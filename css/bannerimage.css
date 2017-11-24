@@ -390,7 +390,6 @@ text-decoration:none;
 	top:0;
 	left:0;
 	width:75%;
-	margin-bottom:1.5em;
 }
 
 .text p{
@@ -398,6 +397,7 @@ text-decoration:none;
 	position:relative;
 	bottom:0;
 	left:0;
+	margin-bottom: 1.5em;
 }
 
 .text h1{
