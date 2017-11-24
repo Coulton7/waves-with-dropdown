@@ -319,7 +319,7 @@ text-decoration:none;
 .socialmedia a:nth-child(1) i{
 
 	color:#1DA1F2;
-	margin-right:0.75em;
+	margin-right:0.5em;
 	margin-top:0.5em;
 	z-index:4;
 	margin-left: -0.5em;
@@ -330,7 +330,7 @@ text-decoration:none;
 .socialmedia a:nth-child(2) i{
 
 	color:#0077b5;
-	margin-right:0.75em;
+	margin-right:0.5em;
 	margin-top:0.5em;
 	position:relative;
 }
@@ -338,14 +338,14 @@ text-decoration:none;
 .socialmedia a:nth-child(3) i{
 
 	color: #d34836;
-	margin-right:0.75em;
+	margin-right:0.5em;
 	margin-top:0.5em;
 	position:relative;
 }
 
 .socialmedia a:nth-child(4) i{
 	color:#002A5B;
-	margin-right:0.75em;
+	margin-right:0.5em;
 	margin-top:0.5em;
 	position:relative;
 }
@@ -354,7 +354,7 @@ text-decoration:none;
 
 	color:#d34836;
 	margin-top:0.5em;
-	margin-right:0.25em;
+	
 	position:relative;
 
 }
