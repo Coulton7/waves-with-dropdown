@@ -321,7 +321,7 @@ text-decoration:none;
 	color:#1DA1F2;
 	margin-right:0.75em;
 	margin-top:0.5em;
-	margin-left:0.25em;
+	z-index:4;
 	position:relative;
 }
 
@@ -364,9 +364,9 @@ text-decoration:none;
 }
 
 .curve-down{
-	width: 7em;
+	width: 8em;
 	height: 6em;
-	right: 6em;
+	right: 6.5em;
 	position:relative;
 	z-index:3;
 	bottom:0;
