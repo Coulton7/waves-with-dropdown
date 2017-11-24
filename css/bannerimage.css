@@ -389,7 +389,8 @@ text-decoration:none;
 	position:absolute;
 	top:0;
 	left:0;
-	width:75%
+	width:75%;
+	padding-bottom:0.5em;
 }
 
 .text p{
