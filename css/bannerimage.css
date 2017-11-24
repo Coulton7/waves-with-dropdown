@@ -250,9 +250,10 @@ display:none;
 
 .logo img{
 	width:100%;
-	height:100%;
+	height:95%;
 	background:#ffffff;
 	z-index:8;
+	left:0.5em;
 	position:absolute;
 
 }
