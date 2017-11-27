@@ -190,7 +190,7 @@ text-decoration:none;
 	width: 8em;
 	height: 6em;
 	right: 6.5em;
-	position:relative;
+	position:absolute;
 	z-index:3;
 	bottom:0;
 	margin-top:2em;
