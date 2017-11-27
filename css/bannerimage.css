@@ -232,12 +232,6 @@ text-decoration:none;
 	width:100%;
 }
 
-.text{
-	height: :2em;
-	width:100%;
-	display:inline-block;
-}
-
 /*aspect ratio 27.35%*/
 
 @media screen and (max-width: 767px) {
@@ -426,4 +420,10 @@ display:none;
 	display:none;
 }
 
+}
+
+.text{
+	height: :2em;
+	width:100%;
+	display:inline-block;
 }
