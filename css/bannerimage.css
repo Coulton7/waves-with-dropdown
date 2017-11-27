@@ -331,6 +331,7 @@ text-decoration:none;
 	z-index:4;
 	margin-left: -0.5em;
 	position:relative;
+	text-decoration: none;
 }
 
 
@@ -340,6 +341,7 @@ text-decoration:none;
 	margin-right:0.65em;
 	margin-top:0.5em;
 	position:relative;
+	text-decoration: none;
 }
 
 .socialmedia a:nth-child(3) i{
@@ -348,6 +350,7 @@ text-decoration:none;
 	margin-right:0.65em;
 	margin-top:0.5em;
 	position:relative;
+	text-decoration: none;
 }
 
 .socialmedia a:nth-child(4) i{
@@ -355,13 +358,14 @@ text-decoration:none;
 	margin-right:0.65em;
 	margin-top:0.5em;
 	position:relative;
+	text-decoration: none;
 }
 
 .socialmedia a:nth-child(5) i{
 
 	color:#d34836;
 	margin-top:0.5em;
-
+	text-decoration: none;
 	position:relative;
 
 }
