@@ -94,12 +94,10 @@ li a:hover{
 			display:none;
 		}
 
-.socialmedia {
+.socialmedia{
 	text-align: center;
-	position: absolute;
 	margin-top: 0.5em;
-	bottom:0;
-	right:0;
+	background-color: transparent;
 	height:0em;
 	display:inline-block;
 }
