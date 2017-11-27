@@ -183,6 +183,7 @@ text-decoration:none;
 .icons a{
 	border-bottom:none;
 	bottom: 0;
+	display: inline-block;;
 }
 
 .curve-down{
