@@ -70,6 +70,7 @@ li a:hover{
 	z-index:8;
 	left:0.5em;
 	position:absolute;
+	border-bottom-right-radius: 10%;
 
 }
 
@@ -420,10 +421,4 @@ display:none;
 	display:none;
 }
 
-}
-
-.text{
-	height: 2em;
-	width:100%;
-	display:inline-block;
 }
