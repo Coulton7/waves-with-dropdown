@@ -277,8 +277,7 @@ text-decoration:none;
 	text-align: center;
 	margin-top: 0.5em;
 	background-color: transparent;
-	height:0em;
-	display:inline-block;
+	display:inline-table;
 }
 
 }
