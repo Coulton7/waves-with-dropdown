@@ -370,7 +370,7 @@ text-decoration:none;
 .socialmedia a{
 	border-bottom:none;
 	bottom: 0;
-	display:inline-flex;
+	display:inline-table;
 }
 
 .curve-down{
