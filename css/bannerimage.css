@@ -312,6 +312,7 @@ ul{
 .navigation a.icon {
 	float: right;
 	display: block;
+	padding-top:0.5em
 }
 
 
@@ -321,7 +322,6 @@ ul{
 	left:  0;
 	top: 0;
 	width: 100%;
-	padding-top:0.5em
 }
 
 .navigation.responsive a {
