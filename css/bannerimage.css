@@ -156,7 +156,7 @@ text-decoration:none;
 .icons a:nth-child(3) i{
 
 	color: #d34836;
-	margin-right:0.60em;
+	padding-right:0.60em;
 	margin-top:0.65em;
 	position:relative;
 	text-decoration: none;
@@ -166,7 +166,7 @@ text-decoration:none;
 
 .icons a:nth-child(4) i{
 	color:#002A5B;
-	margin-right:0.60em;
+	padding-right:0.60em;
 	margin-top:0.5em;
 	position:relative;
 	text-decoration: none;
