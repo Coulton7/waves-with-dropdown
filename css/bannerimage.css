@@ -290,6 +290,13 @@ text-decoration:none;
 	display:inline-table;
 }
 
+.navigation a:not(:first-child) {display: none;}
+.navigation a.icon {
+	float: right;
+	display: block;
+}
+}
+
 .navigation.responsive {position: relative;}
 .navigation.responsive a.icon {
 	position: absolute;
