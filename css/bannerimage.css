@@ -85,6 +85,11 @@ li a:hover{
 	background:#ffffff;
 	z-index:8;
 	position:absolute;
+	margin-left:auto;
+	margin-right:auto;
+	display:inline-block;
+	max-width:100%;
+	height:auto;
 }
 
 .img-responsive{
@@ -304,7 +309,7 @@ text-decoration:none;
 
 .navigation.responsive {position: relative;}
 .navigation.responsive a.icon {
-	position: absolute;
+	position: relative;
 	left:  0;
 	top: 0;
 	width: 100%
