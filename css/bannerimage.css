@@ -65,6 +65,7 @@ li a:hover{
   object-position: 50% 50%; /* default value: image is centred*/
   background-image:url(Images/AESGlobal.png);
   background-repeat:no-repeat;
+	overflow: visible;
 }
 
 .logo{
