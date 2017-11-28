@@ -299,6 +299,7 @@ text-decoration:none;
 .navigation a.icon {
 	float: right;
 	display: block;
+	height:1em;
 }
 }
 
