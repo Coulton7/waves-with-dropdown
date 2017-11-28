@@ -289,6 +289,9 @@ text-decoration:none;
 	text-align: center;
 	margin-top: 0.5em;
 	background-color: transparent;
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }
 
 .navigation a {display: none;}
