@@ -133,7 +133,7 @@ text-decoration:none;
 .icons a:nth-child(1) i{
 
 	color:#1DA1F2;
-	margin-right:0.60em;
+	padding-right:0.60em;
 	margin-top:0.65em;
 	z-index:4;
 	position:relative;
@@ -145,7 +145,7 @@ text-decoration:none;
 .icons a:nth-child(2) i{
 
 	color:#0077b5;
-	margin-right:0.60em;
+	padding-right:0.60em;
 	margin-top:0.65em;
 	position:relative;
 	text-decoration: none;
