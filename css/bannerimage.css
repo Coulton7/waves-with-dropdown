@@ -218,7 +218,7 @@ text-decoration:none;
   background-image:url(Images/AESGlobal.png);
   background-repeat:no-repeat;
 	height:auto;
-	display: block;
+	display: contents;
 }
 
 .text{
