@@ -300,14 +300,6 @@ text-decoration:none;
 	width:100%;
 }
 
-.navigation{
-	height:3em;
-}
-
-ul{
-	height: 100%;
-}
-
 .navigation a {display: none;}
 .navigation a.icon {
 	float: right;
