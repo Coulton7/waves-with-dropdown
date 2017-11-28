@@ -249,6 +249,7 @@ text-decoration:none;
 	width:100%;
 }
 
+
 /*aspect ratio 27.35%*/
 
 @media screen and (max-width: 767px) {
@@ -316,6 +317,11 @@ text-decoration:none;
 	display: block;
 	text-align: left;
 }
+
+.wavecenter{
+	height: 10vh;
+}
+
 }
 
 
