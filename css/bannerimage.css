@@ -324,6 +324,12 @@ text-decoration:none;
 	height: 10em;
 }
 
+.icons a{
+	float:none;
+	margin:0 auto;
+	width:100%
+}
+
 }
 
 
