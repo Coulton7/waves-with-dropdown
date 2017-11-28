@@ -303,22 +303,26 @@ text-decoration:none;
 .icons a:nth-child(1) i{
 
 padding-right:0.8em;
+z-index:4;
 }
 
 
 .icons a:nth-child(2) i{
 
 padding-right:0.8em;
+z-index:4;
 }
 
 .icons a:nth-child(3) i{
 
 padding-right:0.8em;
+z-index:4;
 }
 
 .icons a:nth-child(4) i{
 
 	padding-right:0.8em;
+	z-index:4;
 }
 
 
