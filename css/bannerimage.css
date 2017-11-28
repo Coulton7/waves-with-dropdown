@@ -76,7 +76,6 @@ li a:hover{
 
 .textonlylogo{
 	width:100%;
-	height:auto;
 	background:#ffffff;
 	z-index:8;
 	position:absolute;
@@ -87,7 +86,7 @@ li a:hover{
 	margin-right:auto;
 	display:inline-block;
 	max-width:100%;
-
+	height:auto;
 }
 
 .uppercurve{
