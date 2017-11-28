@@ -297,7 +297,8 @@ text-decoration:none;
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	width:100%
+	width:100%;
+	display:inline-block;
 }
 
 .navigation a {display: none;}
@@ -322,12 +323,6 @@ text-decoration:none;
 }
 .wavecenter{
 	height: 10em;
-}
-
-.icons a{
-	float:none;
-	margin:0 auto;
-	width:100%
 }
 
 }
