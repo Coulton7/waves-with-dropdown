@@ -55,6 +55,20 @@ li a:hover{
 	display: flex;
 }
 
+
+.bannercontainer{
+	height:100%;
+}
+
+.bannerimage{
+  object-fit: cover;
+  object-position: 50% 50%; /* default value: image is centred*/
+  background-image:url(Images/AESGlobal.png);
+  background-repeat:no-repeat;
+	max-width:100%;
+	height: auto;
+}
+
 .logo{
 	width: 15em;
 	height: 10em;
@@ -206,19 +220,6 @@ text-decoration:none;
 	z-index:3;
 	bottom:0;
 	margin-top:2em;
-}
-
-.bannercontainer{
-	height:100%;
-}
-
-.bannerimage{
-  object-fit: cover;
-  object-position: 50% 50%; /* default value: image is centred*/
-  background-image:url(Images/AESGlobal.png);
-  background-repeat:no-repeat;
-	min-width: 100%;
-	min-height: 100%
 }
 
 .text{
