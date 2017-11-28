@@ -295,7 +295,6 @@ text-decoration:none;
 	text-align: center;
 	margin-top: 0.5em;
 	background-color: transparent;
-	display:inline-table;
 }
 
 .navigation a {display: none;}
@@ -318,7 +317,7 @@ text-decoration:none;
 	text-align: left;
 }
 .wavecenter{
-	height: 40vh;
+	height: 100vh;
 }
 
 }
