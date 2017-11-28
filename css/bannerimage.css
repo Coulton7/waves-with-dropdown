@@ -116,7 +116,7 @@ text-decoration:none;
 }
 
 /* Hide the link that should open and close the topnav on small screens */
-.navigation.icon {
+.navigation a.icon {
 		display: none;
 }
 
