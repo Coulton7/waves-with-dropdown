@@ -217,8 +217,8 @@ text-decoration:none;
   object-position: 50% 50%; /* default value: image is centred*/
   background-image:url(Images/AESGlobal.png);
   background-repeat:no-repeat;
-	height:auto;
-	display: contents;
+	min-width: 100%;
+	min-height: 100%
 }
 
 .text{
