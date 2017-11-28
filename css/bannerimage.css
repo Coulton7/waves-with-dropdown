@@ -292,13 +292,11 @@ text-decoration:none;
 
 .socialmedia{
 	text-align: center;
-	margin-top: 0.5em;
 	background-color: transparent;
 	position: absolute;
-	bottom: 0;
+	bottom: 10em;
 	right: 0;
 	width:100%;
-	display:inline-block;
 }
 
 .navigation a {display: none;}
