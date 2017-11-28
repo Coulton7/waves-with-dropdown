@@ -305,7 +305,7 @@ text-decoration:none;
 .navigation.responsive {position: relative;}
 .navigation.responsive a.icon {
 	position: absolute;
-	right: 0;
+	left:  0;
 	top: 0;
 	width: 100%
 }
