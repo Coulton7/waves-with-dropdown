@@ -385,6 +385,10 @@ ul{
 			padding-left: 0em;
 		}
 
+		.socialmedia{
+			text-align: center;
+		}
+
 		.icons a:nth-child(1) i{
 		margin-left:-0.35em;
 		z-index:4;
