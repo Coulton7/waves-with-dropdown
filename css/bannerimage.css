@@ -388,7 +388,10 @@ ul{
 		.icons a:nth-child(1) i{
 		margin-left:-0.35em;
 		z-index:4;
+		padding-right:0.5em
 		}
+
+
 
 }
 
