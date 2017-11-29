@@ -392,6 +392,7 @@ ul{
 		.icons a:nth-child(1) i{
 		z-index:4;
 		margin-top:0.35em;
+		margin-left: 0;
 		}
 
 		.icons a:nth-child(2) i{
@@ -402,7 +403,6 @@ ul{
 		.icons a:nth-child(3) i{
 		z-index:4;
 		margin-top:0.35em;
-		padding-right: 1.5em;
 		}
 
 		.icons a:nth-child(4) i{
