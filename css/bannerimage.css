@@ -389,32 +389,6 @@ ul{
 			text-align: center;
 		}
 
-		.icons a:nth-child(1) i{
-		z-index:4;
-		margin-top:0.35em;
-		margin-left: 0;
-		}
-
-		.icons a:nth-child(2) i{
-		z-index:4;
-		margin-top:0.35em;
-		}
-
-		.icons a:nth-child(3) i{
-		z-index:4;
-		margin-top:0.35em;
-		}
-
-		.icons a:nth-child(4) i{
-		z-index:4;
-		margin-top:0.25em;
-		}
-
-		.icons a:nth-child(5) i{
-		z-index:4;
-		margin-top:0.25em;
-		}
-
 }
 
 /* md */
@@ -461,24 +435,6 @@ ul{
 
 .textonlylogo{
 	display:none;
-}
-
-.icons a:nth-child(1) i{
-	margin-top:0.5em;
-}
-
-.icons a:nth-child(2) i{
-	margin-top:0.5em;
-}
-
-.icons a:nth-child(3) i{
-	margin-top:0.5em;
-	padding-right:0.60em;
-
-}
-
-.icons a:nth-child(4) i{
-	margin-top:0.5em;
 }
 
 }
