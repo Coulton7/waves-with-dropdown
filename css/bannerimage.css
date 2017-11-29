@@ -8,13 +8,6 @@ p{
 	color: #535454;
 }/*anything under the p tag colr*/
 
-ul{
-	list-style-type: none;
-	overflow:hidden;
-	background-color:#ffffff;
-	padding-left:4em;
-}
-
 li{
 	float:left;
 	color:#535454;
@@ -432,6 +425,14 @@ z-index:4;
         font-size: 16px;
         line-height: 26px;
     }
+
+		ul{
+			list-style-type: none;
+			overflow:hidden;
+			background-color:#ffffff;
+			padding-left:4em;
+		}
+
 
 
 
