@@ -468,7 +468,7 @@ ul{
 }
 
 .icons a:nth-child(1) i{
-	margin-left: -0.25em;
+	margin-left: -0.35em;
 	padding-right:0.6em;
 	margin-top:0.5em;
 	z-index:4;
@@ -525,6 +525,13 @@ ul{
         font-size: 18px;
         line-height: 29px;
     }
+
+		.icons a:nth-child(1) i{
+			margin-left: -0.25em;
+			padding-right:0.6em;
+			margin-top:0.5em;
+			z-index:4;
+		}
 }
 
 @media (max-width: 992px){
