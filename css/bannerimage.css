@@ -27,10 +27,6 @@ li a:hover{
 	text-decoration:none;
 }
 
-ul{
-	background-color:#ffffff;
-}
-
 .container-fluid{
 	 padding-left:0px;
 	 padding-right:0px;
@@ -128,11 +124,9 @@ text-decoration:none;
 		display: none;
 }
 
-
 .navbar-header a{
 	border-bottom:none;
 }/*navigation bar links when clicked on or hovered over*/
-
 
 .socialmedia{
 	width: 100%;
@@ -142,7 +136,6 @@ text-decoration:none;
 	bottom:0;
 
 }
-
 
 .icons a:nth-child(1) i{
 
@@ -155,7 +148,6 @@ text-decoration:none;
 	text-decoration: none;
 	font-size: 2.5em;
 }
-
 
 .icons a:nth-child(2) i{
 
@@ -196,7 +188,6 @@ text-decoration:none;
 	text-decoration: none;
 	position:relative;
 	font-size: 2.5em;
-
 
 }
 
@@ -245,7 +236,6 @@ text-decoration:none;
 	margin-top: 4em;
 }
 
-
 /*aspect ratio 27.35%*/
 
 @media screen and (max-width: 767px) {
@@ -282,7 +272,6 @@ text-decoration:none;
         line-height: 19px;
     }
 
-
 		.curve-down{
 			display:none;
 		}
@@ -300,7 +289,6 @@ text-decoration:none;
 padding-right:0.8em;
 z-index:4;
 }
-
 
 .icons a:nth-child(2) i{
 padding-right:0.8em;
@@ -356,7 +344,6 @@ ul{
 
 }
 
-
 /* sm */
 @media screen and (min-width: 768px) {
 	h1{
@@ -401,7 +388,6 @@ ul{
 
 }
 
-
 /* md */
 @media screen and (min-width: 992px) {
 	h1{
@@ -444,16 +430,11 @@ ul{
 			padding-left:4em;
 		}
 
-
-
-
 .textonlylogo{
 	display:none;
 }
 
 }
-
-
 
 /* lg */
 @media screen and (min-width: 1200px) {
