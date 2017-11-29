@@ -347,6 +347,14 @@ z-index:4;
 	height: 10em;
 }
 
+ul{
+	list-style-type: none;
+	overflow:hidden;
+	background-color:#ffffff;
+	padding-left: 0em;
+}
+
+
 }
 
 
