@@ -391,27 +391,32 @@ ul{
 
 		.icons a:nth-child(1) i{
 		margin-left: 0.35em;
+		margin-top:0.35em;
 		padding-right:0.8em;
 		z-index:4;
 		}
 
 		.icons a:nth-child(2) i{
 		padding-right:0.8em;
+		margin-top:0.35em;
 		z-index:4;
 		}
 
 		.icons a:nth-child(3) i{
 		padding-right:0.8em;
+		margin-top:0.35em;
 		z-index:4;
 		}
 
 		.icons a:nth-child(4) i{
 			padding-right:0.8em;
+			margin-top:0.25em;
 			z-index:4;
 		}
 
 		.icons a:nth-child(5) i{
 			z-index: 4;
+			margin-top:0.25em;
 		}
 
 }
@@ -465,18 +470,22 @@ ul{
 .icons a:nth-child(1) i{
 	margin-left: -0.15em;
 	padding-right:0.6em;
+	margin-top:0.5em;
 	z-index:4;
 }
 .icons a:nth-child(2) i{
 	padding-right:0.6em;
+	margin-top:0.5em;
 	z-index:4;
 }
 .icons a:nth-child(3) i{
 	padding-right:0.6em;
+	margin-top:0.5em;
 	z-index:4;
 }
 .icons a:nth-child(4) i{
 	padding-right:0.6em;
+	margin-top:0.5em;
 	z-index:4;
 }
 
