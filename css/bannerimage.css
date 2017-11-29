@@ -144,7 +144,7 @@ text-decoration:none;
 	margin-top:0.65em;
 	margin-left: -0.15em;
 	z-index:4;
-	position:relative;
+	position: static;
 	text-decoration: none;
 	font-size: 2.5em;
 }
@@ -154,7 +154,7 @@ text-decoration:none;
 	color:#0077b5;
 	padding-right:0.60em;
 	margin-top:0.65em;
-	position:relative;
+	position: static;
 	text-decoration: none;
 	font-size: 2.5em;
 
@@ -165,7 +165,7 @@ text-decoration:none;
 	color: #d34836;
 	padding-right:0.60em;
 	margin-top:0.65em;
-	position:relative;
+	position: static;
 	text-decoration: none;
 	font-size: 2.5em;
 
@@ -175,7 +175,7 @@ text-decoration:none;
 	color:#002A5B;
 	padding-right:0.60em;
 	margin-top:0.5em;
-	position:relative;
+	position: static;
 	text-decoration: none;
 	font-size: 2.5em;
 
@@ -186,15 +186,14 @@ text-decoration:none;
 	color:#d34836;
 	margin-top:0.5em;
 	text-decoration: none;
-	position:relative;
+	position: static;
 	font-size: 2.5em;
 
 }
 
 .icons a{
 	border-bottom:none;
-	bottom: 0;
-	display: inline-block;;
+	display: inline-block;
 }
 
 .curve-down{
