@@ -18,7 +18,7 @@ li a{
 	display:block;
 	color:#535454;
 	text-align:center;
-	padding: 10px 15px;
+	padding: 1em 1.5em;
 	text-decoration:none;
 }
 
@@ -353,7 +353,6 @@ ul{
 	background-color:#ffffff;
 	padding-left: 0em;
 }
-
 
 }
 
