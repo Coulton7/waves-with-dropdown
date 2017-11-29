@@ -64,7 +64,7 @@ li a:hover{
 }
 
 .logo img{
-	width:100%;
+	width: 100% \9; /*for SVG images for IE 8-10*/
 	height:100%;
 	background:#ffffff;
 	z-index:8;
