@@ -388,6 +388,12 @@ z-index:4;
         line-height: 23px;
     }
 
+		ul{
+			list-style-type: none;
+			overflow:hidden;
+			background-color:#ffffff;
+		}
+
 }
 
 
