@@ -407,7 +407,12 @@ ul{
 
 		.icons a:nth-child(4) i{
 		z-index:4;
-		margin-top:0.35em;
+		margin-top:0.25em;
+		}
+
+		.icons a:nth-child(5) i{
+		z-index:4;
+		margin-top:0.25em;
 		}
 
 }
