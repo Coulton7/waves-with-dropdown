@@ -391,7 +391,20 @@ ul{
 		padding-right:0.55em
 		}
 
+		.icons a:nth-child(2) i{
+		z-index:4;
+		padding-right:0.55em
+		}
 
+		.icons a:nth-child(3) i{
+		z-index:4;
+		padding-right:0.55em
+		}
+
+		.icons a:nth-child(4) i{
+		z-index:4;
+		padding-right:0.55em
+		}
 
 }
 
@@ -439,6 +452,24 @@ ul{
 
 .textonlylogo{
 	display:none;
+}
+
+.icons a:nth-child(1) i{
+	padding-right:0.60em;
+	margin-left: -0.15em;
+}
+
+.icons a:nth-child(2) i{
+	padding-right:0.60em;
+}
+
+.icons a:nth-child(3) i{
+	padding-right:0.60em;
+
+}
+
+.icons a:nth-child(4) i{
+	padding-right:0.60em;
 }
 
 }
