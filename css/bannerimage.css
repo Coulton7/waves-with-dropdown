@@ -230,9 +230,9 @@ text-decoration:none;
 
 .content-blockthick{
 	background: #8d8e8f;
-background: -moz-linear-gradient(-45deg, #8d8e8f 0%, #5c5f60 74%, #a6aaad 100%);
-background: -webkit-linear-gradient(-45deg, #8d8e8f 0%,#5c5f60 74%,#a6aaad 100%);
-background: linear-gradient(135deg, #8d8e8f 0%,#5c5f60 74%,#a6aaad 100%);
+background: -moz-linear-gradient(-45deg, #8d8e8f 0%, #5c5f60 78%, #a6aaad 100%);
+background: -webkit-linear-gradient(-45deg, #8d8e8f 0%,#5c5f60 78%,#a6aaad 100%);
+background: linear-gradient(135deg, #8d8e8f 0%,#5c5f60 78%,#a6aaad 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', endColorstr='#a6aaad',GradientType=1 );
 	height:800px;
 	width:100%;
