@@ -229,7 +229,11 @@ text-decoration:none;
 }
 
 .content-block{
-	background:#B5B6B9;
+	background: #8d8e8f;
+	background: -moz-linear-gradient(top, #8d8e8f 0%, #5c5f60 42%, #a6aaad 100%);
+	background: -webkit-linear-gradient(top, #8d8e8f 0%,#5c5f60 42%,#a6aaad 100%);
+	background: linear-gradient(to bottom, #8d8e8f 0%,#5c5f60 42%,#a6aaad 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', endColorstr='#a6aaad',GradientType=0 );
 	height:500px;
 	width:100%;
 	margin-top: 4em;
