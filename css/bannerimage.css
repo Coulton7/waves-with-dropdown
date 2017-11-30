@@ -256,7 +256,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 	background: -webkit-linear-gradient(-45deg, #8d8e8f 0%,#5c5f60 10%,#a6aaad 100%);
 	background: linear-gradient(135deg, #8d8e8f 0%,#5c5f60 10%,#a6aaad 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', endColorstr='#a6aaad',GradientType=1 );
-	height:250px;
+	height:600px;
 	width:100%;
 	margin-top: 4em;
 }
