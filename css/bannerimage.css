@@ -365,7 +365,7 @@ ul{
 	overflow:hidden;
 	background-color:#ffffff;
 	padding-left: 0em;
-	padding-top: -1em;
+	margin-top: -1em;
 }
 
 .gap{
@@ -414,7 +414,7 @@ ul{
 			overflow:hidden;
 			background-color:#ffffff;
 			padding-left: 0em;
-			padding-top: -1em;
+			margin-top: -1em;
 		}
 
 		.socialmedia{
@@ -497,7 +497,7 @@ ul{
 			overflow:hidden;
 			background-color:#ffffff;
 			padding-left:4em;
-			padding-top: -1em;
+			margin-top: -1em;
 		}
 
 		.socialmedia{
