@@ -54,7 +54,7 @@ li a:hover{
   background-position: 50% 40%; /* default value: image is centred*/
   background-image:url(Images/AESGlobal.png);
   background-repeat:no-repeat;
-	margin-top:  1.8em;
+	margin-top:  1.1em;
 }
 
 
@@ -100,7 +100,7 @@ li a:hover{
 	width: 15em;
 	height: 7.35em;
 	left:11em;
-	top:2.65em;
+	top:1.55em;
 	z-index:3;
 	position:relative;
 	margin-bottom:5em;
