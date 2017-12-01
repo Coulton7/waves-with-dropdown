@@ -63,7 +63,7 @@ li a:hover{
 	height: 10em;
 	background:#ffffff;
 	position:absolute;
-	top:0;
+	top:-2.65em;
 }
 
 .logo img{
@@ -74,6 +74,7 @@ li a:hover{
 	left:0.5em;
 	position:absolute;
 	border-bottom-right-radius: 10%;
+	top:0em;
 
 }
 
@@ -100,7 +101,7 @@ li a:hover{
 	width: 15em;
 	height: 7.35em;
 	left:11em;
-	top:2.65em;
+	top:0em;
 	z-index:3;
 	position:relative;
 	margin-bottom:5em;
