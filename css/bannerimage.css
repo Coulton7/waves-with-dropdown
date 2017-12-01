@@ -54,7 +54,7 @@ li a:hover{
   background-position: 50% 40%; /* default value: image is centred*/
   background-image:url(Images/AESGlobal.png);
   background-repeat:no-repeat;
-	margin-top:  1.1em;
+	
 }
 
 
@@ -100,7 +100,7 @@ li a:hover{
 	width: 15em;
 	height: 7.35em;
 	left:11em;
-	top:1.55em;
+	top:2.65em;
 	z-index:3;
 	position:relative;
 	margin-bottom:5em;
@@ -365,7 +365,6 @@ ul{
 	overflow:hidden;
 	background-color:#ffffff;
 	padding-left: 0em;
-	margin-top: -1.10em;
 }
 
 .gap{
@@ -414,7 +413,6 @@ ul{
 			overflow:hidden;
 			background-color:#ffffff;
 			padding-left: 0em;
-			margin-top: -1.10em;
 		}
 
 		.socialmedia{
@@ -497,7 +495,6 @@ ul{
 			overflow:hidden;
 			background-color:#ffffff;
 			padding-left:4em;
-			margin-top: -1.10em;
 		}
 
 		.socialmedia{
