@@ -461,6 +461,10 @@ ul{
 			height:6em;
 		}
 
+		.bottom-gap{
+			display:none;
+		}
+
 }
 
 /* md */
