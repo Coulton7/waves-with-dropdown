@@ -30,6 +30,7 @@ li a:hover{
 .container-fluid{
 	 padding-left:0px;
 	 padding-right:0px;
+	 height: 100%
  }/*base padding for container fluid calss*/
 
 .row{
@@ -357,7 +358,7 @@ z-index:4;
 	text-align: left;
 }
 .wavecenter{
-	height: 60em;
+	height: 12em;
 }
 
 ul{
