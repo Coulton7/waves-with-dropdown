@@ -56,6 +56,10 @@ li a:hover{
   background-repeat:no-repeat;
 }
 
+.gap{
+	height:12em;
+}
+
 .logo{
 	width: 15em;
 	height: 10em;
