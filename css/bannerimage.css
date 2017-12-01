@@ -56,9 +56,6 @@ li a:hover{
   background-repeat:no-repeat;
 }
 
-.gap{
-	height:12em;
-}
 
 .logo{
 	width: 15em;
@@ -447,6 +444,10 @@ ul{
 			margin-top:0.35em;
 		}
 
+		.gap{
+			height:4em;
+		}
+
 }
 
 /* md */
@@ -521,6 +522,10 @@ ul{
 	z-index:4;
 }
 
+.gap{
+	height:7em;
+}
+
 }
 
 /* lg */
@@ -567,6 +572,10 @@ ul{
 
 		ul{
 			width:100%
+		}
+
+		.gap{
+			height:10em;
 		}
 }
 
