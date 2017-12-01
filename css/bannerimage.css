@@ -54,6 +54,7 @@ li a:hover{
   background-position: 50% 40%; /* default value: image is centred*/
   background-image:url(Images/AESGlobal.png);
   background-repeat:no-repeat;
+	height: 12em;
 }
 
 .logo{
@@ -356,9 +357,6 @@ z-index:4;
 	float: none;
 	display: block;
 	text-align: left;
-}
-.wavecenter{
-	height: 12em;
 }
 
 ul{
