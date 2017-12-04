@@ -51,7 +51,7 @@ li a:hover{
 
 .bannerimage{
   background-size:  cover;
-  background-position: 60% 40%; /* default value: image is centred*/
+  background-position: 40% 50%; /* default value: image is centred*/
   background-image:url(Images/AESGlobal.png);
   background-repeat:no-repeat;
 	margin-top:3em;
