@@ -69,7 +69,7 @@ li a:hover{
 	height:100%;
 	background:#ffffff;
 	z-index:8;
-	left:0.5em;
+	left:0em;
 	position:absolute;
 	border-bottom-right-radius: 10%;
 	top:0em;
@@ -99,7 +99,7 @@ li a:hover{
 .uppercurve{
 	width: 15em;
 	height: 7.35em;
-	left:10.5em;
+	left:10em;
 	top:0em;
 	z-index:3;
 	position:relative;
