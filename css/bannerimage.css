@@ -30,14 +30,13 @@ li a:hover{
 .container-fluid{
 	 padding-left:0px;
 	 padding-right:0px;
-	 height: 100%
- }/*base padding for container fluid calss*/
+}/*base padding for container fluid calss*/
 
 .row{
 	margin:0 auto;
 }
 
-.no-padding{
+.fullscreen{
 	padding:0 !important;
 	margin:0 !important;
 }
