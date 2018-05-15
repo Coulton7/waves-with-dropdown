@@ -41,6 +41,10 @@ li a:hover{
 	margin:0 !important;
 }
 
+.navigation{
+	position: fixed;
+}
+
 .row-eq-height{
 	display: -webkit-box;
 	display: -webkit-flex;
