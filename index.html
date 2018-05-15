@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/bannerimage.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -13,26 +13,23 @@
 
 <header>
 
-
 <div class="container-fluid bannercontainer">
 	<div class="row bannerimage">
 
 				<div class="row waveupper row-eq-height">
-					<div class="col-sm-2 no-padding">
+					<div class="col-sm-2 col-xs-2 no-padding">
 
 					<img class= "uppercurve" src = "Images\wave-upper.svg" img alt ="uppercurve"></img>
 
-					<img class= "textonlylogo" src="Images\textonlylogo.png" img alt="textonlylgo" class= "img-responsive" alt="image-responsive"></img>
+					<img class= "textonlylogo" class= "img-responsive" src="Images\textonlylogo.png" img alt="textonlylgo" alt="image-responsive"></img>
 
 						<div class="logo">
 							<img class="logo" src = "Images\logo.svg" img alt ="logo">
 						</div>
 					</div>
 
-
-
-					<div class="col-sm-10 no-padding">
-						<div class="navigation ">
+					<div class="col-sm-10 col-xs-10 no-padding">
+						<div class="navigation" id="myNavigation">
 							<ul>
 							<li><a href="#">Home</a></li>
 							<li><a href="#">Product Range</a></li>
@@ -41,14 +38,17 @@
 							<li><a href="#">Contact Us</a></li>
 							<li><a href="#">Location</a></li>
 							<li><a href="#">Key Branches</a></li>
+                <a href="javascript:void(0);" style="font-size:2em;" class="icon" onclick="myFunction()">&#9776;</a>
 							</ul>
 						</div>
 					</div>
 				</div>
 
 				<div class="row wavecenter">
-
-					<div class="col-sm-12">
+          <div class="col-sm-12">
+            <div class="gap">
+            </div>
+          </div>
 							<div class="col-sm-8">
 								<div class="text">
 									<h1>Global</h1>
@@ -56,30 +56,29 @@
 									and in some 104 countries</p>
 								</div>
 							</div>
-						</div>
 				</div>
-
 
 			<div class="row wavelower row-eq-height">
-				<div class="col-sm-8">
-
+				<div class="col-sm-9 col-xs-2 no-padding">
+            <div class="bottom-gap">
+            </div>
 				</div>
 
-
-
-				<div class="col-sm-3 no-padding">
+				<div class="col-sm-3 col-xs-8 no-padding">
 
 					<img class="curve-down" src = "Images\wave-lower.svg" img alt ="curve-down"></img>
 
 
 					<div class="socialmedia">
 
+            <div class="icons">
+
 						<a href = "https://twitter.com/AESSEALplc">
 							<i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
 						<a href="http://www.linkedin.com/company/aesseal">
 							<i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
 
-													<a href="#">
+						<a href="#">
 							<i class="fa fa-map-marker fa-3x" aria-hidden="true"></i></a>
 
 						<a href="#">
@@ -89,18 +88,28 @@
 						<a href="#">
 							<i class="fa fa-phone-square fa-3x" aria-hidden="true"></i></a>
 
+            </div>
+
 					</div>
 
 				</div>
 			</div>
 
-
 	</div>
 </div>
+<script>
+function myFunction() {
+    var x = document.getElementById("myNavigation");
+    if (x.className === "navigation") {
+        x.className += " responsive";
+    } else {
+        x.className = "navigation";
+    }
+}
+</script>
 </header>
 
 &nbsp;
-
 
 <body>
 
@@ -110,14 +119,32 @@
 
 				<div class="row">
 					<div class="col-sm-12">
+            <div class="content-blockthick">
+
+            </div>
 
 						<div class="content-block">
 
 						</div>
+
+            <div class="content-blockthin">
+
+            </div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 </body>
+<footer>
+  <div class="container-fluid">
+		<div class="row">
+      <div class="col-sm-12">
+  <div class="footer">
+    <p>Footer info here</p>
+  </div>
+</div>
+</div>
+</div>
+</footer>
+</html>
