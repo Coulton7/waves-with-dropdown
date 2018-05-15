@@ -61,7 +61,7 @@ li a:hover{
 	height: 10em;
 	background:#ffffff;
 	position:absolute;
-	top:-2.65em;
+	top: 0;
 }
 
 .logo img{
@@ -99,7 +99,7 @@ li a:hover{
 .uppercurve{
 	width: 15em;
 	height: 7.35em;
-	left:11em;
+	left:10.5em;
 	top:0em;
 	z-index:3;
 	position:relative;
