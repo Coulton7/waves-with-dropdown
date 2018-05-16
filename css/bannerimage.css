@@ -527,9 +527,11 @@ ul{
 
 		}
 
-		.socialmedia{
-			text-align: left;
-		}
+		.socialmedia ul{
+	  	transform:translateY(-40%);
+	  	top:50%;
+	  	height:75%;
+	  }
 
 .textonlylogo{
 	display:none;
