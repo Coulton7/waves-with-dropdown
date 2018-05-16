@@ -14,19 +14,6 @@ li{
 	display:inline-block;
 }
 
-li a{
-	display:block;
-	color:#535454;
-	text-align:center;
-	padding: 0.55em 0.87em;
-	text-decoration:none;
-}
-
-li a:hover{
-	background-color:#DDDDDD;
-	text-decoration:none;
-}
-
 .container-fluid{
 	 padding-left:0px;
 	 padding-right:0px;
