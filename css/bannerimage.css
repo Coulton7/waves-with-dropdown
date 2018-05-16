@@ -229,28 +229,6 @@ text-decoration:none;
 	margin-top:2em;
 }
 
-.text{
-	position:absolute;
-	top:-1em;
-	left:0;
-	width:75%;
-	padding-left: 15px;
-}
-
-.text p{
-	color:#ffffff;
-	position:relative;
-	bottom:0;
-	left:0;
-}
-
-.text h1{
-	color:#DD1E25;
-	position:relative;
-	bottom:0;
-	left:0;
-}
-
 .content-blockthick{
 	background: #8d8e8f;
 background: -moz-linear-gradient(-45deg, #8d8e8f 0%, #5c5f60 84%, #a6aaad 100%);
