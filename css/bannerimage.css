@@ -464,6 +464,10 @@ ul{
 
 /* md */
 @media screen and (min-width: 992px) {
+	.navbar-default{
+	background:none;
+	border:none;
+}
 	h1{
 		font-size:34px;
 		line-height:55px;
