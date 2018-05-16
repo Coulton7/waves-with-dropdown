@@ -98,7 +98,7 @@ li{
 	z-index:1032;
 	width:11.7em;
 	opacity:1;
-	top:0.155em;
+	top:0.24em;
 }
 
 .textonlylogo{
@@ -537,28 +537,6 @@ ul{
 	display:none;
 }
 
-.icons a:nth-child(1) i{
-	margin-left: -0.40em;
-	padding-right:0.56em;
-	margin-top:0.5em;
-	z-index:4;
-}
-.icons a:nth-child(2) i{
-	padding-right:0.56em;
-	margin-top:0.5em;
-	z-index:4;
-}
-.icons a:nth-child(3) i{
-	padding-right:0.56em;
-	margin-top:0.5em;
-	z-index:4;
-}
-.icons a:nth-child(4) i{
-	padding-right:0.56em;
-	margin-top:0.5em;
-	z-index:4;
-}
-
 .gap{
 	height:8em;
 }
@@ -607,19 +585,12 @@ ul{
         line-height: 29px;
     }
 
-		.icons a:nth-child(1) i{
-			margin-left: -0.25em;
-			padding-right:0.6em;
-			margin-top:0.5em;
-			z-index:4;
-		}
-
-		ul{
-			width:100%
-		}
-
 		.gap{
 			height:10em;
+		}
+
+		.uppercurve{
+			3.1em
 		}
 }
 
