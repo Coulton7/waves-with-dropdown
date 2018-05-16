@@ -142,13 +142,20 @@ li a:hover{
 }
 
 .uppercurve{
-	width: 15em;
 	height: 7.35em;
-	left:10em;
-	top:2.5em;
-	z-index:3;
+	left:11em;
+	z-index:1030;
 	position:relative;
-	z-index: 1031
+	top:2.95em;
+}
+
+.curve-down{
+	width: 8em;
+	height: 6.185em;
+	right: 6.5em;
+	position:relative;
+	bottom:-0.2em;
+	margin-top:-7.9em;
 }
 
 .navigation{
@@ -262,16 +269,6 @@ text-decoration:none;
 .icons a{
 	border-bottom:none;
 	display: inline-block;
-}
-
-.curve-down{
-	width: 8em;
-	height: 6em;
-	right: 6.5em;
-	position:relative;
-	z-index:3;
-	bottom:0;
-	margin-top:2em;
 }
 
 .content-blockthick{
