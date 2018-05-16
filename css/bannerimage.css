@@ -69,11 +69,8 @@ li a:hover{
 	height:100%;
 	background:#ffffff;
 	z-index:8;
-	left:0em;
 	position:absolute;
 	border-bottom-right-radius: 10%;
-	top:0em;
-
 }
 
 .textonlylogo{
