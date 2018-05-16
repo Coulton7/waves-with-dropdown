@@ -91,6 +91,11 @@ li a:hover{
 	width:100%;
 }
 
+.action-menu{
+	position: absolute;
+	top: 3em;
+	z-index:103;
+}
 
 .flexslider{
 	margin:-4.5em 0 0 0;
