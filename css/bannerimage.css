@@ -84,8 +84,12 @@ li{
 	z-index:103;
 }
 
+.front__flex-margin{
+		margin: -4.3em 0 0 0;
+}
+
 .flexslider{
-	margin:-4.5em 0 0 0;
+	margin:0 0 0 0;
 	border:none;
 	z-index:0;
 }
