@@ -41,8 +41,34 @@ li a:hover{
 	margin:0 !important;
 }
 
-.navigation{
-	position: fixed;
+.nav li a{
+	display:block;
+	color:#535454;
+	padding: 0.95em 1.1em;
+	text-decoration:none;
+}
+
+.nav li a:hover{
+	color: #dd1e25;
+	margin-bottom:0;
+	border-bottom: 1px dashed #dd1e25;
+	text-decoration:none;
+	background-color: #e5e5e7;
+
+}
+
+.nav li a.active{
+	color: #1c2f55
+}
+
+.navbar-nav > li > a{
+	border-top:4px solid transparent;
+	border-bottom:none;
+}
+
+.navbar-nav > li > a:hover{
+	border-top: 4px solid #dd1e25;
+	border-bottom:none;
 }
 
 .row-eq-height{
