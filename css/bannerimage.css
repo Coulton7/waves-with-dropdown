@@ -78,6 +78,20 @@ li a:hover{
 	display: flex;
 }
 
+.fit-menu{
+	float:right;
+	display:inline-block;
+	height:inherit;
+}
+
+.action-menu{
+	background: rgba(0,0,0,0.5);
+	color:#ffffff;
+	height:3em;
+	width:100%;
+}
+
+
 .flexslider{
 	margin:-4.5em 0 0 0;
 	border:none;
