@@ -71,6 +71,11 @@ li{
 	height:inherit;
 }
 
+.dropdown-color{
+	background: rgba(0,0,0,0.5);
+
+}
+
 .action-menu{
 	background: rgba(0,0,0,0.5);
 	color:#ffffff;
