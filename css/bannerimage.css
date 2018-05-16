@@ -131,10 +131,11 @@ text-decoration:none;
 }/*navigation bar links when clicked on or hovered over*/
 
 .navbar-nav{
-	list-style-type: none;
-	overflow:hidden;
-	background-color:#ffffff;
-	padding-left:16em;
+	float:none;
+	margin-bottom: 0;
+	margin-top:0;
+	background:#ffffff;
+	border-bottom:none;
 }
 
 .socialmedia{
@@ -558,6 +559,13 @@ ul{
 
 .gap{
 	height:8em;
+}
+
+.navbar-nav{
+	list-style-type: none;
+	overflow:hidden;
+	background-color:#ffffff;
+	padding-left:16em;
 }
 
 }
