@@ -71,7 +71,7 @@ li{
 	height:inherit;
 }
 
-.dropdown{
+#dropdown{
 	background: rgba(0,0,0,0.5);
 	position: absolute;
 	width:100%;
