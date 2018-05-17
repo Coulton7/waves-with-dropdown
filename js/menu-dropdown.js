@@ -6,7 +6,7 @@ $(function() {
    $('#prod-selector').parent().toggleClass('');
    $(".prod-selector" ).slideToggle('easeInOutQuint')
    $("#block-block-11").slideToggle('easeInOutQuint')
-   $(".ind-selector").slideToggle('easeInOutQuint')
+   $(".ind-selector").slideToggle('easeOutQuint')
      $('#prod-selector').parent().removeClass('')
 
     })
