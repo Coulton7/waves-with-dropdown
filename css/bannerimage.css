@@ -78,7 +78,11 @@ li{
 	z-index: 1
 }
 
-.menu-selector{
+.prod-selector{
+		display: none;
+}
+
+.ind-selector{
 		display: none;
 }
 
