@@ -18,12 +18,21 @@ $(function() {
 
     })
 
+     if($(".ind-selector").is(':hidden')){
     $('#ind-selector').attr("href","#")
     $('#ind-selector').click(function() {
     $('#ind-selector').parent().toggleClass('');
     $(".ind-selector" ).slideToggle('easeInOutQuint')
     $("#block-block-11").slideToggle('easeInOutQuint')
       $('#ind-selector').parent().removeClass('')
+
+      else {
+        $('#ind-selector').parent().toggleClass('');
+        $(".ind-selector" ).slideToggle('easeInOutQuint')
+        $("#block-block-11").slideToggle('easeInOutQuint')
+        $(".prod-selector" ).slideToggle('easeInOutQuint')
+         $('#ind-selector').parent().removeClass('')}
+
     })
 
   });(jQuery)
