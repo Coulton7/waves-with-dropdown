@@ -1,7 +1,7 @@
 $(function() {
 
 
-   $('#prod-selector').attr("href","prod")
+   $('#prod-selector').attr("href","#")
    $('#prod-selector').click(function() {
    $('#prod-selector').parent().toggleClass('');
    $(".prod-selector" ).slideToggle('easeInOutQuint')
@@ -10,7 +10,7 @@ $(function() {
 
     })
 
-    $('#ind-selector').attr("href","ind")
+    $('#ind-selector').attr("href","#")
     $('#ind-selector').click(function() {
     $('#ind-selector').parent().toggleClass('');
     $(".ind-selector" ).slideToggle('easeInOutQuint')
