@@ -94,7 +94,7 @@ li{
 }
 
 .action-menu{
-	position: absolute;
+	position: relative;
 	z-index:103;
 }
 
