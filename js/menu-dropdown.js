@@ -6,6 +6,7 @@ $(function() {
    $('#prod-selector').parent().toggleClass('');
    $(".prod-selector" ).slideToggle('easeInOutQuint')
    $("#block-block-11").slideToggle('easeInOutQuint')
+   $(".ind-selector").slideToggle('easeInOutQuint').style.display="none;"
      $('#prod-selector').parent().removeClass('')
 
     })
