@@ -7,8 +7,8 @@ $(function() {
    $('#prod-selector').parent().toggleClass('');
    $(".prod-selector" ).slideToggle('easeInOutQuint')
      $('#prod-selector').parent().removeClass('')
-     $('#dropdown').addClass("height-active");
-     $('#dropdown').removeClass("height-active");
+     $('#dropdown').addClass("dropdown-fill");
+     $('#dropdown').removeClass("dropdown-fill");
    }
 
      else {
