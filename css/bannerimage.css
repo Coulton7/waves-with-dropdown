@@ -190,6 +190,26 @@ text-decoration:none;
 	border-bottom:none;
 }
 
+.cust-portal{
+	float:right;
+	margin-right:0.6em;
+	padding-top:0.6em;
+	height:100%;
+}
+
+.cust-portal a{
+	border-bottom:none;
+	color:#ffffff;
+}
+
+.cust-portal a:hover{
+	border-bottom:1px solid #ffffff;
+}
+
+.cust-portal-text{
+	vertical-align: super;
+}
+
 .socialmedia{
 	width: 100%;
 	height: 7.57em;
