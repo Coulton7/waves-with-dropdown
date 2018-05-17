@@ -76,6 +76,7 @@ li{
 	/*display: none;*/
 	position: absolute;
 	width:100%;
+	z-index: 1
 }
 
 .action-menu{
@@ -147,6 +148,7 @@ li{
 	position:relative;
 	bottom:-0.2em;
 	margin-top:-7.9em;
+	z-index: 2;
 }
 
 .navigation{
@@ -187,6 +189,7 @@ text-decoration:none;
 	background:#ffffff;
 	position:absolute;
 	bottom:0;
+	z-index: 2;
 }
 
 .socialmedia ul{
