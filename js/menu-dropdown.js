@@ -19,7 +19,7 @@ $(function() {
 
     $('#ind-selector').attr("href","#")
     $('#ind-selector').click(function() {
-      if($(".ind-selector").is(':hidden')){
+      if($(".prod-selector").is(':hidden')){
     $('#ind-selector').parent().toggleClass('');
     $(".ind-selector" ).slideToggle('easeInOutQuint')
       $('#ind-selector').parent().removeClass('')}
