@@ -10,7 +10,11 @@ $(function() {
      $('#prod-selector').parent().removeClass('')}
 
      else {
+       $('#prod-selector').parent().toggleClass('');
+       $(".prod-selector" ).slideToggle('easeInOutQuint')
+       $("#block-block-11").slideToggle('easeInOutQuint')
        $(".ind-selector" ).slideToggle('easeInOutQuint')
+        $('#prod-selector').parent().removeClass('')}
      }
 
     })
