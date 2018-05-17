@@ -14,7 +14,7 @@ $(function() {
        $(".ind-selector" ).slideToggle('easeInOutQuint')
         $('#prod-selector').parent().removeClass('')}
 
-        $(".action-menu").slideDown(easeInOutQuint)
+        $(".action-menu").slideDown()
 
     })
 
