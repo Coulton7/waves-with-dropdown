@@ -18,7 +18,7 @@ $(function() {
      $('#ind-selector').attr("href","#")
      $('#ind-selector, #prod-cta').click(function() {
      $('#ind-selector').parent().toggleClass('');
-     $(".menu-selector" ).slideToggle('easeInOutQuint')
+     $(".ind-selector" ).slideToggle('easeInOutQuint')
      $("#block-block-11").slideToggle('easeInOutQuint')
        $('#ind-selector').parent().removeClass('')
 
