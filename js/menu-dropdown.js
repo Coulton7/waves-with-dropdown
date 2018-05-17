@@ -2,7 +2,7 @@ $(function() {
 
 
    $('#prod-selector').attr("href","#")
-   $('#prod-selector, #prod-cta').click(function() {
+   $('#prod-selector').click(function() {
    $('#prod-selector').parent().toggleClass('');
    $(".prod-selector" ).slideToggle('easeInOutQuint')
    $("#block-block-11").slideToggle('easeInOutQuint')
@@ -16,7 +16,7 @@ $(function() {
 
 
      $('#ind-selector').attr("href","#")
-     $('#ind-selector, #prod-cta').click(function() {
+     $('#ind-selector').click(function() {
      $('#ind-selector').parent().toggleClass('');
      $(".ind-selector" ).slideToggle('easeInOutQuint')
      $("#block-block-11").slideToggle('easeInOutQuint')
