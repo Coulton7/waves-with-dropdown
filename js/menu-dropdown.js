@@ -6,7 +6,6 @@ $(function() {
    $('#prod-selector').parent().toggleClass('');
    $(".prod-selector" ).slideToggle('easeInOutQuint')
    $("#block-block-11").slideToggle('easeInOutQuint')
-   $(".ind-selector").slideToggle('easeOutQuint')
      $('#prod-selector').parent().removeClass('')
 
     })
@@ -21,7 +20,6 @@ $(function() {
      $('#ind-selector').parent().toggleClass('');
      $(".ind-selector" ).slideToggle('easeInOutQuint')
      $("#block-block-11").slideToggle('easeInOutQuint')
-     $(".prod-selector" ).slideToggle('easeOutQuint')
        $('#ind-selector').parent().removeClass('')
 
       })
