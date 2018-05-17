@@ -10,18 +10,12 @@ $(function() {
 
     })
 
+    $('#ind-selector').attr("href","#")
+    $('#ind-selector').click(function() {
+    $('#ind-selector').parent().toggleClass('');
+    $(".ind-selector" ).slideToggle('easeInOutQuint')
+    $("#block-block-11").slideToggle('easeInOutQuint')
+      $('#ind-selector').parent().removeClass('')
+    })
+
   });(jQuery)
-
-  $(function() {
-
-
-     $('#ind-selector').attr("href","#")
-     $('#ind-selector').click(function() {
-     $('#ind-selector').parent().toggleClass('');
-     $(".ind-selector" ).slideToggle('easeInOutQuint')
-     $("#block-block-11").slideToggle('easeInOutQuint')
-       $('#ind-selector').parent().removeClass('')
-
-      })
-
-    });(jQuery)
