@@ -15,7 +15,6 @@ $(function() {
        $("#block-block-11").slideToggle('easeInOutQuint')
        $(".ind-selector" ).slideToggle('easeInOutQuint')
         $('#prod-selector').parent().removeClass('')}
-     }
 
     })
 
