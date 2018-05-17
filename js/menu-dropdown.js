@@ -21,7 +21,7 @@ $(function() {
      $('#ind-selector').parent().toggleClass('');
      $(".ind-selector" ).slideToggle('easeInOutQuint')
      $("#block-block-11").slideToggle('easeInOutQuint')
-     $(".prod-selector" ).slideToggle('easeInOutQuint')
+     $(".prod-selector" ).slideToggle('easeOutQuint')
        $('#ind-selector').parent().removeClass('')
 
       })
