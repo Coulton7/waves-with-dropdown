@@ -6,15 +6,17 @@ $(function() {
      if($(".ind-selector").is(':hidden')){
    $('#prod-selector').parent().toggleClass('');
    $(".prod-selector" ).slideToggle('easeInOutQuint')
-     $('#prod-selector').parent().removeClass('')}
+     $('#prod-selector').parent().removeClass('')
+   $(".action-menu").slideDown()}
 
      else {
        $('#prod-selector').parent().toggleClass('');
        $(".prod-selector" ).slideToggle('easeInOutQuint')
        $(".ind-selector" ).slideToggle('easeInOutQuint')
-        $('#prod-selector').parent().removeClass('')}
+        $('#prod-selector').parent().removeClass('')
+        $(".action-menu").slideDown()}
 
-        $(".action-menu").slideDown()
+
 
     })
 
