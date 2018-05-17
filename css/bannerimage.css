@@ -73,10 +73,13 @@ li{
 
 .dropdown{
 	background: rgba(0,0,0,0.5);
-	display: none;
 	position: absolute;
 	width:100%;
 	z-index: 1
+}
+
+.menu-selector{
+		display: none;
 }
 
 .action-menu{
