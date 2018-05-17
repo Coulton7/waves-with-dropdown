@@ -3,12 +3,12 @@ $(function() {
 
    $('#prod-selector').attr("href","#")
    $('#prod-selector').click(function() {
-     if($(."ind-selector").is(':hidden')){
+     if($(".ind-selector").is(':hidden')){
    $('#prod-selector').parent().toggleClass('');
    $(".prod-selector" ).slideToggle('easeInOutQuint')
    $("#block-block-11").slideToggle('easeInOutQuint')
      $('#prod-selector').parent().removeClass('')}
-     
+
      else {
        $(".ind-selector" ).slideToggle('easeInOutQuint')
      }
