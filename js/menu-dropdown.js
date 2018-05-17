@@ -7,6 +7,7 @@ $(function() {
    $(".prod-selector" ).slideToggle('easeInOutQuint')
    $("#block-block-11").slideToggle('easeInOutQuint')
      $('#prod-selector').parent().removeClass('')
+     $('#ind-selector').parent().removeClass('')
 
     })
 
@@ -21,6 +22,7 @@ $(function() {
      $(".ind-selector" ).slideToggle('easeInOutQuint')
      $("#block-block-11").slideToggle('easeInOutQuint')
        $('#ind-selector').parent().removeClass('')
+       $('#prod-selector').parent().removeClass('')
 
       })
 
