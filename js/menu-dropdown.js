@@ -6,7 +6,7 @@ $(function() {
      if($(".ind-selector").is(':hidden')){
    $('#prod-selector').parent().toggleClass('');
    $(".prod-selector" ).slideToggle('easeInOutQuint' function(){
-      $('#dropdown').toggleClass('dropdown-fill')
+      $('#dropdown').toggleClass('dropdown-fill', $(this).is('visible'));
    });
      $('#prod-selector').parent().removeClass('')
 
