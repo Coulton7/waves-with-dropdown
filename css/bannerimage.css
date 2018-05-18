@@ -71,7 +71,7 @@ li{
 	height:inherit;
 }
 
-.navigation_col{
+#dropdown{
 	background: rgba(0,0,0,0.5);
 	position: absolute;
 	width:100%;
@@ -93,7 +93,7 @@ li{
 	width:100%;
 }
 
-#dropdown{
+.dropdown-fill{
 	height:100%;
 	-webkit-transition: max-height 0.8s;
   -moz-transition: max-height 0.8s;
