@@ -8,7 +8,6 @@ $(function() {
    $(".prod-selector" ).slideToggle('easeInOutQuint')
      $('#prod-selector').parent().removeClass('')
      $('#dropdown').toggleClass('dropdown-fill')
-     $(".dropdown-fill" ).slideDown('easeInOutQuint')
    }
 
      else {
@@ -32,7 +31,6 @@ $(function() {
     $(".ind-selector" ).slideToggle('easeInOutQuint')
       $('#ind-selector').parent().removeClass('')
       $('#dropdown').toggleClass('dropdown-fill')
-      $(".dropdown-fill" ).slideDown('easeInOutQuint')
     }
 
       else {
