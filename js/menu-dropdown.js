@@ -32,7 +32,7 @@ $(function() {
     $(".ind-selector" ).slideToggle('easeInOutQuint')
       $('#ind-selector').parent().removeClass('')
       $('#dropdown').toggleClass('dropdown-fill')
-
+      $(".dropdown-fill" ).slideToggle('easeInOutQuint')
     }
 
       else {
