@@ -7,7 +7,7 @@ $(function() {
    $('#prod-selector').parent().toggleClass('');
    $(".prod-selector" ).slideToggle('easeInOutQuint')
      $('#prod-selector').parent().removeClass('')
-
+     $('#dropdown').toggleClass('dropdown-fill')
    }
 
      else {
@@ -45,26 +45,3 @@ $(function() {
     })
 
   });(jQuery)
-
-$(function() {
-
-  $('#prod-selector').click(function() {
-    if($(".dropdown-fill").is(':hidden')){
-      $('#dropdown').toggleClass('dropdown-fill')
-    }
-    else{
-      $('#dropdown').removeClass('dropdown-fill')
-    }
-
-  })
-
-    $('#ind-selector').click(function() {
-      if($(".dropdown-fill").is(':hidden')){
-        $('#dropdown').toggleClass('dropdown-fill')
-      }
-      else{
-        $('#dropdown').removeClass('dropdown-fill')
-      }
-        })
-
-      });(jQuery)
