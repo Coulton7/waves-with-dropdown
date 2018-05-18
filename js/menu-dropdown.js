@@ -15,7 +15,7 @@ $(function() {
        $(".prod-selector" ).slideToggle('easeInOutQuint')
        $(".ind-selector" ).slideToggle('easeInOutQuint')
         $('#prod-selector').parent().removeClass('')
-        $('#dropdown').toggleClass('dropdown-fill')
+        
 
         }
 
@@ -39,7 +39,7 @@ $(function() {
         $(".ind-selector" ).slideToggle('easeInOutQuint')
         $(".prod-selector" ).slideToggle('easeInOutQuint')
          $('#ind-selector').parent().removeClass('')
-         $('#dropdown').toggleClass('dropdown-fill')
+
 }
 
     })
