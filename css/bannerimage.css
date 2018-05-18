@@ -93,9 +93,13 @@ li{
 	width:100%;
 }
 
-.dropdown-fill{
-	height:100%;
+.dropdown-up{
+	height: fit-content
+}
 
+.dropdown-down{
+	height:100%;
+	transition: height 3s linear;
 }
 
 .action-menu{
