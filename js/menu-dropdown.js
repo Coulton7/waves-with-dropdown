@@ -7,7 +7,7 @@ $(function() {
    $('#prod-selector').parent().toggleClass('');
    $(".prod-selector" ).slideToggle('easeInOutQuint')
      $('#prod-selector').parent().removeClass('')
-     $('#dropdown').toggleClass('hidden-menu visible-menu')
+     $('#dropdown').toggleClass('dropdown-fill')
    }
 
      else {
@@ -30,7 +30,7 @@ $(function() {
     $('#ind-selector').parent().toggleClass('');
     $(".ind-selector" ).slideToggle('easeInOutQuint')
       $('#ind-selector').parent().removeClass('')
-      $('#dropdown').toggleClass('hidden-menu visible-menu')
+      $('#dropdown').toggleClass('dropdown-fill')
 
     }
 

@@ -93,15 +93,11 @@ li{
 	width:100%;
 }
 
-.hidden-menu{
-	height:3em;
-}
-
-.visible-menu{
+.dropdown-fill{
 	height:100%;
-	-webkit-transition: max-height 1.8s;
-  -moz-transition: max-height 1.8s;
-  transition: max-height 1.8s;
+	-webkit-transition: max-height 0.8s;
+  -moz-transition: max-height 0.8s;
+  transition: max-height 0.8s;
   overflow:hidden;
 
 }
