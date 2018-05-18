@@ -94,7 +94,8 @@ li{
 }
 
 .dropdown-up{
-	height: 14%
+	height: 14%;
+	transition: 0.2s all ease-in-out;
 }
 
 .dropdown-down{
