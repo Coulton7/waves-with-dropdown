@@ -95,10 +95,7 @@ li{
 
 .dropdown-fill{
 	height:100%;
-	-webkit-transition: max-height 0.8s;
-  -moz-transition: max-height 0.8s;
-  transition: max-height 0.8s;
-  overflow:hidden;
+display: none;
 
 }
 
