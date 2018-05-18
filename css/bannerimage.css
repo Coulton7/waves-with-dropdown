@@ -66,7 +66,7 @@ li{
 }
 
 .fit-menu{
-	float:right;
+	/*float:right;*/
 	display:inline-block;
 	height:inherit;
 }
@@ -115,8 +115,9 @@ li{
 }
 
 .action-menu{
-	position: relative;
+	position: absolute;
 	z-index:103;
+	bottom: 0;
 }
 
 .flex-down{
