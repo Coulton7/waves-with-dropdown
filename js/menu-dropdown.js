@@ -7,8 +7,9 @@ $(function() {
    $('#prod-selector').parent().toggleClass('');
    $(".prod-selector" ).slideToggle('easeInOutQuint')
      $('#prod-selector').parent().removeClass('')
-     $('#dropdown').addClass('dropdown-fill')
      $('#dropdown').removeClass('dropdown-fill')
+     $(this).addClass('dropdown-fill')
+
    }
 
      else {
@@ -16,8 +17,8 @@ $(function() {
        $(".prod-selector" ).slideToggle('easeInOutQuint')
        $(".ind-selector" ).slideToggle('easeInOutQuint')
         $('#prod-selector').parent().removeClass('')
-        $('#dropdown').addClass('dropdown-fill')
         $('#dropdown').removeClass('dropdown-fill')
+        $(this).addClass('dropdown-fill')
         }
 
 
