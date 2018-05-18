@@ -15,8 +15,8 @@ $(function() {
        $(".prod-selector" ).slideToggle('easeInOutQuint')
        $(".ind-selector" ).slideToggle('easeInOutQuint')
         $('#prod-selector').parent().removeClass('')
-        $('#dropdown').toggleClass('dropdown-fill')
-        $('#dropdown').removeClass('dropdown-fill')
+        $('.prod-selector').parent().toggleClass('dropdown-fill')
+
         }
 
 
@@ -30,8 +30,8 @@ $(function() {
     $('#ind-selector').parent().toggleClass('');
     $(".ind-selector" ).slideToggle('easeInOutQuint')
       $('#ind-selector').parent().removeClass('')
-      $('#dropdown').toggleClass('dropdown-fill')
-      $('#dropdown').removeClass('dropdown-fill')
+      $('.prod-selector').parent().toggleClass('dropdown-fill')
+
     }
 
       else {
@@ -39,8 +39,8 @@ $(function() {
         $(".ind-selector" ).slideToggle('easeInOutQuint')
         $(".prod-selector" ).slideToggle('easeInOutQuint')
          $('#ind-selector').parent().removeClass('')
-         $('#dropdown').toggleClass('dropdown-fill')
-         $('#dropdown').removeClass('dropdown-fill')}
+         $('.prod-selector').parent().toggleClass('dropdown-fill')
+}
 
     })
 
