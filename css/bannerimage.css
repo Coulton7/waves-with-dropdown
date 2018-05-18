@@ -88,6 +88,11 @@ li{
 		display: none;
 }
 
+.grid{
+	display:flex;
+	flex-wrap: wrap;
+}
+
 .action-menu{
 	color:#ffffff;
 	height:fit-content;
