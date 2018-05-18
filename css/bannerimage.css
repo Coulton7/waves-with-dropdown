@@ -99,9 +99,9 @@ li{
 
 .visible-menu{
 	height:100%;
-	-webkit-transition: max-height 0.8s;
-  -moz-transition: max-height 0.8s;
-  transition: max-height 0.8s;
+	-webkit-transition: max-height 1.8s;
+  -moz-transition: max-height 1.8s;
+  transition: max-height 1.8s;
   overflow:hidden;
 
 }
