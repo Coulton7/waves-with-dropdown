@@ -4,11 +4,9 @@ $(function() {
    $('#prod-selector').attr("href","#")
    $('#prod-selector').click(function() {
      if($(".ind-selector").is(':hidden')){
-   $('#prod-selector').parent().toggleClass('');
+   $('#dropdown').parent().toggleClass('dropdown-fill');
    $(".prod-selector" ).slideToggle('easeInOutQuint')
-     $('#prod-selector').parent().removeClass('')
-     $('#dropdown').addClass("dropdown-fill");
-     $('#dropdown').removeClass("dropdown-fill");
+     $('#dropdown').parent().removeClass('dropdown-fill')
    }
 
      else {
