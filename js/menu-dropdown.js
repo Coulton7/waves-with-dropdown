@@ -8,7 +8,7 @@ $(function() {
    $(".prod-selector" ).slideToggle('easeInOutQuint')
      $('#prod-selector').parent().removeClass('')
      $('#dropdown').toggleClass('dropdown-up dropdown-down');
-     $(".dropdown-down" ).slideToggle('easeInOutQuint')
+     $(".dropdown-down" ).slideDown('easeInOutQuint')
    }
 
      else {
