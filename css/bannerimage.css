@@ -94,11 +94,12 @@ li{
 }
 
 .dropdown-up{
-	height: fit-content
+	height: 14%
 }
 
 .dropdown-down{
 	height:100%;
+	transition: 0.5s all ease-in-out;
 }
 
 .action-menu{

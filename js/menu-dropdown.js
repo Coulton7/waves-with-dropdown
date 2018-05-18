@@ -7,7 +7,7 @@ $(function() {
    $('#prod-selector').parent().toggleClass('');
    $(".prod-selector" ).slideToggle('easeInOutQuint')
      $('#prod-selector').parent().removeClass('')
-     $('#dropdown').toggleClass('dropdown-up dropdown-down').delay(1000).slideDown('easeInOutQuint');
+     $('#dropdown').toggleClass('dropdown-up dropdown-down')
    }
 
      else {
