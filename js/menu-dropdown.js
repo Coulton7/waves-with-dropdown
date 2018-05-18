@@ -7,7 +7,7 @@ $(function() {
    $('#prod-selector').parent().toggleClass('');
    $(".prod-selector" ).slideToggle('easeInOutQuint')
      $('#prod-selector').parent().removeClass('')
-     $('#dropdown').toggleClass('dropdown-fill', 10000)
+     $('#dropdown').toggleClass('dropdown-fill', 1500);
    }
 
      else {
@@ -30,7 +30,7 @@ $(function() {
     $('#ind-selector').parent().toggleClass('');
     $(".ind-selector" ).slideToggle('easeInOutQuint')
       $('#ind-selector').parent().removeClass('')
-     $('#dropdown').toggleClass('dropdown-fill', 10000)
+     $('#dropdown').toggleClass('dropdown-fill', 1500);
     }
 
       else {
