@@ -93,7 +93,11 @@ li{
 	width:100%;
 }
 
-.dropdown-fill{
+.hidden{
+	height:3em;
+}
+
+.visible{
 	height:100%;
 	-webkit-transition: max-height 0.8s;
   -moz-transition: max-height 0.8s;
