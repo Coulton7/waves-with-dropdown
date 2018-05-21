@@ -344,7 +344,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 }
 
 .overlay-red{
-	background:rgba(221,30,37,.9);
+	background:rgba(221,30,37,.8);
 	left:0;
 	opacity:1;
 	position:absolute;
