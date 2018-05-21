@@ -369,7 +369,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 	opacity: 1;
 }
 
-.gallery-box:hover .overlay-red a {
+.gallery-box:hover a {
     opacity: 1;
     -moz-transform: translate3d(0,0,0);
     -ms-transform: translate3d(0,0,0);
