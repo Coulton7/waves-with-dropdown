@@ -386,10 +386,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 	position:absolute;
 	top:50%;
 	width:100%;
-	-moz-transform:translateY(-50%);
-	-ms-transform:translateY(-50%);
-	-webkit-transform:translateY(-50%);
-	transform:translateY(-50%);
 }/*Controls the positon of where the icon will go*/
 
 .gallery a{
@@ -398,7 +394,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 	-webkit-transform:translate3d(0,200%,0);
 	transform:translate3d(0,200%,0);
 	color:#ffffff;
-	opacity:0;
+	opacity:1;
 }/*hides the font awesome icon before hover effect*/
 
 @media screen and (max-width: 767px) {
