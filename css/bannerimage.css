@@ -383,7 +383,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 	opacity: 1;
 }
 
-.overlay-caption:hover{
+.overlay-red:hover div{
 	opacity:1;
 }
 
