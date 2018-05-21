@@ -366,13 +366,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
     transform: translate3d(0,0,0)
 }
 
-.carousel-caption{
+.carousel-caption a{
 	color: #ffffff;
 	opacity: 1;
 	text-shadow: none;
 }
 
-.carousel-caption:hover{
+.carousel-caption a:hover{
 	color: #ffffff;
 	opacity: 1;
 	text-shadow: none;
