@@ -357,7 +357,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 	width:100%;
 }/*Adds the red overlay while also hding it*/
 
-.overlay-red:hover div{
+.overlay-red:hover p{
 	opacity:1;
 }
 
@@ -373,7 +373,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 	opacity: 1;
 }
 
-.gallery-box:hover a {
+.gallery-box:hover p {
     opacity: 1;
     -moz-transform: translate3d(0,0,0);
     -ms-transform: translate3d(0,0,0);
@@ -381,7 +381,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
     transform: translate3d(0,0,0)
 }/*makes them visible and puts it on pic*/
 
-.overlay-caption a{
+.overlay-caption p{
 	color: #ffffff;
 	text-shadow: none;
 	opacity: 1;
