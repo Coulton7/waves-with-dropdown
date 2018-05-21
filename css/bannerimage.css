@@ -366,6 +366,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
     transform: translate3d(0,0,0)
 }
 
+.carousel-caption{
+	color: #ffffff;
+	opacity: 1;
+	text-shadow: none;
+}
+
+.carousel-caption:hover{
+	color: #ffffff;
+	opacity: 1;
+	text-shadow: none;
+}
+
 /*aspect ratio 27.35%*/
 
 @media screen and (max-width: 767px) {
