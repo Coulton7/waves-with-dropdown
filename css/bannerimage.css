@@ -357,6 +357,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 	width:100%;
 }/*Adds the red overlay while also hding it*/
 
+.overlay-red:hover div{
+	opacity:1;
+}
+
 .overlay-red:hover{
 	opacity: 0;
     -moz-transform: translate3d(0,0,0);
@@ -383,9 +387,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 	opacity: 1;
 }
 
-.overlay-red:hover div{
-	opacity:1;
-}
+
 
 @media screen and (max-width: 767px) {
 	h1{
