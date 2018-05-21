@@ -377,10 +377,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
     transform: translate3d(0,0,0)
 }/*makes them visible and puts it on pic*/
 
-.overlay-red a{
+.overlay-caption a{
 	color: #ffffff;
 	text-shadow: none;
 	opacity: 1;
+}
+
+.overlay-caption:hover{
+	opacity:1;
 }
 
 @media screen and (max-width: 767px) {
