@@ -370,6 +370,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
     transform: translate3d(0,0,0)
 }/*position of red overlay and visibility*/
 
+.gallery-box:hover img{
+	opacity: 1;
+}
 
 .gallery-box:hover .overlay-red p {
     opacity: 1;
