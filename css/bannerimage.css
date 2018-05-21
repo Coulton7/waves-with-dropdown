@@ -372,7 +372,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 	text-shadow: none;
 }
 
-.carousel-caption:hover a{
+.carousel-inner:hover .overlay-red a{
 	color: #1052ab;
 	opacity: 1;
 	text-shadow: none;
