@@ -377,12 +377,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
     transform: translate3d(0,0,0)
 }/*position of red overlay and visibility*/
 
-.gallery-box:hover img{
-	-moz-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2)
-}/*Makes the image slightly bigger*/
 
 .gallery-box:hover .overlay-red p {
     opacity: 1;
