@@ -372,13 +372,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 	text-shadow: none;
 }
 
-.carousel-caption a:hover{
+.overlay-red:hover .carousel-caption a{
 	color: #ffffff;
 	opacity: 1;
 	text-shadow: none;
 }
-
-/*aspect ratio 27.35%*/
 
 @media screen and (max-width: 767px) {
 	h1{
