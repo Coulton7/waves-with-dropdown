@@ -345,7 +345,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 /*Beginning of the code needed for the dropdown styling*/
 
 .blend{
-	background-image: url("Images/Industry/ogp.png");
+	background-image: url(Images/Industry/ogp.png);
 	background-color: #dd1e25;
 	background-blend-mode: multiply;
 }
