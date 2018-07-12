@@ -345,6 +345,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 /*Beginning of the code needed for the dropdown styling*/
 .overlay-red{
 	background:rgba(221,30,37,1);
+	background-blend-mode: multiply;
 	left:0;
 	opacity:1;
 	position:absolute;
