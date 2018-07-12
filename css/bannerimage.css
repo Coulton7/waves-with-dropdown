@@ -348,6 +348,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 	background-image: url("Images/Industry/ogp.png");
 	background-color: #dd1e25;
 	background-blend-mode: multiply;
+	width: 100%;
+	height: auto;
 }
 
 .overlay-red{
