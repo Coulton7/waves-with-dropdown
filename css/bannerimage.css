@@ -390,6 +390,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 
 .overlay-caption p{
 	color: #ffffff;
+	mix-blend-mode: none;
 	text-shadow: none;
 	opacity: 1;
 }
