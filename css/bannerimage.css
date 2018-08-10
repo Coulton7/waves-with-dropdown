@@ -351,7 +351,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 
 .overlay-red{
 	background-color:#dd1e25;
-	background-blend-mode: multiply;
+	mix-blend-mode: multiply;
 	left:0;
 	opacity:1;
 	position:absolute;
