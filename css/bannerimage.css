@@ -101,7 +101,7 @@ li{
 }
 
 .chosen-container-single .chosen-single div b{
-	background: url(/css/chosen-sprite-white.png) no-repeat 0px 8px;
+	background: url("css/chosen-sprite-white.png") no-repeat 0px 8px;
 }
 
 .prod-selector{
