@@ -80,6 +80,10 @@ li{
 	flex-wrap:wrap;
 }
 
+.chosen-container{
+	font-size: inherit;
+}
+
 .chosen-container-single .chosen-single{
 	padding:6px 12px;
 	height:34px;
