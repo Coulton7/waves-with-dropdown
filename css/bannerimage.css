@@ -91,6 +91,15 @@ li{
  line-height: initial;
 }
 
+.chosen-container .chosen-drop{
+	background:#ffffff;
+	color: #535354;
+}
+
+.chosen-container .chosen-results{
+	font-size: inherit;
+}
+
 .prod-selector{
 		display: none;
 }
