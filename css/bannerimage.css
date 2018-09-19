@@ -100,6 +100,10 @@ li{
 	font-size: inherit;
 }
 
+.chosen-container-single .chosen-single div b{
+	background: url(css/chosen-sprite-white.png) no-repeat 0px 8px;
+}
+
 .prod-selector{
 		display: none;
 }
