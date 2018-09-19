@@ -27,11 +27,14 @@
 })(jQuery);
 </script>
 
-<script>
-$(document).ready(function() {
-   $('.chosen-select').chosen();
+
+<script type="text/javascript">
+$(document).ready( function() {
+    // chosen select
+    $("form select").chosen({no_results_text: "No results matched"});
 });
 </script>
+
 
   <div class="container-fluid bannercontainer">
   	<div class="row bannerimage">
