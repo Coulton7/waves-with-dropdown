@@ -446,22 +446,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 	vertical-align:middle;
 }
 
-@media screen and (min-width:501px) and (max-width: 767px){
-  .front__flex-margin {
-    transform: scale(1.5);
-    transform-origin: top;
-    margin-bottom: 16%;
-  }
-}
-
-@media screen amd (max-width:500px){
-  .front__flex-margin{
-    transform: scale(2);
-    transform-origin: top;
-    margin-bottom: 30%;
-  }
-}
-
 /*end of base code for dropdown styling*/
 @media screen and (max-width: 767px) {
 	h1{
@@ -586,6 +570,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 		height: 8em;
 	}
 
+	.flex-down{
+		margin:0;
+	}
+
+}
+
+@media screen and (min-width:501px) and (max-width: 767px){
+  .front__flex-margin {
+    transform: scale(1.5);
+    transform-origin: top;
+    margin-bottom: 16%;
+  }
+}
+
+@media screen and (max-width:500px){
+  .front__flex-margin{
+    transform: scale(2);
+    transform-origin: top;
+    margin-bottom: 30%;
+  }
 }
 
 /* sm */
@@ -743,6 +747,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 		overflow:hidden;
 		background-color:#ffffff;
 		padding-left:16em;
+	}
+
+	.flex-down{
+		margin:-4.3em 0 0 0;
 	}
 
 }
