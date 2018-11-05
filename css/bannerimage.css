@@ -730,6 +730,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d8e8f', end
 		display:none;
 	}
 
+	.wavelogo{
+		display:block;
+	}
+
 	.gap{
 		height:8em;
 	}
