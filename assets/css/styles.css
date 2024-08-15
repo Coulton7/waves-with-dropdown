@@ -13390,7 +13390,7 @@ a.disabled {
   position: absolute;
   bottom: 20%;
   right: 0;
-  border-top-left-radius: 10px;
+  border-top-left-radius: 25px;
 }
 
 .lower-home-wave {
