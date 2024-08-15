@@ -661,12 +661,14 @@ a.disabled {
   background-color: #fff;
   width: 30%;
   height: 30%;
+  z-index: 2;
 }
 
-.lower-wave {
-  background-color: #fff;
-  height: 30%;;
+.lower-full-wave {
+  background-color: #fafafa;
+  height: 20%;
   width: 100%;
+  z-index: 2;
 }
 
 .upper-wave-overlay {
