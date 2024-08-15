@@ -13388,7 +13388,8 @@ a.disabled {
   height: 15%;
   z-index: 2;
   position: absolute;
-  bottom: 10%;
+  bottom: 20%;
+  right: 0;
 }
 
 .lower-home-wave {
