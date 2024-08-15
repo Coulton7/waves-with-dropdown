@@ -13382,6 +13382,18 @@ a.disabled {
   z-index: 2;
 }
 
+.upper-wave {
+  background-color: #fff;
+  width: 30%;
+  height: 30%;
+}
+
+.lower-wave {
+  background-color: #fff;
+  height: 30%;
+  width: 100%;
+}
+
 .upper-wave-overlay {
   background-color: rgb(0, 42, 91);
   background: url();
