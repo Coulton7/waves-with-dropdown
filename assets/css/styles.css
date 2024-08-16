@@ -16316,6 +16316,9 @@ ul.about-us-cats a {
     background-position: 40%;
     padding-top: 3em;
   }
+  .upper-home-wave, .upper-home-wave::before, .upper-home-wave::after {
+    display: none;
+  }
   .sustain-nav {
     overflow-x: auto;
     overflow-y: hidden;
