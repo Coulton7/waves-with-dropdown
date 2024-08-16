@@ -16887,6 +16887,14 @@ ul.about-us-cats a {
     top: 56%;
     height: 45%;
   }
+  .upper-home-wave {
+    width: 15%;
+    transform: skew(-25deg);
+    background-color: #fafafa;
+    bottom: 20%;
+    right: 0;
+    position: absolute;
+  }
   .upper-home-wave::before {
     content: " ";
     height: 102%;
