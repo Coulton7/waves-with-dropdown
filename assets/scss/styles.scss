@@ -4007,6 +4007,26 @@ ul.about-us-cats a {
     bottom: 3.9em;
   }
 
+  .upper-home-wave {
+    width: 25%;
+    background-color: #fafafa;
+    bottom: 20%;
+    right: 0;
+    position: absolute;
+  }
+
+  .upper-home-wave::before {
+    content: " ";
+    height: 102%;
+    width: 30%;
+    transform: skew(-25deg);
+    background-color: #fafafa;
+    bottom: -2%;
+    right: 84%;
+    position: absolute;
+    border-top-left-radius: 22px;
+  }
+
   .virtual-tour-banner {
     background-image: none;
     background-size: cover;
@@ -4276,7 +4296,7 @@ ul.about-us-cats a {
   }
 
   .upper-home-wave {
-    width: 25%;
+    width: 20%;
     background-color: #fafafa;
     bottom: 20%;
     right: 0;
