@@ -16838,6 +16838,13 @@ ul.about-us-cats a {
     top: 60%;
     height: 45%;
   }
+  .upper-home-wave {
+    width: 25%;
+    background-color: #fafafa;
+    bottom: 20%;
+    right: 0;
+    position: absolute;
+  }
 }
 @media (max-width: 1430px) {
   .nav-slide .item {
