@@ -685,12 +685,12 @@ a.disabled {
   height: 20%;
   width: 20%;
   transform: skew(-25deg);
-  background-color: #000;
+  background-color: transparent;
   bottom: 0%;
-  right: 119%;
+  right: 128%;
   position: absolute;
   border-bottom-right-radius: 25px;
-  z-index: 10;
+  box-shadow: 15px 0 0 0 #fafafa;
 }
 
 .lower-home-wave {
