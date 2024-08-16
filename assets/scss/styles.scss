@@ -4169,6 +4169,18 @@ ul.about-us-cats a {
     bottom: 8em;
   }
 
+  .upper-home-wave::before {
+    content: " ";
+    height: 102%;
+    width: 45%;
+    transform: skew(-25deg);
+    background-color: #fafafa;
+    bottom: -2%;
+    right: 80%;
+    position: absolute;
+    border-top-left-radius: 22px;
+  }
+
   .ind-carousel-caption {
     width: 65%;
     left: 20%;
@@ -4265,6 +4277,18 @@ ul.about-us-cats a {
     bottom: 20%;
     right: 0;
     position: absolute;
+  }
+
+  .upper-home-wave::before {
+    content: " ";
+    height: 102%;
+    width: 36%;
+    transform: skew(-25deg);
+    background-color: #fafafa;
+    bottom: -2%;
+    right: 83%;
+    position: absolute;
+    border-top-left-radius: 22px;
   }
 
 }
