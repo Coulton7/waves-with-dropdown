@@ -13396,11 +13396,11 @@ a.disabled {
 .upper-home-wave::before {
   content: " ";
   height: 102%;
-  width: 25%;
+  width: 26%;
   transform: skew(-25deg);
   background-color: #fafafa;
   bottom: -2%;
-  right: 87%;
+  right: 86%;
   position: absolute;
   border-top-left-radius: 22px;
 }
@@ -16862,11 +16862,41 @@ ul.about-us-cats a {
     top: 60%;
     height: 45%;
   }
+  .upper-home-wave {
+    width: 20%;
+    transform: skew(-25deg);
+    background-color: #fafafa;
+    bottom: 20%;
+    right: 0;
+    position: absolute;
+  }
+  .upper-home-wave::before {
+    content: " ";
+    height: 102%;
+    width: 36%;
+    transform: skew(-25deg);
+    background-color: #fafafa;
+    bottom: -2%;
+    right: 83%;
+    position: absolute;
+    border-top-left-radius: 22px;
+  }
 }
 @media screen and (min-width: 2000px) {
   .video-overlay {
     top: 56%;
     height: 45%;
+  }
+  .upper-home-wave::before {
+    content: " ";
+    height: 102%;
+    width: 26%;
+    transform: skew(-25deg);
+    background-color: #fafafa;
+    bottom: -2%;
+    right: 86%;
+    position: absolute;
+    border-top-left-radius: 22px;
   }
 }
 @media screen and (max-width: 867px) {
