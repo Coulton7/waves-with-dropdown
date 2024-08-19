@@ -16628,7 +16628,6 @@ ul.about-us-cats a {
     right: 125%;
     position: absolute;
     border-bottom-right-radius: 25px;
-    box-shadow: 20px 0 0 0 #fafafa;
   }
   .virtual-tour-banner {
     background-image: none;
@@ -16786,7 +16785,6 @@ ul.about-us-cats a {
     right: 135%;
     position: absolute;
     border-bottom-right-radius: 25px;
-    box-shadow: 20px 0 0 0 #fafafa;
   }
   .ind-carousel-caption {
     width: 65%;
@@ -16887,7 +16885,6 @@ ul.about-us-cats a {
     right: 130%;
     position: absolute;
     border-bottom-right-radius: 25px;
-    box-shadow: 20px 0 0 0 #fafafa;
   }
 }
 @media (max-width: 1430px) {
@@ -16939,7 +16936,6 @@ ul.about-us-cats a {
     right: 127%;
     position: absolute;
     border-bottom-right-radius: 25px;
-    box-shadow: 20px 0 0 0 #fafafa;
   }
 }
 @media screen and (min-width: 2000px) {
@@ -16973,7 +16969,6 @@ ul.about-us-cats a {
     right: 120%;
     position: absolute;
     border-bottom-right-radius: 25px;
-    box-shadow: 20px 0 0 0 #fafafa;
   }
 }
 @media screen and (max-width: 867px) {
