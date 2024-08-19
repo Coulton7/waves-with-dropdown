@@ -13396,7 +13396,8 @@ a.disabled {
 
 .upper-home-wave::before {
   content: " ";
-  background: linear-gradient(180deg, rgba(250, 250, 250, 0.35) 0%, rgba(250, 250, 250, 0.65) 100%);
+  background-image: linear-gradient(180deg, rgba(250, 250, 250, 0.35) 0%, rgba(250, 250, 250, 0.65) 100%);
+  mask-image: linear-gradient(180deg, rgba(250, 250, 250, 0.35) 0%, rgba(250, 250, 250, 0.65) 100%);
   height: 102%;
   width: 26%;
   transform: skew(-25deg);
