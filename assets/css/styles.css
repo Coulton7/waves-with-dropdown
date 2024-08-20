@@ -16614,7 +16614,6 @@ ul.about-us-cats a {
     content: " ";
     height: 100%;
     width: 30%;
-    transform: skew(-25deg);
     right: 84%;
     position: absolute;
     border-top-left-radius: 22px;
@@ -16623,7 +16622,7 @@ ul.about-us-cats a {
     content: " ";
     height: 20%;
     width: 20%;
-    transform: skew(-25deg) translateZ(0);
+    transform: translateZ(0);
     background-color: transparent;
     bottom: -0.3%;
     right: 125%;
@@ -16778,7 +16777,7 @@ ul.about-us-cats a {
     content: " ";
     height: 20%;
     width: 20%;
-    transform: skew(-25deg) translateZ(0);
+    transform: translateZ(0);
     background-color: transparent;
     bottom: -0.3%;
     right: 138%;
@@ -16876,7 +16875,7 @@ ul.about-us-cats a {
     content: " ";
     height: 20%;
     width: 20%;
-    transform: skew(-25deg) translateZ(0);
+    transform: translateZ(0);
     background-color: transparent;
     bottom: -0.3%;
     right: 132.5%;
@@ -16925,7 +16924,7 @@ ul.about-us-cats a {
     content: " ";
     height: 20%;
     width: 20%;
-    transform: skew(-25deg) translateZ(0);
+    transform: translateZ(0);
     background-color: transparent;
     bottom: -0.3%;
     right: 128.5%;
@@ -16941,14 +16940,14 @@ ul.about-us-cats a {
   .upper-home-wave {
     width: 15%;
     bottom: 20%;
-    right: 0;
+    right: -3%;
     position: absolute;
   }
   .upper-home-wave::before {
     content: " ";
     height: 100%;
     width: 26%;
-    right: 86%;
+    right: 100%;
     position: absolute;
     border-top-left-radius: 22px;
   }
@@ -16956,10 +16955,10 @@ ul.about-us-cats a {
     content: " ";
     height: 20%;
     width: 20%;
-    transform: skew(-25deg) translateZ(0);
+    transform: translateZ(0);
     background-color: transparent;
     bottom: -0.3%;
-    right: 120%;
+    right: 135.5%;
     position: absolute;
     border-bottom-right-radius: 25px;
   }
