@@ -16606,15 +16606,15 @@ ul.about-us-cats a {
   }
   .upper-home-wave {
     width: 25%;
-    bottom: 20%;
-    right: -3%;
+    bottom: 19.95%;
+    right: -4%;
     position: absolute;
   }
   .upper-home-wave::before {
     content: " ";
     height: 100%;
     width: 30%;
-    right: 84%;
+    right: 100%;
     position: absolute;
     border-top-left-radius: 22px;
   }
@@ -16624,8 +16624,8 @@ ul.about-us-cats a {
     width: 20%;
     transform: translateZ(0);
     background-color: transparent;
-    bottom: -0.3%;
-    right: 125%;
+    bottom: 0.1%;
+    right: 130%;
     position: absolute;
     border-bottom-right-radius: 25px;
   }
