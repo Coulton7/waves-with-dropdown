@@ -13391,6 +13391,9 @@ a.disabled {
   bottom: 20%;
   right: 0;
   transform: skew(-25deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
 }
 
 .upper-home-wave::before {
@@ -13401,6 +13404,9 @@ a.disabled {
   right: 86%;
   position: absolute;
   border-top-left-radius: 22px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
 }
 
 .upper-home-wave::after {
@@ -13413,6 +13419,9 @@ a.disabled {
   position: absolute;
   border-bottom-right-radius: 25px;
   box-shadow: 20px 1px 0px -1px rgba(250, 250, 250, 0.65);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
 }
 
 .lower-home-wave {
