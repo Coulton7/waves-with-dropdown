@@ -14098,6 +14098,33 @@ blockquote.transparent-50:after {
   background-size: cover;
 }
 
+.labtecta-table-scrollable {
+  max-height: 30em;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.labtecta-table-scrollable::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 11px;
+  height: 11px;
+}
+
+.labtecta-table-scrollable::-webkit-button {
+  color: #ffffff;
+  border-color: #000000;
+}
+
+.labtecta-table-scrollable::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid #535354;
+}
+
+.labtecta-table-scrollable .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: rgba(249, 249, 249, 0.3);
+}
+
 blockquote {
   color: #002a5a;
   padding: 0;
