@@ -4440,13 +4440,6 @@ height:100%;
     width: 100%;
   }
 
-  .virtual-tour-banner {
-    background-image: none;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
   #gas-seal::after { 
     content: "";   
     background-image: url('https://static.aesseal.com/graphics/gascompressorseal_backcut-sm.png');
@@ -5297,13 +5290,6 @@ height:100%;
     bottom: -1em;
   }
 
-  .virtual-tour-banner {
-    background-image: none;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
   .sustain-nav li a {
     padding: 0;
   }
@@ -5884,13 +5870,6 @@ height:100%;
 
   .virtual-tour:hover img {
     opacity: 0;
-  }
-
-  .virtual-tour-banner {
-    background-image: url("https://static.aesseal.com/graphics/360tour-lg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
   }
 
   .virtual-tour-logo {
