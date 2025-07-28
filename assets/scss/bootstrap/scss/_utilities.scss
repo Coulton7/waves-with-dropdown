@@ -43,7 +43,9 @@ $utilities: map-merge(
       values: (
         0: 0,
         25: .25,
+        33: .33,
         50: .5,
+        66: .66,
         75: .75,
         100: 1,
       )
@@ -187,7 +189,9 @@ $utilities: map-merge(
       values: (
         10: .1,
         25: .25,
+        33: .33,
         50: .5,
+        66: .66,
         75: .75,
         100: 1
       )
@@ -200,7 +204,9 @@ $utilities: map-merge(
       class: w,
       values: (
         25: 25%,
+        33: 33%,
         50: 50%,
+        66: 66%,
         75: 75%,
         100: 100%,
         auto: auto
@@ -226,7 +232,9 @@ $utilities: map-merge(
       class: h,
       values: (
         25: 25%,
+        33: 33%,
         50: 50%,
+        66: 66%,
         75: 75%,
         100: 100%,
         auto: auto
@@ -508,7 +516,7 @@ $utilities: map-merge(
       rfs: true,
       property: font-size,
       class: fs,
-      values: $font-sizes
+      values: $font-sizes,
     ),
     "font-style": (
       property: font-style,
@@ -680,7 +688,9 @@ $utilities: map-merge(
       values: (
         10: .1,
         25: .25,
+        33: .33,
         50: .5,
+        66: .66,
         75: .75,
         100: 1
       )

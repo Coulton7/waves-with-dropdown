@@ -487,7 +487,8 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1400px
+  xxl: 1400px,
+  xxxl: 1800px
 ) !default;
 // scss-docs-end grid-breakpoints
 
@@ -505,7 +506,8 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1140px,
-  xxl: 1320px
+  xxl: 1320px,
+  xxxl: 1321px
 ) !default;
 // scss-docs-end container-max-widths
 
@@ -589,10 +591,14 @@ $transition-collapse-width:   width .35s ease !default;
 // stylelint-disable function-disallowed-list
 // scss-docs-start aspect-ratios
 $aspect-ratios: (
+  "3x7": calc(7 / 3 * 100%),
+  "5x8": calc(8 / 5 * 100%),
   "1x1": 100%,
   "4x3": calc(3 / 4 * 100%),
+  "8x5": calc(5 / 8 * 100%),
   "16x9": calc(9 / 16 * 100%),
-  "21x9": calc(9 / 21 * 100%)
+  "2x1": calc(1 / 2 * 100%),
+  "21x9": calc(9 / 21 * 100%),
 ) !default;
 // scss-docs-end aspect-ratios
 // stylelint-enable function-disallowed-list

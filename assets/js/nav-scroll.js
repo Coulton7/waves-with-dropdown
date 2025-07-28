@@ -4,9 +4,14 @@ document.addEventListener("DOMContentLoaded", function() {
     if(el_scrollNav) {
         var last_scroll_top = 0;
         if(window.innerWidth > 992) {
+            
             window.addEventListener('scroll', function(){
                 let scroll_top = window.scrollY;
-                if(scroll_top < last_scroll_top) {
+                if(scroll_top === 0) {
+                    el_scrollNav.classList.add('scrolled-up');
+                    el_scrollNav.classList.remove('scrolled-down');   
+                }
+                 else if(scroll_top < last_scroll_top) {
                     el_scrollNav.classList.remove('scrolled-down');
                     el_scrollNav.classList.add('scrolled-up');
                 }
@@ -16,8 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 last_scroll_top = scroll_top;
          });
-        }
-        else {
+        } else {
             el_scrollNav.classList.add('scrolled-up')
         }
     }

@@ -75,98 +75,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             },
         })
-
-        var info = pillarslider.getInfo(),
-            pillarCurrent = document.querySelector('.pillar-current'),
-            pillarTotal = document.querySelector('.pillar-total');
-            activeSlide = info.displayIndex;
-            
-            pillarTotal.textContent = info.slideCount;
-            pillarCurrent.textContent = info.displayIndex;
         
         pillarslider.events.on('transitionEnd', function(info) {
-            activeSlide = info.displayIndex;
-            pillarCurrent.textContent = info.displayIndex;
         
             if (activeSlide >= 1 && activeSlide <= 5) {
                 document.getElementById('esg-icon').classList.add('active');
                 document.getElementById('tech-icon').classList.remove('active');
                 document.getElementById('cust-icon').classList.remove('active');
-
-                if(!document.querySelector('.esg-text').classList.contains('d-block')){
-                    document.querySelector('.esg-text').classList.add('d-block');
-                    document.querySelector('.esg-text').classList.remove('d-none');
-                    document.querySelector('.esg-btn').classList.add('d-inline-flex');
-                    document.querySelector('.esg-btn').classList.remove('d-none');
-                }
-
-                if(!document.querySelector('.tech-text').classList.contains('d-none')){
-                    document.querySelector('.tech-text').classList.add('d-none');
-                    document.querySelector('.tech-text').classList.remove('d-block');
-                    document.querySelector('.tech-btn').classList.add('d-none');
-                    document.querySelector('.tech-btn').classList.remove('d-inline-flex');
-                }
-
-                if(!document.querySelector('.cust-text').classList.contains('d-none')){
-                    document.querySelector('.cust-text').classList.add('d-none');
-                    document.querySelector('.cust-text').classList.remove('d-block');
-                    document.querySelector('.cust-btn').classList.add('d-none');
-                    document.querySelector('.cust-btn').classList.remove('d-inline-flex');
-                }
             }
         
             else if (activeSlide >= 6 && activeSlide <= 10) {
                 document.getElementById('esg-icon').classList.remove('active');
                 document.getElementById('tech-icon').classList.add('active');
                 document.getElementById('cust-icon').classList.remove('active');
-
-                if(!document.querySelector('.tech-text').classList.contains('d-block')){
-                    document.querySelector('.tech-text').classList.add('d-block');
-                    document.querySelector('.tech-text').classList.remove('d-none');
-                    document.querySelector('.tech-btn').classList.add('d-inline-flex');
-                    document.querySelector('.tech-btn').classList.remove('d-none');
-                }
-
-                if(!document.querySelector('.esg-text').classList.contains('d-none')){
-                    document.querySelector('.esg-text').classList.add('d-none');
-                    document.querySelector('.esg-text').classList.remove('d-block');
-                    document.querySelector('.esg-btn').classList.add('d-none');
-                    document.querySelector('.esg-btn').classList.remove('d-inline-flex');
-                }
-
-                if(!document.querySelector('.cust-text').classList.contains('d-none')){
-                    document.querySelector('.cust-text').classList.add('d-none');
-                    document.querySelector('.cust-text').classList.remove('d-block');
-                    document.querySelector('.cust-btn').classList.add('d-none');
-                    document.querySelector('.cust-btn').classList.remove('d-inline-flex');
-                }
             }
         
             else if (activeSlide >= 11 && activeSlide <= 15) {
                 document.getElementById('tech-icon').classList.remove('active');
                 document.getElementById('esg-icon').classList.remove('active');
                 document.getElementById('cust-icon').classList.add('active');
-
-                if(!document.querySelector('.cust-text').classList.contains('d-block')){
-                    document.querySelector('.cust-text').classList.add('d-block');
-                    document.querySelector('.cust-text').classList.remove('d-none');
-                    document.querySelector('.cust-btn').classList.add('d-inline-flex');
-                    document.querySelector('.cust-btn').classList.remove('d-none');
-                }
-
-                if(!document.querySelector('.esg-text').classList.contains('d-none')){
-                    document.querySelector('.esg-text').classList.add('d-none');
-                    document.querySelector('.esg-text').classList.remove('d-block')
-                    document.querySelector('.esg-btn').classList.add('d-none');
-                    document.querySelector('.esg-btn').classList.remove('d-inline-flex');
-                }
-
-                if(!document.querySelector('.tech-text').classList.contains('d-none')){
-                    document.querySelector('.tech-text').classList.add('d-none');
-                    document.querySelector('.tech-text').classList.remove('d-block');
-                    document.querySelector('.tech-btn').classList.add('d-none');
-                    document.querySelector('.tech-btn').classList.remove('d-inline-flex');
-                }
             }
         });
         
@@ -228,10 +155,10 @@ document.addEventListener("DOMContentLoaded", function() {
             var info = localslider.getInfo(),
                 current = document.querySelector('.local-current'),
                 total = document.querySelector('.local-total');
-                activeSlide = info.displayIndex;
+                activeSlide = info.displayIndex + 2;
                 
                 total.textContent = info.slideCount;
-                current.textContent = info.displayIndex;
+                current.textContent = info.displayIndex + 2;
             }
 
         localCounter();
@@ -305,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 },
         
                 768: {
-                    items: 3
+                    items: 2
                 },
         
                 992: {
