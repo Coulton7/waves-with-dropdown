@@ -3984,10 +3984,18 @@ height:100%;
   height:100%;
 }
 
-#container1{ animation-name: card1_ani; }
-#container2{ animation-name: card2_ani; }
-#container4{ animation-name: card4_ani; }
-#container5{ animation-name: card5_ani; }
+#container1{ 
+  animation-name: card1_ani; 
+}
+#container2{ 
+  animation-name: card2_ani; 
+}
+#container4{ 
+  animation-name: card4_ani; 
+}
+#container5{ 
+  animation-name: card5_ani; 
+}
 
 #training {
   background-image: url('https://static.aesseal.com/content-image/training/aes-advance-laptop.jpg');
