@@ -18350,7 +18350,7 @@ ul.about-us-cats a {
     left: 8.333%;
   }
   .virtual-tour-logo {
-    max-width: 50%;
+    max-width: 100%;
   }
   .vid-embed {
     max-width: 100%;
@@ -19403,7 +19403,7 @@ ul.about-us-cats a {
     opacity: 0;
   }
   .virtual-tour-logo {
-    max-width: 33%;
+    max-width: 100%;
   }
   .promo-margin {
     margin-block-start: 6%;
