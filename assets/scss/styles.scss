@@ -23,6 +23,7 @@ $utilities-text-colors: map-loop(
   "text"
 );
 $utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
+
 @import "bootstrap";
 /* custom.scss */
 
@@ -35,12 +36,16 @@ body,
 .dialog-off-canvas-main-canvas {
   display: flex;
   flex-direction: column;
-  overscroll-behavior-y: none;
+  overscroll-behavior-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 svg:not(:root) {
   overflow: hidden;
+}
+
+strong, b {
+  font-weight: 700;
 }
 
 #toolbar-administration {
@@ -62,7 +67,8 @@ body.toolbar-tray-open {
 }
 
 .toolbar-tray-open .fixed-top,
-.toolbar-tray-open .textlogo {
+.toolbar-tray-open .textlogo,
+.toolbar-tray-open .navbar-flag {
   padding-top: 79px !important;
 }
 
@@ -92,8 +98,17 @@ body .fixed-top {
 
 html {
   scroll-behavior: smooth;
-
   -webkit-overflow-scrolling: touch;
+}
+
+p a[target="_blank"]:after, .btn[target="_blank"]:after, .external-link:after {
+  font-family: "Font Awesome 6 Free";
+  content: "  \f08e";
+  font-weight: 900;
+}
+
+.fas.display-4 {
+  font-weight: 900;
 }
 
 .img-adaptive {
@@ -105,14 +120,6 @@ html {
 
 .no-padding {
   padding: 0;
-}
-
-.w-33 {
-  width: 33% !important;
-}
-
-.w-66 {
-  width: 66% !important;
 }
 
 .min-h-100 {
@@ -131,7 +138,6 @@ html {
   min-height: 25vh !important;
 }
 
-/* code for the padding start parameters 6-10 */
 .ps-6 {
   padding-inline-start: 3.5rem;
 }
@@ -452,7 +458,7 @@ html {
 }
 
 body {
-  color: #535454;
+  color: $textcolor;
   font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman",
     "HelveticaNeue-Roman", "Helvetica Neue Roman", "Arial",
     "TeXGyreHerosRegular", "Helvetica", "Tahoma", "Geneva", sans-serif;
@@ -479,13 +485,17 @@ body {
   pointer-events: visible;
 }
 
+.pe-pointer {
+  cursor: pointer;
+}
+
 a.disabled {
   color: $gray-600;
   border-color: $gray-600;
 }
 
 .path-frontpage .navbar-nav .nav-link {
-  color: $primary;
+  color: $white;
 }
 
 .path-frontpage .navbar-nav .nav-link:hover {
@@ -497,7 +507,7 @@ a.disabled {
 }
 
 .path-frontpage .overlay-btn {
-  color: $primary;
+  color: $white;
 }
 
 .path-frontpage .overlay-btn:hover {
@@ -514,12 +524,43 @@ a.disabled {
   background-color: $gray-200;
 }
 
-.navbar-expand-lg .navbar-collapse {
+.navbar-expand .navbar-collapse, .navbar-expand-lg .navbar-collapse {
   justify-content: center;
 }
 
 .navbar > .container-fluid {
   padding: 0;
+}
+
+.navbar-brand img {
+  max-width: 100%;
+  height: auto;
+}
+
+.national-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  float: right;
+  display: flex;
+  z-index: 1032;
+}
+
+.navbar-flag {
+  position: relative;
+  width: 3.6rem;
+  z-index: 10332;
+}
+
+.search-overlay .nav-tabs .nav-link {
+  color: $white;
+  border: 1px solid rgba($color: #fff, $alpha: 0.75);
+  border-bottom: none;
+}
+
+.search-overlay .nav-tabs .nav-link.active {
+  color: #535354;
+  background-color: rgba($color: #fff, $alpha: 0.5);
 }
 
 .wavelogo {
@@ -534,6 +575,10 @@ a.disabled {
 
 .path-frontpage .wavelogo {
   background: transparent;
+  background-color: rgba($color: $white, $alpha: 0.5);
+  border-radius: 0;
+  width: 12em;
+  z-index: 10 ;
 }
 
 .wavelogo img {
@@ -541,9 +586,12 @@ a.disabled {
   top: 0.5em;
 }
 
-.waveupper,
-.wavelower {
+.waveupper{
   position: relative;
+}
+
+.wavelower{
+  height: 8em;
 }
 
 .textlogo {
@@ -561,6 +609,15 @@ a.disabled {
   z-index: 1032;
   position: relative;
   transform: translateY(49%);
+}
+
+.path-frontpage .uppercurve {
+  height: 11em;
+  left: 12em;
+  z-index: 10;
+  position: absolute;
+  opacity: 0.5;
+  transform: none
 }
 
 .curve-down {
@@ -589,7 +646,6 @@ a.disabled {
 .home-slider-height {
   height: 100%;
   background-color: $primary;
-  min-height: 32em;
   position: relative;
 }
 
@@ -603,7 +659,7 @@ a.disabled {
 
 #carousel-fade .carousel-inner .carousel-item:nth-child(1) {
   background-repeat: no-repeat;
-  background-color: rgb(9, 107, 50);
+  background-color: #012e58;
   height: 100%;
 }
 
@@ -625,14 +681,9 @@ a.disabled {
   height: 100%;
 }
 
-.carousel-caption {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: relative;
-  text-align: left;
-  text-shadow: none;
-  display: inline-block;
+#treewalkCarousel .carousel-item img, .mining-promo {
+  height: 70vh; 
+  object-fit: cover; 
 }
 
 .equal-height-slider .tiny-slider-wrapper {
@@ -648,7 +699,7 @@ a.disabled {
   background: url(https://static.aesseal.com/graphics/lowerwave-white-glass.svg), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,rgba(255, 255, 255, 0.2) 53%, rgba(255, 255, 255, 0.5) 67%, 72%, rgb(255, 255, 255) 100%);
   position: absolute;
   background-size: cover;
-  top: 60%;
+  top: 70%;
   right: 0;
   left: 0;
   bottom: 0;
@@ -657,61 +708,35 @@ a.disabled {
   z-index: 2;
 }
 
-.upper-home-wave {
-  background-image: linear-gradient(180deg, rgba(250,250,250,0.35) 0%, rgba(250,250,250,0.65) 100%);
-  width: 20%;
-  height: 20%;
-  z-index: 2;
+.upper-wave-overlay {
+  background-color: rgb(0,42,91);
+  background: url();
   position: absolute;
-  bottom: 20%;
+  background-size: contain;
+  top: 51.9%;
   right: 0;
-  transform: skew(-25deg);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-}
-
-.upper-home-wave::before {
-  content: " ";
-  background-image: linear-gradient(180deg, rgba(250,250,250,0.35) 0%, rgba(250,250,250,0.65) 100%);
-  height: 100%;
-  width: 26%;
-  right: 86%;
-  position: absolute;
-  border-top-left-radius: 22px;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-}
-
-.upper-home-wave::after{
-  content: " ";
-  height: 20%;
-  width: 20%;
-  transform: translateZ(0);
-  background-color: transparent;
-  right: 128%;
-  position: absolute;
-  border-bottom-right-radius: 25px;
-  box-shadow: 20px 1px 0px -1px rgba(250, 250, 250, 0.65);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-}
-
-.lower-home-wave {
-  background: linear-gradient(180deg, rgba(250, 250, 250, 0.65) 0%, rgba(250,250,250,0.85) 100%);
-  height: 20%;
+  left: 71%;
+  bottom: 0;
+  height: 22%;
   width: 100%;
   z-index: 2;
-  position: absolute;
-  bottom: 0;
+  background-repeat: no-repeat;
 }
 
-.offwhite-gradient-background {
-  background: linear-gradient(180deg, rgba(250, 250, 250, 0.85) 0%, rgba(250,250,250,1) 100%);
+.lower-wave-overlay {
+  background-color: rgb(0,42,91);
+  background: url();
+  position: absolute;
+  background-size: 63% 100%;
+  top: 37%;
+  right: 0;
+  left: 0;
+  bottom: 0;
   height: 100%;
   width: 100%;
+  z-index: 2;
+  transform: scaleY(0.27);
+  background-position: center bottom;
 }
 
 .media-carousel-block {
@@ -748,7 +773,7 @@ a.disabled {
 }
 
 .icons-col-placement {
-  bottom: 8em;
+  bottom: 0em;
   position: relative;
 }
 
@@ -808,6 +833,7 @@ a.icon-link:hover {
   width: 4.5%;
   height: 11.5%;
   padding: 0;
+  text-align: center;
 }
 
 .controls li:hover, .tns-controls button:hover {
@@ -843,14 +869,12 @@ a.icon-link:hover {
 }
 
 .shadow-container .next i {
-  left: 18%;
   position: relative;
   top: 8%;
 }
 
 .shadow-container .prev i {
   position: relative;
-  right: -28%;
   top: 8%;
 }
 
@@ -900,6 +924,10 @@ a.icon-link:hover {
 
 .btn-lightgrey:hover {
   background-color: #cfcfd2;
+}
+
+.text-lightgrey {
+  color: $lightgrey;
 }
 
 .btn-twitter {
@@ -957,6 +985,13 @@ a.icon-link:hover {
   border-bottom: none;
   color: #535454;
   text-decoration: none;
+}
+
+.national-overlay .overlay-btn{
+  position: relative;
+  top: auto;
+  right: auto;
+  margin-right: 0;
 }
 
 .search-btn,
@@ -1024,8 +1059,18 @@ a.lightblue-text {
   color: $white;
 }
 
+.text-bg-primary .mark {
+  background-color: $primary;
+  padding: 0;
+}
+
 .card {
   overflow: hidden;
+}
+
+.full-card {
+  display: flex;
+  flex-flow: column;
 }
 
 .card-body,
@@ -1038,7 +1083,16 @@ a.lightblue-text {
 
 .card-header {
   border-bottom: none;
+}
+
+.infi-card .card-header {
+  border-bottom: none;
   height: 5em;
+}
+
+.infi-card .card-img-top img {
+  width: 100%;
+  height: auto;
 }
 
 .card-footer {
@@ -1062,6 +1116,38 @@ a.lightblue-text {
   background-position: center;
 }
 
+.capi-background {
+  background-image: url(https://static.aesseal.com/photo/alt/Capi-GROUP_0017_shad.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: center;
+}
+
+.oil-rig-background {
+  background-image: url(https://static.aesseal.com/photo/wavehead/industry-4-1440.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: center;
+}
+
+.water-feature {
+  background-image: url("https://static.aesseal.com/graphics/backdrop/water-white.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 300px; 
+}
+
+.robot-cell {
+  background-image: url('https://static.aesseal.com/photo/workshop/ROBOTCELL_9262-21by9.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
 blockquote::before {
   content: url(/themes/contrib/aesbase/assets/images/graphics/blockquote-top.png);
   margin-right: -0.75em;
@@ -1081,6 +1167,58 @@ blockquote::after {
 blockquote.transparent-50:before,
 blockquote.transparent-50:after {
   opacity: 0.5;
+}
+
+.uk-banner-background {
+  background-image: url(/sites/aesseal.int/files/content-image/uk-header.jpg);
+  background-size: cover;
+  background-color: $primary;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.at-banner-background {
+  background-image: url(/sites/aesseal.int/files/content-image/Austria-aesseal-header.jpg);
+  background-size: cover;
+  background-color: $primary;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.no-banner-background {
+  background-image: url(/sites/aesseal.int/files/content-image/Norway-aesseal-header.jpg);
+  background-size: cover;
+  background-color: $primary;
+  background-position: center;
+  background-repeat: no-repeat;
+} /* Norway country banner*/
+
+.pt-banner-background {
+    background-image: url(/sites/aesseal.int/files/content-image/Portugal-aesseal-header.jpg);
+    background-size: cover;
+    background-color: $primary;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ie-banner-background {
+  background-image: url(/sites/aesseal.int/files/content-image/location/ireland-aesseal-header.jpg);
+  background-size: cover;
+  background-color: $primary;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.es-banner-background {
+  background-image: url(/sites/aesseal.int/files/content-image/location/spain-aesseal-header.webp);
+  background-size: cover;
+  background-color: $primary;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sentry-block {
+  background-image: url(https://static.aesseal.com/photo/wavehead/system-sentry-carousel.jpg);
 }
 
 .tomwetlands-background.lazy-back,
@@ -1375,8 +1513,9 @@ blockquote.transparent-50:after {
 
 .labtecta-table-scrollable {
   max-height: 30em;
-  overflow-x: auto;
-  overflow-y: auto;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #535354 rgba(0, 0, 0, .8);
 }
 
 .labtecta-table-scrollable::-webkit-scrollbar {
@@ -1428,16 +1567,16 @@ blockquote {
   background-color: #ad1c1c;
 }
 
-.enquiry-icon {
-  color: $white;
+.enquiry-icon, .expanding-icon {
+  color: white;
   border-radius: 50%;
   width: 3.5em;
   height: 3.5em;
   background-color: $danger;
-  position: fixed;
-  bottom: 1em;
-  right: 1em;
-  z-index: 1032;
+  position: fixed; /* Use fixed to ensure it stays at the bottom-right */
+  bottom: 1.5em;
+  right: 1.5em;
+  z-index: 1060;
   text-align: center;
   display: flex;
   align-items: center;
@@ -1447,9 +1586,113 @@ blockquote {
   text-decoration: none;
 }
 
+.expanding-icon {
+  width: 5em;
+  height: 5em;
+}
+
+.search-icon {
+  color: white;
+  border-radius: 50%;
+  width: 3.5em;
+  height: 3.5em;
+  background-color: $danger;
+  position: fixed; /* Use fixed to align it with .enquiry-icon */
+  bottom: 1em;
+  right: 7.5em; /* Adjust to the left of enquiry-icon */
+  z-index: 1033;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px, rgba(0, 0, 0, 0.2) 0px 2px 24px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
 .enquiry-icon:hover {
-  color: #e5e5e7;
-  background-color: $lightblue;
+ 
+  background-color: rgb(167, 52, 53);
+}
+
+.search-icon:hover{
+  transform: scale(1.2) !important;
+  background-color: rgb(167, 52, 53);
+}
+.chat-icon:hover{
+  transform: scale(1.2) !important;
+  background-color: rgb(167, 52, 53);
+}
+.feedback-icon:hover{
+  transform: scale(1.2) !important; 
+  background-color: rgb(167, 52, 53);
+}
+
+.feedback-icon {
+  color: white;
+  border-radius: 50%;
+  width: 3.5em;
+  height: 3.5em;
+  background-color: $danger;
+  position: fixed; /* Use fixed to align it with .enquiry-icon */
+  bottom: 6.5em;
+  right: 6.5em; /* Adjust to the left of enquiry-icon */
+  z-index: 1034;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px, rgba(0, 0, 0, 0.2) 0px 2px 24px;
+  cursor: pointer;
+  text-decoration: none;
+  
+}
+.chat-icon {
+  color: white;
+  border-radius: 50%;
+  width: 3.5em;
+  height: 3.5em;
+  background-color: $danger;
+  position: fixed; /* Use fixed to align it with .enquiry-icon */
+  bottom: 7.5em;
+  right: 1em; /* Adjust to the left of enquiry-icon */
+  z-index: 1035;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px, rgba(0, 0, 0, 0.2) 0px 2px 24px;
+  cursor: pointer;
+  text-decoration: none;
+ 
+}
+
+.slide-in-right {
+  animation: slide-right 0.5s ease-in-out forwards;
+}
+
+.slide-in-left {
+  animation: slide-left 0.5s ease-in-out forwards;
+}
+
+.slide-in-up {
+  animation: slide-up 0.5s ease-in-out forwards;
+}
+
+@keyframes slide-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slide-left {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
 
 .breadcrumb li {
@@ -1635,6 +1878,28 @@ blockquote {
   padding: 30px 50px 30px 50px;
 }
 
+.engineering-block {
+  background-image: url('https://static.aesseal.com/photo/wavehead/industry-4-1440.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top, right;
+  height: 600px;
+}
+
+.black-box-promo {
+  position: relative;
+  top: 50%;
+  left: 10%; /* Adjust the left position as needed */
+  transform: translateY(-50%);
+  background-color: rgba(1, 1, 1, 0.55); /* Adjust opacity as needed */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  padding-top: 20px;
+  max-width: 30%;
+  max-height: 100%;
+}
+
 .black-box {
   position: absolute;
   top: 220px; /* Adjust the top position as needed */
@@ -1663,7 +1928,6 @@ blockquote {
   -webkit-backdrop-filter: blur(10px);
   color: white;
   padding: 20px;
-  max-width: 40%; /* Adjust the max-width for smaller screens */
   font-size: 1rem; /* Set default font size */
 }
 
@@ -1677,20 +1941,13 @@ blockquote {
   -webkit-backdrop-filter: blur(10px);
   color: white;
   padding: 20px;
-  max-width: 40%; /* Adjust the max-width for smaller screens */
-  font-size: 1rem; /* Set default font size */
+  font-size: 1rem; 
 }
 
-@media screen and (max-width: 700px) {
-  .black-boxes,
-  .black-boxes-right {
-    max-width: 120%; /* Adjust max-width for smaller screens */
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 0.7em /* Decrease font size for smaller screens */
-   
-  }
+.overlay-btn-allow {
+  transform: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .banner-vid {
@@ -1738,7 +1995,7 @@ blockquote {
 .footer-social-icons {
   font-size: 2.5em;
   position: relative;
-  z-index: 10;
+  z-index: 1;
   align-items: center;
   margin-bottom: 1.5em;
 }
@@ -1864,6 +2121,23 @@ blockquote {
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
 }
 
+.related-media-cover a {
+  align-content: center;
+}
+
+.related-media-cover img {
+  max-width: 85%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+              0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: color 0.5s;
+
+}
+
+.related-media-cover img:hover {
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.25),
+              0 5px 5px rgba(0, 0, 0, 0.22);
+}
+
 .blend-mode-multiply {
   mix-blend-mode: multiply;
   transform: translate3d(0, 0, 0);
@@ -1889,6 +2163,21 @@ blockquote {
   max-width: 2em;
 }
 
+.country-browser h3, .brochure-browser h3 {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.country-browser h3:first-of-type, .brochure-browser h3:first-of-type {
+  text-align: center;
+  margin-top: 0;
+}
+
+.flag-icon {
+  max-height: 5em;
+  max-width: 5em;
+}
+
 .flag-indicator {
   bottom: 0;
   position: absolute;
@@ -1896,7 +2185,7 @@ blockquote {
   border-radius: 0!important;
 }
 
-.social-flag, .search-btn {
+.social-flag {
   height: 1em;
   width: 1em;
   position: relative;
@@ -2084,11 +2373,11 @@ ul.about-us-cats {
 .location-overlay {
   height: 1px;
   bottom: -1px;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   position: fixed;
   z-index: 10;
-  inset: 0;
   overflow-y: scroll;
   transition: 0.5s;
   backdrop-filter: blur(10px);
@@ -2133,6 +2422,10 @@ ul.about-us-cats {
   border-bottom: 2px solid #e5e5e7;
   display: flex;
   flex-flow: column;
+}
+
+.view-details {
+  width: auto;
 }
 
 .parts-form {
@@ -2197,6 +2490,14 @@ ul.about-us-cats {
   text-decoration: none;
   background-color: #e9ecef;
   border-left: 4px solid $danger
+}
+
+.lang-switch li[hreflang="ru"] {
+  display:none;
+}
+
+.language-link--untranslated {
+  display: none;
 }
 
 .change {
@@ -2291,7 +2592,8 @@ ul.about-us-cats a {
   display: none;
 }
 
-.WI {
+.WI,
+.VA {
   display: none;
 }
 
@@ -2345,7 +2647,14 @@ ul.about-us-cats a {
 .Bakersfield,
 .Wichita,
 .Albuquerque,
-.Plainville {
+.Plainville,
+.Surrey,
+.Edmonton,
+.Etobicoke {
+  display: none;
+}
+
+.AB, .BC, .MB, .NB, .NL, .NT, .NS, .NU, .ON, .PE, .QC, .SK, .YT {
   display: none;
 }
 
@@ -2353,10 +2662,21 @@ ul.about-us-cats a {
   display: flex;
 }
 
-#Map > *:hover,
-#Map > g > path:hover,
 #Lands > *:hover,
-#Lands > g > path:hover {
+#Lands > g > path:hover,
+#Nova_Scotia .st6:hover,
+#SASKAT-CHEWAN .st7:hover,
+#Quebec .st14:hover,
+#Ontario .st10:hover,
+#Manitoba .st6:hover,
+#New_Brunswick .st15:hover,
+#Princ_Edward_Island .st10:hover,
+#Newfoundland .st10:hover,
+#Yukon_Territory .st7:hover,
+#British_Columbia .st10:hover,
+#Alberta .st6:hover,
+#Nunawut .st7:hover,
+#Northwest_Territory .st10:hover {
   fill: #002a5b !important;
   stroke: #004a8c;
   stroke-width: 2;
@@ -2399,38 +2719,17 @@ ul.about-us-cats a {
   line-height: 1.3em;
 }
 
-.change:after {
+.change:after, .loc-close:after {
   display: block;
   content: "\f00d";
   font-family: "Font Awesome 6 Free"; 
-  font-weight: 400;
+  font-weight: 900;
   color: $white;
   position: fixed;
   font-size: 3em;
   float: right;
   z-index: 1032;
   top: 3em;
-  right: 1em;
-  height: 1em;
-  width: 1em;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-.loc-close:after {
-  display: block;
-  content: "\f00d";
-  font-family: "Font Awesome 6 Free"; 
-  color: $white;
-  position: fixed;
-  font-size: 3em;
-  float: right;
-  z-index: 1032;
-  top: 2em;
   right: 1em;
   height: 1em;
   width: 1em;
@@ -2724,6 +3023,10 @@ ul.about-us-cats a {
   display: flex;
 }
 
+.global-news-block {
+  max-height: 600px;
+}
+
 .carousel-control-next {
   background-image: none;
 }
@@ -2974,6 +3277,12 @@ ul.about-us-cats a {
   background-size: cover;
 }
 
+.water-wave-background {
+  background-image: url(https://static.aesseal.com/industry/marine/water-wave-backdrop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .text-shadow {
   text-shadow: 1px 1px 1px #000;
 }
@@ -3158,11 +3467,14 @@ ul.about-us-cats a {
   align-items: center;
 }
 
-.card-staff-img {
-  bottom: 5em;
+.white-iceberg-secondary{
+  background: linear-gradient(to bottom, #fbfbfb 0%, #fbfbfb 50%, $secondary 50%, $secondary 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.slider-info {
+.counter {
   text-align: right;
 }
 
@@ -3172,8 +3484,50 @@ ul.about-us-cats a {
   margin-right: 1rem;
 }
 
-.dark-glass-background{
+.local-slider .wistia_click_to_play {
+  height: 100%;
+}
+
+.dark-glass .card-header, .dark-glass .card-body {
+  border-radius: 0;
+}
+
+.dark-glass .card-footer {
+  display: flex;
+}
+
+.dark-glass .card-footer a {
+  display: inline-block;
+  align-self: flex-end;
+  width: 100%;
+}
+
+.dark-glass-background, .dark-glass .card-body, .dark-glass .card-header, .dark-glass .card-footer {
   background-color: rgba(0,0,0,0.8);
+  height: 100%;
+}
+
+.crsl-cntrl {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 0;
+  line-height: 1;
+}
+
+.carousel-caption {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: relative;
+  text-align: left;
+  text-shadow: none;
+  display: inline-block;
+  padding-top: 0;
 }
 
 .bg-white-glass {
@@ -3439,6 +3793,229 @@ ul.about-us-cats a {
   display: block;
 }
 
+#svgContainer {
+  z-index: -10;
+  position: absolute;
+  opacity: 0.5;
+  margin: 50px;
+}
+
+.Rotary,
+.Rotary1,
+.Rotary2 {
+  color: #330080;
+}
+.Stationary,
+.Stationary1,
+.Stationary2 {
+  color: #e60073;
+}
+.Elastomer,
+.Elastomer1,
+.Elastomer2 {
+  color: #ff761a;
+}
+
+.Build,
+.build-code {
+  color: #2980b9;
+}
+.size-code {
+  color: #00b300;
+}
+
+.stockcode span {
+  font-size: 1.8em;
+}
+
+.upgrade-text {
+  margin-top: -2.3rem;
+  margin-left: 2rem;
+  color: $white;
+}
+
+.global-site-links {
+  background-image: url(https://static.aesseal.com/photo/technology/capi-atex.jpg);
+  background-size: cover;
+  background-position: 35% 75%;
+}
+
+.floating-seal-left {
+  position: absolute;
+  left: 5%;
+  bottom: -4rem;
+}
+
+.main {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 1px;
+  left:-50px;
+  height: 310px;
+}
+
+.container-cards{
+  display: block;
+  width: 200px;
+  height: 310px;
+  position: absolute;
+  bottom:0;
+  animation-duration: 0.5s;
+  animation-delay:1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  transition: height 0.4s;
+}
+
+.container-cards:hover{
+  height:350px;
+}
+
+.cards{
+  display: block;
+  width: 200px;
+  height: 283px;
+  position: absolute;
+  top:0;
+  background-image: url('https://static.aesseal.com/content-image/corp/LIT-DE-L-CORP_Page_01.jpg');
+  background-size:100%;
+  background-repeat:no-repeat;
+  border-radius: 20px;
+  overflow:hidden;
+}
+
+.cards1{
+  display: block;
+  width: 200px;
+  height: 283px;
+  position: absolute;
+  top:0;
+  background-image: url('https://static.aesseal.com/content-image/brochure/LIT-UK-L-BPMAIN_Page_01.jpg');
+  background-size:100%;
+  background-repeat:no-repeat;
+  border-radius: 20px;
+  overflow:hidden;
+}
+
+.cards2{
+  display: block;
+  width: 200px;
+  height: 283px;
+  position: absolute;
+  top:0;
+  background-image: url('https://static.aesseal.com/content-image/brochure/FIDC_cover.jpg');
+  background-size:100%;
+  background-repeat:no-repeat;
+  border-radius: 20px;
+  overflow:hidden;
+}
+
+.cards3{
+  display: block;
+  width: 200px;
+  height: 283px;
+  position: absolute;
+  top:0;
+  background-image: url('https://static.aesseal.com/content-image/brochure/Systems_cover_DE.jpg');
+  background-size:100%;
+  background-repeat:no-repeat;
+  border-radius: 20px;
+  overflow:hidden;
+}
+
+.cards4{
+  display: block;
+  width: 200px;
+  height: 283px;
+  position: absolute;
+  top:0;
+  background-image: url('https://static.aesseal.com/content-image/range/LIT-DE-L-S-SPRING_Page_001.jpg');
+  background-size:100%;
+  background-repeat:no-repeat;
+  border-radius: 20px;
+  overflow:hidden;
+}
+
+.container-cards:hover {
+  z-index: 1000;
+}
+
+#slider-overlay{
+  top: 15%;
+  right: 15%;
+}
+
+#slider-overlay .black-box {
+  width: 60%;
+  max-width: 75%;
+  max-height: 50%;
+  top: 25%;
+  left: 20%;
+}
+
+.cards a{
+display:block;
+width:100%;
+height:100%;
+}
+
+.cards1 a{
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+.cards2 a{
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+.cards3 a{
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+.cards4 a{
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+#container1{ animation-name: card1_ani; }
+#container2{ animation-name: card2_ani; }
+#container4{ animation-name: card4_ani; }
+#container5{ animation-name: card5_ani; }
+
+#training {
+  background-image: url('https://static.aesseal.com/content-image/training/aes-advance-laptop.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@keyframes card1_ani {
+  0%   { left:0px; transform: rotate(0); }
+  100% { left:-250px; transform: rotate(-30deg); }
+  
+}
+
+@keyframes card2_ani {
+  0%   { left:0px; transform: rotate(0); }
+  100% { left:-150px; transform: rotate(-15deg); }
+}
+
+@keyframes card4_ani {
+  0%   { left: 0px; transform: rotate(0); }
+  100% { left: 150px; transform: rotate(15deg); }
+}
+
+@keyframes card5_ani {
+  0%   { left:0px; transform: rotate(0); }
+  100% { left:250px; transform: rotate(30deg); }
+}
+
 @keyframes fade {
   0% {
     opacity: 0;
@@ -3510,6 +4087,30 @@ ul.about-us-cats a {
   }
 }
 
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 @keyframes typing {
   from {
     width: 0%;
@@ -3538,9 +4139,126 @@ ul.about-us-cats a {
   }
 }
 
-@media (max-width: 576px) {
-  .card-staff-img {
-    bottom: 3em; /* Adjust as needed for smaller screens */
+@media screen and (max-width: 576px) {
+  .carousel-caption {
+    top: -10vh;
+    margin-left: 2vh;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(1) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(1):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/industry-background-01.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+    #carousel-fade .carousel-inner .carousel-item:nth-child(2) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(2):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/Reliability-background-01.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/ecoguard-background-01.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(4) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(4):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/FTemployers-background-01.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.de-carousel .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade.de-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/Solarinstall-background-01.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.us-carousel .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade.us-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/us/Rockford-Ordering-Background-01.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  .pbhd-promo .black-boxes {
+    position: relative;
+    max-width: 100%;
+    left: 0;
+    transform: none;
+    font-size: initial;
+    top: auto;
+    background-color: initial;
+    backdrop-filter: auto;
+    -webkit-backdrop-filter: auto;
+    padding: initial;
+    border-radius: 0!important;
   }
 }
 
@@ -3557,12 +4275,7 @@ ul.about-us-cats a {
     bottom: inherit;
   }
 
-  .main-menu .nav-item:last-child {
-    display: block;
-  }
-
   .home-slider-height {
-    min-height: 45em;
     display: flex;
     flex-wrap: wrap;
   }
@@ -3580,77 +4293,60 @@ ul.about-us-cats a {
   }
 
   .icons-col-placement {
-    position: absolute;
-    bottom: 100%;
-  }
-
-  #carousel-fade .carousel-inner .carousel-item:nth-child(1) {
-    background-image: url(https://static.aesseal.com/photo/wavehead/industry-1-1080.jpg);
-    background-size: cover;
-    background-repeat: repeat;
-    background-color: #012e58;
-    animation: none;
-    background-position: 65%;
-    padding-top: 3em;
-  }
-
-  #carousel-fade .carousel-inner .carousel-item:nth-child(2) {
-    background-image: url(https://static.aesseal.com/photo/wavehead/industry-2-1080.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #012e58;
-    background-blend-mode: unset;
-    animation: none;
-    background-position: center;
-    padding-top: 3em;
-  }
-
-  #carousel-fade .carousel-inner .carousel-item:nth-child(3) {
-    background-image: url(https://static.aesseal.com/photo/wavehead/sustainability-carousel.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #012e58;
-    background-blend-mode: unset;
-    animation: none;
-    background-position: top;
-    padding-top: 3em;
-  }
-
-  #carousel-fade.us-carousel .carousel-inner .carousel-item:nth-child(3) {
-    background-image: url(https://static.aesseal.com/photo/wavehead/Rockford-careers-slide.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #012e58;
-    background-blend-mode: unset;
-    animation: none;
-    background-position: 65%;
-    padding-top: 3em;
+    position: relative;
+    bottom: 0em;
   }
 
   #carousel-fade.pump-carousel .carousel-inner .carousel-item:nth-child(3) {
-    background-image: url(https://s3-eu-west-1.amazonaws.com/aesweb/photo/wavehead/sky-carousel.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
     background-color: #012e58;
-    background-blend-mode: unset;
-    animation: none;
+  }
+
+  #carousel-fade.pump-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/carousel/sky-carousel.jpg);
+    background-repeat: repeat;
+    background-size: cover;
     background-position: 65%;
-    padding-top: 3em;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
   }
 
-  #carousel-fade .carousel-inner .carousel-item:nth-child(4) {
-    background-image: url(https://static.aesseal.com/photo/wavehead/wideformatmobile/pillar-customer-service.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+  #carousel-fade.in-carousel .carousel-inner .carousel-item:nth-child(3) {
     background-color: #012e58;
-    background-blend-mode: unset;
-    animation: none;
-    background-position: 40%;
-    padding-top: 3em;
   }
 
-  .upper-home-wave, .upper-home-wave::before, .upper-home-wave::after {
-    display: none;
+  #carousel-fade.in-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: top;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.za-carousel .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade.za-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/photo/wavehead/SA-isoslide-1440.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
   }
 
   .sustain-nav {
@@ -3787,7 +4483,6 @@ ul.about-us-cats a {
     margin: 0.25rem 0;
   }
 
-  .overlay-content,
   .location-overlay > div + div {
     top: 21%;
   }
@@ -3801,7 +4496,6 @@ ul.about-us-cats a {
     height: 3em;
     box-shadow: 0 0 0 1px rgb(0 0 0 / 4%), 0 4px 8px 0 rgb(0 0 0 / 30%);
     border: 1px solid #e5e5e7;
-    text-align: center;
   }
 
   .ind-carousel-caption {
@@ -3819,32 +4513,20 @@ ul.about-us-cats a {
     max-height: 100%;
   }
 
-  .black-boxes .btn,
-  .black-boxes-right .btn {
-    font-size: 5px;
-    padding: 2px 4px;
-  }
-
   .black-boxes{
     padding: 1px;
   }
 
-  .footer-curve {
-    margin-top: -6em;
+  #slider-overlay .black-box {
+   top: 3%;
+   left: 7.5%;
+   width: 85%;
+   max-width: 85%;
+   max-height: 100%; 
   }
 
-  .path-frontpage .scroll-nav {
-    transform: translateY(23%);
-  }
-  
-  .path-frontpage .scrolled-down {
-    transform: translateY(-210%);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .path-frontpage .scrolled-up {
-    transform: translateY(23%);
-    transition: all 0.3s ease-in-out;
+  .footer-curve {
+    margin-top: -6em;
   }
 
   .sub-menu{
@@ -3861,6 +4543,15 @@ ul.about-us-cats a {
     transform-origin: none;
     margin-bottom: 0;
   }
+
+  .change:after {
+    top: 1.5em
+    }
+    
+  .overlay-content {
+    top: 15%
+  }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -3871,9 +4562,439 @@ ul.about-us-cats a {
     transform-origin: none;
     margin-bottom: 0;
   }
+
+  .change:after {
+    top: 1.5em
+    }
+    
+  .overlay-content {
+    top: 30%
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .black-boxes,
+  .black-boxes-right {
+    max-width: 120%; /* Adjust max-width for smaller screens */
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 0.7em /* Decrease font size for smaller screens */
+   
+  }
 }
 
 /* sm */
+@media screen and (min-width: 576px) {
+  .carousel-caption {
+    top: -35vh;
+    margin-left: 2vh;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(1) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(1):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/industry-background-01.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+    #carousel-fade .carousel-inner .carousel-item:nth-child(2) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(2):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/Reliability-background-01.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/ecoguard-background-01.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(4) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(4):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/FTemployers-background-01.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.de-carousel .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade.de-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/Solarinstall-background-01.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.us-carousel .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade.us-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/us/Rockford-Ordering-Background-01.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  .ps-sm-6 {
+    padding-inline-start: 3.5rem;
+  }
+  
+  .ps-sm-7 {
+    padding-inline-start: 4rem;
+  }
+  
+  .ps-sm-8 {
+    padding-inline-start: 5rem;
+  }
+  
+  .ps-sm-9 {
+    padding-inline-start: 6rem;
+  }
+  
+  .ps-sm-10 {
+    padding-inline-start: 8rem;
+  }
+  
+  .pe-sm-6 {
+    padding-inline-end: 3.5rem;
+  }
+  
+  .pe-sm-7 {
+    padding-inline-end: 4rem;
+  }
+  
+  .pe-sm-8 {
+    padding-inline-end: 5rem;
+  }
+  
+  .pe-sm-9 {
+    padding-inline-end: 6rem;
+  }
+  
+  .pe-sm-10 {
+    padding-inline-end: 8rem;
+  }
+  
+  .pt-sm-6 {
+    padding-block-start: 3.5rem;
+  }
+  
+  .pt-sm-7 {
+    padding-block-start: 4rem;
+  }
+  
+  .pt-sm-8 {
+    padding-block-start: 5rem;
+  }
+  
+  .pt-sm-9 {
+    padding-block-start: 6rem;
+  }
+  
+  .pt-sm-10 {
+    padding-block-start: 8rem;
+  }
+  
+  .pb-sm-6 {
+    padding-block-end: 3.5rem;
+  }
+  
+  .pb-sm-7 {
+    padding-block-end: 4rem;
+  }
+  
+  .pb-sm-8 {
+    padding-block-end: 5rem;
+  }
+  
+  .pb-sm-9 {
+    padding-block-end: 6rem;
+  }
+  
+  .pb-sm-10 {
+    padding-block-end: 8rem;
+  }
+    
+  .ms-sm-6 {
+    margin-inline-start: 3.5rem;
+  }
+  
+  .ms-sm-7 {
+    margin-inline-start: 4rem;
+  }
+  
+  .ms-sm-8 {
+    margin-inline-start: 5rem;
+  }
+  
+  .ms-sm-9 {
+    margin-inline-start: 6rem;
+  }
+  
+  .ms-sm-10 {
+    margin-inline-start: 8rem;
+  }
+    
+  .mt-sm-6 {
+    margin-block-start: 3.5rem;
+  }
+  
+  .mt-sm-7 {
+    margin-block-start: 4rem;
+  }
+  
+  .mt-sm-8 {
+    margin-block-start: 5rem;
+  }
+  
+  .mt-sm-9 {
+    margin-block-start: 6rem;
+  }
+  
+  .mt-sm-10 {
+    margin-block-start: 8rem;
+  }
+  
+  .mt-sm-n6 {
+    margin-block-start: -3.5rem;
+  }
+  
+  .mt-sm-n7 {
+    margin-block-start: -4rem;
+  }
+  
+  .mt-sm-n8 {
+    margin-block-start: -5rem;
+  }
+  
+  .mt-sm-n9 {
+    margin-block-start: -6rem;
+  }
+  
+  .mt-sm-n10 {
+    margin-block-start: -8rem;
+  }
+    
+  .me-sm-6 {
+    margin-inline-end: 3.5rem;
+  }
+  
+  .me-sm-7 {
+    margin-inline-end: 4rem;
+  }
+  
+  .me-sm-8 {
+    margin-inline-end: 5rem;
+  }
+  
+  .me-sm-9 {
+    margin-inline-end: 6rem;
+  }
+  
+  .me-sm-10 {
+    margin-inline-end: 10rem;
+  }
+    
+  .mb-sm-6 {
+    margin-block-end: 3.5rem;
+  }
+  
+  .mb-sm-7 {
+    margin-block-end: 4rem;
+  }
+  
+  .mb-sm-8 {
+    margin-block-end: 5rem;
+  }
+  
+  .mb-sm-9 {
+    margin-block-end: 6rem;
+  }
+  
+  .mb-sm-10 {
+    margin-block-end: 8rem;
+  }
+    
+  .px-sm-6 {
+    padding-inline: 3.5rem;
+  }
+  
+  .px-sm-7 {
+    padding-inline: 4rem;
+  }
+  
+  .px-sm-8 {
+    padding-inline: 5rem;
+  }
+  
+  .px-sm-9 {
+    padding-inline: 6rem;
+  }
+  
+  .px-sm-10 {
+    padding-inline: 8rem;
+  }
+    
+  .py-sm-6 {
+    padding-block: 3.5rem;
+  }
+  
+  .py-sm-7 {
+    padding-block: 4rem;
+  }
+  
+  .py-sm-8 {
+    padding-block: 5rem;
+  }
+  
+  .py-sm-9 {
+    padding-block: 6rem;
+  }
+  
+  .py-sm-10 {
+    padding-block: 8rem;
+  }
+    
+  .mx-sm-6 {
+    margin-inline: 3.5rem;
+  }
+  
+  .mx-sm-7 {
+    margin-inline: 4rem;
+  }
+  
+  .mx-sm-8 {
+    margin-inline: 5rem;
+  }
+  
+  .mx-sm-9 {
+    margin-inline: 6rem;
+  }
+  
+  .mx-sm-10 {
+    margin-inline: 8rem;
+  }
+    
+  .my-sm-6 {
+    margin-block: 3.5rem;
+  }
+  
+  .my-sm-7 {
+    margin-block: 4rem;
+  }
+  
+  .my-sm-8 {
+    margin-block: 5rem;
+  }
+  
+  .my-sm-9 {
+    margin-block: 6rem;
+  }
+  
+  .my-sm-10 {
+    margin-block: 8rem;
+  }
+  
+  .p-sm-6 {
+    padding: 3.5rem;
+  }
+  
+  .p-sm-7 {
+    padding: 4rem;
+  }
+  
+  .p-sm-8 {
+    padding: 5rem;
+  }
+  
+  .p-sm-9 {
+    padding: 6rem;
+  }
+  
+  .p-sm-10 {
+    padding: 8rem;
+  }
+  
+  .m-sm-6 {
+    margin: 3.5rem;
+  }
+  
+  .m-sm-7 {
+    margin: 4rem;
+  }
+  
+  .m-sm-8 {
+    margin: 5rem;
+  }
+  
+  .m-sm-9 {
+    margin: 6rem;
+  }
+  
+  .m-sm-10 {
+    margin: 8rem;
+  }
+}
+
+/* md */
 @media screen and (min-width: 768px) {
   .textlogo {
     top: 0;
@@ -3900,7 +5021,7 @@ ul.about-us-cats a {
     margin: 0.25rem 0;
   }
 
-  .navbar-expand-lg .navbar-nav .nav-link {
+  .navbar-expand .navbar-nav .nav-link, .navbar-expand .navbar-nav .nav-link {
     padding: 0.95em 0.95em;
   }
 
@@ -3910,7 +5031,6 @@ ul.about-us-cats a {
   }
 
   .home-slider-height {
-    min-height: 42em;
     display: flex;
   }
 
@@ -3927,72 +5047,166 @@ ul.about-us-cats a {
 
   .icons-col-placement {
     position: relative;
-    bottom: 8em;
+    bottom: 0em;
+  }
+
+  .carousel-caption {
+    top: -35vh;
+    margin-left: 2vh;
   }
 
   #carousel-fade .carousel-inner .carousel-item:nth-child(1) {
-    background-image: url(https://static.aesseal.com/photo/wavehead/industry-1-1440.jpg);
-    background-size: cover;
-    background-repeat: repeat;
     background-color: #012e58;
-    background-position: 65%;
-    animation: none;
-    padding-top: 3em;
   }
 
-  #carousel-fade .carousel-inner .carousel-item:nth-child(2) {
-    background-image: url(https://static.aesseal.com/photo/wavehead/industry-2-1440.jpg);
+  #carousel-fade .carousel-inner .carousel-item:nth-child(1):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/industry-background-02.webp);
+    background-repeat: repeat;
     background-size: cover;
-    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+    #carousel-fade .carousel-inner .carousel-item:nth-child(2) {
     background-color: #012e58;
-    background-blend-mode: unset;
-    background-position: center;
-    animation: none;
-    padding-top: 3em;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(2):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/Reliability-background-02.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
   }
 
   #carousel-fade .carousel-inner .carousel-item:nth-child(3) {
-    background-image: url(https://static.aesseal.com/photo/wavehead/sustainability-carousel.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
     background-color: #012e58;
-    background-blend-mode: unset;
-    background-position: top;
-    animation: none;
-    padding-top: 3em;
   }
 
-  #carousel-fade.us-carousel .carousel-inner .carousel-item:nth-child(3) {
-    background-image: url(https://static.aesseal.com/photo/wavehead/Rockford-careers-slide.jpg);
+  #carousel-fade .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/ecoguard-background-02.webp);
+    background-repeat: repeat;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #012e58;
-    background-blend-mode: unset;
-    background-position: bottom right;
-    animation: none;
-    padding-top: 3em;
-  }
-
-  #carousel-fade.pump-carousel .carousel-inner .carousel-item:nth-child(3) {
-    background-image: url(https://s3-eu-west-1.amazonaws.com/aesweb/photo/wavehead/sky-carousel.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #012e58;
-    background-blend-mode: unset;
-    background-position: bottom right;
-    animation: none;
-    padding-top: 3em;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
   }
 
   #carousel-fade .carousel-inner .carousel-item:nth-child(4) {
-    background-image: url(https://static.aesseal.com/photo/wavehead/wideformattablet/pillar-customer-service.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
     background-color: #012e58;
-    background-blend-mode: unset;
-    background-position: top center;
-    animation: none;
-    padding-top: 3em;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(4):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/FTemployers-background-02.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.de-carousel .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade.de-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/Solarinstall-background-02.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.us-carousel .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade.us-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/us/Rockford-Ordering-Background-02.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.pump-carousel .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade.pump-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/carousel/sky-carousel.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: 65%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.in-carousel .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade.in-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: top;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.za-carousel .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade.za-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/photo/wavehead/SA-isoslide-1440.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
   }
 
   .controls li, .tns-outer .tns-controls button[aria-controls] {
@@ -4004,7 +5218,7 @@ ul.about-us-cats a {
 
   .media-carousel-block {
     bottom: 0;
-    margin-top: -1em;
+    margin-top: -0.1rem;
   }
 
   .media-carousel-block .item div {
@@ -4013,35 +5227,7 @@ ul.about-us-cats a {
 
   .carousel-col-placement {
     position: relative;
-    bottom: 3.9em;
-  }
-
-  .upper-home-wave {
-    width: 25%;
-    bottom: 19.95%;
-    right: -4%;
-    position: absolute;
-  }
-
-  .upper-home-wave::before {
-    content: " ";
-    height: 100%;
-    width: 30%;
-    right: 100%;
-    position: absolute;
-    border-top-left-radius: 22px;
-  }
-
-  .upper-home-wave::after{
-    content: " ";
-    height: 20%;
-    width: 20%;
-    transform: translateZ(0);
-    background-color: transparent;
-    bottom: 0.1%;
-    right: 130%;
-    position: absolute;
-    border-bottom-right-radius: 25px;
+    bottom: -1em;
   }
 
   .virtual-tour-banner {
@@ -4071,10 +5257,6 @@ ul.about-us-cats a {
     left: 8.333%;
   }
 
-  .card-staff-img {
-    bottom: 3em;
-  }
-
   .promo-margin {
     margin-block-start: 2%;
   }
@@ -4082,18 +5264,13 @@ ul.about-us-cats a {
   .black-boxes,
   .black-boxes-right {
     height: auto; /* Reset height to auto for smaller screens */
-    max-height: 115px; /* Adjust the maximum height as per your requirement */
     overflow-y: scroll; /* Add vertical scroll if content exceeds the height */
     padding: 0;
     margin: 0;
   }
 
   .footer-curve {
-    margin-top: -6em;
-  }
-
-  .main-menu .nav-item:last-child {
-    display: block;
+    margin-top: -5.7em;
   }
 
   .path-frontpage .scroll-nav {
@@ -4109,10 +5286,322 @@ ul.about-us-cats a {
     transform: translateY(102%);
     transition: all 0.3s ease-in-out;
   }
+
+  .change:after{
+    top: 2em;
+  }
+    
+  .overlay-content {
+    top: 15%
+  }
+
+  .ps-md-6 {
+    padding-inline-start: 3.5rem;
+  }
+  
+  .ps-md-7 {
+    padding-inline-start: 4rem;
+  }
+  
+  .ps-md-8 {
+    padding-inline-start: 5rem;
+  }
+  
+  .ps-md-9 {
+    padding-inline-start: 6rem;
+  }
+  
+  .ps-md-10 {
+    padding-inline-start: 8rem;
+  }
+  
+  .pe-md-6 {
+    padding-inline-end: 3.5rem;
+  }
+  
+  .pe-md-7 {
+    padding-inline-end: 4rem;
+  }
+  
+  .pe-md-8 {
+    padding-inline-end: 5rem;
+  }
+  
+  .pe-md-9 {
+    padding-inline-end: 6rem;
+  }
+  
+  .pe-md-10 {
+    padding-inline-end: 8rem;
+  }
+  
+  .pt-md-6 {
+    padding-block-start: 3.5rem;
+  }
+  
+  .pt-md-7 {
+    padding-block-start: 4rem;
+  }
+  
+  .pt-md-8 {
+    padding-block-start: 5rem;
+  }
+  
+  .pt-md-9 {
+    padding-block-start: 6rem;
+  }
+  
+  .pt-md-10 {
+    padding-block-start: 8rem;
+  }
+  
+  .pb-md-6 {
+    padding-block-end: 3.5rem;
+  }
+  
+  .pb-md-7 {
+    padding-block-end: 4rem;
+  }
+  
+  .pb-md-8 {
+    padding-block-end: 5rem;
+  }
+  
+  .pb-md-9 {
+    padding-block-end: 6rem;
+  }
+  
+  .pb-md-10 {
+    padding-block-end: 8rem;
+  }
+    
+  .ms-md-6 {
+    margin-inline-start: 3.5rem;
+  }
+  
+  .ms-md-7 {
+    margin-inline-start: 4rem;
+  }
+  
+  .ms-md-8 {
+    margin-inline-start: 5rem;
+  }
+  
+  .ms-md-9 {
+    margin-inline-start: 6rem;
+  }
+  
+  .ms-md-10 {
+    margin-inline-start: 8rem;
+  }
+    
+  .mt-md-6 {
+    margin-block-start: 3.5rem;
+  }
+  
+  .mt-md-7 {
+    margin-block-start: 4rem;
+  }
+  
+  .mt-md-8 {
+    margin-block-start: 5rem;
+  }
+  
+  .mt-md-9 {
+    margin-block-start: 6rem;
+  }
+  
+  .mt-md-10 {
+    margin-block-start: 8rem;
+  }
+  
+  .mt-md-n6 {
+    margin-block-start: -3.5rem;
+  }
+  
+  .mt-md-n7 {
+    margin-block-start: -4rem;
+  }
+  
+  .mt-md-n8 {
+    margin-block-start: -5rem;
+  }
+  
+  .mt-md-n9 {
+    margin-block-start: -6rem;
+  }
+  
+  .mt-md-n10 {
+    margin-block-start: -8rem;
+  }
+    
+  .me-md-6 {
+    margin-inline-end: 3.5rem;
+  }
+  
+  .me-md-7 {
+    margin-inline-end: 4rem;
+  }
+  
+  .me-md-8 {
+    margin-inline-end: 5rem;
+  }
+  
+  .me-md-9 {
+    margin-inline-end: 6rem;
+  }
+  
+  .me-md-10 {
+    margin-inline-end: 10rem;
+  }
+    
+  .mb-md-6 {
+    margin-block-end: 3.5rem;
+  }
+  
+  .mb-md-7 {
+    margin-block-end: 4rem;
+  }
+  
+  .mb-md-8 {
+    margin-block-end: 5rem;
+  }
+  
+  .mb-md-9 {
+    margin-block-end: 6rem;
+  }
+  
+  .mb-md-10 {
+    margin-block-end: 8rem;
+  }
+    
+  .px-md-6 {
+    padding-inline: 3.5rem;
+  }
+  
+  .px-md-7 {
+    padding-inline: 4rem;
+  }
+  
+  .px-md-8 {
+    padding-inline: 5rem;
+  }
+  
+  .px-md-9 {
+    padding-inline: 6rem;
+  }
+  
+  .px-md-10 {
+    padding-inline: 8rem;
+  }
+    
+  .py-md-6 {
+    padding-block: 3.5rem;
+  }
+  
+  .py-md-7 {
+    padding-block: 4rem;
+  }
+  
+  .py-md-8 {
+    padding-block: 5rem;
+  }
+  
+  .py-md-9 {
+    padding-block: 6rem;
+  }
+  
+  .py-md-10 {
+    padding-block: 8rem;
+  }
+    
+  .mx-md-6 {
+    margin-inline: 3.5rem;
+  }
+  
+  .mx-md-7 {
+    margin-inline: 4rem;
+  }
+  
+  .mx-md-8 {
+    margin-inline: 5rem;
+  }
+  
+  .mx-md-9 {
+    margin-inline: 6rem;
+  }
+  
+  .mx-md-10 {
+    margin-inline: 8rem;
+  }
+    
+  .my-md-6 {
+    margin-block: 3.5rem;
+  }
+  
+  .my-md-7 {
+    margin-block: 4rem;
+  }
+  
+  .my-md-8 {
+    margin-block: 5rem;
+  }
+  
+  .my-md-9 {
+    margin-block: 6rem;
+  }
+  
+  .my-md-10 {
+    margin-block: 8rem;
+  }
+  
+  .p-md-6 {
+    padding: 3.5rem;
+  }
+  
+  .p-md-7 {
+    padding: 4rem;
+  }
+  
+  .p-md-8 {
+    padding: 5rem;
+  }
+  
+  .p-md-9 {
+    padding: 6rem;
+  }
+  
+  .p-md-10 {
+    padding: 8rem;
+  }
+  
+  .m-md-6 {
+    margin: 3.5rem;
+  }
+  
+  .m-md-7 {
+    margin: 4rem;
+  }
+  
+  .m-md-8 {
+    margin: 5rem;
+  }
+  
+  .m-md-9 {
+    margin: 6rem;
+  }
+  
+  .m-md-10 {
+    margin: 8rem;
+  }
 }
 
-/* md */
+/* lg */
 @media screen and (min-width: 992px) {
+
+  .navbar-nav .nav-item:nth-child(7) {
+    display: block;
+  }
 
   .lg-mt-10 {
     margin-block-start: 8rem;
@@ -4126,24 +5615,16 @@ ul.about-us-cats a {
     width: 100%;
   }
 
-  .main-menu .nav-item:last-child {
-    display: none;
-  }
-
   .bg-white .navbar-collapse {
     padding-left: 6rem;
   }
 
-  .navbar-expand-lg .navbar-nav .nav-link {
+  .navbar-expand .navbar-nav .nav-link, .navbar-expand-lg .navbar-nav .nav-link {
     padding: 0.95em 1.1em;
   }
 
   .preface-flex-margin {
     margin: -4.3em 0 0 0;
-  }
-
-  .home-slider-height {
-    min-height: 55em;
   }
 
   .slider-caption {
@@ -4152,92 +5633,178 @@ ul.about-us-cats a {
     z-index: 4;
   }
 
+  .carousel-caption {
+    top: 0;
+    margin-left: 0;
+  }
+
   #carousel-fade .carousel-inner .carousel-item:nth-child(1) {
-    background-image: url(https://static.aesseal.com/photo/wavehead/industry-1-1440.jpg);
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(1):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/industry-background-03.webp);
     background-repeat: repeat;
     background-size: cover;
-    background-color: rgb(8,14,34);
-    background-blend-mode: unset;
-    background-position: top center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
   }
 
   #carousel-fade .carousel-inner .carousel-item:nth-child(2) {
-    background-image: url(https://static.aesseal.com/photo/wavehead/industry-2-1440.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
     background-color: #012e58;
-    background-blend-mode: unset;
-    background-position: 50% 30%;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(2):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/Reliability-background-03.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
   }
 
   #carousel-fade .carousel-inner .carousel-item:nth-child(3) {
-    background-image: url(https://static.aesseal.com/photo/wavehead/sustainability-carousel.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
     background-color: #012e58;
-    background-blend-mode: unset;
-    background-position: top;
   }
 
-  #carousel-fade.us-carousel .carousel-inner .carousel-item:nth-child(3) {
-    background-image: url(https://static.aesseal.com/photo/wavehead/Rockford-careers-slide.jpg);
-    background-repeat: no-repeat;
+  #carousel-fade .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/ecoguard-background-03.webp);
+    background-repeat: repeat;
     background-size: cover;
-    background-color: #012e58;
-    background-blend-mode: unset;
-    background-position: top center;
-  }
-
-  #carousel-fade.pump-carousel .carousel-inner .carousel-item:nth-child(3) {
-    background-image: url(https://s3-eu-west-1.amazonaws.com/aesweb/photo/wavehead/sky-carousel.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #012e58;
-    background-blend-mode: unset;
-    background-position: top center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
   }
 
   #carousel-fade .carousel-inner .carousel-item:nth-child(4) {
-    background-image: url(https://static.aesseal.com/photo/wavehead/wideformatfull/pillar-customer-service.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
     background-color: #012e58;
-    background-blend-mode: unset;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(4):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/FTemployers-background-03.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.de-carousel .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade.de-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/Solarinstall-background-03.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.us-carousel .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade.us-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/us/Rockford-Ordering-Background-03.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.pump-carousel .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade.pump-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/carousel/sky-carousel.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: 65%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.in-carousel .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade.in-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: top;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.za-carousel .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade.za-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/photo/wavehead/SA-isoslide-1440.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
   }
 
   .carousel-col-placement {
     position: relative;
-    bottom: 8em;
-  }
-
-  .upper-home-wave {
-    right: -4%;
-  }
-
-  .upper-home-wave::before {
-    content: " ";
-    height: 100%;
-    width: 45%;
-    right: 100%;
-    position: absolute;
-    border-top-left-radius: 22px;
-  }
-
-  .upper-home-wave::after{
-    content: " ";
-    height: 20%;
-    width: 20%;
-    transform: translateZ(0);
-    background-color: transparent;
-    right: 145%;
-    position: absolute;
-    border-bottom-right-radius: 25px;
+    bottom: -1em;
   }
 
   .ind-carousel-caption {
     width: 65%;
     left: 20%;
     top: 15%;
+  }
+
+  .overlay-content {
+    top:22%;
   }
 
   .virtual-tour:hover {
@@ -4278,10 +5845,320 @@ ul.about-us-cats a {
   .footer-curve {
     margin-top: -6.9em;
   }
+
+  .ps-lg-6 {
+    padding-inline-start: 3.5rem;
+  }
+  
+  .ps-lg-7 {
+    padding-inline-start: 4rem;
+  }
+  
+  .ps-lg-8 {
+    padding-inline-start: 5rem;
+  }
+  
+  .ps-lg-9 {
+    padding-inline-start: 6rem;
+  }
+  
+  .ps-lg-10 {
+    padding-inline-start: 8rem;
+  }
+  
+  /* code for the padding end parameters 6-10 */
+  .pe-lg-6 {
+    padding-inline-end: 3.5rem;
+  }
+  
+  .pe-lg-7 {
+    padding-inline-end: 4rem;
+  }
+  
+  .pe-lg-8 {
+    padding-inline-end: 5rem;
+  }
+  
+  .pe-lg-9 {
+    padding-inline-end: 6rem;
+  }
+  
+  .pe-lg-10 {
+    padding-inline-end: 8rem;
+  }
+  
+  /* code for the padding top parameters 6-10 */
+  .pt-lg-6 {
+    padding-block-start: 3.5rem;
+  }
+  
+  .pt-lg-7 {
+    padding-block-start: 4rem;
+  }
+  
+  .pt-lg-8 {
+    padding-block-start: 5rem;
+  }
+  
+  .pt-lg-9 {
+    padding-block-start: 6rem;
+  }
+  
+  .pt-lg-10 {
+    padding-block-start: 8rem;
+  }
+  
+  /* code for the padding bottom parameters 6-10 */
+  .pb-lg-6 {
+    padding-block-end: 3.5rem;
+  }
+  
+  .pb-lg-7 {
+    padding-block-end: 4rem;
+  }
+  
+  .pb-lg-8 {
+    padding-block-end: 5rem;
+  }
+  
+  .pb-lg-9 {
+    padding-block-end: 6rem;
+  }
+  
+  .pb-lg-10 {
+    padding-block-end: 8rem;
+  }
+    
+  .ms-lg-6 {
+    margin-inline-start: 3.5rem;
+  }
+  
+  .ms-lg-7 {
+    margin-inline-start: 4rem;
+  }
+  
+  .ms-lg-8 {
+    margin-inline-start: 5rem;
+  }
+  
+  .ms-lg-9 {
+    margin-inline-start: 6rem;
+  }
+  
+  .ms-lg-10 {
+    margin-inline-start: 8rem;
+  }
+    
+  .mt-lg-6 {
+    margin-block-start: 3.5rem;
+  }
+  
+  .mt-lg-7 {
+    margin-block-start: 4rem;
+  }
+  
+  .mt-lg-8 {
+    margin-block-start: 5rem;
+  }
+  
+  .mt-lg-9 {
+    margin-block-start: 6rem;
+  }
+  
+  .mt-lg-10 {
+    margin-block-start: 8rem;
+  }
+  
+  .mt-lg-n6 {
+    margin-block-start: -3.5rem;
+  }
+  
+  .mt-lg-n7 {
+    margin-block-start: -4rem;
+  }
+  
+  .mt-lg-n8 {
+    margin-block-start: -5rem;
+  }
+  
+  .mt-lg-n9 {
+    margin-block-start: -6rem;
+  }
+  
+  .mt-lg-n10 {
+    margin-block-start: -8rem;
+  }
+    
+  .me-lg-6 {
+    margin-inline-end: 3.5rem;
+  }
+  
+  .me-lg-7 {
+    margin-inline-end: 4rem;
+  }
+  
+  .me-lg-8 {
+    margin-inline-end: 5rem;
+  }
+  
+  .me-lg-9 {
+    margin-inline-end: 6rem;
+  }
+  
+  .me-lg-10 {
+    margin-inline-end: 10rem;
+  }
+    
+  .mb-lg-6 {
+    margin-block-end: 3.5rem;
+  }
+  
+  .mb-lg-7 {
+    margin-block-end: 4rem;
+  }
+  
+  .mb-lg-8 {
+    margin-block-end: 5rem;
+  }
+  
+  .mb-lg-9 {
+    margin-block-end: 6rem;
+  }
+  
+  .mb-lg-10 {
+    margin-block-end: 8rem;
+  }
+    
+  .px-lg-6 {
+    padding-inline: 3.5rem;
+  }
+  
+  .px-lg-7 {
+    padding-inline: 4rem;
+  }
+  
+  .px-lg-8 {
+    padding-inline: 5rem;
+  }
+  
+  .px-lg-9 {
+    padding-inline: 6rem;
+  }
+  
+  .px-lg-10 {
+    padding-inline: 8rem;
+  }
+  
+  /* code for the padding Y parameters 6-10 */
+  
+  .py-lg-6 {
+    padding-block: 3.5rem;
+  }
+  
+  .py-lg-7 {
+    padding-block: 4rem;
+  }
+  
+  .py-lg-8 {
+    padding-block: 5rem;
+  }
+  
+  .py-lg-9 {
+    padding-block: 6rem;
+  }
+  
+  .py-lg-10 {
+    padding-block: 8rem;
+  }
+    
+  .mx-lg-6 {
+    margin-inline: 3.5rem;
+  }
+  
+  .mx-lg-7 {
+    margin-inline: 4rem;
+  }
+  
+  .mx-lg-8 {
+    margin-inline: 5rem;
+  }
+  
+  .mx-lg-9 {
+    margin-inline: 6rem;
+  }
+  
+  .mx-lg-10 {
+    margin-inline: 8rem;
+  }
+    
+  .my-lg-6 {
+    margin-block: 3.5rem;
+  }
+  
+  .my-lg-7 {
+    margin-block: 4rem;
+  }
+  
+  .my-lg-8 {
+    margin-block: 5rem;
+  }
+  
+  .my-lg-9 {
+    margin-block: 6rem;
+  }
+  
+  .my-lg-10 {
+    margin-block: 8rem;
+  }
+  
+  .p-lg-6 {
+    padding: 3.5rem;
+  }
+  
+  .p-lg-7 {
+    padding: 4rem;
+  }
+  
+  .p-lg-8 {
+    padding: 5rem;
+  }
+  
+  .p-lg-9 {
+    padding: 6rem;
+  }
+  
+  .p-lg-10 {
+    padding: 8rem;
+  }
+  
+  .m-lg-6 {
+    margin: 3.5rem;
+  }
+  
+  .m-lg-7 {
+    margin: 4rem;
+  }
+  
+  .m-lg-8 {
+    margin: 5rem;
+  }
+  
+  .m-lg-9 {
+    margin: 6rem;
+  }
+  
+  .m-lg-10 {
+    margin: 8rem;
+  }
 }
 
-/* lg */
+/* xl */
 @media screen and (min-width: 1200px) {
+
+  .navbar-nav .nav-item:nth-child(7) {
+    display: block;
+  }
+
   .textlogo {
     top: 0;
   }
@@ -4290,6 +6167,100 @@ ul.about-us-cats a {
     top: 4vh;
     position: relative;
     z-index: 4;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(1) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(1):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/industry-background-04.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(2) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(2):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/Reliability-background-04.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/ecoguard-background-04.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(4) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(4):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/FTemployers-background-04.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.de-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/Solarinstall-background-04.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  #carousel-fade.us-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/us/Rockford-Ordering-Background-04.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
   }
 
   .bg-white .navbar-collapse {
@@ -4320,38 +6291,735 @@ ul.about-us-cats a {
   }
 
   .video-overlay {
-    top: 60%;
+    top: 64%;
     height: 45%;
   }
 
-  .upper-home-wave {
-    width: 20%;
-    bottom: 20%;
-    right: -3%;
-    position: absolute;
+  .ps-xl-6 {
+    padding-inline-start: 3.5rem;
+  }
+  
+  .ps-xl-7 {
+    padding-inline-start: 4rem;
+  }
+  
+  .ps-xl-8 {
+    padding-inline-start: 5rem;
+  }
+  
+  .ps-xl-9 {
+    padding-inline-start: 6rem;
+  }
+  
+  .ps-xl-10 {
+    padding-inline-start: 8rem;
+  }
+  
+  .pe-xl-6 {
+    padding-inline-end: 3.5rem;
+  }
+  
+  .pe-xl-7 {
+    padding-inline-end: 4rem;
+  }
+  
+  .pe-xl-8 {
+    padding-inline-end: 5rem;
+  }
+  
+  .pe-xl-9 {
+    padding-inline-end: 6rem;
+  }
+  
+  .pe-xl-10 {
+    padding-inline-end: 8rem;
+  }
+  
+  .pt-xl-6 {
+    padding-block-start: 3.5rem;
+  }
+  
+  .pt-xl-7 {
+    padding-block-start: 4rem;
+  }
+  
+  .pt-xl-8 {
+    padding-block-start: 5rem;
+  }
+  
+  .pt-xl-9 {
+    padding-block-start: 6rem;
+  }
+  
+  .pt-xl-10 {
+    padding-block-start: 8rem;
+  }
+  
+  .pb-xl-6 {
+    padding-block-end: 3.5rem;
+  }
+  
+  .pb-xl-7 {
+    padding-block-end: 4rem;
+  }
+  
+  .pb-xl-8 {
+    padding-block-end: 5rem;
+  }
+  
+  .pb-xl-9 {
+    padding-block-end: 6rem;
+  }
+  
+  .pb-xl-10 {
+    padding-block-end: 8rem;
+  }
+    
+  .ms-xl-6 {
+    margin-inline-start: 3.5rem;
+  }
+  
+  .ms-xl-7 {
+    margin-inline-start: 4rem;
+  }
+  
+  .ms-xl-8 {
+    margin-inline-start: 5rem;
+  }
+  
+  .ms-xl-9 {
+    margin-inline-start: 6rem;
+  }
+  
+  .ms-xl-10 {
+    margin-inline-start: 8rem;
+  }
+    
+  .mt-xl-6 {
+    margin-block-start: 3.5rem;
+  }
+  
+  .mt-xl-7 {
+    margin-block-start: 4rem;
+  }
+  
+  .mt-xl-8 {
+    margin-block-start: 5rem;
+  }
+  
+  .mt-xl-9 {
+    margin-block-start: 6rem;
+  }
+  
+  .mt-xl-10 {
+    margin-block-start: 8rem;
+  }
+  
+  .mt-xl-n6 {
+    margin-block-start: -3.5rem;
+  }
+  
+  .mt-xl-n7 {
+    margin-block-start: -4rem;
+  }
+  
+  .mt-xl-n8 {
+    margin-block-start: -5rem;
+  }
+  
+  .mt-xl-n9 {
+    margin-block-start: -6rem;
+  }
+  
+  .mt-xl-n10 {
+    margin-block-start: -8rem;
+  }
+    
+  .me-xl-6 {
+    margin-inline-end: 3.5rem;
+  }
+  
+  .me-xl-7 {
+    margin-inline-end: 4rem;
+  }
+  
+  .me-xl-8 {
+    margin-inline-end: 5rem;
+  }
+  
+  .me-xl-9 {
+    margin-inline-end: 6rem;
+  }
+  
+  .me-xl-10 {
+    margin-inline-end: 10rem;
+  }
+    
+  .mb-xl-6 {
+    margin-block-end: 3.5rem;
+  }
+  
+  .mb-xl-7 {
+    margin-block-end: 4rem;
+  }
+  
+  .mb-xl-8 {
+    margin-block-end: 5rem;
+  }
+  
+  .mb-xl-9 {
+    margin-block-end: 6rem;
+  }
+  
+  .mb-xl-10 {
+    margin-block-end: 8rem;
+  }
+    
+  .px-xl-6 {
+    padding-inline: 3.5rem;
+  }
+  
+  .px-xl-7 {
+    padding-inline: 4rem;
+  }
+  
+  .px-xl-8 {
+    padding-inline: 5rem;
+  }
+  
+  .px-xl-9 {
+    padding-inline: 6rem;
+  }
+  
+  .px-xl-10 {
+    padding-inline: 8rem;
+  }
+    
+  .py-xl-6 {
+    padding-block: 3.5rem;
+  }
+  
+  .py-xl-7 {
+    padding-block: 4rem;
+  }
+  
+  .py-xl-8 {
+    padding-block: 5rem;
+  }
+  
+  .py-xl-9 {
+    padding-block: 6rem;
+  }
+  
+  .py-xl-10 {
+    padding-block: 8rem;
+  }
+    
+  .mx-xl-6 {
+    margin-inline: 3.5rem;
+  }
+  
+  .mx-xl-7 {
+    margin-inline: 4rem;
+  }
+  
+  .mx-xl-8 {
+    margin-inline: 5rem;
+  }
+  
+  .mx-xl-9 {
+    margin-inline: 6rem;
+  }
+  
+  .mx-xl-10 {
+    margin-inline: 8rem;
+  }
+    
+  .my-xl-6 {
+    margin-block: 3.5rem;
+  }
+  
+  .my-xl-7 {
+    margin-block: 4rem;
+  }
+  
+  .my-xl-8 {
+    margin-block: 5rem;
+  }
+  
+  .my-xl-9 {
+    margin-block: 6rem;
+  }
+  
+  .my-xl-10 {
+    margin-block: 8rem;
+  }
+  
+  .p-xl-6 {
+    padding: 3.5rem;
+  }
+  
+  .p-xl-7 {
+    padding: 4rem;
+  }
+  
+  .p-xl-8 {
+    padding: 5rem;
+  }
+  
+  .p-xl-9 {
+    padding: 6rem;
+  }
+  
+  .p-xl-10 {
+    padding: 8rem;
+  }
+  
+  .m-xl-6 {
+    margin: 3.5rem;
+  }
+  
+  .m-xl-7 {
+    margin: 4rem;
+  }
+  
+  .m-xl-8 {
+    margin: 5rem;
+  }
+  
+  .m-xl-9 {
+    margin: 6rem;
+  }
+  
+  .m-xl-10 {
+    margin: 8rem;
+  }
+}
+
+/* xxl */
+@media screen and (min-width: 1400px) {
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(1) {
+    background-color: #012e58;
   }
 
-  .upper-home-wave::before {
-    content: " ";
-    height: 100%;
-    width: 36%;
-    right: 100%;
+  #carousel-fade .carousel-inner .carousel-item:nth-child(1):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/industry-background-05.webp);
+    background-repeat: repeat;
+    background-size: cover;
     position: absolute;
-    border-top-left-radius: 22px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+    animation: fadeInOut 7s ease-in-out forwards;
   }
 
-  .upper-home-wave::after{
-    content: " ";
-    height: 20%;
-    width: 20%;
-    transform: translateZ(0);
-    background-color: transparent;
-    bottom: 0%;
-    right: 135.5%;
-    position: absolute;
-    border-bottom-right-radius: 25px;
+  #carousel-fade .carousel-inner .carousel-item:nth-child(2) {
+    background-color: #012e58;
   }
 
+  #carousel-fade .carousel-inner .carousel-item:nth-child(2):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/Reliability-background-05.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+    animation: fadeIn 7s ease-in-out forwards;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/ecoguard-background-05.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+    animation: fadeIn 7s ease-in-out forwards;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(4) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(4):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/FTemployers-background-05.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+    animation: fadeIn 7s ease-in-out forwards;
+  }
+
+  #carousel-fade.de-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/Solarinstall-background-05.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+    animation: fadeIn 7s ease-in-out forwards;
+  }
+
+  #carousel-fade.us-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/us/Rockford-Ordering-Background-05.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+  
+  .ps-xxl-6 {
+    padding-inline-start: 3.5rem;
+  }
+  
+  .ps-xxl-7 {
+    padding-inline-start: 4rem;
+  }
+  
+  .ps-xxl-8 {
+    padding-inline-start: 5rem;
+  }
+  
+  .ps-xxl-9 {
+    padding-inline-start: 6rem;
+  }
+  
+  .ps-xxl-10 {
+    padding-inline-start: 8rem;
+  }
+  
+  .pe-xxl-6 {
+    padding-inline-end: 3.5rem;
+  }
+  
+  .pe-xxl-7 {
+    padding-inline-end: 4rem;
+  }
+  
+  .pe-xxl-8 {
+    padding-inline-end: 5rem;
+  }
+  
+  .pe-xxl-9 {
+    padding-inline-end: 6rem;
+  }
+  
+  .pe-xxl-10 {
+    padding-inline-end: 8rem;
+  }
+  
+  .pt-xxl-6 {
+    padding-block-start: 3.5rem;
+  }
+  
+  .pt-xxl-7 {
+    padding-block-start: 4rem;
+  }
+  
+  .pt-xxl-8 {
+    padding-block-start: 5rem;
+  }
+  
+  .pt-xxl-9 {
+    padding-block-start: 6rem;
+  }
+  
+  .pt-xxl-10 {
+    padding-block-start: 8rem;
+  }
+  
+  .pb-xxl-6 {
+    padding-block-end: 3.5rem;
+  }
+  
+  .pb-xxl-7 {
+    padding-block-end: 4rem;
+  }
+  
+  .pb-xxl-8 {
+    padding-block-end: 5rem;
+  }
+  
+  .pb-xxl-9 {
+    padding-block-end: 6rem;
+  }
+  
+  .pb-xxl-10 {
+    padding-block-end: 8rem;
+  }
+    
+  .ms-xxl-6 {
+    margin-inline-start: 3.5rem;
+  }
+  
+  .ms-xxl-7 {
+    margin-inline-start: 4rem;
+  }
+  
+  .ms-xxl-8 {
+    margin-inline-start: 5rem;
+  }
+  
+  .ms-xxl-9 {
+    margin-inline-start: 6rem;
+  }
+  
+  .ms-xxl-10 {
+    margin-inline-start: 8rem;
+  }
+    
+  .mt-xxl-6 {
+    margin-block-start: 3.5rem;
+  }
+  
+  .mt-xxl-7 {
+    margin-block-start: 4rem;
+  }
+  
+  .mt-xxl-8 {
+    margin-block-start: 5rem;
+  }
+  
+  .mt-xxl-9 {
+    margin-block-start: 6rem;
+  }
+  
+  .mt-xxl-10 {
+    margin-block-start: 8rem;
+  }
+  
+  .mt-xxl-n6 {
+    margin-block-start: -3.5rem;
+  }
+  
+  .mt-xxl-n7 {
+    margin-block-start: -4rem;
+  }
+  
+  .mt-xxl-n8 {
+    margin-block-start: -5rem;
+  }
+  
+  .mt-xxl-n9 {
+    margin-block-start: -6rem;
+  }
+  
+  .mt-xxl-n10 {
+    margin-block-start: -8rem;
+  }
+    
+  .me-xxl-6 {
+    margin-inline-end: 3.5rem;
+  }
+  
+  .me-xxl-7 {
+    margin-inline-end: 4rem;
+  }
+  
+  .me-xxl-8 {
+    margin-inline-end: 5rem;
+  }
+  
+  .me-xxl-9 {
+    margin-inline-end: 6rem;
+  }
+  
+  .me-xxl-10 {
+    margin-inline-end: 10rem;
+  }
+    
+  .mb-xxl-6 {
+    margin-block-end: 3.5rem;
+  }
+  
+  .mb-xxl-7 {
+    margin-block-end: 4rem;
+  }
+  
+  .mb-xxl-8 {
+    margin-block-end: 5rem;
+  }
+  
+  .mb-xxl-9 {
+    margin-block-end: 6rem;
+  }
+  
+  .mb-xxl-10 {
+    margin-block-end: 8rem;
+  }
+    
+  .px-xxl-6 {
+    padding-inline: 3.5rem;
+  }
+  
+  .px-xxl-7 {
+    padding-inline: 4rem;
+  }
+  
+  .px-xxl-8 {
+    padding-inline: 5rem;
+  }
+  
+  .px-xxl-9 {
+    padding-inline: 6rem;
+  }
+  
+  .px-xxl-10 {
+    padding-inline: 8rem;
+  }
+    
+  .py-xxl-6 {
+    padding-block: 3.5rem;
+  }
+  
+  .py-xxl-7 {
+    padding-block: 4rem;
+  }
+  
+  .py-xxl-8 {
+    padding-block: 5rem;
+  }
+  
+  .py-xxl-9 {
+    padding-block: 6rem;
+  }
+  
+  .py-xxl-10 {
+    padding-block: 8rem;
+  }
+    
+  .mx-xxl-6 {
+    margin-inline: 3.5rem;
+  }
+  
+  .mx-xxl-7 {
+    margin-inline: 4rem;
+  }
+  
+  .mx-xxl-8 {
+    margin-inline: 5rem;
+  }
+  
+  .mx-xxl-9 {
+    margin-inline: 6rem;
+  }
+  
+  .mx-xxl-10 {
+    margin-inline: 8rem;
+  }
+    
+  .my-xxl-6 {
+    margin-block: 3.5rem;
+  }
+  
+  .my-xxl-7 {
+    margin-block: 4rem;
+  }
+  
+  .my-xxl-8 {
+    margin-block: 5rem;
+  }
+  
+  .my-xxl-9 {
+    margin-block: 6rem;
+  }
+  
+  .my-xxl-10 {
+    margin-block: 8rem;
+  }
+  
+  .p-xxl-6 {
+    padding: 3.5rem;
+  }
+  
+  .p-xxl-7 {
+    padding: 4rem;
+  }
+  
+  .p-xxl-8 {
+    padding: 5rem;
+  }
+  
+  .p-xxl-9 {
+    padding: 6rem;
+  }
+  
+  .p-xxl-10 {
+    padding: 8rem;
+  }
+  
+  .m-xxl-6 {
+    margin: 3.5rem;
+  }
+  
+  .m-xxl-7 {
+    margin: 4rem;
+  }
+  
+  .m-xxl-8 {
+    margin: 5rem;
+  }
+  
+  .m-xxl-9 {
+    margin: 6rem;
+  }
+  
+  .m-xxl-10 {
+    margin: 8rem;
+  }
+
+  .short-texts {
+    display: block;
+  }
+  .long-texts {
+    display: none;
+  }
+
+  .st-txt {
+    display: block;
+     
+  }
+  .lg-txt {
+    display: none;
+  }
+
+  .short-text {
+    display: block;
+  } 
+  
+  .long-text {
+    display: none;
+  }
 }
 
 @media(max-width: 1430px){
@@ -4379,72 +7047,418 @@ ul.about-us-cats a {
   }
 
   .video-overlay {
-    top: 60%;
+    top: 62%;
     height: 45%;
   }
+}
 
-  .upper-home-wave {
-    width: 20%;
-    bottom: 20%;
-    right: -3%;
-    position: absolute;
+@media screen and (min-width: 1800px) {
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(1) {
+    background-color: #012e58;
   }
 
-  .upper-home-wave::before {
-    content: " ";
-    height: 100%;
-    width: 36%;
-    right: 100%;
+  #carousel-fade .carousel-inner .carousel-item:nth-child(1):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/industry-background-06.webp);
+    background-repeat: repeat;
+    background-size: cover;
     position: absolute;
-    border-top-left-radius: 22px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+    animation: fadeInOut 7s ease-in-out forwards;
   }
 
-  .upper-home-wave::after{
-    content: " ";
-    height: 20%;
-    width: 20%;
-    transform: translateZ(0);
-    background-color: transparent;
-    bottom: 0%;
-    right: 135.5%;
+  #carousel-fade .carousel-inner .carousel-item:nth-child(2) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(2):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/Reliability-background-06.webp);
+    background-repeat: repeat;
+    background-size: cover;
     position: absolute;
-    border-bottom-right-radius: 25px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+    animation: fadeIn 7s ease-in-out forwards;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(3) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/ecoguard-background-06.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+    animation: fadeInOut 7s ease-in-out forwards;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(4) {
+    background-color: #012e58;
+  }
+
+  #carousel-fade .carousel-inner .carousel-item:nth-child(4):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/FTemployers-background-06.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+    animation: fadeIn 7s ease-in-out forwards;
+  }
+
+  #carousel-fade.de-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/Solarinstall-background-06.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+    animation: fadeIn 7s ease-in-out forwards;
+  }
+
+#carousel-fade.us-carousel .carousel-inner .carousel-item:nth-child(3):before {
+    background-image: url(https://static.aesseal.com/graphics/heroslide/us/Rockford-Ordering-Background-06.webp);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content:'';
+    z-index: -1;
+  }
+
+  .ps-xxxl-6 {
+    padding-inline-start: 3.5rem;
+  }
+  
+  .ps-xxxl-7 {
+    padding-inline-start: 4rem;
+  }
+  
+  .ps-xxxl-8 {
+    padding-inline-start: 5rem;
+  }
+  
+  .ps-xxxl-9 {
+    padding-inline-start: 6rem;
+  }
+  
+  .ps-xxxl-10 {
+    padding-inline-start: 8rem;
+  }
+  
+  .pe-xxxl-6 {
+    padding-inline-end: 3.5rem;
+  }
+  
+  .pe-xxxl-7 {
+    padding-inline-end: 4rem;
+  }
+  
+  .pe-xxxl-8 {
+    padding-inline-end: 5rem;
+  }
+  
+  .pe-xxxl-9 {
+    padding-inline-end: 6rem;
+  }
+  
+  .pe-xxxl-10 {
+    padding-inline-end: 8rem;
+  }
+  
+  .pt-xxxl-6 {
+    padding-block-start: 3.5rem;
+  }
+  
+  .pt-xxxl-7 {
+    padding-block-start: 4rem;
+  }
+  
+  .pt-xxxl-8 {
+    padding-block-start: 5rem;
+  }
+  
+  .pt-xxxl-9 {
+    padding-block-start: 6rem;
+  }
+  
+  .pt-xxxl-10 {
+    padding-block-start: 8rem;
+  }
+  
+  .pb-xxxl-6 {
+    padding-block-end: 3.5rem;
+  }
+  
+  .pb-xxxl-7 {
+    padding-block-end: 4rem;
+  }
+  
+  .pb-xxxl-8 {
+    padding-block-end: 5rem;
+  }
+  
+  .pb-xxxl-9 {
+    padding-block-end: 6rem;
+  }
+  
+  .pb-xxxl-10 {
+    padding-block-end: 8rem;
+  }
+    
+  .ms-xxxl-6 {
+    margin-inline-start: 3.5rem;
+  }
+  
+  .ms-xxxl-7 {
+    margin-inline-start: 4rem;
+  }
+  
+  .ms-xxxl-8 {
+    margin-inline-start: 5rem;
+  }
+  
+  .ms-xxxl-9 {
+    margin-inline-start: 6rem;
+  }
+  
+  .ms-xxxl-10 {
+    margin-inline-start: 8rem;
+  }
+    
+  .mt-xxxl-6 {
+    margin-block-start: 3.5rem;
+  }
+  
+  .mt-xxxl-7 {
+    margin-block-start: 4rem;
+  }
+  
+  .mt-xxxl-8 {
+    margin-block-start: 5rem;
+  }
+  
+  .mt-xxxl-9 {
+    margin-block-start: 6rem;
+  }
+  
+  .mt-xxxl-10 {
+    margin-block-start: 8rem;
+  }
+  
+  .mt-xxxl-n6 {
+    margin-block-start: -3.5rem;
+  }
+  
+  .mt-xxxl-n7 {
+    margin-block-start: -4rem;
+  }
+  
+  .mt-xxxl-n8 {
+    margin-block-start: -5rem;
+  }
+  
+  .mt-xxxl-n9 {
+    margin-block-start: -6rem;
+  }
+  
+  .mt-xxxl-n10 {
+    margin-block-start: -8rem;
+  }
+    
+  .me-xxxl-6 {
+    margin-inline-end: 3.5rem;
+  }
+  
+  .me-xxxl-7 {
+    margin-inline-end: 4rem;
+  }
+  
+  .me-xxl-8 {
+    margin-inline-end: 5rem;
+  }
+  
+  .me-xxxl-9 {
+    margin-inline-end: 6rem;
+  }
+  
+  .me-xxxl-10 {
+    margin-inline-end: 10rem;
+  }
+    
+  .mb-xxxl-6 {
+    margin-block-end: 3.5rem;
+  }
+  
+  .mb-xxxl-7 {
+    margin-block-end: 4rem;
+  }
+  
+  .mb-xxxl-8 {
+    margin-block-end: 5rem;
+  }
+  
+  .mb-xxxl-9 {
+    margin-block-end: 6rem;
+  }
+  
+  .mb-xxxl-10 {
+    margin-block-end: 8rem;
+  }
+    
+  .px-xxxl-6 {
+    padding-inline: 3.5rem;
+  }
+  
+  .px-xxxl-7 {
+    padding-inline: 4rem;
+  }
+  
+  .px-xxxl-8 {
+    padding-inline: 5rem;
+  }
+  
+  .px-xxxl-9 {
+    padding-inline: 6rem;
+  }
+  
+  .px-xxxl-10 {
+    padding-inline: 8rem;
+  }
+    
+  .py-xxxl-6 {
+    padding-block: 3.5rem;
+  }
+  
+  .py-xxxl-7 {
+    padding-block: 4rem;
+  }
+  
+  .py-xxxl-8 {
+    padding-block: 5rem;
+  }
+  
+  .py-xxxl-9 {
+    padding-block: 6rem;
+  }
+  
+  .py-xxxl-10 {
+    padding-block: 8rem;
+  }
+    
+  .mx-xxxl-6 {
+    margin-inline: 3.5rem;
+  }
+  
+  .mx-xxxl-7 {
+    margin-inline: 4rem;
+  }
+  
+  .mx-xxxl-8 {
+    margin-inline: 5rem;
+  }
+  
+  .mx-xxxl-9 {
+    margin-inline: 6rem;
+  }
+  
+  .mx-xxxl-10 {
+    margin-inline: 8rem;
+  }
+    
+  .my-xxxl-6 {
+    margin-block: 3.5rem;
+  }
+  
+  .my-xxxl-7 {
+    margin-block: 4rem;
+  }
+  
+  .my-xxxl-8 {
+    margin-block: 5rem;
+  }
+  
+  .my-xxxl-9 {
+    margin-block: 6rem;
+  }
+  
+  .my-xxxl-10 {
+    margin-block: 8rem;
+  }
+  
+  .p-xxxl-6 {
+    padding: 3.5rem;
+  }
+  
+  .p-xxxl-7 {
+    padding: 4rem;
+  }
+  
+  .p-xxxl-8 {
+    padding: 5rem;
+  }
+  
+  .p-xxxl-9 {
+    padding: 6rem;
+  }
+  
+  .p-xxxl-10 {
+    padding: 8rem;
+  }
+  
+  .m-xxxl-6 {
+    margin: 3.5rem;
+  }
+  
+  .m-xxxl-7 {
+    margin: 4rem;
+  }
+  
+  .m-xxxl-8 {
+    margin: 5rem;
+  }
+  
+  .m-xxxl-9 {
+    margin: 6rem;
+  }
+  
+  .m-xxxl-10 {
+    margin: 8rem;
   }
 }
 
 @media screen and (min-width: 2000px) {
   .video-overlay {
-    top: 56%;
+    top: 62%;
     height: 45%;
-  }
-  
-  .upper-home-wave {
-    width: 15%;
-    bottom: 20%;
-    right: -3%;
-    position: absolute;
-  }
-
-  .upper-home-wave::before {
-    content: " ";
-    height: 100%;
-    width: 26%;
-    right: 100%;
-    position: absolute;
-    border-top-left-radius: 22px;
-  }
-
-  .upper-home-wave::after{
-    content: " ";
-    height: 20%;
-    width: 20%;
-    transform: translateZ(0);
-    background-color: transparent;
-    bottom: 0%;
-    right: 126%;
-    position: absolute;
-    border-bottom-right-radius: 25px;
-  }
+  }  
 }
 
 @media screen and (max-width: 867px) {
@@ -4460,8 +7474,16 @@ ul.about-us-cats a {
     border: none;
   }
 
+  .path-frontpage .overlay-btn {
+    color: #777;
+  }
+
   .navbar-toggler {
     margin: 0.5rem 0;
+  }
+
+  .navbar-expand .navbar-nav {
+    visibility: hidden;
   }
 
   /*To stop a while background appearing behind the action-menu*/
@@ -4475,11 +7497,6 @@ ul.about-us-cats a {
 
   .uppercurve {
     display: none;
-  }
-
-  .carousel-caption {
-    top: -10vh;
-    margin-left: 2vh;
   }
 
   .intro-text {
@@ -4507,30 +7524,34 @@ ul.about-us-cats a {
   .promo-text {
     display: none;
   }
+
+  .navbar-flag {
+    width: 3.5rem;
+  }
+
+  .flag-space {
+    margin-right: 4rem;
+  }
+
+  .scrolled-up, .path-frontpage .scrolled-up {
+    transform: translateY(90%);
+  }
+
+  .shadow-mob-text i{
+    font-size: calc(1.275rem + 0.3vw) !important;
+  }
+
+  .black-box-promo {
+    max-width: 70%;
+  }
 }
 
-@media (max-width: 1200px) {
-  .short-texts {
-    display: block;
-  }
-  .long-texts {
-    display: none;
-  }
-
-  .st-txt {
-    display: block;
-     
-  }
-  .lg-txt {
-    display: none;
-  }
-
-  .short-text {
-    display: block;
-  } 
-  
-  .long-text {
-    display: none;
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  #slider-overlay .black-box {
+    width: 85%;
+    height: 100%;
+    top: 10%;
+    left: 15%;
   }
 }
 
