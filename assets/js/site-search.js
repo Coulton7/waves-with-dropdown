@@ -354,6 +354,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 'bearingprotection': 'Bearing Protection',
                 'cartridgemechanicalseals': 'Cartridge Mechanical Seals',
                 'casestudies': 'Case Studies',
+                'case_studies': 'Case Studies',
                 'componentseals': 'Component Seals',
                 'corpbrochure': 'Corporate Brochure',
                 'elastomers': 'Elastomers',
