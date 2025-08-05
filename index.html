@@ -981,5 +981,33 @@
       </div>
     </div>
 
+    <div id="shareOverlay" class="share-overlay">
+      <div class="overlay-content row">
+          <div class="col-lg-8 col-sm-10 offset-lg-2 offset-sm-1">
+              <h2 class="text-white text-center display-5 mb-5">Share this page</h2>
+              <div class="share-links">
+                  <ul class="list-unstyled justify-content-center list-group list-group-horizontal">
+                      <li><a class="text-white me-5 btn btn-lg btn-danger" href="mailto:?subject=[current-page:title]&body=[current-page:url]"><i class="fas fa-at"></i> Email</a></li>
+                      <li><a class="text-white me-5 btn btn-lg btn-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=[current-page:url]"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                      <li><a class="text-white me -5 btn btn-lg btn-twitter" href="https://twitter.com/intent/tweet?url=[current-page:url]"><i class="fa-brands fa-x-twitter"></i> (Twitter)</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-lg-8 col-sm-10 offset-lg-2 offset-sm-1 mt-6 text-white">
+              <h2 class="text-center display-5 mb-5">Meta Preview</h2>
+              <div class="row">
+                  <div class="col">
+                      <h4>[current-page:title]</h4>
+                      <p>[current-page:metatag:description]</p>
+                  </div>
+                  <div class="col">
+                      <img src="[current-page:metatag:image_src]" class="img-fluid d-block mx-auto" alt="[current-page:title]" />
+                      <p>[current-page:metatag:canonical_url:value]</p>
+                  </div>
+              </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>
