@@ -5912,7 +5912,14 @@ height:100%;
     background-repeat: no-repeat;
   }
 
-  .virtual-tour:hover img {
+  .corp-video:hover {
+    background-image: url("https://static.aesseal.com/graphics/corp-video-over.svg");
+    background-size: 100%;
+    opacity: 1;
+    background-repeat: no-repeat;
+  }
+
+  .virtual-tour:hover img, .corp-video:hover img {
     opacity: 0;
   }
 
