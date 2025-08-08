@@ -1208,6 +1208,11 @@ document.addEventListener("DOMContentLoaded", function() {
                  searchAsYouType: false,
             }),
 
+            customSearchBox({
+                container: document.querySelector('#popular-search-bar'),
+                searchAsYouType: false,
+            }),
+
             customStats({
                 container: document.querySelector("#stats"),
             }),
