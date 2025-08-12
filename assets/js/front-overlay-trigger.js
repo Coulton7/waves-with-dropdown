@@ -16,7 +16,7 @@ var scrollNav = document.querySelector('.scroll-nav');
 var navLinks = document.querySelectorAll(".nav-link");
 var url = window.location.href;
 var query = 'q';
-var popSearch = document.querySelector("#popular-search-bar input");
+var popSearch = document.getElementById("popular-search-bar").querySelector("input");
 
 document.addEventListener("DOMContentLoaded", function () {
   
