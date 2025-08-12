@@ -369,4 +369,4 @@ popSearch.addEventListener("keypress", function(event) {
       document.querySelector('.ais-SearchBox-input').focus();
     }
   }
-})
+});
