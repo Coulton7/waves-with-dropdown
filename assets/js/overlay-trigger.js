@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-    window.addEventListener("popstate", function(event) {
+    window.navigation.addEventListener("navigate", function(event) {
     console.log("URL changed")
     if(url.indexOf('?' + query + '=') != -1){
       overlaySearchBtn.classList.toggle("change");
