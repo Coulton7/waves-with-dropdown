@@ -16,7 +16,7 @@ var scrollNav = document.querySelector('.scroll-nav');
 var navLinks = document.querySelectorAll(".nav-link");
 var url = window.location.href;
 var query = 'q';
-var popSearch = document.querySelector("#popular-search-bar input");
+var popSearch = document.querySelector("#popular-search-bar > input");
 
 document.addEventListener("DOMContentLoaded", function () {
   
@@ -373,7 +373,7 @@ document.addEventListener("DOMContentLoaded", function () {
 popSearch.addEventListener("keypress", function(event) {
   if(event.key === "Enter") {
     event.preventDefault();
-    document.querySelector('#popular-search-bar .ais-SearchBox-submit').click()
+    document.querySelector('#popular-search-bar > .ais-SearchBox-submit').click()
     overlaySearchBtn.classList.toggle("change");
     if (y.style.height === "100%") {
       y.style.height = "1px";
