@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var urlLang = urlArray[1];
     var filterLang = urlLang;
 
+    console.log('Filterlang value =' + filterLang);
+
     let globeSearch = document.getElementById('hits');
     let usSearch = document.getElementById('usHits');
     let gerSearch = document.getElementById('deHits');
