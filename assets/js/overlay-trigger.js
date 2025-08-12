@@ -16,7 +16,7 @@ var frontPage = document.querySelector(".path-frontpage");
 var scrollNav = document.querySelector('.scroll-nav');
 var url = window.location.href;
 var query = 'q';
-var popSearch = document.getElementById("popular-search-bar");
+var popSearch = document.querySelector("#popular-search-bar input");
 
 document.addEventListener("DOMContentLoaded", function () {
 
