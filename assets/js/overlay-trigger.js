@@ -315,8 +315,9 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
+});
 
-    window.navigation.addEventListener("navigate", function(event) {
+ window.navigation.addEventListener("navigate", function(event) {
     console.log("URL changed")
     if(url.indexOf('?' + query + '=') != -1){
       overlaySearchBtn.classList.toggle("change");
@@ -367,4 +368,3 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-});
