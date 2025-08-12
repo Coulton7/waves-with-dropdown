@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
- window.navigation.addEventListener("navigate", function(event) {
+ window.history.addEventListener("navigate", function(event) {
     console.log("URL changed")
     if(url.indexOf('?' + query + '=') != -1){
       overlaySearchBtn.classList.toggle("change");
