@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     var urlArray = window.location.pathname.split('/');
-    var urlLang = urlArray[1];
+    var urlLang = urlArray[2];
     var filterLang = urlLang;
 
     console.log('Filterlang value =' + filterLang);
