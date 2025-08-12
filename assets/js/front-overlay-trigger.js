@@ -369,7 +369,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  if(popSearch){  
+  if(popSearch){
+    console.log("Found popular search found");  
     popSearch.addEventListener("keypress", function(event) {
       if(event.key === "Enter") {
         event.preventDefault();
