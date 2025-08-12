@@ -317,7 +317,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-window.addEventListener("popstate", function(url) {
+window.addEventListener("popstate", function(event) {
+  console.log("URL changed")
   if(url.indexOf('?' + query + '=') != -1){
     overlaySearchBtn.classList.toggle("change");
     if (y.style.height === "100%") {
