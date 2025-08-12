@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
     var urlLang = urlArray[2];
     var filterLang = urlLang;
 
-    console.log('Filterlang value =' + filterLang);
-
     let globeSearch = document.getElementById('hits');
     let usSearch = document.getElementById('usHits');
     let gerSearch = document.getElementById('deHits');
@@ -347,7 +345,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 'whitepaper': 'Whitepaper',
             }
         } else if (filterLang =="") {
-            console.log('No language detected');
             typeMapping = {
                 '3dmodels': '3D Models',
                 'academy': 'Academy',
