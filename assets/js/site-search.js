@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 'whitepaper': 'Whitepaper',
             }
         } else if (filterLang =="") {
-            console.log('No language detected')
+            console.log('No language detected');
             typeMapping = {
                 '3dmodels': '3D Models',
                 'academy': 'Academy',
