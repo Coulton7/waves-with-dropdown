@@ -1208,6 +1208,7 @@ document.addEventListener("DOMContentLoaded", function() {
                  searchAsYouType: false,
                  cssClasses: {
                     root: 'overlay-search-bar',
+                    form: 'main-search-bar',
                  }
             }),
 
@@ -1216,6 +1217,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 searchAsYouType: false,
                 cssClasses: {
                     root: 'popular-search',
+                    form: 'pop-search-bar',
                 }
             }),
 
