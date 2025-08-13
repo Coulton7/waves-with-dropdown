@@ -1206,11 +1206,13 @@ document.addEventListener("DOMContentLoaded", function() {
             customSearchBox({
                 container: document.querySelector('#searchbox'),
                  searchAsYouType: false,
+                 autofocus: true
             }),
 
             customSearchBox({
                 container: document.querySelector('#popular-search-bar'),
                 searchAsYouType: false,
+                autofocus: false
             }),
 
             customStats({
@@ -1623,7 +1625,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }),
         ]);
         search.start();
-        document.querySelector('.ais-SearchBox-input').focus();
     }
 
     if(!!usSearch){
