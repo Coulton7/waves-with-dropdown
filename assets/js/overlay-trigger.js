@@ -372,7 +372,7 @@ popSearch.addEventListener("keypress", function(event) {
   }
 });
 
-popSearchButton.addEventListener("click", function(){
+popSearchButton.addEventListener("click", function popSearchBtn(){
   overlaySearchBtn.classList.toggle("change");
   if (y.style.height === "100%") {
     y.style.height = "1px";
