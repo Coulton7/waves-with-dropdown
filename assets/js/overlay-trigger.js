@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } 
       });
     }
-    
+
     popSearch.addEventListener("keypress", function(event) {
       if(event.key === "Enter") {
         event.preventDefault();
@@ -371,6 +371,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     popSearchButton.addEventListener("click", function popSearchBtn(){
+      console.log('button clicked')
       overlaySearchBtn.classList.toggle("change");
       if (y.style.height === "100%") {
         y.style.height = "1px";
