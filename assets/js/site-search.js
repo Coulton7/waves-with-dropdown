@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
             searchButton.classList.add('ais-SearchBox-submit');
             searchButton.classList.add('btn');
             searchButton.classList.add('btn-danger');
+            searchButton.classList.add('pop-search-button');
             searchButton.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i>';
 
             const loadingIndicator = document.createElement('span');

@@ -321,7 +321,7 @@ document.addEventListener("DOMContentLoaded", function () {
 popSearch.addEventListener("keypress", function(event) {
   if(event.key === "Enter") {
     event.preventDefault();
-    document.querySelector('#popular-search-bar .ais-SearchBox-submit').click()
+    document.querySelector('.pop-search-button').click()
     overlaySearchBtn.classList.toggle("change");
     if (y.style.height === "100%") {
       y.style.height = "1px";
@@ -366,7 +366,7 @@ popSearch.addEventListener("keypress", function(event) {
         }
       }
       document.querySelector('.overlay-btn').classList.add("normText");
-      document.querySelector('.ais-SearchBox-input').focus();
+      document.querySelector('.main-search-bar').focus();
     }
   }
 });
