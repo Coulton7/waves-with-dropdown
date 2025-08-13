@@ -1674,7 +1674,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }),
         ]);
         search.start();
-        document.querySelector('.ais-SearchBox-input').focus();
+        document.querySelector('.main-search-bar').focus();
     }
 
     if(!!usSearch){
