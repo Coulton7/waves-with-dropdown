@@ -422,8 +422,8 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         }
       });
-      
-      popSearch.addEventListener("click", function popSearchBtn(){
+
+      popSearchButton.addEventListener("click", function popSearchBtn(){
         console.log('button clicked')
         overlaySearchBtn.classList.toggle("change");
         if (y.style.height === "100%") {
