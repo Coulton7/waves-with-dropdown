@@ -1207,7 +1207,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 container: document.querySelector('#searchbox'),
                  searchAsYouType: false,
                  cssClasses: {
-                    root: ['overlay-search-bar']
+                    root: 'overlay-search-bar',
                  }
             }),
 
@@ -1215,7 +1215,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 container: document.querySelector('#popular-search-bar'),
                 searchAsYouType: false,
                 cssClasses: {
-                    root: ['popular-search']
+                    root: 'popular-search',
                 }
             }),
 
