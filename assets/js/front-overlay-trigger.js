@@ -423,7 +423,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      document.querySelector(".popsearch-button").addEventListener("click", function popSearchBtn(){
+      document.querySelector(".pop-search-button").addEventListener("click", function popSearchBtn(){
         console.log('button clicked')
         overlaySearchBtn.classList.toggle("change");
         if (y.style.height === "100%") {
