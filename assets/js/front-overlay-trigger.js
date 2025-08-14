@@ -418,7 +418,7 @@ document.addEventListener("DOMContentLoaded", function () {
               }
             }
             document.querySelector('.overlay-btn').classList.add("normText");
-            document.querySelector('.ais-SearchBox-input').focus();
+            document.querySelector('.main-search-bar').focus();
           }
         }
       });
