@@ -16,9 +16,10 @@ var scrollNav = document.querySelector('.scroll-nav');
 var navLinks = document.querySelectorAll(".nav-link");
 var url = window.location.href;
 var query = 'q';
-var popSearchButton = document.querySelector(".pop-search-button");
 
 document.addEventListener("DOMContentLoaded", function () {
+  var popSearchButton = document.querySelector(".pop-search-button");
+  
     if(popSearchButton) {
         popSearchButton.addEventListener("click", function popSearchBtn(){
             overlaySearchBtn.classList.toggle("change");
