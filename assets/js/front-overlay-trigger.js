@@ -474,4 +474,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+window.addEventListener('load', function() {
+  if(popSearchButton) {
+    console.log("Pop search button exists");
+  }
+})
   
