@@ -19,8 +19,8 @@ var query = 'q';
 
 document.addEventListener("DOMContentLoaded", function () {
   var popSearchButton = document.querySelector(".pop-search-button");
-  
-    if(popSearchButton) {
+
+      console.log('Pop search button is here')
         popSearchButton.addEventListener("click", function popSearchBtn(){
             overlaySearchBtn.classList.toggle("change");
             if (y.style.height === "100%") {
@@ -69,5 +69,4 @@ document.addEventListener("DOMContentLoaded", function () {
           document.querySelector('.main-search-bar').focus();
         }
       });
-    }
 });
