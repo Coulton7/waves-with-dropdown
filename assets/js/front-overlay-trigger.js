@@ -21,42 +21,9 @@ var prefillBtns = document.querySelectorAll(".prefill-btn");
 
 document.addEventListener("DOMContentLoaded", function () {
   var popSearchButton = document.querySelector(".pop-search-button");
-  
-  if(frontPage){
-    if(overlayNavBtn){
-      overlayNavBtn.addEventListener("click", function navBtn() {
-        document.getElementById("overlay-btn").classList.toggle("change");
-        if (x.style.height === "100%") {
-          x.style.height = "1px";
-          x.style.bottom = "-1px";
-          html.classList.remove("noscroll");
-          body.classList.remove("noscroll");
-          dialogOffCanvas.classList.remove("noscroll");
-          overlayNavBtn.classList.add("overlay-btn");
-        } else {
-          x.style.height = "100%";
-          x.style.bottom = "0";
-          if (y.style.height == "100%") {
-            y.style.height = "1px";
-            y.style.top = "-1px";
-            overlaySearchBtn.classList.remove("change");
-            overlaySearchBtn.classList.add("search-btn");
-          } else if (s.style.height == "100%") {
-            s.style.height = "1px";
-            s.style.bottom = "-1px";
-            overlayShareBtn.classList.remove("change");
-            overlayShareBtn.classList.add("share-btn");
-          }
-          html.classList.add("noscroll");
-          body.classList.add("noscroll");
-          dialogOffCanvas.classList.add("noscroll");
-          overlayNavBtn.classList.remove("overlay-btn");
-        }
-      });
-    }
-    
-    if(overlaySearchBtn){
-      overlaySearchBtn.addEventListener("click", function searchBtn() {
+
+  function openSearch() {
+    overlaySearchBtn.addEventListener("click", function searchBtn() {
         overlaySearchBtn.classList.toggle("change");
         if (y.style.height === "100%") {
           y.style.height = "1px";
@@ -118,128 +85,51 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         }
       });
+  }
+  
+  if(frontPage){
+    if(overlayNavBtn){
+      overlayNavBtn.addEventListener("click", function navBtn() {
+        document.getElementById("overlay-btn").classList.toggle("change");
+        if (x.style.height === "100%") {
+          x.style.height = "1px";
+          x.style.bottom = "-1px";
+          html.classList.remove("noscroll");
+          body.classList.remove("noscroll");
+          dialogOffCanvas.classList.remove("noscroll");
+          overlayNavBtn.classList.add("overlay-btn");
+        } else {
+          x.style.height = "100%";
+          x.style.bottom = "0";
+          if (y.style.height == "100%") {
+            y.style.height = "1px";
+            y.style.top = "-1px";
+            overlaySearchBtn.classList.remove("change");
+            overlaySearchBtn.classList.add("search-btn");
+          } else if (s.style.height == "100%") {
+            s.style.height = "1px";
+            s.style.bottom = "-1px";
+            overlayShareBtn.classList.remove("change");
+            overlayShareBtn.classList.add("share-btn");
+          }
+          html.classList.add("noscroll");
+          body.classList.add("noscroll");
+          dialogOffCanvas.classList.add("noscroll");
+          overlayNavBtn.classList.remove("overlay-btn");
+        }
+      });
+    }
+    
+    if(overlaySearchBtn){
+      openSearch();
     }
 
     if(url.indexOf('?' + query + '=') != -1){
-      overlaySearchBtn.classList.toggle("change");
-        if (y.style.height === "100%") {
-          y.style.height = "1px";
-          y.style.top = "-1px";
-          html.classList.remove("noscroll");
-          body.classList.remove("noscroll");
-          dialogOffCanvas.classList.remove("noscroll");
-          overlaySearchBtn.classList.add("search-btn");
-          if (scrollNav.classList.contains("scrolled-up")){
-            scrollNav.classList.remove("scrolled-up");
-            scrollNav.classList.add("scrolled-down")
-          } else {
-            scrollNav.classList.add("scrolled-down")
-          }
-          document.querySelector(".scroll-nav").classList.remove("shadow-back");
-          document.querySelector('#autocollapse .navbar-collapse').classList.remove("bg-white");
-          document.querySelector('.overlay-btn').classList.remove("normText");
-          document.querySelector('.wavelogo').style.opacity = "1";
-          document.querySelector('.textlogo').style.opacity = "0";
-          navLinks.forEach(function (navLink) {
-          navLink.classList.remove('normText');
-          });
-        } else {
-          y.style.height = "100%";
-          y.style.top = "0";
-          if (x.style.height == "100%") {
-            x.style.height = "1px";
-            x.style.bottom = "-1px";
-            overlaySearchBtn.classList.remove("change");
-            overlaySearchBtn.classList.add("overlay-btn");
-          } else if (s.style.height == "100%") {
-            s.style.height = "1px";
-            s.style.bottom = "-1px";
-            overlayShareBtn.classList.remove("change");
-            overlayShareBtn.classList.add("share-btn");
-          }
-          html.classList.add("noscroll");
-          body.classList.add("noscroll");
-          dialogOffCanvas.classList.add("noscroll");
-          overlaySearchBtn.classList.remove("search-btn");
-          if (scrollNav.classList.contains("scrolled-down")){
-            scrollNav.classList.remove("scrolled-down");
-            scrollNav.classList.add("scrolled-up")
-          } else {
-            scrollNav.classList.add("scrolled-up")
-          }
-          document.querySelector('.main-search-bar').focus();
-          document.querySelector(".scroll-nav").classList.add("shadow-back");
-          document.querySelector('#autocollapse .navbar-collapse').classList.add("bg-white");
-          document.querySelector('.overlay-btn').classList.add("normText");
-          document.querySelector('.wavelogo').style.opacity = "0";
-          document.querySelector('.textlogo').style.opacity = "1";
-          navLinks.forEach(function (navLink) {
-            navLink.classList.add('normText');
-          });
-        }
+      openSearch();
     }
 
     if(overlaySearchGlobal) {
-      overlaySearchGlobal.addEventListener("click", function searchBtn() {
-        overlaySearchGlobal.classList.toggle("change");
-        if (y.style.height === "100%") {
-          y.style.height = "1px";
-          y.style.top = "-1px";
-          html.classList.remove("noscroll");
-          body.classList.remove("noscroll");
-          dialogOffCanvas.classList.remove("noscroll");
-          if(window.innerWidth > 992) {
-            if (scrollNav.classList.contains("scrolled-up")){
-              scrollNav.classList.remove("scrolled-up");
-              scrollNav.classList.add("scrolled-down")
-            } else {
-              scrollNav.classList.add("scrolled-down")
-            }
-          }
-          document.querySelector(".scroll-nav").classList.remove("shadow-back");
-          document.querySelector('#autocollapse .navbar-collapse').classList.remove("bg-white");
-          document.querySelector('.overlay-btn').classList.remove("normText");
-          document.querySelector('.wavelogo').style.opacity = "1";
-          document.querySelector('.textlogo').style.opacity = "0";
-          navLinks.forEach(function (navLink) {
-          navLink.classList.remove('normText');
-          });
-        } else {
-          y.style.height = "100%";
-          y.style.top = "0";
-          if (x.style.height == "100%") {
-            x.style.height = "1px";
-            x.style.bottom = "-1px";
-            overlaySearchGlobal.classList.remove("change");
-            overlaySearchGlobal.classList.add("overlay-btn");
-          } else if (s.style.height == "100%") {
-            s.style.height = "1px";
-            s.style.bottom = "-1px";
-            overlayShareBtn.classList.remove("change");
-            overlayShareBtn.classList.add("share-btn");
-          }
-          html.classList.add("noscroll");
-          body.classList.add("noscroll");
-          dialogOffCanvas.classList.add("noscroll");
-          if(window.innerWidth > 992) {
-            if (scrollNav.classList.contains("scrolled-down")){
-              scrollNav.classList.remove("scrolled-down");
-              scrollNav.classList.add("scrolled-up")
-            } else {
-              scrollNav.classList.add("scrolled-up")
-            }
-          }
-          document.querySelector('..main-search-bar').focus();
-          document.querySelector(".scroll-nav").classList.add("shadow-back");
-          document.querySelector('#autocollapse .navbar-collapse').classList.add("bg-white");
-          document.querySelector('.overlay-btn').classList.add("normText");
-          document.querySelector('.wavelogo').style.opacity = "0";
-          document.querySelector('.textlogo').style.opacity = "1";
-          navLinks.forEach(function (navLink) {
-            navLink.classList.add('normText');
-          });
-        }
-      });
+      openSearch();
     }
   
     if(overlayShareBtn){
@@ -374,153 +264,17 @@ document.addEventListener("DOMContentLoaded", function () {
       popSearch.addEventListener("keypress", function(event) {
         if(event.key === "Enter") {
           event.preventDefault();
-          document.querySelector('.pop-search-button').click()
-          overlaySearchBtn.classList.toggle("change");
-          if (y.style.height === "100%") {
-            y.style.height = "1px";
-            y.style.top = "-1px";
-            html.classList.remove("noscroll");
-            body.classList.remove("noscroll");
-            dialogOffCanvas.classList.remove("noscroll");
-            overlaySearchBtn.classList.add("search-btn");
-            if(window.innerWidth > 992) {
-              if (scrollNav.classList.contains("scrolled-up")){
-                scrollNav.classList.remove("scrolled-up");
-                scrollNav.classList.add("scrolled-down")
-              } else {
-                scrollNav.classList.add("scrolled-down")
-              }
-            }
-            document.querySelector('.overlay-btn').classList.remove("normText");
-          } else {
-            y.style.height = "100%";
-            y.style.top = "0";
-            if (x.style.height == "100%") {
-              x.style.height = "1px";
-              x.style.bottom = "-1px";
-              overlaySearchBtn.classList.remove("change");
-              overlaySearchBtn.classList.add("overlay-btn");
-            } else if (s.style.height == "100%") {
-              s.style.height = "1px";
-              s.style.bottom = "-1px";
-              overlayShareBtn.classList.remove("change");
-              overlayShareBtn.classList.add("share-btn");
-            }
-            html.classList.add("noscroll");
-            body.classList.add("noscroll");
-            dialogOffCanvas.classList.add("noscroll");
-            overlaySearchBtn.classList.remove("search-btn");
-            if(window.innerWidth > 992) {
-              if (scrollNav.classList.contains("scrolled-down")){
-                scrollNav.classList.remove("scrolled-down");
-                scrollNav.classList.add("scrolled-up")
-              } else {
-                scrollNav.classList.add("scrolled-up")
-              }
-            }
-            document.querySelector('.overlay-btn').classList.add("normText");
-            document.querySelector('.main-search-bar').focus();
-          }
+          openSearch();
         }
       });
 
       popSearchButton.addEventListener("click", function popSearchBtn(){
-        overlaySearchBtn.classList.toggle("change");
-        if (y.style.height === "100%") {
-          y.style.height = "1px";
-          y.style.top = "-1px";
-          html.classList.remove("noscroll");
-          body.classList.remove("noscroll");
-          dialogOffCanvas.classList.remove("noscroll");
-          overlaySearchBtn.classList.add("search-btn");
-          if(window.innerWidth > 992) {
-            if (scrollNav.classList.contains("scrolled-up")){
-              scrollNav.classList.remove("scrolled-up");
-              scrollNav.classList.add("scrolled-down")
-            } else {
-              scrollNav.classList.add("scrolled-down")
-            }
-          }
-          document.querySelector('.overlay-btn').classList.remove("normText");
-        } else {
-          y.style.height = "100%";
-          y.style.top = "0";
-          if (x.style.height == "100%") {
-            x.style.height = "1px";
-            x.style.bottom = "-1px";
-            overlaySearchBtn.classList.remove("change");
-            overlaySearchBtn.classList.add("overlay-btn");
-          } else if (s.style.height == "100%") {
-            s.style.height = "1px";
-            s.style.bottom = "-1px";
-            overlayShareBtn.classList.remove("change");
-            overlayShareBtn.classList.add("share-btn");
-          }
-          html.classList.add("noscroll");
-          body.classList.add("noscroll");
-          dialogOffCanvas.classList.add("noscroll");
-          overlaySearchBtn.classList.remove("search-btn");
-          if(window.innerWidth > 992) {
-            if (scrollNav.classList.contains("scrolled-down")){
-              scrollNav.classList.remove("scrolled-down");
-              scrollNav.classList.add("scrolled-up")
-            } else {
-              scrollNav.classList.add("scrolled-up")
-            }
-          }
-          document.querySelector('.overlay-btn').classList.add("normText");
-          document.querySelector('.main-search-bar').focus();
-        }
+        openSearch();
       });
 
       for (var i = 0; i < prefillBtns.length; i++) {
         prefillBtns[i].addEventListener('click', function(){
-          overlaySearchBtn.classList.toggle("change");
-          if (y.style.height === "100%") {
-            y.style.height = "1px";
-            y.style.top = "-1px";
-            html.classList.remove("noscroll");
-            body.classList.remove("noscroll");
-            dialogOffCanvas.classList.remove("noscroll");
-            overlaySearchBtn.classList.add("search-btn");
-            if(window.innerWidth > 992) {
-              if (scrollNav.classList.contains("scrolled-up")){
-                scrollNav.classList.remove("scrolled-up");
-                scrollNav.classList.add("scrolled-down")
-              } else {
-                scrollNav.classList.add("scrolled-down")
-              }
-            }
-            document.querySelector('.overlay-btn').classList.remove("normText");
-          } else {
-            y.style.height = "100%";
-            y.style.top = "0";
-            if (x.style.height == "100%") {
-              x.style.height = "1px";
-              x.style.bottom = "-1px";
-              overlaySearchBtn.classList.remove("change");
-              overlaySearchBtn.classList.add("overlay-btn");
-            } else if (s.style.height == "100%") {
-              s.style.height = "1px";
-              s.style.bottom = "-1px";
-              overlayShareBtn.classList.remove("change");
-              overlayShareBtn.classList.add("share-btn");
-            }
-            html.classList.add("noscroll");
-            body.classList.add("noscroll");
-            dialogOffCanvas.classList.add("noscroll");
-            overlaySearchBtn.classList.remove("search-btn");
-            if(window.innerWidth > 992) {
-              if (scrollNav.classList.contains("scrolled-down")){
-                scrollNav.classList.remove("scrolled-down");
-                scrollNav.classList.add("scrolled-up")
-              } else {
-                scrollNav.classList.add("scrolled-up")
-              }
-            }
-            document.querySelector('.overlay-btn').classList.add("normText");
-            document.querySelector('.main-search-bar').focus();
-          }
+         openSearch();
         });
       }
     }
