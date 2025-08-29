@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var urlLang = urlArray[2];
     var filterLang = urlLang;
 
+    var popSearch = document.getElementById('popular-searches');
+
     let globeSearch = document.getElementById('hits');
     let usSearch = document.getElementById('usHits');
     let gerSearch = document.getElementById('deHits');
@@ -1676,6 +1678,13 @@ document.addEventListener("DOMContentLoaded", function() {
         ]);
         search.start();
         document.querySelector('.main-search-bar').focus();
+
+        if(popSearch) {
+            document.querySelector('.prefill-btn').addEventListener('click', function(){
+                var searchQuery = document.querySelector('.prefill-btn').getAttribute('data-search-query');
+                search.helper.setQuery(searchQuery).search();
+            })
+        }
     }
 
     if(!!usSearch){
