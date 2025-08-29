@@ -1680,10 +1680,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.main-search-bar').focus();
 
         if(popSearch) {
-            document.querySelector('.prefill-btn').addEventListener('click', function(){
-                var searchQuery = document.querySelector('.prefill-btn').getAttribute('data-search-query');
-                search.helper.setQuery(searchQuery).search();
-            })
+            var popSearchButtons = document.querySelectorAll('.prefill-btn');
+            for (var i = 0; i < popSearchButtons.length; i++) {
+                popSearchButtons[i].addEventListener('click', function(){
+                    var searchQuery = this.getAttribute('data-search-query');
+                    search.helper.setQuery(searchQuery).search();
+                });
+            }
         }
     }
 
