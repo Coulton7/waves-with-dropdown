@@ -5904,6 +5904,11 @@ height:100%;
     background-repeat: no-repeat;
   }
 
+  .banner-overlay-video:hover .btn {
+    background-color: var(--bs-btn-hover-bg);
+    border-color:  var(--bs-btn-hover-order-color);
+  }
+
   .virtual-tour:hover img,.banner-overlay-video:hover .corp-video img {
     opacity: 0;
   }
