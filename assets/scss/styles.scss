@@ -5904,7 +5904,7 @@ height:100%;
     background-repeat: no-repeat;
   }
 
-  .virtual-tour:hover img, .corp-video:hover img {
+  .virtual-tour:hover img,.banner-overlay-video:hover .corp-video img {
     opacity: 0;
   }
 
