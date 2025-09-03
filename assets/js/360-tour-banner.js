@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
     // Handle tour banner click
     const launchTourBtn = document.getElementById("launch-tour");
     if (launchTourBtn) {
