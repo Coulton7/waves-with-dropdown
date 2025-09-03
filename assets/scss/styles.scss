@@ -5897,7 +5897,7 @@ height:100%;
     background-repeat: no-repeat;
   }
 
-  .banner-video-overlay:hover ~ .corp-video {
+  .banner-video-overlay:hover .corp-video {
     background-image: url("/waves-with-dropdown/assets/images/graphics/corp-video-over.svg");
     background-size: 100%;
     opacity: 1;
