@@ -4051,7 +4051,7 @@ height:100%;
     position: relative;
   }
   
-  #tour-banner-overlay {
+  #tour-banner-overlay, #corp-video-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -4064,7 +4064,7 @@ height:100%;
     transition: opacity 0.5s ease, visibility 0.5s ease;
   }
   
-  #tour-banner-overlay.hidden {
+  #tour-banner-overlay.hidden, #corp-video-overlay.hidden {
     opacity: 0.5;
     visibility: hidden;
     pointer-events: none;
