@@ -5890,7 +5890,7 @@ height:100%;
     top:22%;
   }
 
-  .virtual-tour:hover {
+  .banner-overlay-video:hover .virtual-tour {
     background-image: url("https://static.aesseal.com/graphics/360-tour-inverse-over.svg");
     background-size: 100%;
     opacity: 1;
@@ -5904,13 +5904,13 @@ height:100%;
     background-repeat: no-repeat;
   }
 
+  .banner-overlay-video:hover .virtual-tour img,.banner-overlay-video:hover .corp-video img {
+    opacity: 0;
+  }
+
   .banner-overlay-video:hover .btn {
     background-color: var(--bs-btn-hover-bg);
     border-color:  var(--bs-btn-hover-border-color);
-  }
-
-  .virtual-tour:hover img,.banner-overlay-video:hover .corp-video img {
-    opacity: 0;
   }
 
   .virtual-tour-logo {
