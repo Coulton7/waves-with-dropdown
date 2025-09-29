@@ -349,9 +349,11 @@ document.addEventListener("DOMContentLoaded", function() {
         renderSearchBox
     );
 
-    const popularSearchBox = connectSearchBox(
-        renderPopularSearchBox
-    );
+    if(popSearch){
+        const popularSearchBox = connectSearchBox(
+            renderPopularSearchBox
+        );
+    };
 
     let typeMapping;
     let vidMapping;
