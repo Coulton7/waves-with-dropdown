@@ -65,43 +65,46 @@ document.addEventListener("DOMContentLoaded", function() {
         widgetParams.container.querySelector('span').hidden = !isSearchStalled;
     };
 
-    const renderPopularSearchBox = (renderOptions, isFirstRender) => {
-        const { query, refine, clear, isSearchStalled, widgetParams } = renderOptions;
+    if(popSearch) {
 
-        if (isFirstRender) {
-            const input = document.createElement('input');
-            input.classList.add('ais-SearchBox-input');
-            input.classList.add('form-control');
-            input.classList.add('pop-search-bar');
-            input.setAttribute("type", "text")
+        const renderPopularSearchBox = (renderOptions, isFirstRender) => {
+            const { query, refine, clear, isSearchStalled, widgetParams } = renderOptions;
 
-            const searchButton = document.createElement('button');
-            searchButton.classList.add('ais-SearchBox-submit');
-            searchButton.classList.add('btn');
-            searchButton.classList.add('btn-danger');
-            searchButton.classList.add('pop-search-button');
-            searchButton.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i>';
+            if (isFirstRender) {
+                const input = document.createElement('input');
+                input.classList.add('ais-SearchBox-input');
+                input.classList.add('form-control');
+                input.classList.add('pop-search-bar');
+                input.setAttribute("type", "text")
 
-            const loadingIndicator = document.createElement('span');
-            loadingIndicator.textContent = 'Loading...';
+                const searchButton = document.createElement('button');
+                searchButton.classList.add('ais-SearchBox-submit');
+                searchButton.classList.add('btn');
+                searchButton.classList.add('btn-danger');
+                searchButton.classList.add('pop-search-button');
+                searchButton.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i>';
 
-            searchButton.addEventListener('click', event => {
-                refine(input.value);
-            });
+                const loadingIndicator = document.createElement('span');
+                loadingIndicator.textContent = 'Loading...';
 
-            input.addEventListener('keydown', function(e){
-                if(e.code === "Enter") {
+                searchButton.addEventListener('click', event => {
                     refine(input.value);
-                }
-            });
+                });
 
-            widgetParams.container.appendChild(input);
-            widgetParams.container.appendChild(searchButton);
-            widgetParams.container.appendChild(loadingIndicator);
-        }
+                input.addEventListener('keydown', function(e){
+                    if(e.code === "Enter") {
+                        refine(input.value);
+                    }
+                });
 
-        widgetParams.container.querySelector('input').value = query;
-        widgetParams.container.querySelector('span').hidden = !isSearchStalled;
+                widgetParams.container.appendChild(input);
+                widgetParams.container.appendChild(searchButton);
+                widgetParams.container.appendChild(loadingIndicator);
+            }
+
+            widgetParams.container.querySelector('input').value = query;
+            widgetParams.container.querySelector('span').hidden = !isSearchStalled;
+        };
     };
 
     const renderClearRefinements = (renderOptions, isFirstRender) => {
