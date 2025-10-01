@@ -66,10 +66,10 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
 
-        const renderPopularSearchBox = (renderOptions, isFirstRender) => {
+        const renderPopularSearchBox = (renderOptions, isFirstRender, popSearch) => {
             const { query, refine, clear, isSearchStalled, widgetParams } = renderOptions;
 
-            if (isFirstRender) {
+            if (isFirstRender && popSearch) {
                 const input = document.createElement('input');
                 input.classList.add('ais-SearchBox-input');
                 input.classList.add('form-control');
