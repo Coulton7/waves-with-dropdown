@@ -347,7 +347,7 @@ document.addEventListener("DOMContentLoaded", function() {
         renderSearchBox
     );
 
-        var popularSearchBox = connectSearchBox(
+        const popularSearchBox = connectSearchBox(
             renderPopularSearchBox
         );
 
