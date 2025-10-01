@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function() {
         widgetParams.container.querySelector('span').hidden = !isSearchStalled;
     };
 
-    if(popSearch) {
 
         const renderPopularSearchBox = (renderOptions, isFirstRender) => {
             const { query, refine, clear, isSearchStalled, widgetParams } = renderOptions;
@@ -105,7 +104,6 @@ document.addEventListener("DOMContentLoaded", function() {
             widgetParams.container.querySelector('input').value = query;
             widgetParams.container.querySelector('span').hidden = !isSearchStalled;
         };
-    };
 
     const renderClearRefinements = (renderOptions, isFirstRender) => {
         const {canRefine, refine, widgetParams} = renderOptions;
@@ -350,7 +348,7 @@ document.addEventListener("DOMContentLoaded", function() {
     );
 
     if(popSearch){
-        const popularSearchBox = connectSearchBox(
+        var popularSearchBox = connectSearchBox(
             renderPopularSearchBox
         );
     };
