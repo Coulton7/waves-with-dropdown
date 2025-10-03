@@ -266,7 +266,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if(popSearch){
       popSearchInput.addEventListener("keydown", function(event) {
         if(event.key === "Enter") {
-          document.querySelector('.pop-search-button').click()
           openSearch();
         }
       });
