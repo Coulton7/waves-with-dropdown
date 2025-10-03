@@ -65,46 +65,6 @@ document.addEventListener("DOMContentLoaded", function() {
         widgetParams.container.querySelector('span').hidden = !isSearchStalled;
     };
 
-
-        const renderPopularSearchBox = (renderOptions, isFirstRender, popSearch) => {
-            const { query, refine, clear, isSearchStalled, widgetParams } = renderOptions;
-
-            if (isFirstRender && popSearch) {
-                const input = document.createElement('input');
-                input.classList.add('ais-SearchBox-input');
-                input.classList.add('form-control');
-                input.classList.add('pop-search-bar');
-                input.setAttribute("type", "text")
-
-                const searchButton = document.createElement('button');
-                searchButton.classList.add('ais-SearchBox-submit');
-                searchButton.classList.add('btn');
-                searchButton.classList.add('btn-danger');
-                searchButton.classList.add('pop-search-button');
-                searchButton.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i>';
-
-                const loadingIndicator = document.createElement('span');
-                loadingIndicator.textContent = 'Loading...';
-
-                searchButton.addEventListener('click', event => {
-                    refine(input.value);
-                });
-
-                input.addEventListener('keydown', function(e){
-                    if(e.code === "Enter") {
-                        refine(input.value);
-                    }
-                });
-
-                widgetParams.container.appendChild(input);
-                widgetParams.container.appendChild(searchButton);
-                widgetParams.container.appendChild(loadingIndicator);
-            }
-
-            widgetParams.container.querySelector('input').value = query;
-            widgetParams.container.querySelector('span').hidden = !isSearchStalled;
-        };
-
     const renderClearRefinements = (renderOptions, isFirstRender) => {
         const {canRefine, refine, widgetParams} = renderOptions;
 
@@ -346,10 +306,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const mainSearchBox = connectSearchBox (
         renderSearchBox
     );
-
-        const popularSearchBox = connectSearchBox(
-            renderPopularSearchBox
-        );
 
     let typeMapping;
     let vidMapping;
@@ -1257,15 +1213,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     root: 'overlay-search-bar',
                     form: 'main-search-bar',
                  }
-            }),
-
-            popularSearchBox({
-                container: document.querySelector('#popular-search-bar'),
-                searchAsYouType: false,
-                cssClasses: {
-                    root: 'popular-search',
-                    form: 'pop-search-bar',
-                }
             }),
 
             customStats({
