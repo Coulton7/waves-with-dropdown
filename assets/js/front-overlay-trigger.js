@@ -16,10 +16,11 @@ var scrollNav = document.querySelector('.scroll-nav');
 var navLinks = document.querySelectorAll(".nav-link");
 var url = window.location.href;
 var query = 'q';
+var popSearch = document.querySelector("#popular-search-bar");
 var prefillBtns = document.querySelectorAll(".prefill-btn");
 
 document.addEventListener("DOMContentLoaded", function () {
-  var popSearch = document.querySelector('#popular-search-input');
+  var popSearchInput = document.querySelector("#popular-search-input");
   var popSearchButton = document.querySelector(".pop-search-button");
 
   function openSearch() {
@@ -263,7 +264,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if(popSearch){
-      popSearch.addEventListener("keypress", function(event) {
+      popSearchInput.addEventListener("keydown", function(event) {
         if(event.key === "Enter") {
           event.preventDefault();
           document.querySelector('.pop-search-button').click()
