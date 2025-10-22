@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
     });
 
-    resSearch.addWidgets([
+    pdfSearch.addWidgets([
         instantsearch.widgets.configure({
             hitsPerPage: 20,
             attributesToSnippet: ['content:80'],
