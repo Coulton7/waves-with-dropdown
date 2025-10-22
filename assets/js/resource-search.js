@@ -82,16 +82,6 @@ document.addEventListener("DOMContentLoaded", function() {
             page: 0,
         }),
 
-        instantsearch.widgets.clearRefinements({
-            container: '#clear-refinements',
-            cssClasses:{
-                root: 'pt-5',
-                button: [
-                    'btn btn-primary text-white'
-                ]
-            }
-        }),
-
         pagination({
             container: '#pagination',
             totalPages: 3,
