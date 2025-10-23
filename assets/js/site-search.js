@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     var urlArray = window.location.pathname.split('/');
-    var urlLang = urlArray[2];
+    var urlLang = urlArray[1];
     var filterLang = urlLang;
 
     var popSearch = document.getElementById('popular-searches');
@@ -20,6 +20,31 @@ document.addEventListener("DOMContentLoaded", function() {
     let toriSearch = document.getElementById('jaHits');
     let articleSearch = document.getElementById('newsHits');
 
+    function revealForm() {
+        if(document.querySelector('#parts-form')){ 
+            document.querySelector('#parts-form').classList.add('d-block');
+        } else if (document.querySelector('#search-parts-form')) {
+            document.querySelector('#search-parts-form').classList.add('d-block');
+        }
+
+        document.querySelector('.ais-Pagination').classList.add('d-none');
+    }
+
+    function hideForm() {
+        if(document.querySelector('#parts-form')){ 
+            if(document.querySelector('#parts-form').classList.contains('d-block')){
+                document.querySelector('#parts-form').classList.remove('d-block');
+            }
+        } else if (document.querySelector('#search-parts-form')) {
+            if (document.querySelector('#search-parts-form').classList.contains('d-block')) {
+                document.querySelector('#search-parts-form').classList.remove('d-block');
+            }
+        }
+        if (document.querySelector('.ais-Pagination').classList.contains('d-none')) {
+            document.querySelector('.ais-Pagination').classList.remove('d-none');
+        }
+    }
+
     window.dataLayer = window.dataLayer || [];
     const { connectSearchBox } = instantsearch.connectors;
     const { connectStats } = instantsearch.connectors;
@@ -34,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
             const input = document.createElement('input');
             input.classList.add('ais-SearchBox-input');
             input.classList.add('form-control');
-            input.classList.add('main-search-bar');
             input.setAttribute("type", "text")
 
             const searchButton = document.createElement('button');
@@ -110,20 +134,13 @@ document.addEventListener("DOMContentLoaded", function() {
             clearButton.addEventListener('click', () => {
                 refine();
             });
-
             widgetParams.container.appendChild(clearButton);
         }
-
         widgetParams.container.querySelector('button').disabled = !canRefine;
     }
 
     const renderStats = (renderOptions, isFirstRender) => {
-        const {
-            nbHits,
-            processingTimeMS,
-            widgetParams,
-            query,
-        } = renderOptions;
+        const { nbHits, processingTimeMS, widgetParams, query } = renderOptions;
 
         if (isFirstRender) {
             return;
@@ -357,7 +374,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 'bearingprotection': 'Bearing Protection',
                 'cartridgemechanicalseals': 'Cartridge Mechanical Seals',
                 'casestudies': 'Case Studies',
-                'case_studies': 'Case Studies',
                 'componentseals': 'Component Seals',
                 'corpbrochure': 'Corporate Brochure',
                 'elastomers': 'Elastomers',
@@ -369,7 +385,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 'policies': 'Policies',
                 'productbrochure': 'Product Brochure',
                 'productcertificates': 'Product Certificates',
-                'servicesbrochure' : 'Services Brochure',
                 'sealsupportsystems': 'Seal Support Systems',
                 'technicaldrawings': 'Technical Drawing',
                 'video': 'Video',
@@ -1209,10 +1224,6 @@ document.addEventListener("DOMContentLoaded", function() {
             mainSearchBox({
                 container: document.querySelector('#searchbox'),
                  searchAsYouType: false,
-                 cssClasses: {
-                    root: 'overlay-search-bar',
-                    form: 'main-search-bar',
-                 }
             }),
 
             customStats({
@@ -1224,6 +1235,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 templates:{
                     item(data, { html, components }){
                         if(filterLang == 'en'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Announcements" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_website_link ? '' : 'd-none'}">${data.field_website_link}</small>
@@ -1257,6 +1269,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 </div>
                             </div>`
                         } else if(filterLang == ''){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Announcements" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_website_link ? '' : 'd-none'}">${data.field_website_link}</small>
@@ -1290,6 +1303,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 </div>
                             </div>`
                         } else if(filterLang == 'es'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Announcements" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_website_link ? '' : 'd-none'}">${data.field_website_link}</small>
@@ -1324,6 +1338,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 </div>
                             </div>`
                         } else if(filterLang == 'fr'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Announcements" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_website_link ? '' : 'd-none'}">${data.field_website_link}</small>
@@ -1358,6 +1373,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 </div>
                             </div>`
                         } else if(filterLang == 'de'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Announcements" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_website_link ? '' : 'd-none'}">${data.field_website_link}</small>
@@ -1392,6 +1408,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 </div>
                             </div>`
                         } else if(filterLang == 'it'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Announcements" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_website_link ? '' : 'd-none'}">${data.field_website_link}</small>
@@ -1426,6 +1443,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 </div>
                             </div>`
                         } else if(filterLang == 'pl'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Announcements" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_website_link ? '' : 'd-none'}">${data.field_website_link}</small>
@@ -1460,6 +1478,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 </div>
                             </div>`
                         } else if(filterLang == 'tr'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Announcements" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_website_link ? '' : 'd-none'}">${data.field_website_link}</small>
@@ -1494,6 +1513,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 </div>
                             </div>`
                         } else if(filterLang == 'zh-hans'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Announcements" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_website_link ? '' : 'd-none'}">${data.field_website_link}</small>
@@ -1532,72 +1552,63 @@ document.addEventListener("DOMContentLoaded", function() {
                     empty(results, { html }){
                         if (results.query === '') return null;
                         if(filterLang == 'en'){
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         }
                         else if(filterLang == '') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         }
                         else if (filterLang == 'es') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No se han encontrado resultados que coincidan ${results.query}</p>
                             <p>Lo sentimos, no hemos encontrado ningún resultado para su búsqueda. Intente buscar de nuevo, revisando su búsqueda en busca de errores ortográficos y/o reduciendo el número de palabras clave utilizadas. También puede intentar utilizar una frase de búsqueda más amplia.</p>
                             </div>
                             <p class="h3">¿Busca un número de pieza o de serie?</p>`;
                         }
                         else if (filterLang == 'fr') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Aucun résultat trouvé correspondant ${results.query}</p>
                             <p>Nous sommes désolés de ne pas avoir trouvé de résultat pour votre recherche. Essayez d'effectuer une nouvelle recherche en vérifiant les fautes d'orthographe et/ou en réduisant le nombre de mots-clés utilisés. Vous pouvez également essayer d'utiliser une phrase de recherche plus large.</p>
                             </div>
                             <p class="h3">Vous recherchez un numéro de pièce ou un numéro de série ?</p>`;
                         }
                         else if (filterLang == 'de') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Keine passenden Ergebnisse gefunden ${results.query}</p>
                             <p>Wir konnten leider kein Ergebnis für Ihre Suche finden. Versuchen Sie, die Suche zu wiederholen, indem Sie Ihre Suche auf Rechtschreibfehler überprüfen und/oder die Anzahl der verwendeten Schlüsselwörter reduzieren. Sie können auch versuchen, einen umfassenderen Suchbegriff zu verwenden.</p>
                             </div>
                             <p class="h3">Vous recherchez un numéro de pièce ou un numéro de série ?</p>`;
                         }
                         else if (filterLang == 'it') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Nessun risultato trovato corrispondente ${results.query}</p>
                             <p>Siamo spiacenti di non aver trovato un risultato per la vostra ricerca. Provi a effettuare una nuova ricerca, controllando che non vi siano errori di ortografia e/o riducendo il numero di parole chiave utilizzate. Potete anche provare a utilizzare una frase di ricerca più ampia.</p>
                             </div>
                             <p class="h3">State cercando un numero di parte o un numero di serie?</p>`;
                         }
                         else if (filterLang == 'pl') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Nie znaleziono pasujących wyników ${results.query}</p>
                             <p>Przepraszamy, nie mogliśmy znaleźć wyniku wyszukiwania. Spróbuj wyszukać ponownie, sprawdzając wyszukiwanie pod kątem błędów ortograficznych i/lub zmniejszając liczbę użytych słów kluczowych. Możesz także spróbować użyć szerszej frazy wyszukiwania.</p>
                             </div>
                             <p class="h3">Szukasz numeru części lub numeru seryjnego?</p>`;
                         }
                         else if (filterLang == 'tr') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Eşleşen sonuç bulunamadı ${results.query}</p>
                             <p>Üzgünüz, aramanız için bir sonuç bulamadık. Aramanızı yazım hatalarına karşı kontrol ederek ve/veya kullanılan anahtar kelime sayısını azaltarak tekrar aramayı deneyin. Daha geniş bir arama cümlesi kullanmayı da deneyebilirsiniz.</p>
                             </div>
                             <p class="h3">Bir Parça Numarası veya Seri Numarası mı arıyorsunuz?</p>`;
                         }
                         else if (filterLang == 'zh-hans') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">未找到匹配结果 ${results.query}</p>
                             <p>很抱歉，我们找不到您的搜索结果。请再次尝试搜索，检查拼写错误和/或减少使用的关键词数量。您还可以尝试使用更宽泛的搜索短语。</p>
                             </div>
@@ -1625,8 +1636,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }),
         ]);
         search.start();
-        document.querySelector('.main-search-bar').focus();
-
+        document.querySelector('.ais-SearchBox-input').focus();
+        
         if(popSearch) {
             var popSearchButtons = document.querySelectorAll('.prefill-btn');
             var popSearchButton = document.querySelector('.pop-search-button');
@@ -1750,6 +1761,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 hitsPerPage: 10,
                 attributesToSnippet: ['body:80'],
                 page: 0,
+                filters: 'field_global_article: "false"',
             }),
 
             typelistPanel({
@@ -1788,19 +1800,21 @@ document.addEventListener("DOMContentLoaded", function() {
             instantsearch.widgets.hits ({
                 container: '#usHits',
                 templates:{
-                    item: data => `
-                    <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
-                        <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
-                        <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
-                        <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
-                        <p class="lead">${data.type}</p>
-                        <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
-                        <a class="${data.type != "Case Studies" ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
-                        <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
-                    </div>`,
+                    item(data, { html, components }){ 
+                        hideForm();
+                        return html`
+                        <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
+                            <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
+                            <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
+                            <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
+                            <p class="lead">${data.type}</p>
+                            <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
+                            <a class="${data.type != "Case Studies" ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
+                            <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
+                        </div>`
+                    },
                     empty(results, { html }){
-                        document.querySelector('.parts-form').style.display = 'block';
-                        document.querySelector('.ais-Pagination').style.display = 'none';
+                        revealForm();
                         return html`<p class="h3">No results found matching ${results.query}</p>
                     <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                     <div class="text-center  py-5">
@@ -1819,96 +1833,44 @@ document.addEventListener("DOMContentLoaded", function() {
             }),
 
             instantsearch.widgets
-                .index({ indexName: 'aesseal' })
-                .addWidgets([{
-                    init: function(options) {
-                        if(filterLang == "en")
-                        {
-                            options.helper.toggleRefinement('search_api_language', 'en');
-                        }
-                        else if(filterLang == "")
-                        {
-                            options.helper.toggleRefinement('search_api_language', 'en');
-                        }
-                    }
-                },
+                .index({ indexName: 'pdf_brochures_xml_crawler' }),
 
                 instantsearch.widgets.configure({
                     clickAnalytics: true,
                     userToken: 'user-1',
                     hitsPerPage: 10,
-                    attributesToSnippet: ['field_summary:80', 'body:80'],
+                    attributesToSnippet: ['content:80'],
                     page: 0,
-                    filters: '(type:casestudies OR type:productbrochure OR type:video OR type:industryguides OR type:corpbrochure)', 
-                }),
-
-                gloablTypelistPanel({
-                    container: '#globalType-list',
-                    attribute: 'type',
-                    templates: {
-                        header: 'Filter Global Site by Content Type',
-                        item: '<input type="checkbox" data-insights-filter="${`type:${value}`}" class="ais-refinement-list--checkbox" {{#isRefined}}checked="true"{{/isRefined}}> {{label}} <span class="ais-refinement-list--count">({{count}})</span>',
-                    },
-                    transformItems(items){
-                        return items.map(item => ({
-                            ...item,
-                            label: typeMapping[item.label],
-                        }));
-                    },
-                    cssClasses: {
-                        item: ['types-item']
-                    },
-                    sortBy: ['isRefined', 'count:desc', 'name:asc']
-                }),
-
-                langlistPanel({
-                    container: '#lang-list',
-                    attribute: 'search_api_language',
-                    templates: {
-                        header: 'Select your Language',
-                        item: '<input type="checkbox" data-insights-filter="${`search_api_language:${value}`}" class="ais-refinement-list--checkbox lang-item" value="{{label}}" {{#isRefined}}checked="true"{{/isRefined}}> {{label}} <span class="ais-refinement-list--count">({{count}})</span>',
-                    },
-                    transformItems(items){
-                        return items.map(item => ({
-                            ...item,
-                            label: item.label.toUpperCase(),
-                        }));
-                    },
-                    sortBy: ['isRefined', 'count:desc', 'name:asc']
                 }),
 
                 pagination({
-                    container: '#pagination',
+                    container: '#pdfPagination',
                     totalPages: 3,
                     scrollTo: '#usSearchbox'
                 }),
 
                 customStats({
-                    container: document.querySelector("#globalStats"),
+                    container: document.querySelector("#pdfStats"),
                 }),
 
                 instantsearch.widgets.hits ({
-                    container: '#globalHits',
+                    container: '#pdfHits',
                     templates:{
-                        item: data => `
-                        <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
-                            <small>https://www.aesseal.com${data.url}</small>
-                            <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
-                            <p id="contentCat" class="lead ${data.type ? '' : 'd-none'}">${data.type}</p>
-                            <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
-                            <a class="btn btn-danger view-details align-self-end" href="https://www.aesseal.com${data.url}" target="_blank">Read More</a>
-                        </div>`,
+                        item(data, { html, components }){
+                            return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
+                                    <small>${data.url}</small>
+                                    <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>                                
+                                    <p class=${data.content ? '' : 'd-none'}>${components.Snippet({
+                                        attribute: "content",
+                                        hit: data,
+                                        highlightedTagName: 'strong'
+                                    })}</p>
+                                <a class="btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
+                            </div>`
+                        }
                     },
-                    transformItems(items){
-                        return items.map(item => ({
-                            ...item,
-                            type: typeMapping[item.type],
-                            vid: vidMapping[item.vid]
-                        }))
-                    },
-                })
-            ])
-        ]);
+                }),
+            ]);
         usaSearch.start();
     }
 
@@ -2012,6 +1974,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 hitsPerPage: 10,
                 attributesToSnippet: ['body:80'],
                 page: 0,
+                filters: 'field_global_article: "false"',
             }),
 
             typelistPanel({
@@ -2050,19 +2013,21 @@ document.addEventListener("DOMContentLoaded", function() {
             instantsearch.widgets.hits ({
                 container: '#inHits',
                 templates:{
-                    item: data => `
-                    <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
-                        <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
-                        <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
-                        <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
-                        <p class="lead">${data.type}</p>
-                        <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
-                        <a class="${data.type != "Case Studies" ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
-                        <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
-                    </div>`,
+                    item(data, { html, components }){ 
+                        hideForm();
+                        return html`
+                        <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
+                            <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
+                            <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
+                            <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
+                            <p class="lead">${data.type}</p>
+                            <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
+                            <a class="${data.type != "Case Studies" ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
+                            <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
+                        </div>`
+                    },
                     empty(results, { html }){
-                        document.querySelector('.parts-form').style.display = 'block';
-                        document.querySelector('.ais-Pagination').style.display = 'none';
+                        revealForm();
                         return html`<p class="h3">No results found matching ${results.query}</p>
                     <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                     <div class="text-center  py-5">
@@ -2152,14 +2117,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 instantsearch.widgets.hits ({
                     container: '#globalHits',
                     templates:{
-                        item: data => `
+                        item(data, { html, components }){ 
+                        hideForm();
+                        return html`
                         <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                             <small>https://www.aesseal.com${data.url}</small>
                             <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
                             <p id="contentCat" class="lead ${data.type ? '' : 'd-none'}">${data.type}</p>
-                            <p class=${data.body ? '' : 'd-none'}>${data.summary}</p>
+                            <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
                             <a class="btn btn-danger view-details align-self-end" href="https://www.aesseal.com${data.url}" target="_blank">Read More</a>
-                        </div>`,
+                        </div>`
+                        },
                     },
                     transformItems(items){
                         return items.map(item => ({
@@ -2275,6 +2243,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 hitsPerPage: 10,
                 attributesToSnippet: ['body:80'],
                 page: 0,
+                filters: 'field_global_article: "false"',
             }),
 
             typelistPanel({
@@ -2313,19 +2282,21 @@ document.addEventListener("DOMContentLoaded", function() {
             instantsearch.widgets.hits ({
                 container: '#zaHits',
                 templates:{
-                    item: data => `
-                    <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
-                        <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
-                        <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
-                        <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
-                        <p class="lead">${data.type}</p>
-                        <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
-                        <a class="${data.type != "Case Studies" ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
-                        <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
-                    </div>`,
+                    item(data, { html, components }){ 
+                        hideForm();
+                        return html`
+                        <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
+                            <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
+                            <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
+                            <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
+                            <p class="lead">${data.type}</p>
+                            <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
+                            <a class="${data.type != "Case Studies" ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
+                            <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
+                        </div>`
+                    },
                     empty(results, { html }){
-                        document.querySelector('.parts-form').style.display = 'block';
-                        document.querySelector('.ais-Pagination').style.display = 'none';
+                        revealForm();
                         return html`<p class="h3">No results found matching ${results.query}</p>
                     <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                     <div class="text-center  py-5">
@@ -2415,14 +2386,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 instantsearch.widgets.hits ({
                     container: '#globalHits',
                     templates:{
-                        item: data => `
+                        item(data, { html, components }){ 
+                        hideForm();
+                        return html`
                         <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                             <small>https://www.aesseal.com${data.url}</small>
                             <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
                             <p id="contentCat" class="lead ${data.type ? '' : 'd-none'}">${data.type}</p>
                             <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
                             <a class="btn btn-danger view-details align-self-end" href="https://www.aesseal.com${data.url}" target="_blank">Read More</a>
-                        </div>`,
+                        </div>`
+                        },
                     },
                     transformItems(items){
                         return items.map(item => ({
@@ -2538,6 +2512,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 hitsPerPage: 10,
                 attributesToSnippet: ['body:80'],
                 page: 0,
+                filters: 'field_global_article: "false"',
             }),
 
             typelistPanel({
@@ -2576,19 +2551,21 @@ document.addEventListener("DOMContentLoaded", function() {
             instantsearch.widgets.hits ({
                 container: '#myHits',
                 templates:{
-                    item: data => `
-                    <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
-                        <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
-                        <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
-                        <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
-                        <p class="lead">${data.type}</p>
-                        <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
-                        <a class="${data.type != "Case Studies" ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
-                        <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
-                    </div>`,
+                    item(data, { html, components }){ 
+                        hideForm();
+                        return html`
+                        <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
+                            <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
+                            <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
+                            <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
+                            <p class="lead">${data.type}</p>
+                            <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
+                            <a class="${data.type != "Case Studies" ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
+                            <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
+                        </div>`
+                    },
                     empty(results, { html }){
-                        document.querySelector('.parts-form').style.display = 'block';
-                        document.querySelector('.ais-Pagination').style.display = 'none';
+                        revealForm();
                         return html`<p class="h3">No results found matching ${results.query}</p>
                     <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                     <div class="text-center  py-5">
@@ -2678,14 +2655,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 instantsearch.widgets.hits ({
                     container: '#globalHits',
                     templates:{
-                        item: data => `
+                        item(data, { html, components }){ 
+                        hideForm();
+                        return html`
                         <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                             <small>https://www.aesseal.com${data.url}</small>
                             <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
                             <p id="contentCat" class="lead ${data.type ? '' : 'd-none'}">${data.type}</p>
                             <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
                             <a class="btn btn-danger view-details align-self-end" href="https://www.aesseal.com${data.url}" target="_blank">Read More</a>
-                        </div>`,
+                        </div>`
+                        },
                     },
                     transformItems(items){
                         return items.map(item => ({
@@ -2801,6 +2781,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 hitsPerPage: 10,
                 attributesToSnippet: ['body:80'],
                 page: 0,
+                filters: 'field_global_article: "false"',
             }),
 
             langlistPanel({
@@ -2857,6 +2838,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 templates:{
                     item(data, { html, components }){
                         if(filterLang == 'en'){
+                            hideForm();
                             return html ` <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
@@ -2867,6 +2849,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
                             </div>`
                         } else if (filterLang == ''){
+                            hideForm();
                             return html ` <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
@@ -2877,6 +2860,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
                             </div>`
                         } else if(filterLang == 'de'){
+                            hideForm();
                             return html`
                             <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
@@ -2892,24 +2876,21 @@ document.addEventListener("DOMContentLoaded", function() {
                     },
                     empty(results, { html }){
                         if(filterLang == 'en'){
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         }
                         else if(filterLang == '') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         }
                         else if (filterLang == 'de') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Keine passenden Ergebnisse gefunden ${results.query}</p>
                             <p>Wir konnten leider kein Ergebnis für Ihre Suche finden. Versuchen Sie, die Suche zu wiederholen, indem Sie Ihre Suche auf Rechtschreibfehler überprüfen und/oder die Anzahl der verwendeten Schlüsselwörter reduzieren. Sie können auch versuchen, einen umfassenderen Suchbegriff zu verwenden.</p>
                             </div>
@@ -3163,6 +3144,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 hitsPerPage: 10,
                 attributesToSnippet: ['body:80'],
                 page: 0,
+                filters: 'field_global_article: "false"',
             }),
 
             langlistPanel({
@@ -3217,22 +3199,24 @@ document.addEventListener("DOMContentLoaded", function() {
             instantsearch.widgets.hits ({
                 container: '#aeHits',
                 templates:{
-                    item: data => `
-                    <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
-                        <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
-                        <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
-                        <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
-                        <p class="lead">${data.type}</p>
-                        <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
-                        <a class="${data.type != "Case Studies" ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
-                        <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
-                    </div>`,
+                    item(data, { html, components }){ 
+                        hideForm();
+                        return html`
+                        <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
+                            <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
+                            <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
+                            <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
+                            <p class="lead">${data.type}</p>
+                            <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
+                            <a class="${data.type != "Case Studies" ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
+                            <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
+                        </div>`
+                    },
                     empty(results, { html }){
-                        document.querySelector('.parts-form').style.display = 'block';
-                        document.querySelector('.ais-Pagination').style.display = 'none';
+                        revealForm();
                         return html`<p class="h3">No results found matching ${results.query}</p>
                     <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
-                    <div class="text-center py-5">
+                    <div class="text-center  py-5">
                         <p class="h3">Would you like to search our Global site?</p>
                         <a href="https://www.aesseal.com/en/search" class="btn btn-danger" target="_blank" rel="noopener">Search our Global site</a>
                     </div>
@@ -3319,14 +3303,23 @@ document.addEventListener("DOMContentLoaded", function() {
                 instantsearch.widgets.hits ({
                     container: '#globalHits',
                     templates:{
-                        item: data => `
+                        item(data, { html, components }){ 
+                        hideForm();
+                        return html`
                         <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                             <small>https://www.aesseal.com${data.url}</small>
                             <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
                             <p id="contentCat" class="lead ${data.type ? '' : 'd-none'}">${data.type}</p>
                             <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
                             <a class="btn btn-danger view-details align-self-end" href="https://www.aesseal.com${data.url}" target="_blank">Read More</a>
-                        </div>`,
+                        </div>`
+                        },
+                        empty(results, { html }){
+                            revealForm();
+                            return html`<p class="h3">No results found matching ${results.query}</p>
+                        <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
+                        <p class="h3 pt-4">Are you searching for a Part Number or Serial Number?</p>`;
+                        },
                     },
                     transformItems(items){
                         return items.map(item => ({
@@ -3442,6 +3435,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 hitsPerPage: 10,
                 attributesToSnippet: ['body:80'],
                 page: 0,
+                filters: 'field_global_article: "false"',
             }),
 
             langlistPanel({
@@ -3498,6 +3492,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 templates:{
                     item(data, { html, components }){
                         if(filterLang == 'en'){
+                            hideForm();
                             return html ` <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
@@ -3508,6 +3503,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
                             </div>`
                         } else if (filterLang == ''){
+                            hideForm();
                             return html ` <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
@@ -3518,6 +3514,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
                             </div>`
                         } else if(filterLang == 'fr'){
+                            hideForm();
                             return html`
                             <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
@@ -3533,24 +3530,21 @@ document.addEventListener("DOMContentLoaded", function() {
                     },
                     empty(results, { html }){
                         if(filterLang == 'en'){
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         }
                         else if(filterLang == '') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         }
                         else if (filterLang == 'fr') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Aucun résultat trouvé correspondant ${results.query}</p>
                             <p>Nous sommes désolés de ne pas avoir trouvé de résultat pour votre recherche. Essayez d'effectuer une nouvelle recherche en vérifiant les fautes d'orthographe et/ou en réduisant le nombre de mots-clés utilisés. Vous pouvez également essayer d'utiliser une phrase de recherche plus large.</p>
                             </div>
@@ -3804,6 +3798,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 hitsPerPage: 10,
                 attributesToSnippet: ['body:80'],
                 page: 0,
+                filters: 'field_global_article: "false"',
             }),
 
             langlistPanel({
@@ -3860,6 +3855,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 templates:{
                     item(data, { html, components }){
                         if(filterLang == 'en'){
+                            hideForm();
                             return html ` <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
@@ -3870,6 +3866,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
                             </div>`
                         } else if (filterLang == ''){
+                            hideForm();
                             return html ` <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
@@ -3880,6 +3877,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
                             </div>`
                         } else if(filterLang == 'fr'){
+                            hideForm();
                             return html`
                             <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
@@ -3895,24 +3893,21 @@ document.addEventListener("DOMContentLoaded", function() {
                     },
                     empty(results, { html }){
                         if(filterLang == 'en'){
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         }
                         else if(filterLang == '') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         }
                         else if (filterLang == 'fr') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Aucun résultat trouvé correspondant ${results.query}</p>
                             <p>Nous sommes désolés de ne pas avoir trouvé de résultat pour votre recherche. Essayez d'effectuer une nouvelle recherche en vérifiant les fautes d'orthographe et/ou en réduisant le nombre de mots-clés utilisés. Vous pouvez également essayer d'utiliser une phrase de recherche plus large.</p>
                             </div>
@@ -4166,6 +4161,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 hitsPerPage: 10,
                 attributesToSnippet: ['body:80'],
                 page: 0,
+                filters: 'field_global_article: "false"',
             }),
 
             langlistPanel({
@@ -4222,6 +4218,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 templates:{
                     item(data, { html, components }){
                         if(filterLang == 'en'){
+                            hideForm();
                             return html ` <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
@@ -4232,6 +4229,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
                             </div>`
                         } else if (filterLang == ''){
+                            hideForm();
                             return html ` <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
@@ -4242,6 +4240,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
                             </div>`
                         } else if(filterLang == 'sv'){
+                            hideForm();
                             return html`
                             <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
@@ -4257,24 +4256,21 @@ document.addEventListener("DOMContentLoaded", function() {
                     },
                     empty(results, { html }){
                         if(filterLang == 'en'){
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         }
                         else if(filterLang == '') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         }
                         else if (filterLang == 'sv') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Inga resultat hittades som matchade ${results.query}</p>
                             <p>Tyvärr kunde vi inte hitta något resultat för din sökning. Försök att söka igen genom att kontrollera din sökning efter stavfel och/eller minska antalet nyckelord som används. Du kan också försöka använda en bredare sökfras.</p>
                             </div>
@@ -4584,6 +4580,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 container: '#jaHits',
                 templates:{
                     item(data, { html, components }){
+                        hideForm();
                         if(filterLang == 'en'){
                             return html ` <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
@@ -4595,6 +4592,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
                             </div>`
                         } else if (filterLang == ''){
+                            hideForm();
                             return html ` <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
                                 <small class="${data.field_s3_link ? '' : 'd-none'}">${data.field_s3_link}</small>
@@ -4605,6 +4603,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="${data.field_s3_link ? '' : 'd-none'} btn btn-primary view-details align-self-end" href="${data.field_s3_link}">Open PDF</a>
                             </div>`
                         } else if(filterLang == 'ja'){
+                            hideForm();
                             return html`
                             <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Case Studies" ? '' : 'd-none'}">${data.url}</small>
@@ -4620,24 +4619,21 @@ document.addEventListener("DOMContentLoaded", function() {
                     },
                     empty(results, { html }){
                         if(filterLang == 'en'){
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         }
                         else if(filterLang == '') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         }
                         else if (filterLang == 'ja') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">一致する結果は見つかりませんでした ${results.query}</p>
                             <p>検索結果が見つかりませんでした。スペルミスがないか、キーワードの数を減らして再度検索してみてください。また、より広い検索フレーズを使用してみることもできます。</p>
                             </div>
@@ -4991,6 +4987,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 templates:{
                     item(data, { html, components }){
                         if(filterLang == 'en'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small>${data.url}</small>
                                 <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
@@ -4999,6 +4996,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
                             </div>`
                         } else if(filterLang == ''){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small>${data.url}</small>
                                 <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
@@ -5007,6 +5005,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
                             </div>`
                         } else if(filterLang == 'es'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small>${data.url}</small>
                                 <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
@@ -5015,6 +5014,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="btn btn-primary view-details align-self-end" href="${data.url}">Seguir leyendo</a>
                             </div>`
                         } else if(filterLang == 'fr'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small>${data.url}</small>
                                 <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
@@ -5023,6 +5023,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="btn btn-primary view-details align-self-end" href="${data.url}">En savoir plus</a>
                             </div>`
                         } else if(filterLang == 'de'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small>${data.url}</small>
                                 <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
@@ -5031,6 +5032,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="btn btn-primary view-details align-self-end" href="${data.url}">Mehr lesen</a>
                             </div>`
                         } else if(filterLang == 'it'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small>${data.url}</small>
                                 <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
@@ -5039,6 +5041,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="btn btn-primary view-details align-self-end" href="${data.url}">Per saperne di più</a>
                             </div>`
                         } else if(filterLang == 'tr'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small>${data.url}</small>
                                 <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
@@ -5047,6 +5050,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="btn btn-primary view-details align-self-end" href="${data.url}">Daha Fazla Oku</a>
                             </div>`
                         } else if(filterLang == 'zh-hans'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small>${data.url}</small>
                                 <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
@@ -5055,6 +5059,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="btn btn-primary view-details align-self-end" href="${data.url}">更多信息</a>
                             </div>`
                         }  else if(filterLang == 'pl'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small>${data.url}</small>
                                 <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
@@ -5063,6 +5068,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="btn btn-primary view-details align-self-end" href="${data.url}">Czytaj więcej</a>
                             </div>`
                         } else if(filterLang == 'ar'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small>${data.url}</small>
                                 <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
@@ -5074,6 +5080,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="btn btn-primary view-details align-self-end" href="${data.url}">قراءة المزيد</a>
                             </div>`
                         } else if(filterLang == 'nb'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small>${data.url}</small>
                                 <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
@@ -5082,6 +5089,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="btn btn-primary view-details align-self-end" href="${data.url}">Les mer</a>
                             </div>`
                         } else if(filterLang == 'pt-br'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small>${data.url}</small>
                                 <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
@@ -5090,6 +5098,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="btn btn-primary view-details align-self-end" href="${data.url}">Leia mais</a>
                             </div>`
                         } else if(filterLang == 'pt'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small>${data.url}</small>
                                 <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
@@ -5098,6 +5107,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a class="btn btn-primary view-details align-self-end" href="${data.url}">Ler mais</a>
                             </div>`
                         } else if(filterLang == 'nl'){
+                            hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small>${data.url}</small>
                                 <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
@@ -5110,106 +5120,91 @@ document.addEventListener("DOMContentLoaded", function() {
                     empty(results, { html }){
                         if(results.query === '') return null;
                         if(filterLang == 'en'){
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         } else if(filterLang == '') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         } else if (filterLang == 'es') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">No se han encontrado resultados que coincidan ${results.query}</p>
                             <p>Lo sentimos, no hemos encontrado ningún resultado para su búsqueda. Intente buscar de nuevo, revisando su búsqueda en busca de errores ortográficos y/o reduciendo el número de palabras clave utilizadas. También puede intentar utilizar una frase de búsqueda más amplia.</p>
                             </div>
                             <p class="h3">¿Busca un número de pieza o de serie?</p>`;
                         } else if (filterLang == 'fr') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Aucun résultat trouvé correspondant ${results.query}</p>
                             <p>Nous sommes désolés de ne pas avoir trouvé de résultat pour votre recherche. Essayez d'effectuer une nouvelle recherche en vérifiant les fautes d'orthographe et/ou en réduisant le nombre de mots-clés utilisés. Vous pouvez également essayer d'utiliser une phrase de recherche plus large.</p>
                             </div>
                             <p class="h3">Vous recherchez un numéro de pièce ou un numéro de série ?</p>`;
                         } else if (filterLang == 'de') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Keine passenden Ergebnisse gefunden ${results.query}</p>
                             <p>Wir konnten leider kein Ergebnis für Ihre Suche finden. Versuchen Sie, die Suche zu wiederholen, indem Sie Ihre Suche auf Rechtschreibfehler überprüfen und/oder die Anzahl der verwendeten Schlüsselwörter reduzieren. Sie können auch versuchen, einen umfassenderen Suchbegriff zu verwenden.</p>
                             </div>
                             <p class="h3">Vous recherchez un numéro de pièce ou un numéro de série ?</p>`;
                         } else if (filterLang == 'it') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Nessun risultato trovato corrispondente ${results.query}</p>
                             <p>Siamo spiacenti di non aver trovato un risultato per la vostra ricerca. Provi a effettuare una nuova ricerca, controllando che non vi siano errori di ortografia e/o riducendo il numero di parole chiave utilizzate. Potete anche provare a utilizzare una frase di ricerca più ampia.</p>
                             </div>
                             <p class="h3">State cercando un numero di parte o un numero di serie?</p>`;
                         } else if (filterLang == 'tr') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Eşleşen sonuç bulunamadı ${results.query}</p>
                             <p>Üzgünüz, aramanız için bir sonuç bulamadık. Aramanızı yazım hatalarına karşı kontrol ederek ve/veya kullanılan anahtar kelime sayısını azaltarak tekrar aramayı deneyin. Daha geniş bir arama cümlesi kullanmayı da deneyebilirsiniz.</p>
                             </div>
                             <p class="h3">Bir Parça Numarası veya Seri Numarası mı arıyorsunuz?</p>`;
                         } else if (filterLang == 'zh-hans') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">未找到匹配结果 ${results.query}</p>
                             <p>很抱歉，我们找不到您的搜索结果。请再次尝试搜索，检查拼写错误和/或减少使用的关键词数量。您还可以尝试使用更宽泛的搜索短语。</p>
                             </div>
                             <p class="h3">您在搜索零件编号或序列号吗？</p>`;
                         }  else if (filterLang == 'pl') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Nie znaleziono pasujących wyników ${results.query}</p>
                             <p>Przepraszamy, nie mogliśmy znaleźć wyniku wyszukiwania. Spróbuj wyszukać ponownie, sprawdzając wyszukiwanie pod kątem błędów ortograficznych i/lub zmniejszając liczbę użytych słów kluczowych. Możesz także spróbować użyć szerszej frazy wyszukiwania.</p>
                             </div>
                             <p class="h3">Szukasz numeru części lub numeru seryjnego?</p>`;
                         } else if(filterLang == 'ar') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">لم يتم العثور على نتائج مطابقة لـ ${results.query}</p>
                             <p>نأسف لعدم تمكننا من العثور على نتيجة لبحثك. حاول البحث مرة أخرى عن طريق التدقيق في بحثك بحثاً عن الأخطاء الإملائية و/أو تقليل عدد الكلمات الرئيسية المستخدمة. يمكنك أيضاً محاولة استخدام عبارة بحث أوسع نطاقاً.</p>
                             </div>
                             <p class="h3">هل تبحث عن رقم الجزء أو الرقم التسلسلي؟</p>`;
                         } else if(filterLang == 'nb') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Ingen resultater funnet som samsvarer med ${results.query}</p>
                             <p>Vi fant dessverre ikke noe resultat for søket ditt. Prøv å søke på nytt ved å kontrollere søket for stavefeil og/eller redusere antall søkeord. Du kan også prøve å bruke en bredere søkefrase.</p>
                             </div>
                             <p class="h3">Leter du etter et delenummer eller serienummer?</p>`;
                         } else if(filterLang == 'pt-br') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Não foram encontrados resultados correspondentes a ${results.query}</p>
                             <p>Lamentamos não ter encontrado um resultado para sua pesquisa. Tente pesquisar novamente, verificando se há erros de ortografia em sua pesquisa e/ou reduzindo o número de palavras-chave usadas. Você também pode tentar usar uma frase de pesquisa mais ampla.</p>
                             </div>
                             <p class="h3">Você está procurando um número de peça ou um número de série?</p>`;
                         } else if(filterLang == 'pt') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Não foram encontrados resultados correspondentes a ${results.query}</p>
                             <p>Lamentamos não ter encontrado um resultado para a sua pesquisa. Tente pesquisar novamente, verificando se existem erros ortográficos na sua pesquisa e/ou reduzindo o número de palavras-chave utilizadas. Também pode tentar utilizar uma frase de pesquisa mais abrangente.</p>
                             </div>
                             <p class="h3">Está à procura de um número de peça ou de série?</p>`;
                         }  else if(filterLang == 'cz') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Nebyly nalezeny žádné výsledky odpovídající ${results.query}</p>
                             <p>Omlouváme se, že jsme nenašli výsledek vašeho hledání. Zkuste hledat znovu, zkontrolujte, zda ve vyhledávání nejsou pravopisné chyby, a/nebo snižte počet použitých klíčových slov. Můžete také zkusit použít širší vyhledávací frázi.</p>
                             </div>
                             <p class="h3">Está à procura de um número de peça ou de série?</p>`;
                         } else if(filterLang == 'nl') {
-                            document.querySelector('.parts-form').style.display = 'block';
-                            document.querySelector('.ais-Pagination').style.display = 'none';
+                            revealForm();
                             return html`<div class="no-result"><p class="h3">Geen resultaten gevonden die overeenkomen met ${results.query}</p>
                             <p>Sorry, we konden geen resultaat vinden voor je zoekopdracht. Probeer opnieuw te zoeken door je zoekopdracht te controleren op spelfouten en/of het aantal gebruikte trefwoorden te verminderen. U kunt ook proberen een bredere zoekterm te gebruiken.</p>
                             </div>
@@ -5571,73 +5566,57 @@ document.addEventListener("DOMContentLoaded", function() {
                     },
                     empty(results, { html }){
                         if(filterLang == 'en'){
-                            document.querySelector('.ais-Pagination').style.display = 'none';
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>`;
                         } else if(filterLang == '') {
-                            document.querySelector('.ais-Pagination').style.display = 'none';
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
                             </div>`;
                         } else if (filterLang == 'es') {
-                            document.querySelector('.ais-Pagination').style.display = 'none';
                             return html`<div class="no-result"><p class="h3">No se han encontrado resultados que coincidan ${results.query}</p>
                             <p>Lo sentimos, no hemos encontrado ningún resultado para su búsqueda. Intente buscar de nuevo, revisando su búsqueda en busca de errores ortográficos y/o reduciendo el número de palabras clave utilizadas. También puede intentar utilizar una frase de búsqueda más amplia.</p>
                             </div>`;
                         } else if (filterLang == 'fr') {
-                            document.querySelector('.ais-Pagination').style.display = 'none';
                             return html`<div class="no-result"><p class="h3">Aucun résultat trouvé correspondant ${results.query}</p>
                             <p>Nous sommes désolés de ne pas avoir trouvé de résultat pour votre recherche. Essayez d'effectuer une nouvelle recherche en vérifiant les fautes d'orthographe et/ou en réduisant le nombre de mots-clés utilisés. Vous pouvez également essayer d'utiliser une phrase de recherche plus large.</p>
                             </div>`;
                         } else if (filterLang == 'de') {
-                            document.querySelector('.ais-Pagination').style.display = 'none';
                             return html`<div class="no-result"><p class="h3">Keine passenden Ergebnisse gefunden ${results.query}</p>
                             <p>Wir konnten leider kein Ergebnis für Ihre Suche finden. Versuchen Sie, die Suche zu wiederholen, indem Sie Ihre Suche auf Rechtschreibfehler überprüfen und/oder die Anzahl der verwendeten Schlüsselwörter reduzieren. Sie können auch versuchen, einen umfassenderen Suchbegriff zu verwenden.</p>
                             </div>`;
                         } else if (filterLang == 'it') {
-                            document.querySelector('.ais-Pagination').style.display = 'none';
                             return html`<div class="no-result"><p class="h3">Nessun risultato trovato corrispondente ${results.query}</p>
                             <p>Siamo spiacenti di non aver trovato un risultato per la vostra ricerca. Provi a effettuare una nuova ricerca, controllando che non vi siano errori di ortografia e/o riducendo il numero di parole chiave utilizzate. Potete anche provare a utilizzare una frase di ricerca più ampia.</p>
                             </div>`;
                         } else if (filterLang == 'tr') {
-                            document.querySelector('.ais-Pagination').style.display = 'none';
                             return html`<div class="no-result"><p class="h3">Eşleşen sonuç bulunamadı ${results.query}</p>
                             <p>Üzgünüz, aramanız için bir sonuç bulamadık. Aramanızı yazım hatalarına karşı kontrol ederek ve/veya kullanılan anahtar kelime sayısını azaltarak tekrar aramayı deneyin. Daha geniş bir arama cümlesi kullanmayı da deneyebilirsiniz.</p>
                             </div>`;
                         } else if (filterLang == 'zh-hans') {
-                            document.querySelector('.ais-Pagination').style.display = 'none';
                             return html`<div class="no-result"><p class="h3">未找到匹配结果 ${results.query}</p>
                             <p>很抱歉，我们找不到您的搜索结果。请再次尝试搜索，检查拼写错误和/或减少使用的关键词数量。您还可以尝试使用更宽泛的搜索短语。</p>
                             </div>`;
                         } else if(filterLang == 'ar') {
-                            document.querySelector('.ais-Pagination').style.display = 'none';
                             return html`<div class="no-result"><p class="h3">لم يتم العثور على نتائج مطابقة لـ ${results.query}</p>
                             <p>نأسف لعدم تمكننا من العثور على نتيجة لبحثك. حاول البحث مرة أخرى عن طريق التدقيق في بحثك بحثاً عن الأخطاء الإملائية و/أو تقليل عدد الكلمات الرئيسية المستخدمة. يمكنك أيضاً محاولة استخدام عبارة بحث أوسع نطاقاً.</p>
                             </div>`;
                         } else if(filterLang == 'nb') {
-                            document.querySelector('.ais-Pagination').style.display = 'none';
                             return html`<div class="no-result"><p class="h3">Ingen resultater funnet som samsvarer med ${results.query}</p>
                             <p>Vi fant dessverre ikke noe resultat for søket ditt. Prøv å søke på nytt ved å kontrollere søket for stavefeil og/eller redusere antall søkeord. Du kan også prøve å bruke en bredere søkefrase.</p>
                             </div>`;
                         } else if(filterLang == 'pt-br') {
-                            document.querySelector('.ais-Pagination').style.display = 'none';
                             return html`<div class="no-result"><p class="h3">Não foram encontrados resultados correspondentes a ${results.query}</p>
                             <p>Lamentamos não ter encontrado um resultado para sua pesquisa. Tente pesquisar novamente, verificando se há erros de ortografia em sua pesquisa e/ou reduzindo o número de palavras-chave usadas. Você também pode tentar usar uma frase de pesquisa mais ampla.</p>
                             </div>`;
                         } else if(filterLang == 'pt') {
-                            document.querySelector('.ais-Pagination').style.display = 'none';
                             return html`<div class="no-result"><p class="h3">Não foram encontrados resultados correspondentes a ${results.query}</p>
                             <p>Lamentamos não ter encontrado um resultado para a sua pesquisa. Tente pesquisar novamente, verificando se existem erros ortográficos na sua pesquisa e/ou reduzindo o número de palavras-chave utilizadas. Também pode tentar utilizar uma frase de pesquisa mais abrangente.</p>
                             </div>`;
-                        }  else if(filterLang == 'cz') {
-                            document.querySelector('.ais-Pagination').style.display = 'none';
-                            return html`<div class="no-result"><p class="h3">Nebyly nalezeny žádné výsledky odpovídající ${results.query}</p>
+                        }  else if(filterLang == 'cz') {                            return html`<div class="no-result"><p class="h3">Nebyly nalezeny žádné výsledky odpovídající ${results.query}</p>
                             <p>Omlouváme se, že jsme nenašli výsledek vašeho hledání. Zkuste hledat znovu, zkontrolujte, zda ve vyhledávání nejsou pravopisné chyby, a/nebo snižte počet použitých klíčových slov. Můžete také zkusit použít širší vyhledávací frázi.</p>
                             </div>`;
-                        } else if(filterLang == 'nl') {
-                            document.querySelector('.ais-Pagination').style.display = 'none';
-                            return html`<div class="no-result"><p class="h3">Geen resultaten gevonden die overeenkomen met ${results.query}</p>
+                        } else if(filterLang == 'nl') {                            return html`<div class="no-result"><p class="h3">Geen resultaten gevonden die overeenkomen met ${results.query}</p>
                             <p>Sorry, we konden geen resultaat vinden voor je zoekopdracht. Probeer opnieuw te zoeken door je zoekopdracht te controleren op spelfouten en/of het aantal gebruikte trefwoorden te verminderen. U kunt ook proberen een bredere zoekterm te gebruiken.</p>
                             </div>`;
                         }
