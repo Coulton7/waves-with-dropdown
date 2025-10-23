@@ -1863,12 +1863,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         header: 'Filter Global Site by Content Type',
                         item: '<input type="checkbox" data-insights-filter="${`type:${value}`}" class="ais-refinement-list--checkbox" {{#isRefined}}checked="true"{{/isRefined}}> {{label}} <span class="ais-refinement-list--count">({{count}})</span>',
                     },
-                    transformItems(items){
-                        return items.map(item => ({
-                            ...item,
-                            label: typeMapping[item.label],
-                        }));
-                    },
+                    
                     cssClasses: {
                         item: ['types-item']
                     },
