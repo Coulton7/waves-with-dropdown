@@ -1834,8 +1834,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             instantsearch.widgets
                 .index({ indexName: 'pdf_brochures_xml_crawler' })
-                .addWidgets([{
-                },
+                .addWidgets([
 
                 instantsearch.widgets.configure({
                     clickAnalytics: true,
