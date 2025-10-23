@@ -1916,13 +1916,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         </div>`
                         },
                     },
-                    transformItems(items){
-                        return items.map(item => ({
-                            ...item,
-                            type: typeMapping[item.type],
-                            vid: vidMapping[item.vid]
-                        }))
-                    },
+                    
                 }),
             ])
         ]);
