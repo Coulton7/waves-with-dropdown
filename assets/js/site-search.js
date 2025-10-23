@@ -1777,7 +1777,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }),
 
             instantsearch.widgets
-                .index({ indexName: 'pdf_brochures_xml_crawler' }),
+                .index({ indexName: 'pdf_brochures_xml_crawler' })
+                .addWidgets([
 
                 instantsearch.widgets.configure({
                     clickAnalytics: true,
@@ -1814,7 +1815,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         }
                     },
                 }),
-            ]);
+            ])
+        ]);
         usaSearch.start();
     }
 
