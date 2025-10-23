@@ -1764,6 +1764,24 @@ document.addEventListener("DOMContentLoaded", function() {
                 filters: 'field_global_article: "false"',
             }),
 
+            typelistPanel({
+                container: '#type-list',
+                attribute: 'type',
+                templates: {
+                    item: '<input type="checkbox" data-insights-filter="${`type:${value}`}" class="ais-refinement-list--checkbox" {{#isRefined}}checked="true"{{/isRefined}}> {{label}} <span class="ais-refinement-list--count">({{count}})</span>',
+                },
+                transformItems(items){
+                    return items.map(item => ({
+                        ...item,
+                        label: typeMapping[item.label],
+                    }));
+                },
+                cssClasses: {
+                    item: ['types-item']
+                },
+                sortBy: ['isRefined', 'count:desc', 'name:asc']
+            }),
+
             nationalPagination({
                 container: '#usPagination',
                 totalPages: 3,
@@ -1815,54 +1833,97 @@ document.addEventListener("DOMContentLoaded", function() {
             }),
 
             instantsearch.widgets
-                .index({ indexName: 'pdf_brochures_xml_crawler' })
-                .addWidgets([
+                .index({ indexName: 'aesseal' })
+                .addWidgets([{
+                    init: function(options) {
+                        if(filterLang == "en")
+                        {
+                            options.helper.toggleRefinement('search_api_language', 'en');
+                        }
+                        else if(filterLang == "")
+                        {
+                            options.helper.toggleRefinement('search_api_language', 'en');
+                        }
+                    }
+                },
 
                 instantsearch.widgets.configure({
                     clickAnalytics: true,
                     userToken: 'user-1',
                     hitsPerPage: 10,
-                    attributesToSnippet: ['content:80'],
+                    attributesToSnippet: ['field_summary:80', 'body:80'],
                     page: 0,
+                    filters: '(type:casestudies OR type:productbrochure OR type:video OR type:industryguides OR type:corpbrochure)', 
+                }),
+
+                gloablTypelistPanel({
+                    container: '#globalType-list',
+                    attribute: 'type',
+                    templates: {
+                        header: 'Filter Global Site by Content Type',
+                        item: '<input type="checkbox" data-insights-filter="${`type:${value}`}" class="ais-refinement-list--checkbox" {{#isRefined}}checked="true"{{/isRefined}}> {{label}} <span class="ais-refinement-list--count">({{count}})</span>',
+                    },
+                    transformItems(items){
+                        return items.map(item => ({
+                            ...item,
+                            label: typeMapping[item.label],
+                        }));
+                    },
+                    cssClasses: {
+                        item: ['types-item']
+                    },
+                    sortBy: ['isRefined', 'count:desc', 'name:asc']
+                }),
+
+                langlistPanel({
+                    container: '#lang-list',
+                    attribute: 'search_api_language',
+                    templates: {
+                        header: 'Select your Language',
+                        item: '<input type="checkbox" data-insights-filter="${`search_api_language:${value}`}" class="ais-refinement-list--checkbox lang-item" value="{{label}}" {{#isRefined}}checked="true"{{/isRefined}}> {{label}} <span class="ais-refinement-list--count">({{count}})</span>',
+                    },
+                    transformItems(items){
+                        return items.map(item => ({
+                            ...item,
+                            label: item.label.toUpperCase(),
+                        }));
+                    },
+                    sortBy: ['isRefined', 'count:desc', 'name:asc']
                 }),
 
                 pagination({
-                    container: '#pdfPagination',
+                    container: '#pagination',
                     totalPages: 3,
                     scrollTo: '#usSearchbox'
                 }),
 
                 customStats({
-                    container: document.querySelector("#pdfStats"),
+                    container: document.querySelector("#globalStats"),
                 }),
 
                 instantsearch.widgets.hits ({
-                    container: '#pdfHits',
+                    container: '#globalHits',
                     templates:{
-                        item(data, { html, components }){
-                            return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
-                                    <small>${data.url}</small>
-                                    <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>                                
-                                    <p class=${data.content ? '' : 'd-none'}>${components.Snippet({
-                                        attribute: "content",
-                                        hit: data,
-                                        highlightedTagName: 'strong'
-                                    })}</p>
-                                <a class="btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
-                            </div>`
+                        item(data, { html, components }){ 
+                        hideForm();
+                        return html`
+                        <div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
+                            <small>https://www.aesseal.com${data.url}</small>
+                            <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>
+                            <p id="contentCat" class="lead ${data.type ? '' : 'd-none'}">${data.type}</p>
+                            <p class=${data.summary ? '' : 'd-none'}>${data.summary}</p>
+                            <a class="btn btn-danger view-details align-self-end" href="https://www.aesseal.com${data.url}" target="_blank">Read More</a>
+                        </div>`
                         },
-                        empty(results, { html }){
-                        revealForm();
-                        return html`<p class="h3">No results found matching ${results.query}</p>
-                            <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
-                            <div class="text-center  py-5">
-                                <p class="h3">Would you like to search our Global site?</p>
-                                <a href="https://www.aesseal.com/en/search" class="btn btn-danger" target="_blank" rel="noopener">Search our Global site</a>
-                            </div>
-                            <p class="h3 pt-4">Are you searching for a Part Number or Serial Number?</p>`;
-                       }
                     },
-                })
+                    transformItems(items){
+                        return items.map(item => ({
+                            ...item,
+                            type: typeMapping[item.type],
+                            vid: vidMapping[item.vid]
+                        }))
+                    },
+                }),
             ])
         ]);
         usaSearch.start();

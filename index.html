@@ -907,36 +907,41 @@
           <div class="overlay-content row">
             <div class="col-lg-8 col-sm-10 offset-lg-2 offset-sm-1 col-10 offset-1">
               <div class="d-flex" id="usSearchbox"></div>
-              <div class="stats-row mt-2 text-white d-inline-flex"><span id="usStats"></span>&nbsp;|&nbsp;<span id="pdfStats"></span></div>
-              <ul class="nav nav-tabs mt-5">
-                <li class="nav-item active"><a class="nav-link active" data-bs-toggle="tab" href="#usSearch">US Webpage Search <img src="https://static.aesseal.com/graphics/flags/US.svg" height="25" width="25" alt="US Flag" /></a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#pdfSearch">Global Resources Search <i class="fa-solid fa-globe"></i></a></li>
-              </ul>
-        
-              <div class="tab-content">
-                <div id="usSearch" class="tab-pane fade in active show">
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <div id="clear-refinements"></div>
-                      <div id="type-list"></div>
+              <div class="stats-row mt-2 text-white d-inline-flex"><span id="usStats"></span>&nbsp;|&nbsp;<span id="globalStats"></span></div>
+                <ul class="nav nav-tabs mt-5">
+                  <li class="nav-item active"><a class="nav-link active" data-bs-toggle="tab" href="#usSearch">US Search <img src="https://static.aesseal.com/graphics/flags/US.svg" height="25" width="25" alt="US Flag" /></a></li>
+                  <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#globalSearch">Global Site Search <i class="fa-solid fa-globe"></i></a></li>
+                </ul>
+          
+                <div class="tab-content">
+                  <div id="usSearch" class="tab-pane fade in active show">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div id="clear-refinements"></div>
+                        <div id="type-list"></div>
+                      </div>
+                      <div class="col-sm-8" data-insights-index="aesseal us">
+                        <div id="usHits"></div>
+                      </div>
+                      <div id="usPagination"></div>
                     </div>
-                    <div class="col-sm-8" data-insights-index="aesseal us">
-                      <div id="usHits"></div>
+                  </div>
+                  <div id="globalSearch" class="tab-pane fade">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div id="clear-refinements"></div>
+                        <div id="globalType-list"></div>
+                        <div id="lang-list"></div>
+                      </div>
+                      <div class="col-sm-8" data-insights-index="aesseal">
+                        <div id="globalHits"></div>
+                      </div>
+                      <div id="pagination"></div>
                     </div>
-                    <div id="usPagination"></div>
                   </div>
                 </div>
-                <div id="pdfSearch" class="tab-pane fade">
-                  <div class="row">
-                    <div class="col-sm-10 offset-1" data-insights-index="pdf_brochures_xml_crawler">
-                      <div id="pdfHits"></div>
-                    </div>
-                    <div id="pdfPagination"></div>
-                  </div>
+                <div id="parts-form">
                 </div>
-              </div>
-              <div id="parts-form">
-              </div>
             </div>
           </div>
         </div>
@@ -980,7 +985,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.56.7/dist/instantsearch.production.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js@1.18.1/dist/umd/index.production.js" integrity="sha256-WVU+KiMWjrQCAjDUDpWTBQKpC0YenCmCvIRvSO7Q9qc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/autocomplete-js@2.7.1/dist/autocomplete.min.js"></script>
-    <script type="text/javascript" src="assets/js/site-search.js"></script>
+    <script type="text/javascript" src="assets/js/resource-search.js"></script>
     <script type="text/javascript" src="assets/js/front-overlay-trigger.js"></script>
     <script type="text/javascript" src="assets/js/smooth-scroll.js"></script>
     <script type="text/javascript" src="assets/js/360-tour-banner.js"></script>
