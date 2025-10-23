@@ -1781,11 +1781,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 .addWidgets([
 
                 instantsearch.widgets.configure({
-                    clickAnalytics: true,
-                    userToken: 'user-1',
                     hitsPerPage: 10,
                     attributesToSnippet: ['content:80'],
-                    page: 0,
                 }),
 
                 pdfPagination({
