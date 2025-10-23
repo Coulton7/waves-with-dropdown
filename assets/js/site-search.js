@@ -1054,16 +1054,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             },
         })(instantsearch.widgets.pagination)
-
-        const pdfPagination = instantsearch.widgets.panel ({
-            hidden: function(options) {
-                if (options.results.query === ''){
-                    return [];
-                } else {
-                    return options.results.nbHits === 0;
-                }
-            },
-        })(instantsearch.widgets.pagination)
     
     if(!!globeSearch){
         window.dataLayer.push({
@@ -1783,7 +1773,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 transformItems(items){
                     return items.map(item => ({
                         ...item,
-                        label: natTypeMapping[item.label],
+                        label: typeMapping[item.label],
                     }));
                 },
                 cssClasses: {
@@ -1844,14 +1834,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
             instantsearch.widgets
                 .index({ indexName: 'pdf_brochures_xml_crawler' })
-                .addWidgets([
+                .addWidgets([{
+                },
 
                 instantsearch.widgets.configure({
+                    clickAnalytics: true,
+                    userToken: 'user-1',
                     hitsPerPage: 10,
                     attributesToSnippet: ['content:80'],
+                    page: 0,
                 }),
 
-                pdfPagination({
+                pagination({
                     container: '#pdfPagination',
                     totalPages: 3,
                     scrollTo: '#usSearchbox'
@@ -1875,18 +1869,19 @@ document.addEventListener("DOMContentLoaded", function() {
                                     })}</p>
                                 <a class="btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
                             </div>`
-                        }, empty(results, { html }){
+                        },
+                        empty(results, { html }){
                         revealForm();
                         return html`<p class="h3">No results found matching ${results.query}</p>
-                    <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
-                    <div class="text-center  py-5">
-                        <p class="h3">Would you like to search our Global site?</p>
-                        <a href="https://www.aesseal.com/en/search" class="btn btn-danger" target="_blank" rel="noopener">Search our Global site</a>
-                    </div>
-                    <p class="h3 pt-4">Are you searching for a Part Number or Serial Number?</p>`;
+                            <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
+                            <div class="text-center  py-5">
+                                <p class="h3">Would you like to search our Global site?</p>
+                                <a href="https://www.aesseal.com/en/search" class="btn btn-danger" target="_blank" rel="noopener">Search our Global site</a>
+                            </div>
+                            <p class="h3 pt-4">Are you searching for a Part Number or Serial Number?</p>`;
+                       }
                     },
-                    },
-                }),
+                })
             ])
         ]);
         usaSearch.start();
