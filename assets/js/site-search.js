@@ -1764,24 +1764,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 filters: 'field_global_article: "false"',
             }),
 
-            typelistPanel({
-                container: '#type-list',
-                attribute: 'type',
-                templates: {
-                    item: '<input type="checkbox" data-insights-filter="${`type:${value}`}" class="ais-refinement-list--checkbox" {{#isRefined}}checked="true"{{/isRefined}}> {{label}} <span class="ais-refinement-list--count">({{count}})</span>',
-                },
-                transformItems(items){
-                    return items.map(item => ({
-                        ...item,
-                        label: natTypeMapping[item.label],
-                    }));
-                },
-                cssClasses: {
-                    item: ['types-item']
-                },
-                sortBy: ['isRefined', 'count:desc', 'name:asc']
-            }),
-
             nationalPagination({
                 container: '#usPagination',
                 totalPages: 3,
