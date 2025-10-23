@@ -1054,6 +1054,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             },
         })(instantsearch.widgets.pagination)
+
+        const pdfPagination = instantsearch.widgets.panel ({
+            hidden: function(options) {
+                if (options.results.query === ''){
+                    return [];
+                } else {
+                    return options.results.nbHits === 0;
+                }
+            },
+        })(instantsearch.widgets.pagination)
     
     if(!!globeSearch){
         window.dataLayer.push({
@@ -1843,7 +1853,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     page: 0,
                 }),
 
-                pagination({
+                pdfPagination({
                     container: '#pdfPagination',
                     totalPages: 3,
                     scrollTo: '#usSearchbox'
