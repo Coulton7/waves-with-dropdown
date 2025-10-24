@@ -315,7 +315,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const renderHits = (renderOptions, isFirstRender) => {
-        const { nbHits, hits, widgetParams, query } = renderOptions;
+        const { nbHits, widgetParams, query } = renderOptions;
 
         if(isFirstRender) {
             return;
@@ -333,6 +333,7 @@ document.addEventListener("DOMContentLoaded", function() {
             count += `0`;
         }
 
+        widgetParams.container.innerHTML = `${count}`;
     }
 
 
