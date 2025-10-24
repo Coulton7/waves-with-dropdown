@@ -1857,16 +1857,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 instantsearch.widgets.hits ({
                     container: '#globalHits',
                     templates:{
-                item(data, { html, components }){
-                    return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
-                            <small>${data.url}</small>
-                            <p class="h3 ${data.title ? '' : 'd-none'}">${data.title}</p>                                
-                            <p class=${data.content ? '' : 'd-none'}>${components.Snippet({
+                item(hit, { html, components }){
+                    return html `<div class="search-result" data-insights-object-id="${hit.objectID}" data-insights-position="${hit.__position}" data-insights-query-id="${hit.__queryID}">
+                            <small>${hit.url}</small>
+                            <p class="h3 ${hit.title ? '' : 'd-none'}">${hit.title}</p>                                
+                            <p class=${hit.content ? '' : 'd-none'}>${components.Snippet({
                                 attribute: "content",
-                                hit: data,
+                                hit: hit,
                                 highlightedTagName: 'strong'
                             })}</p>
-                        <a class="btn btn-primary view-details align-self-end" href="${data.url}">Read More</a>
+                        <a class="btn btn-primary view-details align-self-end" href="${hit.url}">Read More</a>
                     </div>`
                 }
             }
