@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
             clearButton.classList.add("btn", "btn-primary", "mt-5");
             if(filterLang == 'en'){
                 clearButton.textContent = 'Clear Refinements';
-            } else if(filterLang == ''){
+            } else if(filterLang == 'waves-with-dropdown'){
                 clearButton.textContent = 'Clear Refinements';
             } else if(filterLang == 'es'){
                 clearButton.textContent = 'Refinamientos claros'
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (nbHits > 1) {
             if(filterLang == 'en') {
                 count += `${nbHits} results`;
-            } else if(filterLang == '') {
+            } else if(filterLang == 'waves-with-dropdown') {
                 count += `${nbHits} results`;
             } else if (filterLang == 'es') {
                 count += `${nbHits} resultados`;
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else if (nbHits === 1) {
             if(filterLang == 'en') {
                 count += `1 result`;
-            } else if (filterLang == '') {
+            } else if (filterLang == 'waves-with-dropdown') {
                 count += `1 result`;
             } else if (filterLang == 'es') {
                 count += `1 resultado`;
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             if(filterLang == 'en') {
                 count += `no results`;
-            } else if (filterLang == '') {
+            } else if (filterLang == 'waves-with-dropdown') {
                 count += `no results`;
             } else if (filterLang == 'es') {
                 count += `sin resultados`;
@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if(filterLang == 'en') {
             widgetParams.container.innerHTML =
             `<p class="text-white">${count} found in ${processingTimeMS}ms</p>`
-        } else if(filterLang == '') {
+        } else if(filterLang == 'waves-with-dropdown') {
             widgetParams.container.innerHTML =
             `<p class="text-white">${count} found in ${processingTimeMS}ms</p>`
         } else if(filterLang == 'es') {
@@ -882,7 +882,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 header( options, { html }) {
                     if (filterLang == 'en'){
                         return html `<h4>Select your Language</h4>`
-                    } else if (filterLang == ''){
+                    } else if (filterLang == 'waves-with-dropdown'){
                         return html `<h4>Select your Language</h4>`
                     } else if (filterLang == 'es'){
                         return html `<h4>Seleccione su idioma</h4>`
@@ -929,7 +929,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 header( options, { html }) {
                     if (filterLang == 'en'){
                         return html `<h4>Filter by Content Type</h4>`
-                    } else if (filterLang == ''){
+                    } else if (filterLang == 'waves-with-dropdown'){
                         return html `<h4>Filter by Content Type</h4>`
                     } else if (filterLang == 'es'){
                         return html `<h4>Filtrar por tipo de contenido</h4>`
@@ -976,7 +976,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 header( options, { html }) {
                     if (filterLang == 'en'){
                         return html `<h4>Filter Global Site by Resource Type</h4>`
-                    } else if (filterLang == ''){
+                    } else if (filterLang == 'waves-with-dropdown'){
                         return html `<h4>Filter Global Site by Resource Type</h4>`
                     } else if (filterLang == 'es'){
                         return html `<h4>Filtrar el sitio global por tipo de recurso</h4>`
@@ -1024,7 +1024,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 header( options, { html }) {
                     if (filterLang == 'en'){
                         return html `<h4>Select your Language</h4>`
-                    } else if (filterLang == ''){
+                    } else if (filterLang == 'waves-with-dropdown'){
                         return html `<h4>Select your Language</h4>`
                     } else if (filterLang == 'es'){
                         return html `<h4>Seleccione su idioma</h4>`
@@ -1292,7 +1292,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                     </div>
                                 </div>
                             </div>`
-                        } else if(filterLang == ''){
+                        } else if(filterLang == 'waves-with-dropdown'){
                             hideForm();
                             return html `<div class="search-result" data-insights-object-id="${data.objectID}" data-insights-position="${data.__position}" data-insights-query-id="${data.__queryID}">
                                 <small class="${data.type != "Announcements" ? '' : 'd-none'}">${data.url}</small>
@@ -1582,7 +1582,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         }
-                        else if(filterLang == '') {
+                        else if(filterLang == 'waves-with-dropdown') {
                             revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
