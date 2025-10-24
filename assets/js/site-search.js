@@ -314,7 +314,31 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    const renderHits = (renderOptions, isFirstRender) => {
+        const { nbHits, hits, widgetParams, query } = renderOptions;
+
+        if(isFirstRender) {
+            return;
+        }
+
+        let count = "";
+
+        if (query === '') return [];
+
+        if (nbHits > 1) {
+            count += `${nbHits}`;
+        } else if (nbHits === 1) {
+            count += `1`;
+        } else {
+            count += `0`;
+        }
+
+    }
+
+
     const customStats = connectStats(renderStats);
+
+    const numberOfHits = connectStats(renderHits);
 
     const customClearRefinements = connectClearRefinements(
         renderClearRefinements
@@ -1796,6 +1820,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 container: document.querySelector("#usStats"),
             }),
 
+            numberOfHits({
+                container: document.querySelector("#usResultsNum"),
+            }),
+
             instantsearch.widgets.hits ({
                 container: '#usHits',
                 templates:{
@@ -1852,6 +1880,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 customStats({
                     container: document.querySelector("#globalStats"),
                 }),
+
+                numberOfHits({
+                    container: document.querySelector("#globalResultsNum"),
+            }),
 
                 instantsearch.widgets.hits ({
                     container: '#globalHits',
