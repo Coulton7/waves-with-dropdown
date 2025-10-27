@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     searchButton.addEventListener("click", function() {
 
-        if (intResultsNum.innerHTML === "0") {
+        if (intResultsNum.value === "0") {
             document.querySelector('#globalResultsTab').classList.add('highlight-tab');
         }
 
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     searchInput.addEventListener("keydown", function(e) {
         if (e.key === 'Enter') {
-            if (intResultsNum.innerHTML === "0") {
+            if (intResultsNum.value === "0") {
                 document.querySelector('#globalResultsTab').classList.add('highlight-tab');
             }
 
