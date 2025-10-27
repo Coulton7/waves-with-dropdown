@@ -316,11 +316,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const renderHits = (renderOptions, isFirstRender) => {
         const { nbHits, widgetParams, query } = renderOptions;
-
         if(isFirstRender) {
             return;
         }
-
         let count = "";
 
         if (query === '') return [];
@@ -332,7 +330,6 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             count += `0`;
         }
-
         widgetParams.container.innerHTML = `${count}`;
     }
 
