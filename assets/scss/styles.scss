@@ -553,14 +553,15 @@ a.disabled {
 }
 
 .search-overlay .nav-tabs .nav-link {
-  color: $white;
+  color: $gray-200;
+  background-color: $black;
   border: 1px solid rgba($color: #fff, $alpha: 0.75);
   border-bottom: none;
 }
 
 .search-overlay .nav-tabs .nav-link.active, .search-overlay .nav-tabs .nav-link span {
-  color: #535354;
-  background-color: rgba($color: #fff, $alpha: 0.5);
+  color: $white;
+  background-color: transparent;
 }
 
 .wavelogo {
@@ -4018,79 +4019,93 @@ height:100%;
     margin-right: auto;
     display: flex;
     position: relative;
-  }
-  .marquee-slider__list {
-    flex: none;
-    display: flex;
-    flex-flow: row;
-    align-items: stretch;
-    grid-row-gap: 2.6rem;
-    justify-content: center;
-    grid-column-gap: 1.6rem;
-    transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.38, 1.399);
-  }
-  .marquee-slider__list--item {
-    color: #FFF;
-    width: 100%;
-    height: 100%;
-    max-width: 260px;
-    min-height: 260px;
-    grid-column-gap: 1.6rem;
-    border-radius: 0.8rem;
-    flex: none;
-    display: flex;
-    position: relative;
-    align-items: center;
-    grid-row-gap: 1.6rem;
-    justify-content: center;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.09));
-  }
-  
-  .marquee-tour-wrapper {
-    position: relative;
-  }
-  
-  #tour-banner-overlay, #corp-video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-  }
-  
-  #tour-banner-overlay.hidden, #corp-video-overlay.hidden {
-    opacity: 0.5;
-    visibility: hidden;
-    pointer-events: none;
-  }
+}
+.marquee-slider__list {
+  flex: none;
+  display: flex;
+  flex-flow: row;
+  align-items: stretch;
+  grid-row-gap: 2.6rem;
+  justify-content: center;
+  grid-column-gap: 1.6rem;
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.38, 1.399);
+}
+.marquee-slider__list--item {
+  color: #FFF;
+  width: 100%;
+  height: 100%;
+  max-width: 260px;
+  min-height: 260px;
+  grid-column-gap: 1.6rem;
+  border-radius: 0.8rem;
+  flex: none;
+  display: flex;
+  position: relative;
+  align-items: center;
+  grid-row-gap: 1.6rem;
+  justify-content: center;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.09));
+}
 
-  .popular-searches-seal-support {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: linear-gradient(to right, rgba(0, 32, 91, 1) 33%, rgba(0, 32, 91, 0) 100%), url('https://static.aesseal.com/photo/seal_support_systems/2018-STAR_PETROLEUM_53B_order.jpg');
-    background-size: cover;
-    background-position: top;
-    padding: 3rem;
-    color: white;
-    position: relative;
-    overflow: hidden;
-  }
+.marquee-tour-wrapper {
+  position: relative;
+}
 
-  .popular-search-bar{
-    display: inline-flex;
-    width: 100%;
-  }
+#tour-banner-overlay, #corp-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
 
-  .pop-search-bar {
-    margin-right: 1em;
-  }
+#tour-banner-overlay.hidden, #corp-video-overlay.hidden {
+  opacity: 0.5;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.popular-searches-seal-support {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to right, rgba(0, 32, 91, 1) 33%, rgba(0, 32, 91, 0) 100%), url('https://static.aesseal.com/photo/seal_support_systems/2018-STAR_PETROLEUM_53B_order.jpg');
+  background-size: cover;
+  background-position: top;
+  padding: 3rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.popular-search-bar{
+  display: inline-flex;
+  width: 100%;
+}
+
+.pop-search-bar {
+  margin-right: 1em;
+}
+
+.highlight-tab {
+  animation: highlightTab 5s ease-in-out;
+  -webkit-animation: highlightTab 5s ease-in-out;
+}
+
+@keyframes highlightTab {
+  0%   { background-color: #000000;
+        color: $gray-200; }
+  50%  { background-color: #b5b6b9;
+        color: $gray-200; }
+  100% { background-color: #000000;
+        color: $gray-200; }
+}
 
 @keyframes card1_ani {
   0%   { left:0px; transform: rotate(0); }
