@@ -1819,7 +1819,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }),
 
             numberOfHits({
-                container: document.querySelector("#usResultsNum"),
+                container: document.querySelector("#intResultsNum"),
             }),
 
             instantsearch.widgets.hits ({
