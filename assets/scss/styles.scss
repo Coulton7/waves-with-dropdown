@@ -558,7 +558,7 @@ a.disabled {
   border-bottom: none;
 }
 
-.search-overlay .nav-tabs .nav-link.active {
+.search-overlay .nav-tabs .nav-link.active, .search-overlay .nav-tabs .nav-link span {
   color: #535354;
   background-color: rgba($color: #fff, $alpha: 0.5);
 }
