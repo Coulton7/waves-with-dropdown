@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    var intResultsNum = document.querySelector('#intResultsNum');
+    const intResultsNum = document.querySelector('#intResultsNum');
     var searchButton = document.querySelector('.ais-SearchBox-submit');
     var searchInput = document.querySelector('.ais-SearchBox-input');
 
