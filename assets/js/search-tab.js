@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (intResultsNum.innerText === "0") {
                 document.querySelector('#globalResultsTab').classList.add('highlight-tab');
+            } else {
+                document.querySelector('#globalResultsTab').classList.remove('highlight-tab');
             }
         }, 1000);
     });
@@ -20,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log(intResultsNum.innerHTML);
                 if (intResultsNum.innerText === "0") {
                     document.querySelector('#globalResultsTab').classList.add('highlight-tab');
+                } else {
+                    document.querySelector('#globalResultsTab').classList.remove('highlight-tab');
                 }
 
             }, 1000);
