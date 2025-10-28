@@ -1691,6 +1691,9 @@ document.addEventListener("DOMContentLoaded", function() {
         const usaSearch = instantsearch({
             indexName: 'aesseal us',
             searchClient,
+            searchParams: {
+                filters: 'field_global_article:false',
+            },
             typoTolerance: 'strict',
             paginationLimitedTo: 80,
             searchFunction(helper) {
