@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
             clearButton.classList.add("btn", "btn-primary", "mt-5");
             if(filterLang == 'en'){
                 clearButton.textContent = 'Clear Refinements';
-            } else if(filterLang == 'waves-with-dropdown'){
+            } else if(filterLang == ''){
                 clearButton.textContent = 'Clear Refinements';
             } else if(filterLang == 'es'){
                 clearButton.textContent = 'Refinamientos claros'
@@ -129,6 +129,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 clearButton.textContent = '明確な絞り込み';
             } else if(filterLang == 'sv'){
                 clearButton.textContent = 'Tydliga förbättringar';
+            } else {
+                clearButton.textContent = 'Clear Refinements';
             }
 
             clearButton.addEventListener('click', () => {
