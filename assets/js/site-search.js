@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (nbHits > 1) {
             if(filterLang == 'en') {
                 count += `${nbHits} results`;
-            } else if(filterLang == 'waves-with-dropdown') {
+            } else if(filterLang == '') {
                 count += `${nbHits} results`;
             } else if (filterLang == 'es') {
                 count += `${nbHits} resultados`;
@@ -185,6 +185,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 count += `${nbHits} 結果`;
             } else if (filterLang == 'sv') {
                 count += `${nbHits} resultat`;
+            } else {
+                count += `${nbHits} results`;
             }
         } else if (nbHits === 1) {
             if(filterLang == 'en') {
