@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.querySelector('#globalResultsTab').classList.remove('highlight-tab');
             }
             document.querySelector(".stats-row").style.visibility = "visible";
-        }, 1000);
+        }, 500);
     });
 
     searchInput.addEventListener("keydown", function(e) {
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     document.querySelector('#globalResultsTab').classList.remove('highlight-tab');
                 }
                 document.querySelector(".stats-row").style.visibility = "visible";
-            }, 1000);
+            }, 500);
         }
     })
 
