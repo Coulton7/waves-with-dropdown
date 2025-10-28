@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     document.querySelector('#globalResultsTab').classList.remove('highlight-tab');
                 }
             }, 1000);
+            document.querySelector(".stats-row").style.visibility = "visible";
         }
-        document.querySelector(".stats-row").style.visibility = "visible";
     })
 
 });
