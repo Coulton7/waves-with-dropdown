@@ -4099,7 +4099,8 @@ height:100%;
 }
 
 .stats-row {
-  display: none;
+  visibility: hidden;
+  display: inline-flex;
 }
 
 @keyframes highlightTab {
