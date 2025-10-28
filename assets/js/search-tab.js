@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     searchButton.addEventListener("click", function() {
         setTimeout(function() {
-            console.log(intResultsNum.innerHTML);
-
             if (intResultsNum.innerText === "0") {
                 document.querySelector('#globalResultsTab').classList.add('highlight-tab');
             } else {
@@ -19,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
     searchInput.addEventListener("keydown", function(e) {
         if (e.key === 'Enter') {
             setTimeout(function() {
-                console.log(intResultsNum.innerHTML);
                 if (intResultsNum.innerText === "0") {
                     document.querySelector('#globalResultsTab').classList.add('highlight-tab');
                 } else {
