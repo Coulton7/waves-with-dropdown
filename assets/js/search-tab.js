@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.querySelector('#globalResultsTab').classList.remove('highlight-tab');
             }
         }, 1000);
+        document.querySelector(".stats-row").style.display = "inline-flex";
     });
 
     searchInput.addEventListener("keydown", function(e) {
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }, 1000);
         }
+        document.querySelector(".stats-row").style.display = "inline-flex";
     })
 
 });

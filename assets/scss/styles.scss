@@ -4098,6 +4098,10 @@ height:100%;
   -webkit-animation: highlightTab 5s ease-in-out;
 }
 
+.stats-row {
+  display: none;
+}
+
 @keyframes highlightTab {
   0%   { background-color: #000000;
         color: $gray-200; }
