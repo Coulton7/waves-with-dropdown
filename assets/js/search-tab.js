@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 document.querySelector('#globalResultsTab').classList.remove('highlight-tab');
             }
+            document.querySelector(".stats-row").style.visibility = "visible";
         }, 1000);
-        document.querySelector(".stats-row").style.visibility = "visible";
     });
 
     searchInput.addEventListener("keydown", function(e) {
@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     document.querySelector('#globalResultsTab').classList.remove('highlight-tab');
                 }
+                document.querySelector(".stats-row").style.visibility = "visible";
             }, 1000);
-            document.querySelector(".stats-row").style.visibility = "visible";
         }
     })
 
