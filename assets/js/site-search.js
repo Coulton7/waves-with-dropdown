@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else if (nbHits === 1) {
             if(filterLang == 'en') {
                 count += `1 result`;
-            } else if (filterLang == 'waves-with-dropdown') {
+            } else if (filterLang == '') {
                 count += `1 result`;
             } else if (filterLang == 'es') {
                 count += `1 resultado`;
@@ -223,11 +223,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 count += `1件`;
             } else if (filterLang == 'sv') {
                 count += `1 resultat`;
+            } else {
+                count += `1 result`;
             }
         } else {
             if(filterLang == 'en') {
                 count += `no results`;
-            } else if (filterLang == 'waves-with-dropdown') {
+            } else if (filterLang == '') {
                 count += `no results`;
             } else if (filterLang == 'es') {
                 count += `sin resultados`;
@@ -259,13 +261,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 count += `結果なし`;
             } else if (filterLang == 'sv') {
                 count += `inga resultat`;
+            } else {
+                count += `no results`;
             }
         }
 
         if(filterLang == 'en') {
             widgetParams.container.innerHTML =
             `<p class="text-white">${count} found in ${processingTimeMS}ms</p>`
-        } else if(filterLang == 'waves-with-dropdown') {
+        } else if(filterLang == '') {
             widgetParams.container.innerHTML =
             `<p class="text-white">${count} found in ${processingTimeMS}ms</p>`
         } else if(filterLang == 'es') {
@@ -313,6 +317,9 @@ document.addEventListener("DOMContentLoaded", function() {
         } else if(filterLang == 'sv') {
             widgetParams.container.innerHTML =
             `<p class="text-white">${count} finns i ${processingTimeMS}ms</p>`
+        } else {
+            widgetParams.container.innerHTML =
+            `<p class="text-white">${count} found in ${processingTimeMS}ms</p>`
         }
     }
 
@@ -782,6 +789,32 @@ document.addEventListener("DOMContentLoaded", function() {
                 'video': 'ビデオ',
                 'whitepaper': 'Whitepaper',
             }
+        } else {
+            typeMapping = {
+                '3dmodels': '3D Models',
+                'academy': 'Academy',
+                'announcements': 'Announcements',
+                'apiplans': 'API Plans',
+                'article': 'Article',
+                'bearingprotection': 'Bearing Protection',
+                'cartridgemechanicalseals': 'Cartridge Mechanical Seals',
+                'casestudies': 'Case Studies',
+                'componentseals': 'Component Seals',
+                'corpbrochure': 'Corporate Brochure',
+                'elastomers': 'Elastomers',
+                'gasseals': 'Gas Seals',
+                'glandpacking': 'Gland Packing',
+                'industryguides': 'Industry Guides',
+                'locations': 'Locations',
+                'page': 'Web Page',
+                'policies': 'Policies',
+                'productbrochure': 'Product Brochure',
+                'productcertificates': 'Product Certificates',
+                'sealsupportsystems': 'Seal Support Systems',
+                'technicaldrawings': 'Technical Drawing',
+                'video': 'Video',
+                'whitepaper': 'Whitepaper',
+            }
         }
 
         if(filterLang == "en") {
@@ -868,6 +901,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 'gasseals': 'Gas Seals Category',
                 'componentseals': 'Component Seals Category',
             }
+        } else {
+            vidMapping = {
+                'industry': 'Industry',
+                'glandpacking': 'Gland Packing Category',
+                'sealsupportsystems': 'Seal Support Systems Category',
+                'bearingprotectioncategories': 'Bearing Protection Category',
+                'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
+                'gasseals': 'Gas Seals Category',
+                'componentseals': 'Component Seals Category',
+            }
         }
 
         const langlistPanel = instantsearch.widgets.panel ({
@@ -882,7 +925,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 header( options, { html }) {
                     if (filterLang == 'en'){
                         return html `<h4>Select your Language</h4>`
-                    } else if (filterLang == 'waves-with-dropdown'){
+                    } else if (filterLang == ''){
                         return html `<h4>Select your Language</h4>`
                     } else if (filterLang == 'es'){
                         return html `<h4>Seleccione su idioma</h4>`
@@ -910,6 +953,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         return html `<h4>Selecteer uw taal</h4>`
                     } else if (filterLang == 'ja'){
                         return html `<h4>言語の選択</h4>`
+                    } else {
+                        return html `<h4>Select your Language</h4>`
                     }
                 },
             },cssClasses: {
@@ -929,7 +974,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 header( options, { html }) {
                     if (filterLang == 'en'){
                         return html `<h4>Filter by Content Type</h4>`
-                    } else if (filterLang == 'waves-with-dropdown'){
+                    } else if (filterLang == ''){
                         return html `<h4>Filter by Content Type</h4>`
                     } else if (filterLang == 'es'){
                         return html `<h4>Filtrar por tipo de contenido</h4>`
@@ -957,6 +1002,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         return html `<h4>Filter op inhoudstype</h4>`
                     } else if (filterLang == 'ja'){
                         return html `<h4>コンテンツ・タイプによるフィルタリング</h4>`
+                    } else {
+                        return html `<h4>Filter by Content Type</h4>`
                     }
                 }
             },cssClasses: {
@@ -976,7 +1023,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 header( options, { html }) {
                     if (filterLang == 'en'){
                         return html `<h4>Filter Global Site by Resource Type</h4>`
-                    } else if (filterLang == 'waves-with-dropdown'){
+                    } else if (filterLang == ''){
                         return html `<h4>Filter Global Site by Resource Type</h4>`
                     } else if (filterLang == 'es'){
                         return html `<h4>Filtrar el sitio global por tipo de recurso</h4>`
@@ -1004,6 +1051,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         return html `<h4>Filter Globale site op type bron</h4>`
                     } else if (filterLang == 'ja'){
                         return html `<h4>リソースタイプによるグローバルサイトのフィルタリング</h4>`
+                    } else {
+                        return html `<h4>Filter Global Site by Resource Type</h4>`
                     }
                 },
             },
@@ -1024,7 +1073,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 header( options, { html }) {
                     if (filterLang == 'en'){
                         return html `<h4>Select your Language</h4>`
-                    } else if (filterLang == 'waves-with-dropdown'){
+                    } else if (filterLang == ''){
                         return html `<h4>Select your Language</h4>`
                     } else if (filterLang == 'es'){
                         return html `<h4>Seleccione su idioma</h4>`
@@ -1052,6 +1101,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         return html `<h4>Selecteer uw taal</h4>`
                     } else if (filterLang == 'ja'){
                         return html `<h4>言語の選択</h4>`
+                    } else {
+                        return html `<h4>Select your Language</h4>`
                     }
                 },
             },cssClasses: {
@@ -1797,7 +1848,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 transformItems(items){
                     return items.map(item => ({
                         ...item,
-                        label: natTypeMapping[item.label],
+                        label: typeMapping[item.label],
                     }));
                 },
                 cssClasses: {
@@ -1855,7 +1906,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 transformItems(items){
                     return items.map(item => ({
                         ...item,
-                        type: natTypeMapping[item.type],
+                        type: typeMapping[item.type],
                     }))
                 },
             }),
