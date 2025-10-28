@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     document.querySelector('#globalResultsTab').classList.remove('highlight-tab');
                 }
-
             }, 1000);
         }
     })
