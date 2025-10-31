@@ -908,13 +908,13 @@
             <div class="col-lg-8 col-sm-10 offset-lg-2 offset-sm-1 col-10 offset-1">
               <div class="d-flex" id="usSearchbox"></div>
               <div class="stats-row mt-2 text-white"><span id="usStats"></span>&nbsp;on US Site&nbsp;|&nbsp;<span id="globalStats"></span>&nbsp;on Product Brochure Search</div>
-                <ul class="nav nav-tabs mt-5">
-                  <li class="nav-item active"><a id="intResultsTab" class="nav-link active" data-bs-toggle="tab" href="#">US Site Search <span id="intResultsNum"></span> <img src="https://static.aesseal.com/graphics/flags/US.svg" height="25" width="25" alt="US Flag" /></a></li>
-                  <li class="nav-item"><a id="globalResultsTab" class="nav-link" data-bs-toggle="tab" href="#">Product Brochure Search <span id="globalResultsNum"></span> <img src="https://static.aesseal.com/graphics/flags/earth-americas-solid-colour.svg" height="25" width="25" alt="Globe" /></a></li>
+                <ul class="nav nav-tabs mt-5" role="tablist">
+                  <li class="nav-item active" role="presentation"><a id="intResultsTab" class="nav-link active" data-bs-toggle="tab" data-bs-target="#usSearch">US Site Search <span id="intResultsNum"></span> <img src="https://static.aesseal.com/graphics/flags/US.svg" height="25" width="25" alt="US Flag" /></a></li>
+                  <li class="nav-item" role="presentation"><a id="globalResultsTab" class="nav-link" data-bs-toggle="tab" data-bs-target="#globalSearch">Product Brochure Search <span id="globalResultsNum"></span> <img src="https://static.aesseal.com/graphics/flags/earth-americas-solid-colour.svg" height="25" width="25" alt="Globe" /></a></li>
                 </ul>
           
                 <div class="tab-content">
-                  <div id="usSearch" class="tab-pane fade in active show">
+                  <div id="usSearch" class="tab-pane fade in active show" role="tabpanel">
                     <div class="row">
                       <div class="col-sm-4">
                         <div id="clear-refinements"></div>
@@ -926,7 +926,7 @@
                       <div id="usPagination"></div>
                     </div>
                   </div>
-                  <div id="globalSearch" class="tab-pane fade">
+                  <div id="globalSearch" class="tab-pane fade" role="tabpanel">
                     <div class="row">
                       <div class="col-sm-10 offset-sm-1" data-insights-index="aesseal">
                         <div id="globalHits"></div>
