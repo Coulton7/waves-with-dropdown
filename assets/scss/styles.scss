@@ -552,16 +552,19 @@ a.disabled {
   z-index: 10332;
 }
 
+.search-overlay .nav-tabs {
+  border-color: $gray-200;
+}
+
 .search-overlay .nav-tabs .nav-link {
   color: $gray-200;
   background-color: $black;
   border: 1px solid rgba($color: #fff, $alpha: 0.75);
-  border-bottom: none;
 }
 
 .search-overlay .nav-tabs .nav-link.active, .search-overlay .nav-tabs .nav-link span {
   color: $white;
-  background-color: transparent;
+  background-color: $gray-200;
 }
 
 .wavelogo {
