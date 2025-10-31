@@ -1949,20 +1949,28 @@ document.addEventListener("DOMContentLoaded", function() {
                 instantsearch.widgets.hits ({
                     container: '#globalHits',
                     templates:{
-                item(hit, { html, components }){
-                    return html `<div class="search-result" data-insights-object-id="${hit.objectID}" data-insights-position="${hit.__position}" data-insights-query-id="${hit.__queryID}">
-                            <small>${hit.url}</small>
-                            <p class="h3 ${hit.title ? '' : 'd-none'}">${hit.title}</p>                                
-                            <p class=${hit.content ? '' : 'd-none'}>${components.Snippet({
-                                attribute: "content",
-                                hit: hit,
-                                highlightedTagName: 'strong'
-                            })}</p>
-                        <a class="btn btn-primary view-details align-self-end" href="${hit.url}">Open PDF</a>
-                    </div>`
-                }
-            }
-                    
+                        item(hit, { html, components }){
+                            return html `<div class="search-result" data-insights-object-id="${hit.objectID}" data-insights-position="${hit.__position}" data-insights-query-id="${hit.__queryID}">
+                                    <small>${hit.url}</small>
+                                    <p class="h3 ${hit.title ? '' : 'd-none'}">${hit.title}</p>                                
+                                    <p class=${hit.content ? '' : 'd-none'}>${components.Snippet({
+                                        attribute: "content",
+                                        hit: hit,
+                                        highlightedTagName: 'strong'
+                                    })}</p>
+                                <a class="btn btn-primary view-details align-self-end" href="${hit.url}">Open PDF</a>
+                            </div>`
+                        }, empty(results, { html }){
+                                revealForm();
+                                return html`<p class="h3">No results found matching ${results.query}</p>
+                            <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
+                            <div class="text-center  py-5">
+                                <p class="h3">Would you like to search our Global site?</p>
+                                <a href="https://www.aesseal.com/en/search" class="btn btn-danger" target="_blank" rel="noopener">Search our Global site</a>
+                            </div>
+                            <p class="h3 pt-4">Are you searching for a Part Number or Serial Number?</p>`;
+                            },
+                    }
                 }),
             ])
         ]);
