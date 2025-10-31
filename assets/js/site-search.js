@@ -1969,7 +1969,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a href="https://www.aesseal.com/en/search" class="btn btn-danger" target="_blank" rel="noopener">Search our Global site</a>
                             </div>
                             <p class="h3 pt-4">Are you searching for a Part Number or Serial Number?</p>`;
-                            },
+                        },
                     }
                 }),
             ])
