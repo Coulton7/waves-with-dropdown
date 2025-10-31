@@ -1951,7 +1951,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 hit: hit,
                                 highlightedTagName: 'strong'
                             })}</p>
-                        <a class="btn btn-primary view-details align-self-end" href="${hit.url}">Read More</a>
+                        <a class="btn btn-primary view-details align-self-end" href="${hit.url}">Open PDF</a>
                     </div>`
                 }
             }
