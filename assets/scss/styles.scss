@@ -4112,11 +4112,11 @@ height:100%;
 
 @keyframes highlightTab {
   0%   { background-color: #000000;
-        color: $gray-200; }
-  50%  { background-color: #b5b6b9;
-        color: #535354; }
+        color: $gray-600; }
+  50%  { background-color: $gray-200;
+        color: black; }
   100% { background-color: #000000;
-        color: $gray-200; }
+        color: $gray-600; }
 }
 
 @keyframes card1_ani {
