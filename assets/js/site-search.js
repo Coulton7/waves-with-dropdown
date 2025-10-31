@@ -1635,7 +1635,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             </div>
                             <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         }
-                        else if(filterLang == 'waves-with-dropdown') {
+                        else if(filterLang == '') {
                             revealForm();
                             return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
                             <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
@@ -1690,6 +1690,13 @@ document.addEventListener("DOMContentLoaded", function() {
                             <p>很抱歉，我们找不到您的搜索结果。请再次尝试搜索，检查拼写错误和/或减少使用的关键词数量。您还可以尝试使用更宽泛的搜索短语。</p>
                             </div>
                             <p class="h3">您在搜索零件编号或序列号吗？</p>`;
+                        }
+                        else {
+                            revealForm();
+                            return html`<div class="no-result"><p class="h3">No results found matching ${results.query}</p>
+                            <p>Sorry we couldn’t find a result for your search. Try to search again by, checking your search for spelling mistakes and/or reducing the number of keywords used. You can also try using a broader search phrase.</p>
+                            </div>
+                            <p class="h3">Are you searching for a Part Number or Serial Number?</p>`;
                         }
                     },
                 },
