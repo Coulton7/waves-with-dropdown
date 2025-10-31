@@ -556,13 +556,13 @@ a.disabled {
   border-color: $gray-200;
 }
 
-.search-overlay .nav-tabs .nav-link {
+.search-overlay .nav-tabs .nav-link, .search-overlay .nav-tabs .nav-link span {
   color: $gray-200;
   background-color: $black;
   border: 1px solid $gray-200;
 }
 
-.search-overlay .nav-tabs .nav-link.active, .search-overlay .nav-tabs .nav-link span {
+.search-overlay .nav-tabs .nav-link.active, .search-overlay .nav-tabs .nav-link.active span {
   color: $white;
   background-color: $gray-200;
 }
