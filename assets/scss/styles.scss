@@ -559,7 +559,7 @@ a.disabled {
 .search-overlay .nav-tabs .nav-link {
   color: $gray-200;
   background-color: $black;
-  border: 1px solid rgba($color: #fff, $alpha: 0.75);
+  border: 1px solid $gray-200;
 }
 
 .search-overlay .nav-tabs .nav-link.active, .search-overlay .nav-tabs .nav-link span {
