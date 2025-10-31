@@ -556,7 +556,7 @@ a.disabled {
   border-color: $gray-200;
 }
 
-.search-overlay .nav-tabs .nav-link{
+.search-overlay .nav-tabs .nav-link, .search-overlay .nav-tabs .nav-link.normText {
   color: $gray-600;
   background-color: $black;
   border: 1px solid $gray-200;
