@@ -557,9 +557,13 @@ a.disabled {
 }
 
 .search-overlay .nav-tabs .nav-link{
-  color: $gray-800;
+  color: $gray-600;
   background-color: $black;
   border: 1px solid $gray-200;
+}
+
+.search-overlay .nav-tabs .nav-link span {
+  color: $gray-600;
 }
 
 .search-overlay .nav-tabs .nav-link.active, .search-overlay .nav-tabs .nav-link.active span {
