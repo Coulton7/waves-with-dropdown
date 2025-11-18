@@ -1688,6 +1688,10 @@ blockquote {
   animation: slide-up 0.5s ease-in-out forwards;
 }
 
+.slide-in-diagnol {
+  animation: slide-in-diagonal 0.5s ease-in-out forwards;
+}
+
 @keyframes slide-right {
   from { transform: translateX(100%); }
   to { transform: translateX(0); }
@@ -1701,6 +1705,11 @@ blockquote {
 @keyframes slide-up {
   from { transform: translateY(100%); }
   to { transform: translateY(0); }
+}
+
+@keyframes slide-in-diagonal {
+  from { transform: translate(100%, 100%); }
+  to { transform: translate(0); }
 }
 
 .breadcrumb li {

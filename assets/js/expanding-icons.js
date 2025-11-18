@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
             // Add animation classes
             searchIcon.classList.add('slide-in-right'); // Use the new class name here
-            feedbackIcon.classList.add('slide-in-left');
+            feedbackIcon.classList.add('slide-in-diagonal'); // Use the new class name here
             if(chatIcon){
                 chatIcon.classList.add('slide-in-up');
             }
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             // Remove animation classes and hide buttons
             searchIcon.classList.remove('slide-in-right');
-            feedbackIcon.classList.remove('slide-in-left');
+            feedbackIcon.classList.remove('slide-in-diagonal');
             if(chatIcon){
                 chatIcon.classList.remove('slide-in-up');
             }
