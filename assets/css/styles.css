@@ -15546,7 +15546,7 @@ blockquote {
     transform: translateX(100%), translateY(100%);
   }
   to {
-    transform: translate(0, 0);
+    transform: translateX(0), translateY(0);
   }
 }
 .breadcrumb li {

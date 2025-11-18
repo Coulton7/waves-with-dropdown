@@ -1709,7 +1709,7 @@ blockquote {
 
 @keyframes slide-in-diagonal {
   from { transform: translateX(100%), translateY(100%); }
-  to { transform: translate(0, 0); }
+  to { transform: translateX(0), translateY(0); }
 }
 
 .breadcrumb li {
