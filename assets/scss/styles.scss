@@ -1689,7 +1689,7 @@ blockquote {
 }
 
 .slide-in-diagnol {
-  animation: slide-in-diagonal 0.5s ease-in-out forwards;
+  animation: slide-in-diagonal 0.5s linear;
 }
 
 @keyframes slide-right {
@@ -1708,8 +1708,12 @@ blockquote {
 }
 
 @keyframes slide-in-diagonal {
-  from { transform: translateX(-100%), translateY(-100%); }
-  to { transform: translateX(0), translateY(0); }
+  0% {
+    transform: translateX(100%) translateY(100%);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
 }
 
 .breadcrumb li {
