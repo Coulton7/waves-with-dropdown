@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const textLogo = document.querySelector('.textlogo');
-    const enquiry = document.querySelector('.enq-icon');
+    const enquiry = document.querySelector('.enquiry-icon');
     const navbar = document.querySelector('.bg-transparent .navbar-collapse');
     var navItems = document.querySelectorAll('.navbar-nav .nav-item');
     var navLinks = document.querySelectorAll('.navbar-nav a.nav-link');

@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     searchIcon.style.display = "none";
     feedbackIcon.style.display = "none";
-    chatIcon.style.display = "none";
+    if(chatIcon){
+        chatIcon.style.display = "none";
+    }
 
     let isOpen = false;
 
@@ -17,12 +19,16 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!isOpen) {
             searchIcon.style.display = "flex";
             feedbackIcon.style.display = "flex";
-            chatIcon.style.display = "flex";
+            if(chatIcon){
+                chatIcon.style.display = "flex";
+            }
         
             // Add animation classes
             searchIcon.classList.add('slide-in-right'); // Use the new class name here
-            feedbackIcon.classList.add('slide-in-left');
-            chatIcon.classList.add('slide-in-up');
+            feedbackIcon.classList.add('slide-in-diagonal'); // Use the new class name here
+            if(chatIcon){
+                chatIcon.classList.add('slide-in-up');
+            }
         
             enquiryIconFa.classList.remove('fa-question');
             enquiryIconFa.classList.add('fa-times');
@@ -30,12 +36,16 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             // Remove animation classes and hide buttons
             searchIcon.classList.remove('slide-in-right');
-            feedbackIcon.classList.remove('slide-in-left');
-            chatIcon.classList.remove('slide-in-up');
+            feedbackIcon.classList.remove('slide-in-diagonal');
+            if(chatIcon){
+                chatIcon.classList.remove('slide-in-up');
+            }
         
             searchIcon.style.display = "none";
             feedbackIcon.style.display = "none";
-            chatIcon.style.display = "none";
+            if(chatIcon){
+                chatIcon.style.display = "none";
+            }
         
             enquiryIconFa.classList.remove('fa-times');
             enquiryIconFa.classList.add('fa-question');
