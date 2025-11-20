@@ -1293,12 +1293,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 scrollTo: '#searchbox',
             }),
 
-            EXPERIMENTAL_autocomplete ({
+            instantsearch.widgets.EXPERIMENTAL_autocomplete() ({
                 container: document.querySelector('#searchbox'),
-                showSuggestions: {
-                    indexName: 'aesseal',
-                    getURL: (item) => `?q=${item.query}`
-                },
                 indices: [{
                     indexName: 'aesseal',
                     getQuery: (item) => item.name,
