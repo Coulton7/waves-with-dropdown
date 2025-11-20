@@ -1215,6 +1215,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     else if(filterLang == "zh-hans")
                     {
                         options.helper.toggleRefinement('search_api_language', 'zh-hans');
+                    } else {
+                        options.helper.toggleRefinement('search_api_language', 'en');
                     }
                 }
             }
