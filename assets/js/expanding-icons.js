@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         
             // Add animation classes
-            searchIcon.classList.add('slide-in-right'); // Use the new class name here
-            feedbackIcon.classList.add('slide-in-diagonal'); // Use the new class name here
+            searchIcon.classList.add('slide-in-right'); 
+            feedbackIcon.classList.add('slide-in-left'); 
             if(chatIcon){
                 chatIcon.classList.add('slide-in-up');
             }
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             // Remove animation classes and hide buttons
             searchIcon.classList.remove('slide-in-right');
-            feedbackIcon.classList.remove('slide-in-diagonal');
+            feedbackIcon.classList.remove('slide-in-left');
             if(chatIcon){
                 chatIcon.classList.remove('slide-in-up');
             }
