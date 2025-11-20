@@ -1294,7 +1294,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 scrollTo: '#searchbox',
             }),
 
-            EXPERIMENTAL_autocomplete() ({
+            EXPERIMENTAL_autocomplete ({
                 container: document.querySelector('#searchbox'),
                 showSuggestions: {
                     indexName: 'aesseal',
