@@ -15514,7 +15514,7 @@ blockquote {
 }
 
 .slide-in-diagnol {
-  animation: slide-in-diagonal 0.5s ease-in-out;
+  animation: slide-in-diagonal 0.5s linear;
 }
 
 @keyframes slide-right {
