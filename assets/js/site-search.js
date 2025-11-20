@@ -393,6 +393,15 @@ document.addEventListener("DOMContentLoaded", function() {
             'video': 'Video',
             'whitepaper': 'Whitepaper',
         }
+        vidMapping = {
+            'industry': 'Industry',
+            'glandpacking': 'Gland Packing Category',
+            'sealsupportsystems': 'Seal Support Systems Category',
+            'bearingprotectioncategories': 'Bearing Protection Category',
+            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
+            'gasseals': 'Gas Seals Category',
+            'componentseals': 'Component Seals Category',
+        }
     } else if (filterLang =="") {
         typeMapping = {
             '3dmodels': '3D Models',
@@ -419,6 +428,15 @@ document.addEventListener("DOMContentLoaded", function() {
             'video': 'Video',
             'whitepaper': 'Whitepaper',
         }
+        vidMapping = {
+            'industry': 'Industry',
+            'glandpacking': 'Gland Packing Category',
+            'sealsupportsystems': 'Seal Support Systems Category',
+            'bearingprotectioncategories': 'Bearing Protection Category',
+            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
+            'gasseals': 'Gas Seals Category',
+            'componentseals': 'Component Seals Category',
+        }
     } else if (filterLang == "es") {
         typeMapping = {
             '3dmodels': 'Modelos 3D',
@@ -444,7 +462,10 @@ document.addEventListener("DOMContentLoaded", function() {
             'technicaldrawings': 'Dibujo técnico',
             'video': 'Películas',
             'whitepaper': 'Whitepaper',
-    }
+        }
+        vidMapping = {
+            'industry': 'Industria',
+        }
     } else if (filterLang == "fr") {
         typeMapping = {
             '3dmodels': 'Modèles 3D',
@@ -471,6 +492,15 @@ document.addEventListener("DOMContentLoaded", function() {
             'video': 'Vidéos',
             'whitepaper': 'Whitepaper',
         }
+        vidMapping = {
+            'industry': 'Industrie',
+            'glandpacking': 'Gland Packing Category',
+            'sealsupportsystems': 'Seal Support Systems Category',
+            'bearingprotectioncategories': 'Bearing Protection Category',
+            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
+            'gasseals': 'Gas Seals Category',
+            'componentseals': 'Component Seals Category',
+        }
     } else if (filterLang == "de") {
         typeMapping = {
             '3dmodels': '3D-Modelle',
@@ -496,7 +526,16 @@ document.addEventListener("DOMContentLoaded", function() {
             'technicaldrawings': 'Technische Zeichnung',
             'video': 'Filme',
             'whitepaper': 'Whitepaper',
-    }
+        }
+        vidMapping = {
+            'industry': 'Branchen',
+            'glandpacking': 'Gland Packing Category',
+            'sealsupportsystems': 'Seal Support Systems Category',
+            'bearingprotectioncategories': 'Bearing Protection Category',
+            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
+            'gasseals': 'Gas Seals Category',
+            'componentseals': 'Component Seals Category',
+        }
     } else if (filterLang == "it") {
         typeMapping = {
             '3dmodels': 'Modelli 3D',
@@ -522,6 +561,15 @@ document.addEventListener("DOMContentLoaded", function() {
             'technicaldrawings': 'Disegno tecnico',
             'video': 'Film',
             'whitepaper': 'Whitepaper',
+        }
+        vidMapping = {
+            'industry': 'Industria',
+            'glandpacking': 'Gland Packing Category',
+            'sealsupportsystems': 'Seal Support Systems Category',
+            'bearingprotectioncategories': 'Bearing Protection Category',
+            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
+            'gasseals': 'Gas Seals Category',
+            'componentseals': 'Component Seals Category',
         }
     }
     else if (filterLang == "pl") {
@@ -550,6 +598,15 @@ document.addEventListener("DOMContentLoaded", function() {
             'video': 'Filmy',
             'whitepaper': 'Whitepaper',
         }
+        vidMapping = {
+            'industry': 'Przemysł',
+            'glandpacking': 'Gland Packing Category',
+            'sealsupportsystems': 'Seal Support Systems Category',
+            'bearingprotectioncategories': 'Bearing Protection Category',
+            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
+            'gasseals': 'Gas Seals Category',
+            'componentseals': 'Component Seals Category',
+        }
     }
     else if (filterLang == "tr") {
         typeMapping = {
@@ -577,6 +634,15 @@ document.addEventListener("DOMContentLoaded", function() {
             'video': 'Filmler',
             'whitepaper': 'Whitepaper',
         }
+        vidMapping = {
+            'industry': 'Sanayi',
+            'glandpacking': 'Gland Packing Category',
+            'sealsupportsystems': 'Seal Support Systems Category',
+            'bearingprotectioncategories': 'Bearing Protection Category',
+            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
+            'gasseals': 'Gas Seals Category',
+            'componentseals': 'Component Seals Category',
+        }
     }
     else if (filterLang == "zh-hans") {
         typeMapping = {
@@ -603,6 +669,15 @@ document.addEventListener("DOMContentLoaded", function() {
             'technicaldrawings': '技术图纸',
             'video': '短片',
             'whitepaper': 'Whitepaper',
+        }
+        vidMapping = {
+            'industry': '行业',
+            'glandpacking': 'Gland Packing Category',
+            'sealsupportsystems': 'Seal Support Systems Category',
+            'bearingprotectioncategories': 'Bearing Protection Category',
+            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
+            'gasseals': 'Gas Seals Category',
+            'componentseals': 'Component Seals Category',
         }
     } else if (filterLang =="ar") {
         typeMapping = {
@@ -813,93 +888,6 @@ document.addEventListener("DOMContentLoaded", function() {
             'video': 'Video',
             'whitepaper': 'Whitepaper',
         }
-    }
-
-    if(filterLang == "en") {
-        vidMapping = {
-            'industry': 'Industry',
-            'glandpacking': 'Gland Packing Category',
-            'sealsupportsystems': 'Seal Support Systems Category',
-            'bearingprotectioncategories': 'Bearing Protection Category',
-            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
-            'gasseals': 'Gas Seals Category',
-            'componentseals': 'Component Seals Category',
-        }
-    } else if(filterLang=="") {
-        vidMapping = {
-            'industry': 'Industry',
-            'glandpacking': 'Gland Packing Category',
-            'sealsupportsystems': 'Seal Support Systems Category',
-            'bearingprotectioncategories': 'Bearing Protection Category',
-            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
-            'gasseals': 'Gas Seals Category',
-            'componentseals': 'Component Seals Category',
-        }
-    } else if (filterLang == "es") {
-        vidMapping = {
-            'industry': 'Industria',
-        }
-    } else if (filterLang == "fr") {
-        vidMapping = {
-            'industry': 'Industrie',
-            'glandpacking': 'Gland Packing Category',
-            'sealsupportsystems': 'Seal Support Systems Category',
-            'bearingprotectioncategories': 'Bearing Protection Category',
-            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
-            'gasseals': 'Gas Seals Category',
-            'componentseals': 'Component Seals Category',
-        }
-    } else if (filterLang == "de") {
-        vidMapping = {
-            'industry': 'Branchen',
-            'glandpacking': 'Gland Packing Category',
-            'sealsupportsystems': 'Seal Support Systems Category',
-            'bearingprotectioncategories': 'Bearing Protection Category',
-            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
-            'gasseals': 'Gas Seals Category',
-            'componentseals': 'Component Seals Category',
-        }
-    } else if (filterLang == "it") {
-        vidMapping = {
-            'industry': 'Industria',
-            'glandpacking': 'Gland Packing Category',
-            'sealsupportsystems': 'Seal Support Systems Category',
-            'bearingprotectioncategories': 'Bearing Protection Category',
-            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
-            'gasseals': 'Gas Seals Category',
-            'componentseals': 'Component Seals Category',
-        }
-    } else if (filterLang == "pl") {
-        vidMapping = {
-            'industry': 'Przemysł',
-            'glandpacking': 'Gland Packing Category',
-            'sealsupportsystems': 'Seal Support Systems Category',
-            'bearingprotectioncategories': 'Bearing Protection Category',
-            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
-            'gasseals': 'Gas Seals Category',
-            'componentseals': 'Component Seals Category',
-        }
-    } else if (filterLang == "tr") {
-        vidMapping = {
-            'industry': 'Sanayi',
-            'glandpacking': 'Gland Packing Category',
-            'sealsupportsystems': 'Seal Support Systems Category',
-            'bearingprotectioncategories': 'Bearing Protection Category',
-            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
-            'gasseals': 'Gas Seals Category',
-            'componentseals': 'Component Seals Category',
-        }
-    } else if (filterLang == "zh-hans") {
-        vidMapping = {
-            'industry': '行业',
-            'glandpacking': 'Gland Packing Category',
-            'sealsupportsystems': 'Seal Support Systems Category',
-            'bearingprotectioncategories': 'Bearing Protection Category',
-            'cartridgemechanicalseals': 'Cartridge Mechanical Seals Category',
-            'gasseals': 'Gas Seals Category',
-            'componentseals': 'Component Seals Category',
-        }
-    } else {
         vidMapping = {
             'industry': 'Industry',
             'glandpacking': 'Gland Packing Category',
