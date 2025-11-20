@@ -1938,8 +1938,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     },
                     transformItems(items){
                         return items.map(item => ({
-                            ...item,
-                            label: item.label.toUpperCase(),
+                        ...item,
+                        label: pdfLangMapping[item.label],
                         }));
                     },
                     sortBy: ['isRefined', 'count:desc', 'name:asc']
