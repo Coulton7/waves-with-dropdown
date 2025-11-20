@@ -1299,7 +1299,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     indexName: 'aesseal',
                     getURL: (item) => `?q=${item.query}`
                 },
-                indices: [ {
+                indices: [{
                     indexName: 'aesseal',
                     getQuery: (item) => item.name,
                     getURL: (item) => `?q=${item.name}`,
