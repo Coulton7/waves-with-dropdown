@@ -355,6 +355,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let typeMapping;
     let vidMapping;
+    let pdfLangMapping;
 
     let natTypeMapping
 
@@ -363,6 +364,13 @@ document.addEventListener("DOMContentLoaded", function() {
         'article' : 'Article',
         'casestudies' : 'Case Studies',
         'case_studies' : 'Case Studies'
+    }
+
+    pdfLangMapping = {
+        'de-DE' : 'DE',
+        'en-US' : 'EN',
+        'en-GB' : 'EN',
+        'fr-FR' : 'FR'
     }
 
     if (filterLang == "en") {
@@ -1920,6 +1928,21 @@ document.addEventListener("DOMContentLoaded", function() {
                     container: '#pagination',
                     totalPages: 3,
                     scrollTo: '#usSearchbox'
+                }),
+
+                globalLanglistPanel({
+                    container: '#pdfLang-list',
+                    attribute: 'dclanguage',
+                    templates: {
+                        item: '<input type="checkbox" data-insights-filter="${`search_api_language:${value}`}" class="ais-refinement-list--checkbox lang-item" value="{{label}}" {{#isRefined}}checked="true"{{/isRefined}}> {{label}} <span class="ais-refinement-list--count">({{count}})</span>',
+                    },
+                    transformItems(items){
+                        return items.map(item => ({
+                            ...item,
+                            label: item.label.toUpperCase(),
+                        }));
+                    },
+                    sortBy: ['isRefined', 'count:desc', 'name:asc']
                 }),
 
                 customStats({
