@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const { connectStats } = instantsearch.connectors;
     const { connectClearRefinements } = instantsearch.connectors;
     const { EXPERIMENTAL_autocomplete } = instantsearch.widgets;
-
+    
     const searchClient = algoliasearch('ZUQNGEX563', '23e29710cc4469dec35bd50bc2164b3a');
 
     const renderSearchBox = (renderOptions, isFirstRender) => {
