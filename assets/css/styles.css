@@ -15543,10 +15543,10 @@ blockquote {
 }
 @keyframes slide-in-diagonal {
   0% {
-    transform: translateX(100%) translateY(100%);
+    transform: translate(100%, 100%);
   }
   100% {
-    transform: translateX(0) translateY(0);
+    transform: translate(0, 0);
   }
 }
 .breadcrumb li {
