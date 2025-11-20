@@ -46,11 +46,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     window.dataLayer = window.dataLayer || [];
-    const { liteClient: algoliasearch } = window["algoliasearch/lite"];
     const { connectSearchBox } = instantsearch.connectors;
     const { connectStats } = instantsearch.connectors;
     const { connectClearRefinements } = instantsearch.connectors;
-    const { EXPERIMENTAL_autocomplete } = instantsearch.widgets;
 
     const searchClient = algoliasearch('ZUQNGEX563', '23e29710cc4469dec35bd50bc2164b3a');
 
@@ -1216,8 +1214,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     else if(filterLang == "zh-hans")
                     {
                         options.helper.toggleRefinement('search_api_language', 'zh-hans');
-                    } else {
-                        options.helper.toggleRefinement('search_api_language', 'en');
                     }
                 }
             }
@@ -1293,20 +1289,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 totalPages: 3,
                 scrollTo: '#searchbox',
             }),
-
-            /*EXPERIMENTAL_autocomplete ({
-                container: document.querySelector('#searchbox'),
-                showSuggestions: {
-                    indexName: 'aesseal',
-                    getURL: (item) => `?q=${item.query}`,
-                    templates: {
-                        header: ({ items }, { html }) =>
-                            html`Suggestions(${items.length} results)`,
-                        item : ({ item, onSelect}, { html, components }) =>
-                            html `<div conClick=${onSelect}>${item.name}</div>`,
-                    }
-                }
-            }),*/
         
             mainSearchBox({
                 container: document.querySelector('#searchbox'),
@@ -1730,6 +1712,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }),
         ]);
         search.start();
+        document.querySelector('.ais-SearchBox-input').focus();
         
         if(popSearch) {
             var popSearchButtons = document.querySelectorAll('.prefill-btn');

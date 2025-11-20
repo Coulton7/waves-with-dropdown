@@ -926,25 +926,24 @@
           <div class="overlay-content row">
             <div class="col-lg-8 col-sm-10 offset-lg-2 offset-sm-1 col-10 offset-1">
               <h2 class="text-white text-center display-5 mb-5">Content Search</h2>
-              <div class="d-flex" id="searchbox"></div>
+              <div class="d-flex" id="usSearchbox"></div>
               <div class="stats-row mt-2 text-white"><span id="usStats"></span>&nbsp;on US Site&nbsp;|&nbsp;<span id="globalStats"></span>&nbsp;on Product Brochure Search</div>
                 <ul class="nav nav-tabs mt-5" role="tablist">
-                  <li class="nav-item" role="presentation"><a id="intResultsTab" class="nav-link active" data-bs-toggle="tab" data-bs-target="#search">US Site Search <span id="intResultsNum"></span> <img src="https://static.aesseal.com/graphics/flags/US.svg" height="25" width="25" alt="US Flag" /></a></li>
+                  <li class="nav-item" role="presentation"><a id="intResultsTab" class="nav-link active" data-bs-toggle="tab" data-bs-target="#usSearch">US Site Search <span id="intResultsNum"></span> <img src="https://static.aesseal.com/graphics/flags/US.svg" height="25" width="25" alt="US Flag" /></a></li>
                   <li class="nav-item" role="presentation"><a id="globalResultsTab" class="nav-link" data-bs-toggle="tab" data-bs-target="#globalSearch">Product Brochure Search <span id="globalResultsNum"></span> <img src="https://static.aesseal.com/graphics/flags/earth-americas-solid-colour.svg" height="25" width="25" alt="Globe" /></a></li>
                 </ul>
           
                 <div class="tab-content">
-                  <div id="search" class="tab-pane fade in active show" role="tabpanel">
+                  <div id="usSearch" class="tab-pane fade in active show" role="tabpanel">
                     <div class="row">
                       <div class="col-sm-4">
                         <div id="clear-refinements"></div>
                         <div id="type-list"></div>
-                        <div id="lang-list">
                       </div>
-                      <div class="col-sm-8" data-insights-index="aesseal">
-                        <div id="hits"></div>
+                      <div class="col-sm-8" data-insights-index="aesseal us">
+                        <div id="usHits"></div>
                       </div>
-                      <div id="pagination"></div>
+                      <div id="usPagination"></div>
                     </div>
                   </div>
                   <div id="globalSearch" class="tab-pane fade" role="tabpanel">
@@ -956,7 +955,7 @@
                       <div class="col-sm-8" data-insights-index="pdf_brochures_xml_crawler">
                         <div id="globalHits"></div>
                       </div>
-                      <div id="globalPagination">
+                      <div id="pagination"></div>
                     </div>
                   </div>
                 </div>
@@ -1001,8 +1000,10 @@
     <script type="text/javascript" src="assets/js/home-tiny-slider.js"></script>
     <script type="text/javascript" src="assets/js/home-tinyslider-reveal.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@5.32.0/dist/lite/builds/browser.umd.js" integrity="sha256-nnOvBr+/TkKwYUEly8E6rxPEpq699biJWUqbAWZMZr8=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.79.1/dist/instantsearch.production.min.js" integrity="sha256-IWP9784icM0SoZaK7sd7wk+YOFLDWv9rmaJcgLkgICQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.19.1/dist/algoliasearch-lite.umd.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.56.7/dist/instantsearch.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js@1.18.1/dist/umd/index.production.js" integrity="sha256-WVU+KiMWjrQCAjDUDpWTBQKpC0YenCmCvIRvSO7Q9qc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/autocomplete-js@2.7.1/dist/autocomplete.min.js"></script>
     <script type="text/javascript" src="assets/js/site-search.js"></script>
     <script type="text/javascript" src="assets/js/front-overlay-trigger.js"></script>
     <script type="text/javascript" src="assets/js/search-tab.js"></script>
