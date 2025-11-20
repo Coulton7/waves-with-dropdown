@@ -1730,7 +1730,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }),
         ]);
         search.start();
-        document.querySelector('.ais-SearchBox-input').focus();
         
         if(popSearch) {
             var popSearchButtons = document.querySelectorAll('.prefill-btn');
