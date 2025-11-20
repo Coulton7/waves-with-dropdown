@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     window.dataLayer = window.dataLayer || [];
+    const { liteClient: algoliasearch } = window["algoliasearch/lite"];
     const { connectSearchBox } = instantsearch.connectors;
     const { connectStats } = instantsearch.connectors;
     const { connectClearRefinements } = instantsearch.connectors;
@@ -1293,7 +1294,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 scrollTo: '#searchbox',
             }),
 
-            EXPERIMENTAL_autocomplete ({
+            /*EXPERIMENTAL_autocomplete ({
                 container: document.querySelector('#searchbox'),
                 showSuggestions: {
                     indexName: 'aesseal',
@@ -1305,12 +1306,12 @@ document.addEventListener("DOMContentLoaded", function() {
                             html `<div conClick=${onSelect}>${item.name}</div>`,
                     }
                 }
-            }),
+            }),*/
         
-            /*mainSearchBox({
+            mainSearchBox({
                 container: document.querySelector('#searchbox'),
                  searchAsYouType: false,
-            }),*/
+            }),
 
             customStats({
                 container: document.querySelector("#stats"),
