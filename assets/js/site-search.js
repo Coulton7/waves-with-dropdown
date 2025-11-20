@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const { connectSearchBox } = instantsearch.connectors;
     const { connectStats } = instantsearch.connectors;
     const { connectClearRefinements } = instantsearch.connectors;
+    const { EXPERIMENTAL_autocomplete } = instantsearch.widgets;
 
     const searchClient = algoliasearch('ZUQNGEX563', '23e29710cc4469dec35bd50bc2164b3a');
 
@@ -1289,11 +1290,28 @@ document.addEventListener("DOMContentLoaded", function() {
                 totalPages: 3,
                 scrollTo: '#searchbox',
             }),
+
+            EXPERIMENTAL_autocomplete ({
+                container: document.querySelector('#searchbox'),
+                showSuggestions: {
+                    indexName: 'aesseal',
+                    getURL: (item) => `?q=${item.query}`
+                },
+                indices: [ {
+                    indexName: 'aesseal',
+                    getQuery: (item) => item.name,
+                    getURL: (item) => `?q=${item.name}`,
+                    templates: {
+                        header: (_, {html}) => html `<div>Search Suggestions</div>`,
+                        item: ({ item,onSelect}, {html}) => html`div onClick=${onSelect}>${item.name}</div>`,
+                    },
+                }]
+            }),
         
-            mainSearchBox({
+            /*mainSearchBox({
                 container: document.querySelector('#searchbox'),
                  searchAsYouType: false,
-            }),
+            }),*/
 
             customStats({
                 container: document.querySelector("#stats"),
