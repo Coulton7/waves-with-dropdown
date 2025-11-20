@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const { connectStats } = instantsearch.connectors;
     const { connectClearRefinements } = instantsearch.connectors;
     const { EXPERIMENTAL_autocomplete } = instantsearch.widgets;
-    
+
     const searchClient = algoliasearch('ZUQNGEX563', '23e29710cc4469dec35bd50bc2164b3a');
 
     const renderSearchBox = (renderOptions, isFirstRender) => {
@@ -1296,15 +1296,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
             EXPERIMENTAL_autocomplete() ({
                 container: document.querySelector('#searchbox'),
-                indices: [{
+                showSuggestions: {
                     indexName: 'aesseal',
-                    getQuery: (item) => item.name,
-                    getURL: (item) => `?q=${item.name}`,
+                    getURL: (item) => `?q=${item.query}`,
                     templates: {
-                        header: (_, {html}) => html `<div>Search Suggestions</div>`,
-                        item: ({ item,onSelect}, {html}) => html`div onClick=${onSelect}>${item.name}</div>`,
-                    },
-                }]
+                        header: ({ items }, { html }) =>
+                            html`Suggestions(${items.length} results)`,
+                        item : ({ item, onSelect}, { html, components }) =>
+                            html `<div conClick=${onSelect}>${item.name}</div>`,
+                    }
+                }
             }),
         
             /*mainSearchBox({
