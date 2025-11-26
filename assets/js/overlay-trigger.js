@@ -6,7 +6,7 @@ var l = document.getElementById("legalOverlay")
 var overlayNavBtn = document.querySelector("#overlay-btn");
 var overlaySearchBtn = document.querySelector("#overlay-search");
 var overlayShareBtn = document.querySelector("#overlay-share");
-var overlayLegalBtn = document.querySelector("overlay-legal");
+var overlayLegalBtn = document.querySelector("#overlay-legal");
 var footerOverlayBtn = document.querySelector("#footer-overlay-btn");
 var mobileNavOverlay = document.querySelector("[data-bs-target='#mobile-overlay']");
 var mobileOverlaySearch  = document.querySelector("#mob-overlay-search");

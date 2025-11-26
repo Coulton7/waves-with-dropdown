@@ -2,9 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
   var x = document.getElementById("overlayNav");
   var y = document.getElementById("searchOverlay");
   var s = document.getElementById("shareOverlay");
+  var l = document.getElementById("legalOverlay")
   var overlayNavBtn = document.querySelector("#overlay-btn");
   var overlaySearchBtn = document.querySelector("#overlay-search");
   var overlaySearchGlobal = document.querySelector("#global-overlay-search");
+  var overlayLegalBtn = document.querySelector("#overlay-legal");
   var overlayShareBtn = document.querySelector("#overlay-share");
   var footerOverlayBtn = document.querySelector("#footer-overlay-btn");
   var mobileNavOverlay = document.querySelector("[data-bs-target='#mobile-overlay']");
