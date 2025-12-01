@@ -15432,7 +15432,7 @@ blockquote {
   height: 3.5em;
   background-color: #dd1e25;
   position: fixed; /* Use fixed to align it with .enquiry-icon */
-  bottom: 12em;
+  bottom: 13.5em;
   right: 1em; /* Adjust to the left of enquiry-icon */
   z-index: 1033;
   text-align: center;
@@ -15470,7 +15470,7 @@ blockquote {
   height: 3.5em;
   background-color: #dd1e25;
   position: fixed; /* Use fixed to align it with .enquiry-icon */
-  bottom: 8.5em;
+  bottom: 10em;
   right: 1em; /* Adjust to the left of enquiry-icon */
   z-index: 1034;
   text-align: center;
@@ -15489,7 +15489,7 @@ blockquote {
   height: 3.5em;
   background-color: #dd1e25;
   position: fixed; /* Use fixed to align it with .enquiry-icon */
-  bottom: 5em;
+  bottom: 6.5em;
   right: 1em; /* Adjust to the left of enquiry-icon */
   z-index: 1035;
   text-align: center;
