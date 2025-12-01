@@ -15432,8 +15432,8 @@ blockquote {
   height: 3.5em;
   background-color: #dd1e25;
   position: fixed; /* Use fixed to align it with .enquiry-icon */
-  bottom: 1em;
-  right: 7.5em; /* Adjust to the left of enquiry-icon */
+  bottom: 11.5em;
+  right: 1em; /* Adjust to the left of enquiry-icon */
   z-index: 1033;
   text-align: center;
   display: flex;
@@ -15470,8 +15470,8 @@ blockquote {
   height: 3.5em;
   background-color: #dd1e25;
   position: fixed; /* Use fixed to align it with .enquiry-icon */
-  bottom: 6.5em;
-  right: 6.5em; /* Adjust to the left of enquiry-icon */
+  bottom: 9.5em;
+  right: 1em; /* Adjust to the left of enquiry-icon */
   z-index: 1034;
   text-align: center;
   display: flex;
