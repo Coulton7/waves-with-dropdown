@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         
             // Add animation classes
-            searchIcon.classList.add('slide-up-btn-2'); 
-            feedbackIcon.classList.add('slide-up-btn-3'); 
+            searchIcon.classList.add('slide-up-btn-3'); 
+            feedbackIcon.classList.add('slide-up-btn-2'); 
             if(chatIcon){
                 chatIcon.classList.add('slide-up-btn-1');
             }
@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
             isOpen = true;
         } else {
             // Remove animation classes and hide buttons
-            searchIcon.classList.remove('slide-up-btn-2');
-            feedbackIcon.classList.remove('slide-up-btn-3');
+            searchIcon.classList.remove('slide-up-btn-3');
+            feedbackIcon.classList.remove('slide-up-btn-2');
             if(chatIcon){
                 chatIcon.classList.remove('slide-up-btn-1');
             }
