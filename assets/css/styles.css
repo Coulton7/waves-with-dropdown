@@ -15509,8 +15509,16 @@ blockquote {
   animation: slide-left 0.5s ease-in-out forwards;
 }
 
-.slide-in-up {
-  animation: slide-up 0.5s ease-in-out forwards;
+.slide-up-btn-1 {
+  animation: slide-up-btn-1 0.5s ease-in-out forwards;
+}
+
+.slide-up-btn-2 {
+  animation: slide-up-btn-2 0.7s ease-in-out forwards;
+}
+
+.slide-up-btn-3 {
+  animation: slide-up-btn-3 0.9s ease-in-out forwards;
 }
 
 .slide-in-diagnol {
@@ -15533,9 +15541,25 @@ blockquote {
     transform: translateX(0);
   }
 }
-@keyframes slide-up {
+@keyframes slide-up-btn-1 {
   from {
     transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes slide-up-btn-2 {
+  from {
+    transform: translateY(200%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes slide-up-btn-3 {
+  from {
+    transform: translateY(300%);
   }
   to {
     transform: translateY(0);

@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         
             // Add animation classes
-            searchIcon.classList.add('slide-in-right'); 
-            feedbackIcon.classList.add('slide-in-left'); 
+            searchIcon.classList.add('slide-up-btn-2'); 
+            feedbackIcon.classList.add('slide-up-btn-3'); 
             if(chatIcon){
-                chatIcon.classList.add('slide-in-up');
+                chatIcon.classList.add('slide-up-btn-1');
             }
         
             enquiryIconFa.classList.remove('fa-question');
@@ -35,10 +35,10 @@ document.addEventListener("DOMContentLoaded", function() {
             isOpen = true;
         } else {
             // Remove animation classes and hide buttons
-            searchIcon.classList.remove('slide-in-right');
-            feedbackIcon.classList.remove('slide-in-left');
+            searchIcon.classList.remove('slide-up-btn-2');
+            feedbackIcon.classList.remove('slide-up-btn-3');
             if(chatIcon){
-                chatIcon.classList.remove('slide-in-up');
+                chatIcon.classList.remove('slide-up-btn-1');
             }
         
             searchIcon.style.display = "none";
