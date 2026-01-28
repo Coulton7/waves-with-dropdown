@@ -1,0 +1,109 @@
+<!-- HIDE
+<div class="navbar-affixed-top-mp2" data-spy="affix" data-offset-top="200">
+<section style="margin-top:10px;">
+  <div class="container">
+    <div class="panel panel-default"> 
+      <div class="panel-body">
+        <form class="form-inline" role="form">
+          <small>Find Your PSS Shaft Seal:</small> 
+          <div class="form-group-sm">
+            <label class="radio-inline">
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"><small>Imperial</small></label>
+            <label class="radio-inline">
+              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"><small>Metric</small></label>
+            <select class="form-control input-sm">
+              <option value="" selected disabled>Select Shaft Diameter</option>
+              <option>3/4"</option>
+              <option>7/8"</option>
+              <option>1"</option>
+              <option>1-1/8"</option>
+              <option>1-1/4"</option>
+              <option>1-3/8"</option>
+              <option>1-1/2"</option>
+              <option>1-9/16"</option>
+              <option>1-3/4"</option>
+              <option>2"</option>
+              <option>2-1/4"</option>
+              <option>2-1/2"</option>
+              <option>2-3/4"</option>
+              <option>3"</option>
+              <option>3-1/4"</option>
+              <option>3-1/2"</option>
+              <option>3-5/8"</option>
+              <option>3-3/4"</option>
+              <option>4"</option>
+              <option>4-1/4"</option>
+              <option>4-3/4"</option>
+              <option>5"</option>
+              <option>5-1/4"</option>
+              <option>5-1/2"</option>
+              <option>6"</option>
+              <option>20mm</option>
+              <option>22mm</option>
+              <option>25mm</option>
+              <option>28mm</option>
+              <option>30mm</option>
+              <option>32mm</option>
+              <option>35mm</option>
+              <option>38mm</option>
+              <option>40mm</option>
+              <option>45mm</option>
+              <option>50mm</option>
+              <option>55mm</option>
+              <option>60mm</option>
+              <option>65mm</option>
+              <option>70mm</option>
+              <option>75mm</option>
+              <option>80mm</option>
+              <option>85mm</option>
+              <option>90mm</option>
+              <option>95mm</option>
+              <option>100mm</option>
+              <option>105mm</option>
+              <option>110mm</option>
+              <option>115mm</option>
+              <option>120mm</option>
+              <option>125mm</option>
+              <option>130mm</option>
+              <option>140mm</option>
+              <option>150mm</option>
+            </select>
+            <select class="form-control input-sm">
+              <option value="" selected disabled>Select Stern Tube Diameter</option>
+              <option>1-1/4"</option>
+              <option>1-1/2"</option>
+              <option>1-3/4"</option>
+              <option>2"</option>
+              <option>2-1/4"</option>
+              <option>2-1/2"</option>
+              <option>2-3/4"</option>
+              <option>3"</option>
+              <option>3-1/4"</option>
+              <option>3-1/2"</option>
+              <option>3-3/4"</option>
+              <option>4"</option>
+              <option>4-1/4"</option>
+              <option>4-1/2"</option>
+              <option>4-3/4"</option>
+              <option>5"</option>
+              <option>5-1/4"</option>
+              <option>5-1/2"</option>
+              <option>5-3/4"</option>
+              <option>6"</option>
+              <option>6-1/4"</option>
+              <option>6-1/2"</option>
+              <option>6-3/4"</option>
+              <option>7"</option>
+              <option>8"</option>
+              <option>8-5/8"</option>
+            </select>
+            <button type="button" class="btn btn-template-primary btn-sm pss-btn-top">PSS Shaft Seal #02-112-200</button>
+            <button type="button" class="btn btn-template-primary btn-sm pss-btn-top">PSS Maintenance Kit #07-112-200R</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>  
+</section>
+</div>
+-->
