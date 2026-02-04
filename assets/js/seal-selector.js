@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const { liteClient: algoliasearch } = window["algoliasearch/lite"];
     const searchClient = algoliasearch('ZUQNGEX563', '23e29710cc4469dec35bd50bc2164b3a');
 
     window.dataLayer = window.dataLayer || [];

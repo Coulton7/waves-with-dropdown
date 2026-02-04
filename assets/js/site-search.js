@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    const { liteClient: algoliasearch } = window["algoliasearch/lite"];
     window.dataLayer = window.dataLayer || [];
     const { connectSearchBox } = instantsearch.connectors;
     const { connectStats } = instantsearch.connectors;
