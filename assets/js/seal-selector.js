@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
             attribute: "Stern Tube Diameter*",
         }),
         instantsearch.widgets.hits({
-            cotainer: document.querySelector("#seal-seclection"),
+            container: document.querySelector("#seal-selection"),
         })
 
     ])
