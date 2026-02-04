@@ -70,5 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
         })
 
     ])
+
+    sealSelector.start();
     
 });
