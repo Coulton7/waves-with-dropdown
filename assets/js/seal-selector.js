@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
         typoTolerance: 'strict',
         paginationLimitedTo: 80,
         searchFunction(helper) {
-            if (helper.state.query === '')
+            if (helper.state.query.length === 0)
             {
                 return;
             }
