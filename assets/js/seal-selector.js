@@ -88,6 +88,9 @@ document.addEventListener("DOMContentLoaded", function() {
             attribute: "Stern Tube Diameter*",
             limit: 26,
             templates: {
+                item(item, { html }) {
+                    return html`<span>${item.label}</span>`;
+                },
                 defaultOption(data, { html }) {
                     return html`<span>Choose a Stern Tube Diameter</span>`;
                 },
