@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     window.dataLayer = window.dataLayer || [];
     const { connectClearRefinements } = instantsearch.connectors;
     const { refinementList } = instantsearch.widgets;
+    const { menuSelect } = instantsearch.widgets;
 
     const renderClearRefinements = (renderOptions, isFirstRender) => {
         const {canRefine, refine, widgetParams} = renderOptions;
@@ -68,11 +69,11 @@ document.addEventListener("DOMContentLoaded", function() {
             container: document.querySelector("#measurementType"),
             attribute: "Measurement",
         }),
-        shaftDropdown({
+        menuSelect({
             container: document.querySelector("#shaftDiameter"),
             attribute: "Shaft Diameter*",
         }),
-        sternDropdown({
+        menuSelect({
             container: document.querySelector("#sternTube"),
             attribute: "Stern Tube Diameter*",
         }),
