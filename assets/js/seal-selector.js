@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
         menuSelect({
             container: document.querySelector("#shaftDiameter"),
             attribute: "Shaft Diameter*",
+            sortBy: ["name:asc"],
             limit: 55,
             cssClasses: {
                 root: "shaft-diameter-select",
@@ -90,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
         menuSelect({
             container: document.querySelector("#sternTube"),
             attribute: "Stern Tube Diameter*",
+            sortBy: ["name:asc"],
             limit: 26,
             cssClasses: {
                 root: "stern-tube-select",
