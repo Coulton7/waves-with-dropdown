@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <a href="${hit["Type A Part Shopify URL*"]}" class="${hit["Type A Part Shopify URL*"] ? '' : 'd-none'} btn btn-danger seal-option me-3" data-insights-hits="${hit.objectID}">${hit["Type A Part Number*"]}</a>
                     <a href="${hit["Type A Maintenance Kit Part Shopify URL*"]}" class="${hit["Type A Maintenance Kit Part Shopify URL*"] ? '' : 'd-none'} btn btn-danger seal-option me-3" data-insights-hits="${hit.objectID}">${hit["Type A Maintenance Kit Part Number"]}</a>
                     <a href="${hit["Pro Part Shopify URL"]}" class="${hit["Pro Part Shopify URL"] ? '' : 'd-none'} btn btn-danger seal-option me-3" data-insights-hits="${hit.objectID}">${hit["Pro Part Number"]}</a>
-                    <a href="${hit["Pro Maintenance Kit Part Shopify URL"]}" class="${hit["Pro Part Shopify URL"] ? '' : 'd-none'} btn btn-danger seal-option" data-insights-hits="${hit.objectID}">${hit["Pro Maintenance Kit Part Number"]}</a>
+                    <a href="${hit["Pro Maintenance Kit Part Shopify URL"]}" class="${hit["Pro Maintenance Kit Part Shopify URL"] ? '' : 'd-none'} btn btn-danger seal-option" data-insights-hits="${hit.objectID}">${hit["Pro Maintenance Kit Part Number"]}</a>
                     `
 
                 },
@@ -120,6 +120,44 @@ document.addEventListener("DOMContentLoaded", function() {
 
     ])
 
+    // Disable dependent selects until a measurement option is selected
+    function getDependentSelects() {
+        const shaftSelect = document.querySelector('#shaftDiameter select');
+        const sternSelect = document.querySelector('#sternTube select');
+        return { shaftSelect, sternSelect };
+    }
+
+    function setDependentDisabled(disabled) {
+        const { shaftSelect, sternSelect } = getDependentSelects();
+        if (shaftSelect) {
+            shaftSelect.disabled = disabled;
+            if (disabled) shaftSelect.selectedIndex = 0;
+        }
+        if (sternSelect) {
+            sternSelect.disabled = disabled;
+            if (disabled) sternSelect.selectedIndex = 0;
+        }
+    }
+
+    function updateDependentState() {
+        const measurementContainer = document.querySelector('#measurementType');
+        if (!measurementContainer) return;
+        const anyChecked = !!measurementContainer.querySelector('input[type="checkbox"]:checked');
+        setDependentDisabled(!anyChecked);
+    }
+
+    // Listen for changes on the measurement menu (checkboxes are rendered by the menu widget)
+    const measurementContainer = document.querySelector('#measurementType');
+    if (measurementContainer) {
+        measurementContainer.addEventListener('change', updateDependentState);
+    }
+
+    // Start the search and initialize state after widgets render
     sealSelector.start();
+
+    // Ensure selects are disabled by default until a measurement is chosen
+    // Use a short timeout to allow instantsearch to render the select elements
+    setTimeout(updateDependentState, 100);
     
 });
+
