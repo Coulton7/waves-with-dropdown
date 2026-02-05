@@ -20,12 +20,12 @@ document.addEventListener("DOMContentLoaded", function() {
         widgetParams.container.querySelector('button').disabled = !canRefine;
     }
 
-    const shaftDropdown = instantsearch.createDropdown(
+    const shaftDropdown = createDropdown(
         instantsearch.widgets.refinementList,
         { closeOnChange: true }
     );
 
-    const sternDropdown = instantsearch.createDropdown(
+    const sternDropdown = createDropdown(
         instantsearch.widgets.refinementList,
         { closeOnChange: true }
     );
