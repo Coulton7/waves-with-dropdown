@@ -20,6 +20,16 @@ document.addEventListener("DOMContentLoaded", function() {
         widgetParams.container.querySelector('button').disabled = !canRefine;
     }
 
+    const shaftDropdown = instantsearch.createDropdown(
+        instantsearch.widgets.refinementList,
+        { closeOnChange: true }
+    );
+
+    const sternDropdown = instantsearch.createDropdown(
+        instantsearch.widgets.refinementList,
+        { closeOnChange: true }
+    );
+
     const customClearRefinements = connectClearRefinements(renderClearRefinements);
 
     window.dataLayer.push({
@@ -58,11 +68,11 @@ document.addEventListener("DOMContentLoaded", function() {
             container: document.querySelector("#measurementType"),
             attribute: "Measurement",
         }),
-        refinementList({
+        shaftDropdown({
             container: document.querySelector("#shaftDiameter"),
             attribute: "Shaft Diameter*",
         }),
-        refinementList({
+        sternDropdown({
             container: document.querySelector("#sternTube"),
             attribute: "Stern Tube Diameter*",
         }),
