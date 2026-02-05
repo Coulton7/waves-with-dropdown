@@ -21,16 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
         widgetParams.container.querySelector('button').disabled = !canRefine;
     }
 
-    const shaftDropdown = createDropdown(
-        instantsearch.widgets.refinementList,
-        { closeOnChange: true }
-    );
-
-    const sternDropdown = createDropdown(
-        instantsearch.widgets.refinementList,
-        { closeOnChange: true }
-    );
-
     const customClearRefinements = connectClearRefinements(renderClearRefinements);
 
     window.dataLayer.push({
