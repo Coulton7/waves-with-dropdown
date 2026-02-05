@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.dataLayer = window.dataLayer || [];
     const { connectClearRefinements } = instantsearch.connectors;
-    const { createDropdown } = instantsearch.connectors;
+    const { refinementList } = instantsearch.widgets;
 
     const renderClearRefinements = (renderOptions, isFirstRender) => {
         const {canRefine, refine, widgetParams} = renderOptions;
@@ -19,16 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         widgetParams.container.querySelector('button').disabled = !canRefine;
     }
-
-    const shaftDropdown = createDropdown(
-        instantsearch.widgets.refinementList,
-        { closeOnChange: true }
-    );
-
-    const sternDropdown = createDropdown(
-        instantsearch.widgets.refinementList,
-        { closeOnChange: true }
-    );
 
     const customClearRefinements = connectClearRefinements(renderClearRefinements);
 
@@ -64,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 container: document.querySelector('#reset-options'),
             }),
 
-        instantsearch.widgets.refinementList({
+        refinementList({
             container: document.querySelector("#measurementType"),
             attribute: "Measurement",
         }),
