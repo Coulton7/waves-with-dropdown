@@ -113,7 +113,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     <a href="${hit["Pro Part Shopify URL"]}" class="${hit["Pro Part Shopify URL"] ? '' : 'd-none'} btn btn-danger seal-option me-3" data-insights-hits="${hit.objectID}">${hit["Pro Part Number"]}</a>
                     <a href="${hit["Pro Maintenance Kit Part Shopify URL"]}" class="${hit["Pro Maintenance Kit Part Shopify URL"] ? '' : 'd-none'} btn btn-danger seal-option" data-insights-hits="${hit.objectID}">${hit["Pro Maintenance Kit Part Number"]}</a>
                     `
-
                 },
             },
         }),
