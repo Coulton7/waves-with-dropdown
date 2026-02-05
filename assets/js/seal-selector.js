@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
         menu({
             container: document.querySelector("#measurementType"),
             attribute: "Measurement",
+            sortBy: ["name:asc"],
             cssClasses: {
                 root: "measurement-refinement-container",
                 list: "measurement-item-list",
