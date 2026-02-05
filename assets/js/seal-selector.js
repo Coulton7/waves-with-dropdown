@@ -62,10 +62,12 @@ document.addEventListener("DOMContentLoaded", function() {
         menuSelect({
             container: document.querySelector("#shaftDiameter"),
             attribute: "Shaft Diameter*",
+            limit: 55,
         }),
         menuSelect({
             container: document.querySelector("#sternTube"),
             attribute: "Stern Tube Diameter*",
+            limit: 26,
         }),
         instantsearch.widgets.hits({
             container: document.querySelector("#seal-selection"),
