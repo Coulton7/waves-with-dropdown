@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const { panel } = instantsearch.widgets;
     const { menu } = instantsearch.widgets;
     const { menuSelect } = instantsearch.widgets;
+
+    const isAttributeRefined = (results, attribute) => {
+        const facet = results.getFacetValues(attribute);
+        return Array.isArray(facet) && facet.some   (f => f.isRefined);
+    };
     
     const renderClearRefinements = (renderOptions, isFirstRender) => {
         const {canRefine, refine, widgetParams} = renderOptions;
@@ -85,10 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         shaftPanel({
             hidden(options){
-                const { results } = options;
-                const measurmentFacet = results.getFacetValues("Shaft Diameter*");
-                const ismeasurementSelected = measurmentFacet.some(facet => facet.isRefined);
-                return !ismeasurementSelected;
+                return !isAttributeRefined(options.results, "Measurement");
             },
             container: document.querySelector("#shaftDiameter"),
             attribute: "Shaft Diameter*",
@@ -108,10 +110,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }),
         sternTubePanel({
             hidden(options){
-                const { results } = options;
-                const shaftFacet = results.getFacetValues("Shaft Diameter*");
-                const isShaftDiameterSelected = shaftFacet.some(facet => facet.isRefined);
-                return !isShaftDiameterSelected;
+                return !isAttributeRefined(options.results, "Shaft Diameter*");
             },
             container: document.querySelector("#sternTube"),
             attribute: "Stern Tube Diameter*",
