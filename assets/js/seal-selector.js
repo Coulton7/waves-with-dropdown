@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     window.dataLayer = window.dataLayer || [];
     const { connectClearRefinements } = instantsearch.connectors;
     const { connectRefinementList } = instantsearch.connectors;
-    const { refinementList } = instantsearch.widgets;
+    const { menu } = instantsearch.widgets;
     const { menuSelect } = instantsearch.widgets;
     
     const renderClearRefinements = (renderOptions, isFirstRender) => {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 container: document.querySelector('#reset-options'),
             }),
 
-        refinementList({
+        menu({
             container: document.querySelector("#measurementType"),
             attribute: "Measurement",
             cssClasses: {
