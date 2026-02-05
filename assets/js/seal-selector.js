@@ -58,11 +58,11 @@ document.addEventListener("DOMContentLoaded", function() {
             container: document.querySelector("#measurementType"),
             attribute: "Measurement",
         }),
-        shaftDropdown({
+        refinementList({
             container: document.querySelector("#shaftDiameter"),
             attribute: "Shaft Diameter*",
         }),
-        sternDropdown({
+        refinementList({
             container: document.querySelector("#sternTube"),
             attribute: "Stern Tube Diameter*",
         }),
