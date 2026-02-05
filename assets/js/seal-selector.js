@@ -4,8 +4,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.dataLayer = window.dataLayer || [];
     const { connectClearRefinements } = instantsearch.connectors;
+    const { connectRefinementList } = instantsearch.connectors;
     const { refinementList } = instantsearch.widgets;
     const { menuSelect } = instantsearch.widgets;
+
+    const renderRefinementList = (renderOptions, isFirstRender) => {
+        const {  refine, widgetParams } = renderOptions;
+        if (isFirstRender) {
+            
+        }
+    }
 
     const renderClearRefinements = (renderOptions, isFirstRender) => {
         const {canRefine, refine, widgetParams} = renderOptions;
@@ -22,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const customClearRefinements = connectClearRefinements(renderClearRefinements);
+    const customRefinementList = connectRefinementList(renderRefinementList);
 
     window.dataLayer.push({
         algoliaUserToken: 'user-1',
@@ -58,7 +67,11 @@ document.addEventListener("DOMContentLoaded", function() {
         refinementList({
             container: document.querySelector("#measurementType"),
             attribute: "Measurement",
+            templates: {
+                item: '<input type="checkbox" data-insights-filter="${`type:${value}`}" class="ais-refinement-list--checkbox" {{#isRefined}}checked="true"{{/isRefined}}> {{label}}',
+            }
         }),
+
         menuSelect({
             container: document.querySelector("#shaftDiameter"),
             attribute: "Shaft Diameter*",
