@@ -7,14 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const { connectRefinementList } = instantsearch.connectors;
     const { refinementList } = instantsearch.widgets;
     const { menuSelect } = instantsearch.widgets;
-
-    const renderRefinementList = (renderOptions, isFirstRender) => {
-        const {  refine, widgetParams } = renderOptions;
-        if (isFirstRender) {
-            
-        }
-    }
-
+    
     const renderClearRefinements = (renderOptions, isFirstRender) => {
         const {canRefine, refine, widgetParams} = renderOptions;
         if(isFirstRender) {
@@ -30,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const customClearRefinements = connectClearRefinements(renderClearRefinements);
-    const customRefinementList = connectRefinementList(renderRefinementList);
 
     window.dataLayer.push({
         algoliaUserToken: 'user-1',
