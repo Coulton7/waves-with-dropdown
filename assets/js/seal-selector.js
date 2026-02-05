@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
             container: document.querySelector("#measurementType"),
             attribute: "Measurement",
             templates: {
-                item: '<input type="checkbox" data-insights-filter="${`type:${value}`}" class="ais-refinement-list--checkbox" {{#isRefined}}checked="true"{{/isRefined}}> {{label}}',
+                item: '<input type="checkbox" data-insights-filter="${`type:${value}`}" class="ais-refinement-list--checkbox m-checkbox" {{#isRefined}}checked="true"{{/isRefined}}> {{label}}',
             }
         }),
 
