@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
         shaftPanel({
             hidden(options){
                 const { results } = options;
-                const measurmentFacet = results.getFacetBalues("Shaft Diameter*");
+                const measurmentFacet = results.getFacetValues("Shaft Diameter*");
                 const ismeasurementSelected = measurmentFacet.some(facet => facet.isRefined);
                 return !ismeasurementSelected;
             },
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
         sternTubePanel({
             hidden(options){
                 const { results } = options;
-                const shaftFacet = results.getFacetBalues("Shaft Diameter*");
+                const shaftFacet = results.getFacetValues("Shaft Diameter*");
                 const isShaftDiameterSelected = shaftFacet.some(facet => facet.isRefined);
                 return !isShaftDiameterSelected;
             },
