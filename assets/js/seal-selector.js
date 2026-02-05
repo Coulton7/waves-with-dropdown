@@ -74,6 +74,12 @@ document.addEventListener("DOMContentLoaded", function() {
             container: document.querySelector("#shaftDiameter"),
             attribute: "Shaft Diameter*",
             limit: 55,
+            cssClasses: {
+                root: [
+                    "diabsled",
+                    "shaft-diameter-select"
+                ],
+            },
             templates: {
                 item(item, { html }) {
                     return html`<span>${item.label}</span>`;
@@ -87,6 +93,9 @@ document.addEventListener("DOMContentLoaded", function() {
             container: document.querySelector("#sternTube"),
             attribute: "Stern Tube Diameter*",
             limit: 26,
+            cssClasses: {
+                root: ["stern-tube-select", "diabsled"]
+            },
             templates: {
                 item(item, { html }) {
                     return html`<span>${item.label}</span>`;
