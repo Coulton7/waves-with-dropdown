@@ -77,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function() {
             limit: 55,
             cssClasses: {
                 root: "shaft-diameter-select",
-                select: "disabled"
             },
             templates: {
                 item(item, { html }) {
@@ -94,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function() {
             limit: 26,
             cssClasses: {
                 root: "stern-tube-select",
-                select: "disabled"
             },
             templates: {
                 item(item, { html }) {
