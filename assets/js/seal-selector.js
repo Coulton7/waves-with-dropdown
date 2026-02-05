@@ -75,6 +75,9 @@ document.addEventListener("DOMContentLoaded", function() {
             attribute: "Shaft Diameter*",
             limit: 55,
             templates: {
+                item(item, { html }) {
+                    return html`<span>${item.label}</span>`;
+                },
                 defaultOption(data, { html }) {
                     return html`<span>Choose a Shaft Diameter</span>`;
                 },
