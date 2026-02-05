@@ -105,7 +105,18 @@ document.addEventListener("DOMContentLoaded", function() {
         }),
         instantsearch.widgets.hits({
             container: document.querySelector("#seal-selection"),
-        })
+            templates: {
+                item(hit, {html}){
+                    return html`
+                    <a href="${hit["Type A Part Shopify URL*"]}" class="btn btn-danger seal-option" data-insights-hits="${hit.objectID}">${hit["Type A Part Number*"]}</a>
+                    <a href="${hit["Type A Maintenance Kit Part Shopify URL*"]}" class="btn btn-danger seal-option" data-insights-hits="${hit.objectID}">${hit["Type A Maintenance Kit Part Number"]}</a>
+                    <a href="${hit["Pro Part Shopify URL"]}" class="btn btn-danger seal-option" data-insights-hits="${hit.objectID}">${hit["Pro Part Number"]}</a>
+                    <a href="${hit["Pro Maintenance Kit Part Shopify URL"]}" class="btn btn-danger seal-option" data-insights-hits="${hit.objectID}">${hit["Pro Maintenance Kit Part Number"]}</a>
+                    `
+
+                },
+            },
+        }),
 
     ])
 
