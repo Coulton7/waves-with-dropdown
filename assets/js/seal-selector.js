@@ -63,11 +63,21 @@ document.addEventListener("DOMContentLoaded", function() {
             container: document.querySelector("#shaftDiameter"),
             attribute: "Shaft Diameter*",
             limit: 55,
+            templates: {
+                defaultOption(data, { html }) {
+                    return html`<span>Choose a Shaft Diameter</span>`;
+                },
+            }
         }),
         menuSelect({
             container: document.querySelector("#sternTube"),
             attribute: "Stern Tube Diameter*",
             limit: 26,
+            templates: {
+                defaultOption(data, { html }) {
+                    return html`<span>Choose a Stern Tube Diameter</span>`;
+                },
+            }
         }),
         instantsearch.widgets.hits({
             container: document.querySelector("#seal-selection"),
