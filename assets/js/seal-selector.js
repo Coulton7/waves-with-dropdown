@@ -117,11 +117,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     `
                 },
             },
-            transformItems(items, { results }) {
-                if (results.query === '') return [];
-
-                return items;
-            },
         }),
 
     ])
