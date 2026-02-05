@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.dataLayer = window.dataLayer || [];
     const { connectClearRefinements } = instantsearch.connectors;
-    const { connectRefinementList } = instantsearch.connectors;
+    const { panel } = instantsearch.widgets;
     const { menu } = instantsearch.widgets;
     const { menuSelect } = instantsearch.widgets;
     
@@ -23,6 +23,18 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const customClearRefinements = connectClearRefinements(renderClearRefinements);
+
+    const shaftPanel = panel({
+        templates: {
+            header: 'Shaft Diameter',
+        },
+    })(menuSelect);
+
+    const sternTubePanel = panel({
+        templates: {
+            header: 'Stern Tube Diameter',
+        },
+    })(menuSelect);
 
     window.dataLayer.push({
         algoliaUserToken: 'user-1',
@@ -71,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }),
 
-        menuSelect({
+        shaftPanel({
             container: document.querySelector("#shaftDiameter"),
             attribute: "Shaft Diameter*",
             sortBy: ["name:asc"],
@@ -88,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 },
             }
         }),
-        menuSelect({
+        sternTubePanel({
             container: document.querySelector("#sternTube"),
             attribute: "Stern Tube Diameter*",
             sortBy: ["name:asc"],
