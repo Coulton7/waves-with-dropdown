@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.dataLayer = window.dataLayer || [];
     const { connectClearRefinements } = instantsearch.connectors;
-    const { createDropdown } = instantsearch.widgets;
+    const { createDropdown } = instantsearch.connectors;
 
     const renderClearRefinements = (renderOptions, isFirstRender) => {
         const {canRefine, refine, widgetParams} = renderOptions;
