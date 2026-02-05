@@ -84,6 +84,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }),
 
         shaftPanel({
+            hidden(options){
+                const { results } = options;
+                const measurmentFacet = results.getFacetBalues("Shaft Diameter*");
+                const ismeasurementSelected = measurmentFacet.some(facet => facet.isRefined);
+                return !ismeasurementSelected;
+            },
             container: document.querySelector("#shaftDiameter"),
             attribute: "Shaft Diameter*",
             sortBy: ["name:asc"],
@@ -101,6 +107,12 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }),
         sternTubePanel({
+            hidden(options){
+                const { results } = options;
+                const shaftFacet = results.getFacetBalues("Shaft Diameter*");
+                const isShaftDiameterSelected = shaftFacet.some(facet => facet.isRefined);
+                return !isShaftDiameterSelected;
+            },
             container: document.querySelector("#sternTube"),
             attribute: "Stern Tube Diameter*",
             sortBy: ["name:asc"],
