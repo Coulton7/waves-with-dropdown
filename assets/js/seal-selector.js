@@ -120,44 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     ])
 
-    // Disable dependent selects until a measurement option is selected
-    function getDependentSelects() {
-        const shaftSelect = document.querySelector('#shaftDiameter select');
-        const sternSelect = document.querySelector('#sternTube select');
-        return { shaftSelect, sternSelect };
-    }
-
-    function setDependentDisabled(disabled) {
-        const { shaftSelect, sternSelect } = getDependentSelects();
-        if (shaftSelect) {
-            shaftSelect.disabled = disabled;
-            if (disabled) shaftSelect.selectedIndex = 0;
-        }
-        if (sternSelect) {
-            sternSelect.disabled = disabled;
-            if (disabled) sternSelect.selectedIndex = 0;
-        }
-    }
-
-    function updateDependentState() {
-        const measurementContainer = document.querySelector('#measurementType');
-        if (!measurementContainer) return;
-        const anyChecked = !!measurementContainer.querySelector('input[type="checkbox"]:checked');
-        setDependentDisabled(!anyChecked);
-    }
-
-    // Listen for changes on the measurement menu (checkboxes are rendered by the menu widget)
-    const measurementContainer = document.querySelector('#measurementType');
-    if (measurementContainer) {
-        measurementContainer.addEventListener('change', updateDependentState);
-    }
-
-    // Start the search and initialize state after widgets render
     sealSelector.start();
-
-    // Ensure selects are disabled by default until a measurement is chosen
-    // Use a short timeout to allow instantsearch to render the select elements
-    setTimeout(updateDependentState, 100);
     
 });
 
