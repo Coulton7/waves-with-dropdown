@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const shaftDropdown = createDropdown(
         instantsearch.widgets.refinementList,
-    { closeOnChange: true}
+        { closeOnChange: true }
     );
 
     const sternDropdown = createDropdown(
         instantsearch.widgets.refinementList,
-    { closeOnChange: true}
+        { closeOnChange: true }
     );
 
     const customClearRefinements = connectClearRefinements(renderClearRefinements);
