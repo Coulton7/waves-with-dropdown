@@ -75,10 +75,8 @@ document.addEventListener("DOMContentLoaded", function() {
             attribute: "Shaft Diameter*",
             limit: 55,
             cssClasses: {
-                root: [
-                    "disabled",
-                    "shaft-diameter-select"
-                ],
+                root: "shaft-diameter-select",
+                select: "disabled"
             },
             templates: {
                 item(item, { html }) {
@@ -94,7 +92,8 @@ document.addEventListener("DOMContentLoaded", function() {
             attribute: "Stern Tube Diameter*",
             limit: 26,
             cssClasses: {
-                root: ["stern-tube-select", "disabled"]
+                root: "stern-tube-select",
+                select: "disabled"
             },
             templates: {
                 item(item, { html }) {
