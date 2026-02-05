@@ -34,22 +34,22 @@ document.addEventListener("DOMContentLoaded", function() {
         typoTolerance: 'strict',
         paginationLimitedTo: 80,
         searchFunction(helper) {
-                if (helper.state.query === '')
-                {
-                    return;
+            if (helper.state.query === '')
+            {
+                return;
+            }
+            helper.search();
+        },
+        
+        insights: {
+            onEvent(event) {
+                const { widgetType, eventType, payload, hits } = event;
+                if (widgetType == 'ais.hits' && eventType === 'view') {
+                    dataLayer.push({ event: 'Hits Viewed' });
                 }
-                helper.search();
-            },
-            
-            insights: {
-                onEvent(event) {
-                    const { widgetType, eventType, payload, hits } = event;
-                    if (widgetType == 'ais.hits' && eventType === 'view') {
-                        dataLayer.push({ event: 'Hits Viewed' });
-                    }
-                }
-            },
-        });
+            }
+        },
+    });
         
     sealSelector.addWidgets([
         customClearRefinements({
