@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
             header: 'Shaft Diameter',
         },
         hidden(options){
-            const currentMeasurement = options.results.disjunctiveFacets.find( facet => facet.name === "menu");
+            const currentMeasurement = options.results.disjunctiveFacets.find( facet => facet.name === "measurement-refinement-container");
             return !currentMeasurement || !currentMeasurement.data.some( item => item.isRefined);
         },
     })(menuSelect);
