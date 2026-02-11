@@ -33,11 +33,19 @@ document.addEventListener("DOMContentLoaded", function() {
         templates: {
             header: 'Shaft Diameter',
         },
+        hidden(options){
+            const currentMeasurement = options.results.disjunctiveFacets.find( facet => facet.name === "Measurement");
+            return !currentMeasurement || !currentMeasurement.data.some( item => item.isRefined);
+        },
     })(menuSelect);
 
     const sternTubePanel = panel({
         templates: {
             header: 'Stern Tube Diameter',
+        },
+        hidden(options){
+            const currentShaft = options.results.disjunctiveFacets.find( facet => facet.name === "Shaft Diameter*");
+            return !currentShaft || !currentShaft.data.some( item => item.isRefined);
         },
     })(menuSelect);
 
