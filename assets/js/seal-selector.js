@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
             clearButton.textContent = 'Reset';
             clearButton.addEventListener('click', () => {
                 refine();
-                document.querySelector("#shaftDiameter .ais-Panel").setAttribute("hidden", "");
-                document.querySelector("#sternTube .ais-Panel").setAttribute("hidden", "");
+                document.querySelector("#shaftDiameter .ais-Panel").classList.add("visibility-hidden");
+                document.querySelector("#sternTube .ais-Panel").classList.add("visibility-hidden");
                 document.querySelector("#seal-selection .ais-Hits").classList.add("d-none");
             });
             widgetParams.container.appendChild(clearButton);
@@ -36,9 +36,8 @@ document.addEventListener("DOMContentLoaded", function() {
         templates: {
             header: 'Shaft Diameter',
         },
-        hidden(options){
-            const currentMeasurement = options.results.disjunctiveFacets.find( (f) => f.name === "Metric");
-            return !currentMeasurement || !currentMeasurement.data.some( item => item.isRefined);
+        cssClasses: {
+        root: 'visibility-hidden',
         },
     })(menuSelect);
 
@@ -46,9 +45,8 @@ document.addEventListener("DOMContentLoaded", function() {
         templates: {
             header: 'Stern Tube Diameter',
         },
-        hidden(options){
-            const currentShaft = options.results.disjunctiveFacets.find( facet => facet.name === "Shaft Diameter*");
-            return !currentShaft || !currentShaft.data.some( item => item.isRefined);
+        cssClasses: {
+        root: 'visibility-hidden',
         },
     })(menuSelect);
 
@@ -161,15 +159,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.querySelector("#measurementType").addEventListener("click", function(event) {
         if (event.target.matches(".ais-refinement-list--checkbox")) {
-            document.querySelector("#shaftDiameter .ais-Panel").removeAttribute("hidden");
-            document.querySelector("#shaftDiameter .ais-Panel").classList.remove("ais-Panel--noRefinement");
+            document.querySelector("#shaftDiameter .ais-Panel").classList.remove("visibility-hidden");
         }
     }, false);
 
     document.querySelector("#shaftDiameter").addEventListener("click", function(event) {
         if (event.target.matches(".ais-MenuSelect-option")) {
-            document.querySelector("#sternTube .ais-Panel").removeAttribute("hidden");
-            document.querySelector("#sternTube .ais-Panel").classList.remove("ais-Panel--noRefinement");
+            document.querySelector("#sternTube .ais-Panel").classList.remove("visibility-hidden");
         }
     }, false);
 
