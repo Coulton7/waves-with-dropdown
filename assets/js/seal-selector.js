@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 refine();
                 document.querySelector("#shaftDiameter .ais-Panel").setAttribute("hidden", "");
                 document.querySelector("#sternTube .ais-Panel").setAttribute("hidden", "");
+                document.querySelector("#seal-selection .ais-Hits").classList.add("d-none");
             });
             widgetParams.container.appendChild(clearButton);
         }
@@ -140,6 +141,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }),
         instantsearch.widgets.hits({
             container: document.querySelector("#seal-selection"),
+            cssClasses: {
+                root: "d-none",
+            },
             templates: {
                 item(hit, {html}){
                     return html`
@@ -166,6 +170,12 @@ document.addEventListener("DOMContentLoaded", function() {
         if (event.target.matches(".ais-MenuSelect-option")) {
             document.querySelector("#sternTube .ais-Panel").removeAttribute("hidden");
             document.querySelector("#sternTube .ais-Panel").classList.remove("ais-Panel--noRefinement");
+        }
+    }, false);
+
+    document.querySelector("#sternTube").addEventListener("click", function(event) {
+        if (event.target.matches(".ais-MenuSelect-option")) {
+            document.querySelector("#seal-selection .ais-Hits").classList.remove("d-none");
         }
     }, false);
 });
