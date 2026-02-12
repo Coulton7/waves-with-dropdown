@@ -158,7 +158,13 @@ document.addEventListener("DOMContentLoaded", function() {
         if (event.target.matches(".ais-refinement-list--checkbox")) {
             document.querySelector("#shaftDiameter .ais-Panel").removeAttribute("hidden");
             document.querySelector("#shaftDiameter .ais-Panel").classList.remove("ais-Panel--noRefinement");
-            console.log("Measurement type selected, showing shaft diameter options.");
+        }
+    }, false);
+
+    document.querySelector("#measurementType").addEventListener("click", function(event) {
+        if (event.target.matches(".ais-MenuSelect-option")) {
+            document.querySelector("#sternTube .ais-Panel").removeAttribute("hidden");
+            document.querySelector("#sternTube .ais-Panel").classList.remove("ais-Panel--noRefinement");
         }
     }, false);
 });
