@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
             clearButton.addEventListener('click', () => {
                 refine();
                 document.querySelector("#shaftDiameter .ais-Panel").setAttribute("hidden", "");
+                document.querySelector("#sternTube .ais-Panel").setAttribute("hidden", "");
             });
             widgetParams.container.appendChild(clearButton);
         }
