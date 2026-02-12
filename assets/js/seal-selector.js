@@ -152,5 +152,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     ])
     sealSelector.start();
+
+    document.querySelector("#measurementType").addEventListener("click", function(event) {
+        if (event.target.matches(".ais-refinement-list--checkbox")) {
+            document.querySelector("#shaftDiameter .ais-Panel").removeAttribute("hidden");
+            console.log("Measurement type selected, showing shaft diameter options.");
+        }
+    }, false);
 });
 
