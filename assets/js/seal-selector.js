@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
             clearButton.textContent = 'Reset';
             clearButton.addEventListener('click', () => {
                 refine();
-                document.querySelector("#shaftDiameter .ais-Panel").classList.add("visibility-hidden");
-                document.querySelector("#sternTube .ais-Panel").classList.add("visibility-hidden");
+                document.querySelector("#shaftDiameter .ais-Panel").classList.add("invisible");
+                document.querySelector("#sternTube .ais-Panel").classList.add("invisible");
                 document.querySelector("#seal-selection .ais-Hits").classList.add("d-none");
             });
             widgetParams.container.appendChild(clearButton);
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
             header: 'Shaft Diameter',
         },
         cssClasses: {
-        root: 'visibility-hidden',
+        root: 'invisible',
         },
     })(menuSelect);
 
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
             header: 'Stern Tube Diameter',
         },
         cssClasses: {
-        root: 'visibility-hidden',
+        root: 'invisible',
         },
     })(menuSelect);
 
@@ -159,13 +159,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.querySelector("#measurementType").addEventListener("click", function(event) {
         if (event.target.matches(".ais-refinement-list--checkbox")) {
-            document.querySelector("#shaftDiameter .ais-Panel").classList.remove("visibility-hidden");
+            document.querySelector("#shaftDiameter .ais-Panel").classList.remove("invisible");
         }
     }, false);
 
     document.querySelector("#shaftDiameter").addEventListener("click", function(event) {
         if (event.target.matches(".ais-MenuSelect-option")) {
-            document.querySelector("#sternTube .ais-Panel").classList.remove("visibility-hidden");
+            document.querySelector("#sternTube .ais-Panel").classList.remove("invisible");
         }
     }, false);
 
