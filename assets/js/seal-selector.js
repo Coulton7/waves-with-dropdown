@@ -163,13 +163,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }, false);
 
-    document.querySelector("#shaftDiameter").addEventListener("input", function(event) {
+    document.querySelector("#shaftDiameter").addEventListener("click", function(event) {
         if (event.target.id !== "shaftDiameter") {
             document.querySelector("#sternTube .ais-Panel").classList.remove("invisible");
         }
     }, false);
 
-    document.querySelector("#sternTube").addEventListener("input", function(event) {
+    document.querySelector("#sternTube").addEventListener("click", function(event) {
         if (event.target.matches(".ais-MenuSelect-option")) {
             document.querySelector("#seal-selection .ais-Hits").classList.remove("d-none");
         }
