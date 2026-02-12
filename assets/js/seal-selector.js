@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }, false);
 
-    document.querySelector("#measurementType").addEventListener("click", function(event) {
+    document.querySelector("#shaftDiameter").addEventListener("click", function(event) {
         if (event.target.matches(".ais-MenuSelect-option")) {
             document.querySelector("#sternTube .ais-Panel").removeAttribute("hidden");
             document.querySelector("#sternTube .ais-Panel").classList.remove("ais-Panel--noRefinement");
