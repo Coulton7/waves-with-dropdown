@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
             clearButton.textContent = 'Reset';
             clearButton.addEventListener('click', () => {
                 refine();
+                document.querySelector("#shaftDiameter .ais-Panel").setAttribute("hidden");
             });
             widgetParams.container.appendChild(clearButton);
         }
