@@ -171,8 +171,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }, false);
 
-    document.querySelector("#sternTube").addEventListener("click", function(event) {
-        if (event.target.matches(".ais-MenuSelect-option")) {
+    document.querySelector("#sternTube").addEventListener("input", function(event) {
+        if (event.target.id !== "sternTube") {
             document.querySelector("#seal-selection .ais-Hits").classList.remove("d-none");
             console.log("Stern Tube selected");
         }
