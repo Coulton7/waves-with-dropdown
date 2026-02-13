@@ -164,8 +164,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }, false);
 
-    document.querySelector("#shaftDiameter").addEventListener("click", function(event) {
-        if (event.target.matches(".ais-MenuSelect-option")) {
+    document.querySelector("#shaftDiameter").addEventListener("input", function(event) {
+        if (event.target.id !== "shaftDiameter") {
             document.querySelector("#sternTube .ais-Panel").classList.remove("invisible");
             console.log("Shaft Diameter selected");
         }
