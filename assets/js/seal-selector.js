@@ -160,18 +160,21 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector("#measurementType").addEventListener("click", function(event) {
         if (event.target.matches(".ais-refinement-list--checkbox")) {
             document.querySelector("#shaftDiameter .ais-Panel").classList.remove("invisible");
+            console.log("Measurement Type selected");
         }
     }, false);
 
     document.querySelector("#shaftDiameter").addEventListener("click", function(event) {
         if (event.target.matches(".ais-MenuSelect-option")) {
             document.querySelector("#sternTube .ais-Panel").classList.remove("invisible");
+            console.log("Shaft Diameter selected");
         }
     }, false);
 
     document.querySelector("#sternTube").addEventListener("click", function(event) {
         if (event.target.matches(".ais-MenuSelect-option")) {
             document.querySelector("#seal-selection .ais-Hits").classList.remove("d-none");
+            console.log("Stern Tube selected");
         }
     }, false);
 });
