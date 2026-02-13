@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const {canRefine, refine, widgetParams} = renderOptions;
         if(isFirstRender) {
             const clearButton = document.createElement('button');
-            clearButton.classList.add("btn", "btn-primary", "mt-5");
+            clearButton.classList.add("btn", "btn-primary", "mb-5");
             clearButton.textContent = 'Reset';
             clearButton.addEventListener('click', () => {
                 refine();
