@@ -24,5 +24,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const buttonExpandTooltip = document.getElementById('enquiry-icon');
 const expandTooltip = new bootstrap.Tooltip(buttonExpandTooltip, {
-    trigger: hover,
+    trigger: 'hover'
 });
