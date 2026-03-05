@@ -21,8 +21,3 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.navbar-toggler').classList.add("flag-space");
     }
 });
-
-const buttonExpandTooltip = document.getElementById('enquiry-icon');
-const expandTooltip = new bootstrap.Tooltip(buttonExpandTooltip, {
-    trigger: 'hover'
-});
