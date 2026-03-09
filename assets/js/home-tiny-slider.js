@@ -1,19 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var dataSlider = document.querySelector('.test-slider');
-    var arrow = dataSlider.getAttribute("data-arrow");
-    var sliderDots = dataSlider.getAttribute("data-dots");
-    var slideAxis = dataSlider.getAttribute("data-axis");
-    var slideItems = dataSlider.getAttribute("data-items");
-    var itemsXs = dataSlider.getAttribute("data-items-xs");
-    var itemsSm = dataSlider.getAttribute("data-items-sm");
-    var itemsMd = dataSlider.getAttribute("data-items-md");
-    var itemsLg = dataSlider.getAttribute("data-items-lg");
-    var itemsXL = dataSlider.getAttribute("data-items-xl");
-    var itemsXXL = dataSlider.getAttribute("data-items-xxl");
-    var itemsXXXL = dataSlider.getAttribute("data-items-xxxl");
-    var sliderSpeed = dataSlider.getAttribute("data-speed");
-    var sliderGutter = dataSlider.getAttribute("data-gutter");
-    var mobileTouch = dataSlider.getAttribute("data-touch");
 
     if (document.querySelectorAll('.news-slider').length > 0){
         var newsslider = tns({
@@ -262,6 +247,21 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     if(document.querySelectorAll('.test-slider').length > 0){
+        var dataSlider = document.querySelector('.test-slider');
+        var arrow = dataSlider.getAttribute("data-arrow");
+        var sliderDots = dataSlider.getAttribute("data-dots");
+        var slideAxis = dataSlider.getAttribute("data-axis");
+        var slideItems = dataSlider.getAttribute("data-items");
+        var itemsXs = dataSlider.getAttribute("data-items-xs");
+        var itemsSm = dataSlider.getAttribute("data-items-sm");
+        var itemsMd = dataSlider.getAttribute("data-items-md");
+        var itemsLg = dataSlider.getAttribute("data-items-lg");
+        var itemsXL = dataSlider.getAttribute("data-items-xl");
+        var itemsXXL = dataSlider.getAttribute("data-items-xxl");
+        var itemsXXXL = dataSlider.getAttribute("data-items-xxxl");
+        var sliderSpeed = dataSlider.getAttribute("data-speed");
+        var sliderGutter = dataSlider.getAttribute("data-gutter");
+        var mobileTouch = dataSlider.getAttribute("data-touch");
         var test_slider = tns ({
             container: ".test-slider",
             speed: sliderSpeed,
