@@ -1,4 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
+    var arrow = document.getAttribute("data-arrow");
+    var dots = document.getAttribute("data-dots");
+    var slideAxis = document.getAttribute("data-axis");
+    var slideItems = document.getAttribute("data-items");
+    var itemsXs = document.getAttribute("data-items-xs");
+    var itemsSm = document.getAttribute("data-items-sm");
+    var itemsMd = document.getAttribute("data-items-md");
+    var itemsLg = document.getAttribute("data-items-lg");
+    var itemsXL = document.getAttribute("data-items-xl");
+    var itemsXXL = document.getAttribute("data-items-xxl");
+    var itemsXXXL = document.getAttribute("data-items-xxxl");
+    var sliderSpeed = document.getAttribute("data-speed");
+    var sliderGutter = document.getAttribute("data-gutter");
+    var mobileTouch = document.getAttribute("data-touch");
+
     if (document.querySelectorAll('.base-slider').length > 0){
         var base_slider = tns ({
             container: ".base-slider",
@@ -30,6 +45,54 @@ document.addEventListener("DOMContentLoaded", function() {
                     items: 4
                 }
             },
+        })
+    }
+
+    if(document.querySelectorAll('.test-slider').length > 0){
+        var test_slider = tns ({
+            container: ".test-slider",
+            speed: sliderSpeed,
+            loop: false,
+            items: slideItems,
+            axis: slideAxis,
+            touch: mobileTouch,
+            nav: dots,
+            controls: arrow,
+            controlsContainer: "#arrow-controls",
+            gutter: sliderGutter,
+            lazyload: true,
+            autoplay: false,
+            responsive: {
+                1 : {
+                items: itemsXs 
+                },
+        
+                600 : {
+                items: itemsSm
+                },
+        
+                768: {
+                    items: itemsMd
+                },
+        
+                992: {
+                    itmes: itemsLg
+                },
+        
+                1200: {
+                    items: itemsXL
+                },
+
+                1400: {
+                    items: itemsXXL
+                },
+
+                1600: {
+                    items: itemsXXXL
+                }
+            },
+
+
         })
     }
 
