@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function() {
             axis: slideAxis,
             touch: mobileTouch,
             nav: dots,
-            controls: arrow,
             controlsContainer: "#arrows",
             gutter: sliderGutter,
             lazyload: true,
