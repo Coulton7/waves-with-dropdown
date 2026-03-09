@@ -272,6 +272,7 @@ document.addEventListener("DOMContentLoaded", function() {
             nav: dots,
             controls: arrow,
             controlsContainer: "#arrows",
+            controlsPosition: "top",
             gutter: sliderGutter,
             lazyload: true,
             autoplay: false,
