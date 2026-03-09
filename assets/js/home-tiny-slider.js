@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function() {
             items: slideItems,
             axis: slideAxis,
             touch: mobileTouch,
-            nav: dots,
+            nav: false,
             controls: arrow,
             controlsText: ['<i class="fas fa-chevron-left "></i>', '<i class="fas fa-chevron-right"></i>'],
             controlsPosition: "top",
