@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var dataSlider = document.querySelector('.test-slider');
     var arrow = dataSlider.getAttribute("data-arrow");
-    var dots = dataSlider.getAttribute("data-dots");
+    var sliderDots = dataSlider.getAttribute("data-dots");
     var slideAxis = dataSlider.getAttribute("data-axis");
     var slideItems = dataSlider.getAttribute("data-items");
     var itemsXs = dataSlider.getAttribute("data-items-xs");
@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function() {
             items: slideItems,
             axis: slideAxis,
             touch: mobileTouch,
-            nav: false,
+            nav: sliderDots,
             controls: arrow,
             controlsText: ['<i class="fas fa-chevron-left "></i>', '<i class="fas fa-chevron-right"></i>'],
             controlsPosition: "top",
