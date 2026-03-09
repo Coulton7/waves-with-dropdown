@@ -1,18 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var arrow = document.getAttribute("data-arrow");
-    var dots = document.getAttribute("data-dots");
-    var slideAxis = document.getAttribute("data-axis");
-    var slideItems = document.getAttribute("data-items");
-    var itemsXs = document.getAttribute("data-items-xs");
-    var itemsSm = document.getAttribute("data-items-sm");
-    var itemsMd = document.getAttribute("data-items-md");
-    var itemsLg = document.getAttribute("data-items-lg");
-    var itemsXL = document.getAttribute("data-items-xl");
-    var itemsXXL = document.getAttribute("data-items-xxl");
-    var itemsXXXL = document.getAttribute("data-items-xxxl");
-    var sliderSpeed = document.getAttribute("data-speed");
-    var sliderGutter = document.getAttribute("data-gutter");
-    var mobileTouch = document.getAttribute("data-touch");
+    var dataSlider = document.querySelector('.test-slider');
+    var arrow = dataSlider.getAttribute("data-arrow");
+    var dots = dataSlider.getAttribute("data-dots");
+    var slideAxis = dataSlider.getAttribute("data-axis");
+    var slideItems = dataSlider.getAttribute("data-items");
+    var itemsXs = dataSlider.getAttribute("data-items-xs");
+    var itemsSm = dataSlider.getAttribute("data-items-sm");
+    var itemsMd = dataSlider.getAttribute("data-items-md");
+    var itemsLg = dataSlider.getAttribute("data-items-lg");
+    var itemsXL = dataSlider.getAttribute("data-items-xl");
+    var itemsXXL = dataSlider.getAttribute("data-items-xxl");
+    var itemsXXXL = dataSlider.getAttribute("data-items-xxxl");
+    var sliderSpeed = dataSlider.getAttribute("data-speed");
+    var sliderGutter = dataSlider.getAttribute("data-gutter");
+    var mobileTouch = dataSlider.getAttribute("data-touch");
 
     if (document.querySelectorAll('.news-slider').length > 0){
         var newsslider = tns({
