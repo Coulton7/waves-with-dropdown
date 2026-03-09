@@ -271,7 +271,6 @@ document.addEventListener("DOMContentLoaded", function() {
             touch: mobileTouch,
             nav: dots,
             controls: arrow,
-            controlsContainer: "#arrows",
             controlsText: ['<i class="fas fa-chevron-left "></i>', '<i class="fas fa-chevron-right"></i>'],
             controlsPosition: "top",
             gutter: sliderGutter,
