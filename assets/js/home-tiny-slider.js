@@ -252,6 +252,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var sliderDots = dataSlider.getAttribute("data-dots");
         var slideAxis = dataSlider.getAttribute("data-axis");
         var slideItems = dataSlider.getAttribute("data-items");
+        var slideNumber = dataSlider.getAttribute("data-slideby");
         var itemsXs = dataSlider.getAttribute("data-items-xs");
         var itemsSm = dataSlider.getAttribute("data-items-sm");
         var itemsMd = dataSlider.getAttribute("data-items-md");
@@ -269,6 +270,7 @@ document.addEventListener("DOMContentLoaded", function() {
             loop: false,
             items: slideItems,
             axis: slideAxis,
+            slideBy: slideNumber,
             touch: mobileTouch,
             nav: sliderDots,
             controls: arrow,
