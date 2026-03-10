@@ -256,7 +256,7 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     if(document.querySelectorAll('.test-slider').length > 0){
-        var sliderConfig = document.querySelector('.test-slider').getAttribute('data-slider-config');
+        var sliderConfig = document.querySelector('.test-slider').getAttribute('data-js-config');
         var thisConfig = toJson(sliderConfig.replace(/\'/g, '"'));
         var test_slider = tns ({thisConfig});
     }
