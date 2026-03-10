@@ -248,8 +248,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if(document.querySelectorAll('.test-slider').length > 0){
         var dataSlider = document.querySelector('.test-slider');
+        console.log(dataSlider.getAttribute('data-tiny-slider'));
         opt = JSON.parse(dataSlider.getAttribute('data-tiny-slider'));
-        console.log(opt);
+        console.log(dataSlider.getAttribute('data-tiny-slider'));
         opt.container = dataSlider;
 
         var test_slider = tns ({opt})
