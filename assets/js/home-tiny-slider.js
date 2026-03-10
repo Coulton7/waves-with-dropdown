@@ -246,71 +246,18 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 
+
+    function toJson( str ){
+        try{
+            return JSON.parse(str);
+        } catch(e){
+            return str;
+        }
+    };
+
     if(document.querySelectorAll('.test-slider').length > 0){
-        var dataSlider = document.querySelector('.test-slider');
-        var sliderNav = document.querySelector('.slider-nav');
-        var arrow = sliderNav.getAttribute("data-arrow");
-        var sliderDots = sliderNav.getAttribute("data-dots");
-        var slideAxis = dataSlider.getAttribute("data-axis");
-        var slideItems = dataSlider.getAttribute("data-items");
-        var slideNumber = dataSlider.getAttribute("data-slideby");
-        var itemsXs = dataSlider.getAttribute("data-items-xs");
-        var itemsSm = dataSlider.getAttribute("data-items-sm");
-        var itemsMd = dataSlider.getAttribute("data-items-md");
-        var itemsLg = dataSlider.getAttribute("data-items-lg");
-        var itemsXL = dataSlider.getAttribute("data-items-xl");
-        var itemsXXL = dataSlider.getAttribute("data-items-xxl");
-        var itemsXXXL = dataSlider.getAttribute("data-items-xxxl");
-        var sliderSpeed = dataSlider.getAttribute("data-speed");
-        var sliderGutter = dataSlider.getAttribute("data-gutter");
-        var mobileTouch = dataSlider.getAttribute("data-touch");
-        console.log(arrow, sliderDots);
-        var test_slider = tns ({
-            container: ".test-slider",
-            speed: sliderSpeed,
-            loop: false,
-            items: slideItems,
-            axis: slideAxis,
-            slideBy: slideNumber,
-            touch: mobileTouch,
-            nav: sliderDots,
-            controls: arrow,
-            controlsText: ['<i class="fas fa-chevron-left "></i>', '<i class="fas fa-chevron-right"></i>'],
-            controlsPosition: "top",
-            gutter: sliderGutter,
-            lazyload: true,
-            autoplay: false,
-            responsive: {
-                1 : {
-                items: itemsXs 
-                },
-        
-                600 : {
-                items: itemsSm
-                },
-        
-                768: {
-                    items: itemsMd
-                },
-        
-                992: {
-                    itmes: itemsLg
-                },
-        
-                1200: {
-                    items: itemsXL
-                },
-
-                1400: {
-                    items: itemsXXL
-                },
-
-                1600: {
-                    items: itemsXXXL
-                }
-            },
-
-
-        })
+        var sliderConfig = document.querySelector('.test-slider').getAttribute('data-slider-config');
+        var thisConfig = toJson(sliderConfig.replace(/\'/g, '"'));
+        var test_slider = tns ({thisConfig});
     }
 });
