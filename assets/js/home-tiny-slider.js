@@ -249,8 +249,8 @@ document.addEventListener("DOMContentLoaded", function() {
     if(document.querySelectorAll('.test-slider').length > 0){
         var dataSlider = document.querySelector('.test-slider');
         var sliderNav = document.querySelector('.slider-nav');
-        var arrow = sliderNav.getAttribute("data-arrow");
-        var sliderDots = sliderNav.getAttribute("data-dots");
+        var arrow = dataSlider.getAttribute("data-arrow");
+        var sliderDots = dataSlider.getAttribute("data-dots");
         var slideAxis = dataSlider.getAttribute("data-axis");
         var slideItems = dataSlider.getAttribute("data-items");
         var slideNumber = dataSlider.getAttribute("data-slideby");
