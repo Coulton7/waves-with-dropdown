@@ -262,6 +262,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var sliderSpeed = dataSlider.getAttribute("data-speed");
         var sliderGutter = dataSlider.getAttribute("data-gutter");
         var mobileTouch = dataSlider.getAttribute("data-touch");
+        console.log(arrow, sliderDots);
         var test_slider = tns ({
             container: ".test-slider",
             speed: sliderSpeed,
