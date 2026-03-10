@@ -311,6 +311,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
         })
-        console.log(test_slider);
+        console.log(test_slider(nav));
     }
 });
