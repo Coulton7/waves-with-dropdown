@@ -248,10 +248,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if(document.querySelectorAll('.test-slider').length > 0){
         var dataSlider = document.querySelector('.test-slider');
-        opt = JSON.parse(dataSlider.getAttribute('data-tiny-slider'));
-        opt.container = dataSlider;
-        console.log(opt.container);
+        var slider_config = dataSlider.getAttribute('data-tiny-slider');
+        var thisConfig = toJSON(slider_config.replace(/\'/g, '"'));
 
-        var test_slider = tns ({opt})
+        var test_slider = tns ({thisConfig})
     }
 });
