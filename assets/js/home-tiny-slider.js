@@ -1,11 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    function toJSON( str ) {
-        try {
-          return JSON.parse( str );
-        }catch(err) {
-          return {};
-        }
-    };
 
     if (document.querySelectorAll('.news-slider').length > 0){
         var newsslider = tns({
