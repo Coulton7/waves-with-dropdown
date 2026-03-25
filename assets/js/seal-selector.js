@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
             sortBy: ["name:asc"],
             cssClasses: {
                 root: "measurement-refinement-container",
-                list: "measurement-item-list",
+                list: "measurement-item-list list-unstyled",
                 item: "measurement-item",
                 selectedItem: "measurement-item--selected",
             },
