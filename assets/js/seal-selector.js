@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
             container: document.querySelector("#seal-selection"),
             cssClasses: {
                 root: "d-none",
-                list: "list-unstyled"
+                list: "ais-Hits-list list-unstyled d-flex justify-content-center"
             },
             templates: {
                 item(hit, {html}){
