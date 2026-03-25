@@ -141,6 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
             container: document.querySelector("#seal-selection"),
             cssClasses: {
                 root: "d-none",
+                list: "list-unstyled"
             },
             templates: {
                 item(hit, {html}){
