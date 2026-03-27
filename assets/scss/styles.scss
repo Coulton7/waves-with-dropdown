@@ -1600,15 +1600,12 @@ blockquote {
   height: 5em;
 }
 
-.search-icon {
+.search-icon, .feedback-icon, .chat-icon {
   color: white;
   border-radius: 50%;
   width: 3.5em;
   height: 3.5em;
   background-color: $danger;
-  position: fixed; /* Use fixed to align it with .enquiry-icon */
-  bottom: 16em;
-  right: 1em; /* Adjust to the left of enquiry-icon */
   z-index: 1033;
   text-align: center;
   display: flex;
@@ -1619,61 +1616,32 @@ blockquote {
   text-decoration: none;
 }
 
+.search-icon {
+  position: fixed; /* Use fixed to align it with .enquiry-icon */
+  bottom: 16em;
+  right: 1em; /* Adjust to the left of enquiry-icon */
+}
+
 
 .enquiry-icon:hover {
   background-color: rgb(167, 52, 53);
 }
 
-.search-icon:hover{
-  transform: scale(1.2) !important;
-  background-color: rgb(167, 52, 53);
-}
-.chat-icon:hover{
-  transform: scale(1.2) !important;
-  background-color: rgb(167, 52, 53);
-}
-.feedback-icon:hover{
+.search-icon:hover, .chat-icon:hover, .feedback-icon:hover{
   transform: scale(1.2) !important; 
   background-color: rgb(167, 52, 53);
 }
 
 .feedback-icon {
-  color: white;
-  border-radius: 50%;
-  width: 3.5em;
-  height: 3.5em;
-  background-color: $danger;
   position: fixed; /* Use fixed to align it with .enquiry-icon */
   bottom: 11em;
   right: 1em; /* Adjust to the left of enquiry-icon */
-  z-index: 1034;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px, rgba(0, 0, 0, 0.2) 0px 2px 24px;
-  cursor: pointer;
-  text-decoration: none;
-  
 }
+
 .chat-icon {
-  color: white;
-  border-radius: 50%;
-  width: 3.5em;
-  height: 3.5em;
-  background-color: $danger;
   position: fixed; /* Use fixed to align it with .enquiry-icon */
   bottom: 6em;
   right: 1em; /* Adjust to the left of enquiry-icon */
-  z-index: 1035;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px, rgba(0, 0, 0, 0.2) 0px 2px 24px;
-  cursor: pointer;
-  text-decoration: none;
- 
 }
 
 .slide-in-right {
