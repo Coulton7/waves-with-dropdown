@@ -74,8 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
       dialogOffCanvas.classList.add("noscroll");
       overlaySearchBtn.classList.remove("search-btn");
       if(window.innerWidth > 992) {
-        if (scrollNav.classList.contains("scrolled-down")){
-          scrollNav.classList.remove("scrolled-down");
+        if (scrollNav.classList.contains("scrolled-up")){
+          scrollNav.classList.remove("scrolled-up");
           scrollNav.classList.add("scrolled-up")
         } else {
           scrollNav.classList.add("scrolled-up")
