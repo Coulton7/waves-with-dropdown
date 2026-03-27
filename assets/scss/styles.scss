@@ -1617,6 +1617,11 @@ blockquote {
   border: none;
 }
 
+.search-fa-icon, .feedback-fa-icon, .chat-fa-icon {
+  border: none;
+  background-color: $danger;
+}
+
 .search-icon {
   position: fixed; /* Use fixed to align it with .enquiry-icon */
   bottom: 16em;
