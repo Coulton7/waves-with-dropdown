@@ -42,9 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if(window.innerWidth > 992) {
         if (scrollNav.classList.contains("scrolled-up")){
           scrollNav.classList.remove("scrolled-up");
-          scrollNav.classList.add("scrolled-down")
+          scrollNav.classList.add("scrolled-up")
         } else {
-          scrollNav.classList.add("scrolled-down")
+          scrollNav.classList.add("scrolled-up")
         }
       }
       document.querySelector(".scroll-nav").classList.remove("shadow-back");
