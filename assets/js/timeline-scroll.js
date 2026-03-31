@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(topofImage);
 
     window.addEventListener('scroll', function(){
+        console.log(topofImage);
         if (topofImage <= 0) {
             timeline.style.display = "sticky";
             timeline.style.transform = 'translateX(' + (-scrollPos) + 'px)';
