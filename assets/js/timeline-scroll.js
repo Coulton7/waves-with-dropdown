@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var topofImage = timeline.getBoundingClientRect().top;
     var imageWidth = timelineImage.naturalWidth;
 
-    timeline.setAttribute("height", imageWidth);
+    timeline.setAttribute("style", "height: " + imageWidth + "px");
     console.log(topofImage);
 
     window.addEventListener('scroll', function(){
