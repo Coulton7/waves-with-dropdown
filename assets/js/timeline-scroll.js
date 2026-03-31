@@ -9,9 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(topofImage);
 
     window.addEventListener('scroll', function(){
-        console.log(topofImage);
         if (timeline.getBoundingClientRect().top < 0) {
-            timeline.style.display = "sticky";
+            timeline.style.position = "sticky";
             timeline.style.transform = 'translateX(' + Math.max(0, Math.min(1, scrollPos / 600)) + 'px)';
         }
     });
