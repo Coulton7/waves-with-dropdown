@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener('scroll', function(){
         console.log(topofImage);
-        if (topofImage <= 0) {
+        if (timeline.getBoundingClientRect().top < 0) {
             timeline.style.display = "sticky";
             timeline.style.transform = 'translateX(' + (-scrollPos) + 'px)';
         } else {
