@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         if (timelineImage.style.position === "sticky" ){
-            timeline.style.transform = 'translateX(' + Math.max(0, Math.min(1, scrollPos / 600)) + 'px)';
+            timelineImage.style.transform = 'translateX(' + Math.max(0, Math.min(1, scrollPos / 600)) + 'px)';
         };
             
     });
