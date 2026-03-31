@@ -11,7 +11,11 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('scroll', function(){
         if (timeline.getBoundingClientRect().top < 0) {
             timeline.style.position = "sticky";
-            timeline.style.transform = 'translateX(' + Math.max(0, Math.min(1, scrollPos / 600)) + 'px)';
         }
+
+        if (timeline.style.position === "sticky" ){
+            timeline.style.transform = 'translateX(' + Math.max(0, Math.min(1, scrollPos / 600)) + 'px)';
+        };
+            
     });
 });
