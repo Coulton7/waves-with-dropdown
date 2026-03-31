@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     var timeline = document.querySelector(".timeline");
+    var timelineContainer = document.querySelector(".timeline-container");
     var timelineImage = document.querySelector(".timeline-image");
     var scrollPos = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
     var topofImage = timeline.getBoundingClientRect().top;
@@ -9,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener('scroll', function(){
         if (timeline.getBoundingClientRect().top < 0) {
-            timelineImage.style.position = "sticky";
-            timelineImage.style.top = "0";
+            timelineContainer.style.position = "sticky";
+            timelineContainer.style.top = "0";
         }
 
-        if (timelineImage.style.position === "sticky" ){
+        if (timelineContainer.style.position === "sticky" ){
             timelineImage.style.transform = 'translateX(' + Math.max(0, Math.min(1, scrollPos / 600)) + 'px)';
         };
             

@@ -1900,8 +1900,15 @@ blockquote {
 }
 
 .timeline {
-  overflow-y: hidden;
   position: relative;
+  width: 100%;
+}
+
+.timeline-container{
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+
 }
 
 .timeline-image {
