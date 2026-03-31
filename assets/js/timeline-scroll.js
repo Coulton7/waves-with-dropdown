@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('scroll', function(){
         if (timeline.getBoundingClientRect().top < 0) {
             timelineImage.style.position = "sticky";
+            timelineImage.style.top = "0";
         }
 
         if (timelineImage.style.position === "sticky" ){
