@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (timeline.getBoundingClientRect().top < 0) {
             timeline.style.display = "sticky";
             timeline.style.transform = 'translateX(' + (-scrollPos) + 'px)';
-        } else {
-            timeline.style.display = "block";
         }
     });
 });
