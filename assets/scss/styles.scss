@@ -1912,7 +1912,9 @@ blockquote {
 }
 
 .timeline-image {
-  height: 100vh;
+  height: 100%;
+  position: absolute;
+  will-change: transform;
 }
 
 .black-box-promo {
