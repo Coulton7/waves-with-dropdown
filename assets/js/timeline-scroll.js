@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (timelineContainer.style.position === "sticky" ){
             window.addEventListener('scroll', function(e){
-                timelineImage.style.transform = 'translateX( -' + Math.max(0, Math.min(1, scrollPos / 100)) + 'px)';
+                timelineImage.style.transform = 'translateX( -' + Math.min(0, Math.max(1, scrollPos / 100)) + 'px)';
             });
         };
             
