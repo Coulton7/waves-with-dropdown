@@ -15,9 +15,11 @@ document.addEventListener("DOMContentLoaded", function() {
             timelineImage.style.position = "absolute";
         }
 
+        console.log(scrollPos);
+
         if (timelineContainer.style.position === "sticky" ){
             window.addEventListener('scroll', function(e){
-                timelineImage.style.transform = 'translateX( -' + window.scrollY + 'px)';
+                timelineImage.style.transform = 'translateX( -' + scrollPos + 'px)';
             });
         };
             
