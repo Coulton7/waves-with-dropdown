@@ -14,11 +14,9 @@ document.addEventListener("DOMContentLoaded", function() {
             timelineImage.style.position = "absolute";
         }
 
-        console.log(scrollPos);
-
         if (timelineContainer.style.position === "sticky" ){
             window.addEventListener('scroll', function(e){
-                timelineImage.style.transform = 'translateX( -' + scrollPos + 'px)';
+                timelineImage.style.transform = 'translateX( -' + Math.max(0, Math.min(1, scrollPos / 100)) + 'px)';
             });
         };
             
