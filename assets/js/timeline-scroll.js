@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
             timelineImage.style.position = "absolute";
         }
 
+        if(timeline.offsetHeight + timeline.scrollTop > timeline.scrollHeight){
+            timelineContainer.style.position = "relative";
+            timelineImage.style.position = "relative";
+            console.log("Timeline end reached");
+        }
+
         if (timelineContainer.style.position === "sticky" ){
             window.addEventListener('scroll', function(e){
                 timelineImage.style.transform = 'translateX( -' + Math.min(0, Math.max(imageWidth, scrollPos / 50)) + 'px)';
