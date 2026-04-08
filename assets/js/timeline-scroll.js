@@ -9,12 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('scroll', function(){
         var scrollPos = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
         
-        if(scrollPos > timeline.offsetTop){
-            translateValue += 10;
-        } else {
-            translateValue-= 10;
-        }
-        
         if (timeline.getBoundingClientRect().top < 0) {
             timelineContainer.style.position = "sticky";
             timelineContainer.style.top = "0";
@@ -29,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (timelineContainer.style.position === "sticky" ){
             window.addEventListener('scroll', function(e){
-                timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth, Math.max(0, translateValue)) + 'px)';
+                timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth, Math.max(0, scrollPos/8)) + 'px)';
             });
         };
             
