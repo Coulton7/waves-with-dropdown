@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('scroll', function(){
         var scrollPos = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
         
-        if(scrollPos < timeline.offsetTop){
+        if(scrollPos > timeline.offsetTop){
             translateValue += 10;
         } else {
             translateValue-= 10;
