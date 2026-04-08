@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (timelineContainer.style.position === "sticky" ){
             window.addEventListener('scroll', function(e){
-                timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth, Math.max(0, scrollPos / 100)) + 'px)';
+                timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth, Math.max(0, scrollPos)) + 'px)';
             });
         };
             
