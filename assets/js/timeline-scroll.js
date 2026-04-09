@@ -11,12 +11,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
         var scroll = window.scrollY;
         var scrollTop = 0;
+
          if (scroll > scrollTop) {
             console.log("Scrolling down");
         } else {
             console.log("Scrolling up");
         }
-        
+            scrollTop = scroll;
+                    
         if (timeline.getBoundingClientRect().top < 0) {
             timelineContainer.style.position = "sticky";
             timelineContainer.style.top = "0";
