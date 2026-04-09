@@ -4,14 +4,15 @@ document.addEventListener("DOMContentLoaded", function() {
     var timelineImage = document.querySelector(".timeline-image");
     var imageWidth = timelineImage.clientWidth;
     var scrollTop = 0;
+    var scrollValue = 0;
+
     timeline.setAttribute("style", "height: " + imageWidth + "px");
 
-    window.addEventListener('scroll', function(e){
+    window.addEventListener('wheel', function(e){
         var scrollPos = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
         var scroll = window.scrollY;
-        var scrollValue = 0;
-
+        
         if (timeline.getBoundingClientRect().top < 0) {
             timelineContainer.style.position = "sticky";
             timelineContainer.style.top = "0";
