@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
             
                 const y = e.deltaY;
                 if (y > 0) {                    
-                        scrollValue += 1; 
-                    }  else {
+                    scrollValue += 1; 
+                } else {
                     scrollValue -= 1; 
                 }
                 timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth, Math.max(0, scrollValue)) + 'px)';
