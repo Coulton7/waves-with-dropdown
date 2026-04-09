@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var timelineImage = document.querySelector(".timeline-image");
     var imageWidth = timelineImage.clientWidth;
     var scrollTop = 0;
+    var scrollValue = 0;
 
     timeline.setAttribute("style", "height: " + imageWidth + "px");
 
@@ -26,16 +27,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         if (timelineContainer.style.position === "sticky" ){
-            window.addEventListener('scroll', function(e){
-                if (scroll < scrollTop) {
+            window.addEventListener('wheel', function(e){
+                const y = e.deltaY;
+                if (y > 0) {
                     console.log("Scrolling up");
                     
-                        scrollValue -= 1; 
+                        scrollValue += 1; 
                     
                     }  else {
                     console.log("Scrolling down");
                     
-                    scrollValue += 1; 
+                    scrollValue -= 1; 
                     
                 }
             scrollTop = scroll;
