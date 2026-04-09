@@ -15,11 +15,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
          if (scroll < scrollTop) {
             console.log("Scrolling up");
-            scrollValue -= 5; 
-
-        } else {
+            for (let i = 0; i < imageWidth; i++) {
+                scrollValue -= 1; 
+            };
+            }  else {
             console.log("Scrolling down");
-            scrollValue += 5; 
+            for (let i = 0; i < imageWidth; i++) {
+            scrollValue += 1; 
+            }
         }
             
         scrollTop = scroll;
