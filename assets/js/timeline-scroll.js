@@ -30,12 +30,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (scroll < scrollTop) {
                     console.log("Scrolling up");
                     
-                        scrollValue -= 1; 
+                        scrollValue--; 
 
                 }  else {
                     console.log("Scrolling down");
                     
-                    scrollValue += 1; 
+                    scrollValue++; 
 
                 }
             scrollTop = scroll;
