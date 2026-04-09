@@ -11,11 +11,15 @@ document.addEventListener("DOMContentLoaded", function() {
         var scrollPos = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
         var scroll = window.scrollY;
+        var scrollValue = 0;
 
          if (scroll < scrollTop) {
             console.log("Scrolling up");
+            scrollValue -= 5; 
+
         } else {
             console.log("Scrolling down");
+            scrollValue += 5; 
         }
             
         scrollTop = scroll;
@@ -34,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (timelineContainer.style.position === "sticky" ){
             window.addEventListener('scroll', function(e){
-                timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth, Math.max(0, scrollPos/8)) + 'px)';
+                timelineImage.style.transform = 'translateX( -' + scrollValue + 'px)';
             });
         };
             
