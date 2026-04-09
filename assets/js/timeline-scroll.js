@@ -17,8 +17,9 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             console.log("Scrolling up");
         }
-            scrollTop = scroll;
-                    
+            
+        scrollTop = scroll;
+
         if (timeline.getBoundingClientRect().top < 0) {
             timelineContainer.style.position = "sticky";
             timelineContainer.style.top = "0";
