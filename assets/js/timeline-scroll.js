@@ -29,14 +29,14 @@ document.addEventListener("DOMContentLoaded", function() {
             window.addEventListener('scroll', function(e){
                 if (scroll < scrollTop) {
                     console.log("Scrolling up");
-                    for (let i = 0; i < imageWidth; i++) {
+                    
                         scrollValue -= 1; 
-                    };
+
                 }  else {
                     console.log("Scrolling down");
-                    for (let i = 0; i < imageWidth; i++) {
+                    
                     scrollValue += 1; 
-                    }
+
                 }
             scrollTop = scroll;
                 timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth, Math.max(0, scrollValue)) + 'px)';
