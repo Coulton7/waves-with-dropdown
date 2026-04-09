@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var timelineContainer = document.querySelector(".timeline-container");
     var timelineImage = document.querySelector(".timeline-image");
     var imageWidth = timelineImage.clientWidth;
+    var scrollTop = 0;
 
     timeline.setAttribute("style", "height: " + imageWidth + "px");
 
@@ -10,12 +11,11 @@ document.addEventListener("DOMContentLoaded", function() {
         var scrollPos = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
         var scroll = window.scrollY;
-        var scrollTop = 0;
 
-         if (scroll > scrollTop) {
-            console.log("Scrolling down");
-        } else {
+         if (scroll < scrollTop) {
             console.log("Scrolling up");
+        } else {
+            console.log("Scrolling down");
         }
             
         scrollTop = scroll;
