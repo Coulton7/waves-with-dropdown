@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
     var timelineImage = document.querySelector(".timeline-image");
     var imageWidth = timelineImage.clientWidth;
     var scrollTop = 0;
-    var scrollValue = 0;
-
     timeline.setAttribute("style", "height: " + imageWidth + "px");
 
     window.addEventListener('scroll', function(){
@@ -27,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         if (timelineContainer.style.position === "sticky" ){
-            window.addEventListener('wheel', function(e){
+            
                 const y = e.deltaY;
                 if (y > 0) {
                     console.log("Scrolling up");
@@ -40,10 +38,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     scrollValue -= 1; 
                     
                 }
-            scrollTop = scroll;
                 timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth, Math.max(0, scrollValue)) + 'px)';
-            });
-        };
+            }
+        });
             
     });
-});
