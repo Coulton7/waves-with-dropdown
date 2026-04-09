@@ -8,6 +8,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener('scroll', function(){
         var scrollPos = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+        var scroll = window.scrollY;
+        var scrollTop = 0;
+         if (scroll > scrollTop) {
+            console.log("Scrolling down");
+        } else {
+            console.log("Scrolling up");
+        }
         
         if (timeline.getBoundingClientRect().top < 0) {
             timelineContainer.style.position = "sticky";
