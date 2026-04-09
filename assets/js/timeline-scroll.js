@@ -13,20 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
         var scroll = window.scrollY;
         var scrollValue = 0;
 
-         if (scroll < scrollTop) {
-            console.log("Scrolling up");
-            for (let i = 0; i < imageWidth; i++) {
-                scrollValue -= 1; 
-            };
-            }  else {
-            console.log("Scrolling down");
-            for (let i = 0; i < imageWidth; i++) {
-            scrollValue += 1; 
-            }
-        }
-            
-        scrollTop = scroll;
-
         if (timeline.getBoundingClientRect().top < 0) {
             timelineContainer.style.position = "sticky";
             timelineContainer.style.top = "0";
@@ -41,6 +27,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (timelineContainer.style.position === "sticky" ){
             window.addEventListener('scroll', function(e){
+                if (scroll < scrollTop) {
+            console.log("Scrolling up");
+            for (let i = 0; i < imageWidth; i++) {
+                scrollValue -= 1; 
+            };
+            }  else {
+            console.log("Scrolling down");
+            for (let i = 0; i < imageWidth; i++) {
+            scrollValue += 1; 
+            }
+            }
+            scrollTop = scroll;
                 timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth, Math.max(0, scrollValue)) + 'px)';
             });
         };
