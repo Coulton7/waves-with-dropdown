@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var scrollTop = 0;
     timeline.setAttribute("style", "height: " + imageWidth + "px");
 
-    window.addEventListener('scroll', function(){
+    window.addEventListener('scroll', function(e){
         var scrollPos = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
         var scroll = window.scrollY;
