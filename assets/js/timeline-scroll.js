@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var timelineContainer = document.querySelector(".timeline-container");
     var timelineImage = document.querySelector(".timeline-image");
     var imageWidth = timelineImage.clientWidth;
+    var fifthOfImageWidth = imageWidth / 5;
     var scrollTop = 0;
     var scrollValue = 0;
 
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     scrollValue -= 1; 
                 }
-                timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth - 1/5, Math.max(0, scrollValue * 5)) + 'px)';
+                timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth - fifthOfImageWidth, Math.max(0, scrollValue * 5)) + 'px)';
             }
         });
             
