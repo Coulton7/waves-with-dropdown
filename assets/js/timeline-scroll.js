@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         if (timeline.getBoundingClientRect().top < 0) {
             timelineContainer.style.position = "sticky";
-            timelineContainer.style.top = "0";
+            timelineContainer.style.top = "5rem";
             timelineImage.style.position = "absolute";
         }
 
