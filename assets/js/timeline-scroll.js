@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var timeline = document.querySelector(".timeline");
     var timelineContainer = document.querySelector(".timeline-container");
     var timelineImage = document.querySelector(".timeline-image");
-    var imageWidth = timelineImage.clientWidth;
+    var imageWidth = timelineImage.width;
     var scrollTop = 0;
     var scrollValue = 0;
 
