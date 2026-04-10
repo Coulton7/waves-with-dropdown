@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     scrollValue -= 1; 
                 }
-                timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth, Math.max(0, scrollValue)) + 'px)';
+                timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth, Math.max(0, scrollValue * 5)) + 'px)';
             }
         });
             
