@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     timeline.setAttribute("style", "height: " + imageWidth + "px");
 
-    window.addEventListener('wheel', function(e){
+    window.addEventListener('scroll', function(e){
         
         if (timeline.getBoundingClientRect().top < 0) {
             timelineContainer.style.position = "sticky";
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (timelineContainer.style.position === "sticky" ){
             
-                const y = e.deltaY;
+                const y = e.scrollY;
                 if (y > 0) {                    
                     scrollValue += 1; 
                 } else {
