@@ -1620,6 +1620,9 @@ blockquote {
 .search-fa-icon, .feedback-fa-icon, .chat-fa-icon {
   border: none;
   background-color: transparent;
+  height: 100%;
+  width: 100%;
+  align-content: center;
 }
 
 .search-icon {
