@@ -29,13 +29,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     scrollValue -= 1; 
                     console.log("scroll down");
                     console.log(scrollValue)
+                    lastScrollTop = window.scrollY;
                 } else {
                     scrollValue += 1;
                     console.log("scroll up");
+                    lastScrollTop = window.scrollY;
                 }
                 timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth - fifthOfImageWidth, Math.max(0, scrollValue * 5)) + 'px)';
             }
-        lastScrollTop = window.scrollY;
+        
         });
             
     });
