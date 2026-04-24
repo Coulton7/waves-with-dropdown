@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (scrolled <= lastScrollTop) {                    
                     scrollValue += 1;
                     console.log("scroll up");
-                    console.log("initial scroll value" + lastScrollTop);
-                    console.log("ScrollValue" + scrollValue);
+                    console.log("initial scroll value " + lastScrollTop);
+                    console.log("ScrollValue " + scrollValue);
                     console.log("Scrolled value:" + scrolled);
                     lastScrollTop = scrolled;
                 } else if(scrolled >= lastScrollTop) {
