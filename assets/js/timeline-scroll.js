@@ -29,17 +29,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (scrolled <= lastScrollTop) {                    
                     scrollValue += 1;
                     console.log("scroll up");
-                    console.log(scrollValue);
-                    lastScrollTop = scrolled;
+                    console.log("initial scroll value" + lastScrollTop);
+                    console.log("ScrollValue" + scrollValue);
                     console.log("Scrolled value:" + scrolled);
-                    console.log(lastScrollTop);
+                    lastScrollTop = scrolled;
                 } else if(scrolled >= lastScrollTop) {
                     scrollValue -= 1; 
                     console.log("scroll down");
-                    console.log(scrollValue)
-                    lastScrollTop = scrolled;
+                    console.log("initial scroll value" + lastScrollTop);
+                    console.log("ScrollValue" + scrollValue)
                     console.log("Scrolled value:" + scrolled);
-                    console.log(lastScrollTop);
+                    lastScrollTop = scrolled;
                 }
                 timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth - fifthOfImageWidth, Math.max(0, scrollValue * 5)) + 'px)';
             }
