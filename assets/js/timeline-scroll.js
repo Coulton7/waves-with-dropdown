@@ -4,12 +4,13 @@ document.addEventListener("DOMContentLoaded", function() {
     var timelineImage = document.querySelector(".timeline-image");
     var imageWidth = timelineImage.clientWidth;
     var fifthOfImageWidth = imageWidth / 5;
-    var scrollTop = 0;
     var scrollValue = 0;
 
     timeline.setAttribute("style", "height: " + imageWidth + "px");
 
-    window.addEventListener('wheel', function(e){
+    window.addEventListener('scroll', function(e){
+        let lastScrollTop = 0;
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         if (timeline.getBoundingClientRect().top < 0) {
             timelineContainer.style.position = "sticky";
@@ -25,9 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (timelineContainer.style.position === "sticky" ){
             
-                const y = e.deltaY;
-                if (y > 0) {                    
-                    scrollValue += 1; 
+                if (scrollTop > lastScrollTop) {                    
+                    scrollValue -= 1; 
                 } else {
                     scrollValue -= 1; 
                 }
