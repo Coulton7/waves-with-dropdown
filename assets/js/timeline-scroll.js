@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     timeline.setAttribute("style", "height: " + imageWidth + "px");
 
     window.addEventListener('scroll', function(e){
-        var lastScrollTop = 0;
+        let lastScrollTop = 0;
         
         if (timeline.getBoundingClientRect().top < 0) {
             timelineContainer.style.position = "sticky";
@@ -25,14 +25,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (timelineContainer.style.position === "sticky" ){
             
-                if (window.scrollY > lastScrollTop) {                    
+                if (window.scrollY < lastScrollTop) {                    
+                    scrollValue += 1;
+                    console.log("scroll up");
+                    lastScrollTop = window.scrollY;
+                } else {
                     scrollValue -= 1; 
                     console.log("scroll down");
                     console.log(scrollValue)
-                    lastScrollTop = window.scrollY;
-                } else {
-                    scrollValue += 1;
-                    console.log("scroll up");
                     lastScrollTop = window.scrollY;
                 }
                 timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth - fifthOfImageWidth, Math.max(0, scrollValue * 5)) + 'px)';
