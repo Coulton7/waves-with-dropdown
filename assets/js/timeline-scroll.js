@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     timeline.setAttribute("style", "height: " + imageWidth + "px");
 
     window.addEventListener('scroll', function(e){
-        
+        let lastScrollTop = 0;
         
         if (timeline.getBoundingClientRect().top < 0) {
             timelineContainer.style.position = "sticky";
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         if (timelineContainer.style.position === "sticky" ){
-            let lastScrollTop = 0;
+            
                 if (window.scrollY <= lastScrollTop) {                    
                     scrollValue += 1;
                     console.log("scroll up");
