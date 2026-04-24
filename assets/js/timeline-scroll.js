@@ -28,8 +28,10 @@ document.addEventListener("DOMContentLoaded", function() {
             
                 if (scrollTop > lastScrollTop) {                    
                     scrollValue -= 1; 
+                    console.log("scroll down");
                 } else {
-                    scrollValue -= 1; 
+                    scrollValue += 1;
+                    console.log("scroll up");
                 }
                 timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth - fifthOfImageWidth, Math.max(0, scrollValue * 5)) + 'px)';
             }
