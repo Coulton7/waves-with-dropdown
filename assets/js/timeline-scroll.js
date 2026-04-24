@@ -31,11 +31,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     console.log("scroll up");
                     console.log(scrollValue);
                     lastScrollTop = scrolled;
+                    console.log("Scrolled value:" + scrolled);
                 } else if(scrolled >= lastScrollTop) {
                     scrollValue -= 1; 
                     console.log("scroll down");
                     console.log(scrollValue)
                     lastScrollTop = scrolled;
+                    console.log("Scrolled value:" + scrolled);
                 }
                 timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth - fifthOfImageWidth, Math.max(0, scrollValue * 5)) + 'px)';
             }
