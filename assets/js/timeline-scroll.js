@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (window.scrollY > lastScrollTop) {                    
                     scrollValue -= 1; 
                     console.log("scroll down");
+                    console.log(scrollValue)
                 } else {
                     scrollValue += 1;
                     console.log("scroll up");
