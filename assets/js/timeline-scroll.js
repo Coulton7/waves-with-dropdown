@@ -25,11 +25,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (timelineContainer.style.position === "sticky" ){
             
-                if (window.scrollY < lastScrollTop) {                    
+                if (window.scrollY <= lastScrollTop) {                    
                     scrollValue += 1;
                     console.log("scroll up");
                     lastScrollTop = window.scrollY;
-                } else if(window.scrollY > lastScrollTop) {
+                } else if(window.scrollY >= lastScrollTop) {
                     scrollValue -= 1; 
                     console.log("scroll down");
                     console.log(scrollValue)
