@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (timelineContainer.style.position === "sticky" ){
 
-            var timelineLength = (window.scrollY + window.innerHeight) - timelineBounding.top
+            var timelineLength = (window.scrollY + window.innerHeight) <= timelineBounding.top
              ? 0
              : ((window.scrollY + window.innerHeight) - timelineBounding.top <= (window.innerHeight + timelineBounding.height)
              ? (window.scrollY + window.innerHeight - timelineBounding.top) 
