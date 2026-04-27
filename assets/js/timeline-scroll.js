@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var fifthOfImageWidth = imageWidth / 5;
     var scrollValue = 0;
     var lastScrollTop = 0;
+    var timelineBounding = timelineContainer.getBoundingClientRect();
 
     timeline.setAttribute("style", "height: " + imageWidth + "px");
 
@@ -13,13 +14,13 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const scrolled = window.scrollY;
         
-        if (timeline.getBoundingClientRect().top < 0) {
+        if (timelineBounding.top < 0) {
             timelineContainer.style.position = "sticky";
             timelineContainer.style.top = "5rem";
             timelineImage.style.position = "absolute";
         }
 
-        if(timeline.offsetHeight + timeline.scrollTop > timeline.scrollHeight){
+        if(timelineBounding.bottom > (window.innerHeight || document.documentElement.clientHeight)) {
             timelineContainer.style.position = "relative";
             timelineContainer.style.top = "0";
             timelineImage.style.position = "relative";
