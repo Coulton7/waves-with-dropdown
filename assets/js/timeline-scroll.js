@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded", function() {
         if (timelineContainer.style.position === "sticky" ){
             
                 if (scrolled <= lastScrollTop) {                    
-                    scrollValue += 1;
+                    scrollValue -= 1;
                     lastScrollTop = scrolled;
                 } else if(scrolled >= lastScrollTop) {
-                    scrollValue -= 1; 
+                    scrollValue += 1; 
                     lastScrollTop = scrolled;
                 }
                 timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth - fifthOfImageWidth, Math.max(0, scrollValue * 5)) + 'px)';
