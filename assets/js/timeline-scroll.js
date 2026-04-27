@@ -6,12 +6,11 @@ document.addEventListener("DOMContentLoaded", function() {
     var fifthOfImageWidth = imageWidth / 5;
     var scrollValue = 0;
     var lastScrollTop = 0;
-    var timelineBounding = timeline.getBoundingClientRect();
 
     timeline.setAttribute("style", "height: " + imageWidth + "px");
 
     window.addEventListener('scroll', function(e){
-        
+        var timelineBounding = timeline.getBoundingClientRect();
         const scrolled = window.scrollY;
         
         if (timelineBounding.top < 0) {
