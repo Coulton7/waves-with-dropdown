@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
             timelineImage.style.position = "absolute";
         }
 
-        if(timeline.offsetHeight + timeline.scrollTop > timeline.scrollHeight){
+        if(timelineBounding.bottom < 0) {
             timelineContainer.style.position = "relative";
             timelineContainer.style.top = "0";
             timelineImage.style.position = "relative";
