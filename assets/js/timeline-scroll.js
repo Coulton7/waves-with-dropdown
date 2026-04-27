@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if(timeline.offsetHeight + timeline.scrollTop > timeline.scrollHeight){
             timelineContainer.style.position = "relative";
+            timelineContainer.style.top = "0";
             timelineImage.style.position = "relative";
             console.log("Timeline end reached");
         }
