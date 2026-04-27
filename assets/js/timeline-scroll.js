@@ -17,6 +17,10 @@ document.addEventListener("DOMContentLoaded", function() {
             timelineContainer.style.position = "sticky";
             timelineContainer.style.top = "5rem";
             timelineImage.style.position = "absolute";
+        } else if (timelineBounding.top > 0) {
+            timelineContainer.style.position = "relative";
+            timelineContainer.style.top = "0";
+            timelineImage.style.position = "relative";
         }
 
         if(timelineBounding.bottom < 0) {
@@ -24,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function() {
             timelineContainer.style.top = "0";
             timelineImage.style.position = "relative";
             console.log("Timeline end reached");
+        } else if (timelineBounding.bottom < 0) {
+            timelineContainer.style.position = "sticky";
+            timelineContainer.style.top = "5rem";
+            timelineImage.style.position = "absolute";
         }
 
         if (timelineContainer.style.position === "sticky" ){
