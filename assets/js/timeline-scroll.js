@@ -30,9 +30,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (scrolled <= lastScrollTop) {                    
                     scrollValue -= 1;
                     lastScrollTop = scrolled;
+                    console.log(scrollValue);
                 } else if(scrolled >= lastScrollTop) {
                     scrollValue += 1; 
                     lastScrollTop = scrolled;
+                    console.log(scrollValue);
                 }
                 timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth - fifthOfImageWidth, Math.max(0, scrollValue * 8)) + 'px)';
             }
