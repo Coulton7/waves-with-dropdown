@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", function() {
         var timelineBounding = timeline.getBoundingClientRect();
         var navBounding = document.getElementById("autocollapse").getBoundingClientRect();
         const scrolled = window.scrollY;
+        const scrollableRange = timelineContainer.scrollHeight - timelineContainer.clientHeight;
+        if (scrollableRange <= 0) return;
+        const scrollPercentage = (timelineContainer.scrollTop / scrollableRange) * 100;
         
         if (timelineBounding.top < navBounding.bottom) {
             timelineContainer.style.position = "sticky";
@@ -37,12 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         if (timelineContainer.style.position === "sticky" ){
-
-            const scrollableRange = timelineContainer.scrollHeight - timelineContainer.clientHeight;
-            if (scrollableRange <= 0) return;
-
-            const scrollPercentage = (timelineContainer.scrollTop / scrollableRange) * 100;
             console.log('Scroll Percentage: ' + scrollPercentage + '%');
+
                 if (scrolled <= lastScrollTop) {                    
                     scrollValue -= 1;
                     lastScrollTop = scrolled;
