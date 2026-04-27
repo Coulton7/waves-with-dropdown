@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                     ? (window.scrollY + window.innerHeight - timeline.offsetTop)
                                     : (window.innerHeight + timeline.offsetHeight)
 
-            var percentage = Math.round((imageWidth * 100) / (window.innerHeight + timelineBounding.height));
+            var percentage = Math.round((timelineLength * 100) / (window.innerHeight + timelineBounding.height));
             console.log("Percentage: " + percentage);
             
                 if (scrolled <= lastScrollTop) {                    
