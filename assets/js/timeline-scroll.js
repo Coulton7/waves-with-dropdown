@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     scrollValue += 1; 
                     lastScrollTop = scrolled;
                 }
-                timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth - fifthOfImageWidth, Math.max(0, scrollValue * 5)) + 'px)';
+                timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth - fifthOfImageWidth, Math.max(0, scrollValue * 10)) + 'px)';
             }
         
         });
