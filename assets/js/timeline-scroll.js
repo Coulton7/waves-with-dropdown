@@ -38,12 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (timelineContainer.style.position === "sticky" ){
 
-            var timelineLength = (window.scrollY + window.innerHeight) <= timelineBounding.top
-             ? 0
-             : ((window.scrollY + window.innerHeight) - timelineBounding.top <= (window.innerHeight + timelineBounding.height)
-             ? (window.scrollY + window.innerHeight - timelineBounding.top) 
-             : (window.innerHeight + timelineBounding.height));
-            var percentage = Math.round((timelineLength * 100) / (window.innerHeight + timelineBounding.height));
+            var percentage = Math.round((imageWidth * 100) / (window.innerHeight + timelineBounding.height));
             console.log("Percentage: " + percentage);
             
                 if (scrolled <= lastScrollTop) {                    
