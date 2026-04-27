@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var fifthOfImageWidth = imageWidth / 5;
     var scrollValue = 0;
     var lastScrollTop = 0;
-    var timelineBounding = timelineContainer.getBoundingClientRect();
+    var timelineBounding = timeline.getBoundingClientRect();
 
     timeline.setAttribute("style", "height: " + imageWidth + "px");
 
