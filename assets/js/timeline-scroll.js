@@ -11,24 +11,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener('scroll', function(e){
         var timelineBounding = timeline.getBoundingClientRect();
+        var navBounding = document.getElementById("autocollapse").getBoundingClientRect();
         const scrolled = window.scrollY;
         
-        if (timelineBounding.top < 0) {
+        if (timelineBounding.top < navBounding.bottom) {
             timelineContainer.style.position = "sticky";
             timelineContainer.style.top = "5rem";
             timelineImage.style.position = "absolute";
-        } else if (timelineBounding.top > 0) {
+        } else if (timelineBounding.top > navBounding.bottom
+        ) {
             timelineContainer.style.position = "relative";
             timelineContainer.style.top = "0";
             timelineImage.style.position = "relative";
         }
 
-        if(timelineBounding.bottom < 0) {
+        if(timelineBounding.bottom < navBounding.bottom) {
             timelineContainer.style.position = "relative";
             timelineContainer.style.top = "0";
             timelineImage.style.position = "relative";
             console.log("Timeline end reached");
-        } else if (timelineBounding.bottom < 0) {
+        } else if (timelineBounding.bottom < navBounding.bottom) {
             timelineContainer.style.position = "sticky";
             timelineContainer.style.top = "5rem";
             timelineImage.style.position = "absolute";
