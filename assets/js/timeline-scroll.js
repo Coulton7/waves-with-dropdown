@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else if(scrolled >= lastScrollTop) {
                     scrollValue += 1; 
                     lastScrollTop = scrolled;
-                    if(scrollValue > imageWidth) {
-                        scrollValue = imageWidth;
+                    if(scrollValue > imageWidth / 10) {
+                        scrollValue = imageWidth / 10;
                     }
                     console.log(scrollValue);
                 }
