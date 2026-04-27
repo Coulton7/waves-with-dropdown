@@ -38,13 +38,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (timelineContainer.style.position === "sticky" ){
 
-            var timelineLength = (window.scrollY + window.innerHeight) <= timeline.offsetTop 
-                                    ? 0 
-                                    : ((window.scrollY + window.innerHeight) - timeline.offsetTop) <= (window.innerHeight + timeline.offsetHeight)
-                                    ? (window.scrollY + window.innerHeight - timeline.offsetTop)
-                                    : (window.innerHeight + timeline.offsetHeight)
+            var pixelScrolled = window.scrollY;
+            var viewportHeight = window.innerHeight;
+            var totalScrollableHeight = timeline.scrollHeight;
 
-            var percentage = Math.round((timelineLength * 100) / (window.innerHeight + timelineBounding.height));
+            var percentage = pixelScrolled / (totalScrollableHeight - viewportHeight) * 100;
             console.log("Percentage: " + percentage);
             
                 if (scrolled <= lastScrollTop) {                    
