@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     if(scrollValue > imageWidth / 10) {
                         scrollValue = imageWidth / 10;
                     }
-                    console.log(scrollValue);
                 }
                 timelineImage.style.transform = 'translateX(' + scrollPercent + '%)';
             }
