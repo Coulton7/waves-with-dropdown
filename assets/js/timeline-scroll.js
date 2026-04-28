@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 var totalScrollableHeight = timeline.scrollHeight; - timeline.clientHeight;
                 var scrollPercent = ((timelineTop / totalScrollableHeight) * 100);
                 console.log("Percentage: " + scrollPercent);
-                var scrollAmount = Math.min(-(fifthOfImageWidth / scrollPercent * 100),Math.max(0, scrollPercent));
             
                 if (scrolled <= lastScrollTop) {                    
                     scrollValue -= 1;
@@ -58,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         scrollValue = imageWidth / 10;
                     }
                 }
-                timelineImage.style.transform = 'translateX(' + scrollAmount + '%)';
+                timelineImage.style.transform = 'translateX(' + scrollPercent + '%)';
             }
         
         });
