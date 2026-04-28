@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
             timelineContainer.style.position = "relative";
             timelineContainer.style.top = "0";
             timelineImage.style.position = "relative";
-            console.log("Timeline end reached");
         } else if (timelineBounding.bottom < navBounding.bottom) {
             timelineContainer.style.position = "sticky";
             timelineContainer.style.top = "5rem";
@@ -42,8 +41,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 var totalScrollableHeight = timeline.scrollHeight; - timeline.clientHeight;
                 var scrollPercent = ((timelineTop / totalScrollableHeight) * 100);
                 console.log("Percentage: " + scrollPercent);
-                var min = Math.min(-75, scrollPercent);
-                var max = Math.max(0, min);
             
                 if (scrolled <= lastScrollTop) {                    
                     scrollValue -= 1;
@@ -59,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         scrollValue = imageWidth / 10;
                     }
                 }
-                timelineImage.style.transform = 'translateX(' + max + '%)';
+                timelineImage.style.transform = 'translateX(' + scrollPercent + '%)';
             }
         
         });
