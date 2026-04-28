@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                     console.log(scrollValue);
                 }
-                timelineImage.style.transform = 'translateX( -' + scrollPercent + '%)';
+                timelineImage.style.transform = 'translateX(' + scrollPercent + '%)';
             }
         
         });
