@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                     console.log(scrollValue);
                 }
-                timelineImage.style.transform = 'translateX( -' + Math.min(imageWidth - fifthOfImageWidth, Math.max(0, scrollValue * 10)) + 'px)';
+                timelineImage.style.transform = 'translateX( -' + scrollPercent + '%)';
             }
         
         });
