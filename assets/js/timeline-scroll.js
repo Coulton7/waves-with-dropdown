@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 var timelineTop = timelineBounding.top;
                 var totalScrollableHeight = timeline.scrollHeight; - timeline.clientHeight;
-                var scrollPercent = Math.round((timelineTop / totalScrollableHeight) * 100);
+                var scrollPercent = ((timelineTop / totalScrollableHeight) * 100);
                 console.log("Percentage: " + scrollPercent);
             
                 if (scrolled <= lastScrollTop) {                    
