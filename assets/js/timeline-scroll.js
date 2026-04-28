@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         scrollValue = imageWidth / 10;
                     }
                 }
-                timelineImage.style.transform = 'translateX(' + scrollPercent + '%)';
+                timelineImage.style.transform = 'translateX(' + Math.min(-75, Math.max(0, scrollPercent)) + '%)';
             }
         
         });
