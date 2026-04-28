@@ -38,12 +38,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (timelineContainer.style.position === "sticky" ){
 
-            var pixelScrolled = window.scrollY;
-            var viewportHeight = window.innerHeight;
-            var totalScrollableHeight = timeline.scrollHeight;
+            var timelineTop = timeline.scrollTop;
+            var totalScrollableHeight = timeline.scrollHeight; - timeline.clientHeight;
+            var scrollPercent = Math.round((timelineTop / totalScrollableHeight) * 100);
 
-            var percentage = pixelScrolled / (totalScrollableHeight - viewportHeight) * 100;
-            console.log("Percentage: " + percentage);
+            console.log("Percentage: " + scrollPercent);
             
                 if (scrolled <= lastScrollTop) {                    
                     scrollValue -= 1;
