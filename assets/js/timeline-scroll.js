@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
         timelineImage.addEventListener("load", function() {
             timeline.setAttribute("style", "height: " + timelineImage.clientWidth + "px");
         });
-        var fifthOfImageWidth = imageWidth / 5;
         var scrollValue = 0;
         var lastScrollTop = 0;
 
