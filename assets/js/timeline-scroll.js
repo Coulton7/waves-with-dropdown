@@ -4,9 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var timeline = document.querySelector(".timeline");
         var timelineContainer = document.querySelector(".timeline-container");
         var timelineImage = document.querySelector(".timeline-image");
-        timelineImage.addEventListener("load", function() {
-            timeline.setAttribute("style", "height: " + timelineImage.naturalWidth + "px");
-        });
+        timeline.setAttribute("style", "height: " + timelineImage.naturalWidth + "px");
         var scrollValue = 0;
         var lastScrollTop = 0;
 
