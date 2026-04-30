@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     if (document.querySelector('.timeline')) {
+
         var timeline = document.querySelector(".timeline");
         var timelineContainer = document.querySelector(".timeline-container");
         var timelineImage = document.querySelector(".timeline-image");
-        var imageWidth = timelineImage.clientWidth;
+        var imageWidth = timelineImage.getBoundingClientRect().width;
         var fifthOfImageWidth = imageWidth / 5;
         var scrollValue = 0;
         var lastScrollTop = 0;
