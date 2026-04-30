@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
         var timeline = document.querySelector(".timeline");
         var timelineContainer = document.querySelector(".timeline-container");
         var timelineImage = document.querySelector(".timeline-image");
-        var imageWidth = timelineImage.clientWidth;
+        timelineImage.addEventListener("load", function() {
+            timeline.setAttribute("style", "height: " + timelineImage.clientWidth + "px");
+        });
         var fifthOfImageWidth = imageWidth / 5;
         var scrollValue = 0;
         var lastScrollTop = 0;
